@@ -78,29 +78,29 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                <svg className="w-12 h-12" viewBox="0 0 100 100" fill="none">
                   {/* Dumbbell */}
-                  <g fill="#000">
-                    <rect x="10" y="42" width="8" height="16" rx="2"/>
-                    <rect x="82" y="42" width="8" height="16" rx="2"/>
-                    <rect x="18" y="46" width="64" height="8" rx="1"/>
+                  <g fill="#333">
+                    <rect x="8" y="38" width="12" height="24" rx="3"/>
+                    <rect x="80" y="38" width="12" height="24" rx="3"/>
+                    <rect x="20" y="44" width="60" height="12" rx="2"/>
                   </g>
                   
                   {/* Plant/Leaves */}
-                  <g fill="#000">
-                    <path d="M50 30 Q40 15 35 20 Q40 25 50 30"/>
-                    <path d="M50 30 Q55 15 65 20 Q60 25 50 30"/>
-                    <path d="M50 30 Q45 10 50 5 Q55 10 50 30"/>
-                    <line x1="50" y1="30" x2="50" y2="46" stroke="#000" strokeWidth="2"/>
+                  <g fill="#22c55e">
+                    <path d="M50 28 Q38 12 32 18 Q38 24 50 28"/>
+                    <path d="M50 28 Q58 12 68 18 Q62 24 50 28"/>
+                    <path d="M50 28 Q44 8 50 2 Q56 8 50 28"/>
+                    <line x1="50" y1="28" x2="50" y2="44" stroke="#22c55e" strokeWidth="3"/>
                   </g>
                   
                   {/* Carrot */}
                   <g>
-                    <path d="M50 60 L45 85 Q47 90 50 88 Q53 90 55 85 Z" fill="#ff6b35"/>
-                    <path d="M46 72 Q48 71 50 72" stroke="#000" strokeWidth="1" fill="none"/>
-                    <path d="M47 77 Q49 76 51 77" stroke="#000" strokeWidth="1" fill="none"/>
-                    <path d="M48 82 Q50 81 52 82" stroke="#000" strokeWidth="1" fill="none"/>
+                    <path d="M50 62 L42 88 Q44 94 50 92 Q56 94 58 88 Z" fill="#ff6b35"/>
+                    <path d="M44 74 Q48 72 52 74" stroke="#333" strokeWidth="2" fill="none"/>
+                    <path d="M45 80 Q49 78 53 80" stroke="#333" strokeWidth="2" fill="none"/>
+                    <path d="M46 86 Q50 84 54 86" stroke="#333" strokeWidth="2" fill="none"/>
                   </g>
                 </svg>
               </div>
