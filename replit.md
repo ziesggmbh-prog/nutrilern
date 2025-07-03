@@ -98,6 +98,9 @@ This is a React-based nutrition learning platform that provides an interactive e
 ```
 Changelog:
 - July 03, 2025. Initial setup
+- July 03, 2025. Added footer information boxes with BKK firmus and ZIES gGmbH logos
+- July 03, 2025. Integrated user's carrot-dumbbell logo in header
+- July 03, 2025. Refined logo sizing and proportions for consistent display
 ```
 
 ## User Preferences
