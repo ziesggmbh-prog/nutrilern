@@ -74,33 +74,17 @@ export default function Home() {
     <div className="min-h-screen bg-structured text-white">
       {/* Header */}
       <header className="relative overflow-hidden bg-black bg-opacity-30">
-        <div className="absolute inset-0 opacity-20">
-          <OrganicShape
-            className="absolute top-10 left-10 w-32 h-32 bg-yellow-custom animate-float"
-            variant="default"
-          />
-          <OrganicShape
-            className="absolute top-20 right-20 w-24 h-24 bg-purple-custom animate-pulse-slow"
-            variant="alt"
-          />
-          <OrganicShape
-            className="absolute bottom-10 left-1/3 w-20 h-20 bg-orange-custom"
-            variant="default"
-          />
-          <OrganicShape
-            className="absolute bottom-20 right-10 w-16 h-16 bg-plum-custom animate-float"
-            variant="alt"
-          />
-        </div>
         
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-green-custom rounded-full flex items-center justify-center">
-                <Leaf className="text-white" size={24} />
+              <div className="w-12 h-12 bg-orange-custom rounded-full flex items-center justify-center">
+                <svg className="text-white w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
               </div>
               <div>
-                <h1 className="text-2xl font-bold">NutriLern</h1>
+                <h1 className="text-2xl font-bold">Prävention Plus</h1>
                 <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Bewegung & Ernährung</p>
               </div>
             </div>
