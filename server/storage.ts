@@ -64,7 +64,7 @@ export class MemStorage implements IStorage {
     const lessonData = [
       {
         title: "Intro",
-        description: "Entdecke die Basics einer ausgewogenen Ernährung",
+        description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 8,
         thumbnailUrl: "/assets/1_1751542243605.png",
@@ -73,7 +73,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Kohlenhydrate",
-        description: "Wichtige Nährstoffe für deine Gesundheit",
+        description: "Erfahre, welche Rolle Kohlenhydrate in deinem Körper spielen und warum sie mehr sind als nur Zucker.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
         thumbnailUrl: "/assets/6_1751542243606.png",
@@ -82,7 +82,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Proteine",
-        description: "Wie du ausgewogene Mahlzeiten planst",
+        description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist und wie du genug davon bekommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 12,
         thumbnailUrl: "/assets/3_1751542243606.png",
@@ -91,7 +91,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Fette",
-        description: "5 am Tag - so gelingt es dir!",
+        description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 9,
         thumbnailUrl: "/assets/4_1751542243606.png",
@@ -100,7 +100,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Mikronährstoffe",
-        description: "Bausteine für deinen Körper",
+        description: "Vitamine und Mineralstoffe im Fokus - klein, aber unverzichtbar für Gesundheit und Leistungsfähigkeit.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 11,
         thumbnailUrl: "/assets/5_1751542243606.png",
@@ -109,7 +109,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Die Hölle",
-        description: "Richtig trinken für optimale Gesundheit",
+        description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen und wie du ihnen entkommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 7,
         thumbnailUrl: "/assets/8_1751542243607.png",
@@ -118,7 +118,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Trinken",
-        description: "Langkettige Kohlenhydrate richtig nutzen",
+        description: "Warum ausreichend Flüssigkeit entscheidend für Konzentration, Leistungsfähigkeit und Wohlbefinden ist.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 13,
         thumbnailUrl: "/assets/7_1751542243606.png",
@@ -126,8 +126,8 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Bewegung – Teil 1",
-        description: "Omega-3 und ungesättigte Fettsäuren",
+        title: "Bewegung - Teil 1",
+        description: "Die Grundlagen körperlicher Aktivität: Warum Bewegung essenziell für deine Gesundheit ist.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
         thumbnailUrl: "/assets/2_1751542243605.png",
@@ -135,8 +135,8 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Bewegung – Teil 2",
-        description: "Bewusste Nahrungsaufnahme praktizieren",
+        title: "Bewegung - Teil 2",
+        description: "Praktische Tipps, wie du mehr Bewegung in deinen Alltag integrierst auch ohne Fitnessstudio.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 8,
         thumbnailUrl: "/assets/9_1751542243607.png",
