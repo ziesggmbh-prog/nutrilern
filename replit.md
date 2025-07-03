@@ -107,6 +107,10 @@ Changelog:
 - July 03, 2025. Implemented custom color system for Videos 1-9 with user-provided color references
 - July 03, 2025. Added comprehensive quiz data for all 9 videos with educational content
 - July 03, 2025. Updated Video 2 quiz with user-specific questions about brain energy and complex carbohydrates
+- July 03, 2025. Added error message system in quiz with "Diese Antwort ist leider nicht korrekt" text
+- July 03, 2025. Fixed button visibility in quiz modal - made "Zurück" and "Abbrechen" permanently visible
+- July 03, 2025. Synchronized quest card colors with lesson card organic form colors for consistency
+- July 03, 2025. Updated Video 2 color to dark navy blue based on user reference image
 ```
 
 ## User Preferences
