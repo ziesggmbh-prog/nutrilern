@@ -81,12 +81,36 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center">
-                <img 
-                  src={logoImage} 
-                  alt="Logo" 
-                  className="w-24 h-24 object-cover"
-                />
+              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-orange-custom">
+                <svg 
+                  width="48" 
+                  height="48" 
+                  viewBox="0 0 64 64" 
+                  className="w-12 h-12"
+                >
+                  {/* Carrot shape in white */}
+                  <path 
+                    d="M32 12 C35 12, 38 15, 38 18 L38 42 C38 47, 35 52, 32 52 C29 52, 26 47, 26 42 L26 18 C26 15, 29 12, 32 12 Z" 
+                    fill="white"
+                  />
+                  {/* Dumbbell handle in white */}
+                  <rect 
+                    x="22" 
+                    y="30" 
+                    width="20" 
+                    height="4" 
+                    rx="2" 
+                    fill="white"
+                  />
+                  {/* Dumbbell weights in white */}
+                  <circle cx="20" cy="32" r="4" fill="white" />
+                  <circle cx="44" cy="32" r="4" fill="white" />
+                  {/* Carrot top leaves in white */}
+                  <path 
+                    d="M29 12 Q27 9, 30 10 Q32 7, 34 10 Q37 9, 35 12" 
+                    fill="white"
+                  />
+                </svg>
               </div>
               <div>
                 <h1 className="text-2xl font-bold">NutriLern</h1>
