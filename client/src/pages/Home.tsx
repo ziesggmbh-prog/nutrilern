@@ -101,7 +101,7 @@ export default function Home() {
               <div className="bg-navy-light rounded-full px-4 py-2">
                 <span className="text-green-custom font-semibold">Level 1</span>
               </div>
-              <div className="w-10 h-10 bg-purple-custom rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-green-custom rounded-full flex items-center justify-center">
                 <User className="text-white" size={20} />
               </div>
             </div>
