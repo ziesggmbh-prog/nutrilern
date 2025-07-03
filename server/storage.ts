@@ -230,7 +230,11 @@ export class MemStorage implements IStorage {
 
   async createLesson(insertLesson: InsertLesson): Promise<Lesson> {
     const id = this.currentLessonId++;
-    const lesson: Lesson = { ...insertLesson, id };
+    const lesson: Lesson = { 
+      ...insertLesson, 
+      id,
+      isActive: insertLesson.isActive ?? true
+    };
     this.lessons.set(id, lesson);
     return lesson;
   }
@@ -258,10 +262,14 @@ export class MemStorage implements IStorage {
 
   async createUserProgress(insertProgress: InsertUserProgress): Promise<UserProgress> {
     const id = this.currentProgressId++;
+    const isCompleted = insertProgress.isCompleted ?? false;
     const progress: UserProgress = { 
-      ...insertProgress, 
       id,
-      completedAt: insertProgress.isCompleted ? new Date() : null
+      userId: insertProgress.userId,
+      lessonId: insertProgress.lessonId,
+      isCompleted,
+      quizScore: insertProgress.quizScore ?? null,
+      completedAt: isCompleted ? new Date() : null
     };
     this.userProgress.set(id, progress);
     return progress;
