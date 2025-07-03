@@ -42,7 +42,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       onClick={isAvailable ? onQuizClick : undefined}
     >
       <div className="flex items-center space-x-3 w-full">
-        <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full flex items-center justify-center`}
+        <div className={`${isCompleted ? "bg-gray-600" : isAvailable ? colorClass : "bg-gray-600"} rounded-full flex items-center justify-center`}
              style={{ width: '24px', height: '24px', flexShrink: 0 }}>
           {isCompleted ? (
             <CheckCircle className="text-white" size={12} />
