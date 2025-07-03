@@ -65,7 +65,7 @@ export class MemStorage implements IStorage {
       {
         title: "Intro",
         description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "/assets/AI_Intro_X_1751549357807.mp4",
         duration: 8,
         thumbnailUrl: "/assets/1_1751542243605.png",
         order: 1,
