@@ -97,7 +97,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold">NutriLern</h1>
-                <p className="text-gray-300 text-sm">Präventionsprogramm Ernährung</p>
+                <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Bewegung & Ernährung</p>
               </div>
             </div>
             
