@@ -112,7 +112,7 @@ export class MemStorage implements IStorage {
         description: "Richtig trinken für optimale Gesundheit",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 7,
-        thumbnailUrl: "/assets/6_1751542243606.png",
+        thumbnailUrl: "/assets/8_1751542243607.png",
         order: 6,
         isActive: true
       },
@@ -130,7 +130,7 @@ export class MemStorage implements IStorage {
         description: "Omega-3 und ungesättigte Fettsäuren",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
-        thumbnailUrl: "/assets/8_1751542243607.png",
+        thumbnailUrl: "/assets/6_1751542243606.png",
         order: 8,
         isActive: true
       },
