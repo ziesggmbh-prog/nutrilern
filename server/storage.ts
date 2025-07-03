@@ -76,7 +76,7 @@ export class MemStorage implements IStorage {
         description: "Wichtige Nährstoffe für deine Gesundheit",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
-        thumbnailUrl: "/assets/2_1751542243605.png",
+        thumbnailUrl: "/assets/6_1751542243606.png",
         order: 2,
         isActive: true
       },
@@ -130,7 +130,7 @@ export class MemStorage implements IStorage {
         description: "Omega-3 und ungesättigte Fettsäuren",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
-        thumbnailUrl: "/assets/6_1751542243606.png",
+        thumbnailUrl: "/assets/2_1751542243605.png",
         order: 8,
         isActive: true
       },
