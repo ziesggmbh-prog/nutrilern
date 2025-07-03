@@ -130,7 +130,7 @@ export class MemStorage implements IStorage {
         description: "Omega-3 und ungesättigte Fettsäuren",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
-        thumbnailUrl: "https://images.unsplash.com/photo-1553909489-cd47e0ef937f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "https://images.unsplash.com/photo-1605300840517-e3596f888e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
         order: 8,
         isActive: true
       },
