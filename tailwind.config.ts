@@ -74,6 +74,16 @@ export default {
         "yellow-custom": "var(--yellow-custom)",
         "plum-custom": "var(--plum-custom)",
         "mint-custom": "var(--mint-custom)",
+        // Video-specific colors for organic forms
+        "royal-purple": "var(--royal-purple)",
+        "sage-green": "var(--sage-green)",
+        "lavender": "var(--lavender)",
+        "warm-orange": "var(--warm-orange)",
+        "deep-purple": "var(--deep-purple)",
+        "bright-purple": "var(--bright-purple)",
+        "terracotta": "var(--terracotta)",
+        "soft-lavender": "var(--soft-lavender)",
+        "teal-blue": "var(--teal-blue)",
       },
       keyframes: {
         "accordion-down": {

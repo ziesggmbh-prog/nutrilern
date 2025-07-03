@@ -11,15 +11,15 @@ interface LessonCardProps {
 }
 
 const colorVariants = [
-  "bg-yellow-custom",
-  "bg-purple-custom", 
-  "bg-teal-light",
-  "bg-plum-custom",
-  "bg-mint-custom",
-  "bg-purple-light",
-  "bg-orange-light",
-  "bg-teal-custom",
-  "bg-orange-custom"
+  "bg-royal-purple",
+  "bg-sage-green", 
+  "bg-lavender",
+  "bg-warm-orange",
+  "bg-deep-purple",
+  "bg-bright-purple",
+  "bg-terracotta",
+  "bg-soft-lavender",
+  "bg-teal-blue"
 ];
 
 export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }: LessonCardProps) {
