@@ -67,7 +67,7 @@ export class MemStorage implements IStorage {
         description: "Entdecke die Basics einer ausgewogenen Ernährung",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 8,
-        thumbnailUrl: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/1_1751542243605.png",
         order: 1,
         isActive: true
       },
@@ -76,7 +76,7 @@ export class MemStorage implements IStorage {
         description: "Wichtige Nährstoffe für deine Gesundheit",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
-        thumbnailUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/2_1751542243605.png",
         order: 2,
         isActive: true
       },
@@ -85,7 +85,7 @@ export class MemStorage implements IStorage {
         description: "Wie du ausgewogene Mahlzeiten planst",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 12,
-        thumbnailUrl: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/3_1751542243606.png",
         order: 3,
         isActive: true
       },
@@ -94,7 +94,7 @@ export class MemStorage implements IStorage {
         description: "5 am Tag - so gelingt es dir!",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 9,
-        thumbnailUrl: "https://images.unsplash.com/photo-1610348725531-843dff563e2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/4_1751542243606.png",
         order: 4,
         isActive: true
       },
@@ -103,7 +103,7 @@ export class MemStorage implements IStorage {
         description: "Bausteine für deinen Körper",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 11,
-        thumbnailUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/5_1751542243606.png",
         order: 5,
         isActive: true
       },
@@ -112,7 +112,7 @@ export class MemStorage implements IStorage {
         description: "Richtig trinken für optimale Gesundheit",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 7,
-        thumbnailUrl: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/6_1751542243606.png",
         order: 6,
         isActive: true
       },
@@ -121,7 +121,7 @@ export class MemStorage implements IStorage {
         description: "Langkettige Kohlenhydrate richtig nutzen",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 13,
-        thumbnailUrl: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/7_1751542243606.png",
         order: 7,
         isActive: true
       },
@@ -130,7 +130,7 @@ export class MemStorage implements IStorage {
         description: "Omega-3 und ungesättigte Fettsäuren",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
-        thumbnailUrl: "https://images.unsplash.com/photo-1587486913049-53fc88980cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/8_1751542243607.png",
         order: 8,
         isActive: true
       },
@@ -139,7 +139,7 @@ export class MemStorage implements IStorage {
         description: "Bewusste Nahrungsaufnahme praktizieren",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 8,
-        thumbnailUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
+        thumbnailUrl: "/assets/9_1751542243607.png",
         order: 9,
         isActive: true
       }
