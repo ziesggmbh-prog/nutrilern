@@ -25,7 +25,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
   const colorClass = questColors[(lesson.order - 1) % questColors.length];
   
   return (
-    <motion.div
+    <div
       className={`bg-navy-light rounded-xl cursor-pointer transition-all duration-300 border-2 border-dashed ${
         isCompleted ? "border-green-custom" : isAvailable ? "border-purple-custom" : "border-gray-600"
       } ${
@@ -33,27 +33,17 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       }`}
       style={{ 
         height: '80px',
-        minHeight: '80px',
-        maxHeight: '80px',
-        boxSizing: 'border-box'
+        width: '100%',
+        boxSizing: 'border-box',
+        padding: '16px',
+        display: 'flex',
+        alignItems: 'center'
       }}
       onClick={isAvailable ? onQuizClick : undefined}
-      whileHover={isAvailable ? { y: -2 } : {}}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: (lesson.order * 0.1) + 0.1 }}
     >
-      <div 
-        className="flex items-center space-x-3 w-full"
-        style={{ 
-          height: '76px',
-          paddingLeft: '16px',
-          paddingRight: '16px',
-          paddingTop: '12px',
-          paddingBottom: '12px'
-        }}
-      >
-        <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0`}>
+      <div className="flex items-center space-x-3 w-full">
+        <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full flex items-center justify-center`}
+             style={{ width: '24px', height: '24px', flexShrink: 0 }}>
           {isCompleted ? (
             <CheckCircle className="text-white" size={12} />
           ) : isAvailable ? (
@@ -63,17 +53,17 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           )}
         </div>
         
-        <div className="flex-1 min-w-0">
-          <h4 className="text-sm font-semibold text-white flex items-center truncate">
-            <Target className="mr-1 flex-shrink-0" size={14} />
-            <span className="truncate">Quest: {lesson.title}</span>
-          </h4>
-          <p className="text-xs text-gray-400 truncate">
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div className="text-sm font-semibold text-white flex items-center" style={{ lineHeight: '1.2', marginBottom: '2px' }}>
+            <Target className="mr-1" size={14} style={{ flexShrink: 0 }} />
+            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Quest: {lesson.title}</span>
+          </div>
+          <p className="text-xs text-gray-400" style={{ lineHeight: '1.2', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {isCompleted ? "Erfolgreich abgeschlossen" : isAvailable ? "Wissenstest verfügbar" : "Nach Video verfügbar"}
           </p>
         </div>
         
-        <div className="text-right flex-shrink-0">
+        <div style={{ flexShrink: 0, textAlign: 'right' }}>
           <div className="flex items-center space-x-1">
             {isCompleted ? (
               <Star className="text-green-custom" size={14} />
@@ -88,6 +78,6 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
