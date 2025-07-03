@@ -31,14 +31,28 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       } ${
         isAvailable ? "hover:transform hover:-translate-y-1 hover:shadow-lg" : "opacity-60"
       }`}
-      style={{ height: '80px' }}
+      style={{ 
+        height: '80px',
+        minHeight: '80px',
+        maxHeight: '80px',
+        boxSizing: 'border-box'
+      }}
       onClick={isAvailable ? onQuizClick : undefined}
       whileHover={isAvailable ? { y: -2 } : {}}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: (lesson.order * 0.1) + 0.1 }}
     >
-      <div className="flex items-center space-x-3 h-full px-4 py-3">
+      <div 
+        className="flex items-center space-x-3 w-full"
+        style={{ 
+          height: '76px',
+          paddingLeft: '16px',
+          paddingRight: '16px',
+          paddingTop: '12px',
+          paddingBottom: '12px'
+        }}
+      >
         <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0`}>
           {isCompleted ? (
             <CheckCircle className="text-white" size={12} />
