@@ -26,18 +26,19 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
   
   return (
     <motion.div
-      className={`bg-navy-light rounded-xl p-4 cursor-pointer transition-all duration-300 border-2 border-dashed h-20 ${
+      className={`bg-navy-light rounded-xl cursor-pointer transition-all duration-300 border-2 border-dashed ${
         isCompleted ? "border-green-custom" : isAvailable ? "border-purple-custom" : "border-gray-600"
       } ${
         isAvailable ? "hover:transform hover:-translate-y-1 hover:shadow-lg" : "opacity-60"
       }`}
+      style={{ height: '80px' }}
       onClick={isAvailable ? onQuizClick : undefined}
       whileHover={isAvailable ? { y: -2 } : {}}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: (lesson.order * 0.1) + 0.1 }}
     >
-      <div className="flex items-center space-x-3 h-full">
+      <div className="flex items-center space-x-3 h-full px-4 py-3">
         <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0`}>
           {isCompleted ? (
             <CheckCircle className="text-white" size={12} />
