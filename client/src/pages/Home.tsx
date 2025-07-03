@@ -12,6 +12,7 @@ import OrganicShape from "@/components/OrganicShape";
 import type { Lesson, UserProgress } from "@shared/schema";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 import bkkFirmusLogo from "@assets/Logo_BKK_firmus_5C_300dpi-removebg_1751546007429.png";
+import ziesLogo from "@assets/zies_logo_transparent_1751546047870.png";
 
 export default function Home() {
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
@@ -159,9 +160,18 @@ export default function Home() {
 
         {/* ZIES gGmbH Information Box */}
         <div className="bg-navy-light rounded-2xl p-6 relative overflow-hidden">
-          <p className="text-white text-sm leading-relaxed relative z-10">
-            Entwickler der Materialien ist das Zentrum für Forschung und Diagnostik bei Implantaten, Entzündungen und Schmerzen gemeinnützige GmbH – kurz: ZIES gGmbH. Die ZIES gGmbH setzt sich ein für Beratung, Diagnostik sowie Aufklärung und Prävention. Die ZIES gGmbH ist eine gemeinnützige Initiative. Es ist unabhängig von Firmen, Verbänden oder anderen Interessengruppen.
-          </p>
+          <div className="flex items-center justify-between relative z-10">
+            <p className="text-white text-sm leading-relaxed flex-1 pr-4">
+              Entwickler der Materialien ist das Zentrum für Forschung und Diagnostik bei Implantaten, Entzündungen und Schmerzen gemeinnützige GmbH – kurz: ZIES gGmbH. Die ZIES gGmbH setzt sich ein für Beratung, Diagnostik sowie Aufklärung und Prävention. Die ZIES gGmbH ist eine gemeinnützige Initiative. Es ist unabhängig von Firmen, Verbänden oder anderen Interessengruppen.
+            </p>
+            <div className="flex-shrink-0">
+              <img 
+                src={ziesLogo} 
+                alt="ZIES gGmbH Logo" 
+                className="h-12 w-auto"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
