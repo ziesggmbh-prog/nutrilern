@@ -72,7 +72,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Vitamine & Mineralstoffe",
+        title: "Kohlenhydrate",
         description: "Wichtige Nährstoffe für deine Gesundheit",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
@@ -81,7 +81,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Mahlzeitenplanung",
+        title: "Proteine",
         description: "Wie du ausgewogene Mahlzeiten planst",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 12,
@@ -90,7 +90,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Obst & Gemüse",
+        title: "Fette",
         description: "5 am Tag - so gelingt es dir!",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 9,
@@ -99,7 +99,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Proteine & Eiweiß",
+        title: "Mikronährstoffe",
         description: "Bausteine für deinen Körper",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 11,
@@ -108,7 +108,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Flüssigkeitszufuhr",
+        title: "Die Hölle",
         description: "Richtig trinken für optimale Gesundheit",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 7,
@@ -117,7 +117,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Vollkorn & Ballaststoffe",
+        title: "Trinken",
         description: "Langkettige Kohlenhydrate richtig nutzen",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 13,
@@ -126,7 +126,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Gesunde Fette",
+        title: "Bewegung – Teil 1",
         description: "Omega-3 und ungesättigte Fettsäuren",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 10,
@@ -135,7 +135,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Achtsam essen",
+        title: "Bewegung – Teil 2",
         description: "Bewusste Nahrungsaufnahme praktizieren",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 8,
