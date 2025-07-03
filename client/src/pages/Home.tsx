@@ -138,6 +138,23 @@ export default function Home() {
         </div>
       </main>
 
+      {/* Footer Information Boxes */}
+      <div className="container mx-auto px-4 py-8 space-y-4">
+        {/* BKK firmus Support Box */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+          <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+            Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich.
+          </p>
+        </div>
+
+        {/* ZIES gGmbH Information Box */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+          <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+            Entwickler der Materialien ist das Zentrum für Forschung und Diagnostik bei Implantaten, Entzündungen und Schmerzen gemeinnützige GmbH – kurz: ZIES gGmbH. Die ZIES gGmbH setzt sich ein für Beratung, Diagnostik sowie Aufklärung und Prävention. Die ZIES gGmbH ist eine gemeinnützige Initiative. Es ist unabhängig von Firmen, Verbänden oder anderen Interessengruppen.
+          </p>
+        </div>
+      </div>
+
       {/* Modals */}
       {showVideo && selectedLesson && (
         <VideoPlayer
