@@ -51,16 +51,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             </div>
           </div>
           
-          {/* Embedded video would go here */}
-          <iframe
-            width="100%"
-            height="100%"
-            src={lesson.videoUrl}
-            title={lesson.title}
-            className="absolute inset-0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          {/* Video player would be implemented here with actual video content */}
         </div>
         
         <div className="text-center">
