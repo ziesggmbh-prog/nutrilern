@@ -26,7 +26,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
   
   return (
     <motion.div
-      className={`bg-navy-light rounded-xl p-4 cursor-pointer relative overflow-hidden transition-all duration-300 border-2 border-dashed ${
+      className={`bg-navy-light rounded-xl p-4 cursor-pointer transition-all duration-300 border-2 border-dashed ${
         isCompleted ? "border-green-custom" : isAvailable ? "border-purple-custom" : "border-gray-600"
       } ${
         isAvailable ? "hover:transform hover:-translate-y-1 hover:shadow-lg" : "opacity-60"
@@ -37,12 +37,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: (lesson.order * 0.1) + 0.1 }}
     >
-      <OrganicShape
-        className={`absolute top-0 right-0 w-12 h-12 ${colorClass} opacity-15`}
-        variant="alt"
-      />
-      
-      <div className="relative z-10 flex items-center space-x-3">
+      <div className="flex items-center space-x-3">
         <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
           {isCompleted ? (
             <CheckCircle className="text-white" size={12} />
