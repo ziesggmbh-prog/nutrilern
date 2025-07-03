@@ -11,13 +11,14 @@ interface LessonCardProps {
 }
 
 const colorVariants = [
-  "bg-green-custom",
+  "bg-yellow-custom",
   "bg-purple-custom", 
   "bg-orange-custom",
-  "bg-teal-custom",
-  "bg-green-light",
+  "bg-plum-custom",
+  "bg-green-custom",
   "bg-purple-light",
   "bg-orange-light",
+  "bg-teal-custom",
   "bg-teal-light"
 ];
 

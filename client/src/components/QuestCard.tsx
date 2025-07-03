@@ -13,11 +13,11 @@ interface QuestCardProps {
 const questColors = [
   "bg-purple-custom",
   "bg-orange-custom", 
-  "bg-teal-custom",
-  "bg-green-light",
+  "bg-yellow-custom",
+  "bg-plum-custom",
   "bg-purple-light",
   "bg-orange-light",
-  "bg-teal-light",
+  "bg-teal-custom",
   "bg-green-custom"
 ];
 
