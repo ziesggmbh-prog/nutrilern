@@ -81,15 +81,19 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center">
-                <img 
-                  src={logoImage} 
-                  alt="Logo" 
-                  className="w-24 h-24 object-cover"
-                  style={{
-                    filter: 'hue-rotate(120deg) saturate(2) brightness(2.5) contrast(1.5) invert(0.1)'
-                  }}
-                />
+              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center relative">
+                <div className="relative w-24 h-24">
+                  <div className="absolute inset-0 bg-white"></div>
+                  <img 
+                    src={logoImage} 
+                    alt="Logo" 
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{
+                      filter: 'invert(1) hue-rotate(158deg) saturate(5) brightness(0.6)',
+                      mixBlendMode: 'multiply'
+                    }}
+                  />
+                </div>
               </div>
               <div>
                 <h1 className="text-2xl font-bold">NutriLern</h1>
