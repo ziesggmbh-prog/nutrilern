@@ -212,7 +212,7 @@ export class MemStorage implements IStorage {
           },
           {
             id: "q3",
-            question: "In welchen Lebensmitteln finden sich überwiegend „gute" Kohlenhydrate?",
+            question: "In welchen Lebensmitteln finden sich überwiegend 'gute' Kohlenhydrate?",
             options: [
               "Süßigkeiten, Weißbrot und Limonade",
               "Chips, Käse und Wurst",
