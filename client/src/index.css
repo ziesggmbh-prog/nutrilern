@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom nutrition app colors */
+  --navy: hsl(220, 33%, 13%);
+  --navy-light: hsl(220, 25%, 20%);
+  --green-custom: hsl(158, 100%, 41%);
+  --green-light: hsl(142, 71%, 45%);
+  --purple-custom: hsl(258, 90%, 66%);
+  --purple-light: hsl(262, 83%, 58%);
+  --orange-custom: hsl(24, 95%, 53%);
+  --orange-light: hsl(29, 96%, 61%);
+  --teal-custom: hsl(172, 83%, 38%);
+  --teal-light: hsl(187, 85%, 53%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .bg-navy {
+    background-color: var(--navy);
+  }
+  
+  .bg-navy-light {
+    background-color: var(--navy-light);
+  }
+  
+  .bg-green-custom {
+    background-color: var(--green-custom);
+  }
+  
+  .bg-green-light {
+    background-color: var(--green-light);
+  }
+  
+  .bg-purple-custom {
+    background-color: var(--purple-custom);
+  }
+  
+  .bg-purple-light {
+    background-color: var(--purple-light);
+  }
+  
+  .bg-orange-custom {
+    background-color: var(--orange-custom);
+  }
+  
+  .bg-orange-light {
+    background-color: var(--orange-light);
+  }
+  
+  .bg-teal-custom {
+    background-color: var(--teal-custom);
+  }
+  
+  .bg-teal-light {
+    background-color: var(--teal-light);
+  }
+  
+  .text-green-custom {
+    color: var(--green-custom);
+  }
+  
+  .text-purple-custom {
+    color: var(--purple-custom);
+  }
+  
+  .text-orange-custom {
+    color: var(--orange-custom);
+  }
+  
+  .text-teal-custom {
+    color: var(--teal-custom);
+  }
+  
+  .organic-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  
+  .organic-shape-alt {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  
+  .hover\:bg-green-custom:hover {
+    background-color: var(--green-custom);
+  }
+  
+  .hover\:bg-purple-custom:hover {
+    background-color: var(--purple-custom);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
