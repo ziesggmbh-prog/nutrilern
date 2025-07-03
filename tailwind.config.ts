@@ -73,6 +73,7 @@ export default {
         "teal-light": "var(--teal-light)",
         "yellow-custom": "var(--yellow-custom)",
         "plum-custom": "var(--plum-custom)",
+        "mint-custom": "var(--mint-custom)",
       },
       keyframes: {
         "accordion-down": {

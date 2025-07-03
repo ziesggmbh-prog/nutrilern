@@ -37,6 +37,7 @@
   --teal-light: hsl(187, 85%, 53%);
   --yellow-custom: hsl(48, 100%, 67%); /* Warm yellow from user's palette */
   --plum-custom: hsl(295, 37%, 35%); /* Dark plum from user's palette */
+  --mint-custom: hsl(167, 85%, 75%); /* Light mint green from user's reference image */
   
   /* Background pattern - irregular dots */
   --dot-bg: 
