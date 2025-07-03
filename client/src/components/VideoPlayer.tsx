@@ -59,7 +59,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             onClick={onComplete}
             className="bg-green-custom hover:bg-green-custom/90 text-white px-8 py-3 rounded-xl font-semibold"
           >
-            Video abgeschlossen
+            Schließen
           </Button>
         </div>
       </motion.div>
