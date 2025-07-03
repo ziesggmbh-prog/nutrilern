@@ -27,7 +27,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
   
   return (
     <motion.div
-      className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 ${
+      className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 group ${
         isAvailable ? "hover:transform hover:-translate-y-1 hover:shadow-xl" : "opacity-60"
       }`}
       onClick={isAvailable ? onClick : undefined}
@@ -64,7 +64,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
             className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${!isAvailable ? "grayscale hover:grayscale-0" : ""}`}
           />
           {!isAvailable && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl mb-4">
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl mb-4 group-hover:opacity-0 transition-opacity duration-300">
               <Lock className="text-white opacity-40" size={32} />
             </div>
           )}
