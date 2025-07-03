@@ -94,7 +94,7 @@ export class MemStorage implements IStorage {
         description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 9,
-        thumbnailUrl: "/assets/4_1751542243606.png",
+        thumbnailUrl: "/assets/4_1751549047993.png",
         order: 4,
         isActive: true
       },
