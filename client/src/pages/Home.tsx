@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-structured text-white">
       {/* Header */}
-      <header className="relative overflow-hidden">
+      <header className="relative overflow-hidden bg-black bg-opacity-30">
         <div className="absolute inset-0 opacity-20">
           <OrganicShape
             className="absolute top-10 left-10 w-32 h-32 bg-yellow-custom animate-float"
