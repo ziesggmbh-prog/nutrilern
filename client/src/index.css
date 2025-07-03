@@ -35,6 +35,9 @@
   --orange-light: hsl(29, 96%, 61%);
   --teal-custom: hsl(172, 83%, 38%);
   --teal-light: hsl(187, 85%, 53%);
+  
+  /* Background pattern */
+  --dot-bg: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
 }
 
 .dark {
@@ -109,6 +112,13 @@
   
   .bg-teal-light {
     background-color: var(--teal-light);
+  }
+  
+  .bg-structured {
+    background-color: var(--navy);
+    background-image: var(--dot-bg);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
   }
   
   .text-green-custom {

@@ -71,7 +71,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-navy text-white">
+    <div className="min-h-screen bg-structured text-white">
       {/* Header */}
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
