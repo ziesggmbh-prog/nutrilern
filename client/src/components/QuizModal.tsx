@@ -295,7 +295,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
                 <Button
                   onClick={handlePrevious}
                   variant="outline"
-                  className="px-6 py-3"
+                  className="px-6 py-3 text-white border-gray-600 hover:bg-gray-700"
                 >
                   Zurück
                 </Button>
