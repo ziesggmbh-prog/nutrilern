@@ -79,21 +79,30 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-16 h-16 bg-orange-custom rounded-full flex items-center justify-center">
-                <svg className="w-14 h-14" viewBox="0 0 100 100" fill="none">
-                  {/* Dumbbell */}
-                  <g fill="#000">
-                    <rect x="5" y="30" width="15" height="40" rx="4"/>
-                    <rect x="80" y="30" width="15" height="40" rx="4"/>
-                    <rect x="20" y="42" width="60" height="16" rx="3"/>
-                  </g>
+                <svg className="w-12 h-12" viewBox="0 0 100 100" fill="none">
+                  {/* Carrot body */}
+                  <path d="M50 35 L40 85 Q45 88 50 85 Q55 88 60 85 L50 35 Z" fill="#000"/>
                   
-                  {/* Carrot */}
-                  <g>
-                    <path d="M50 65 L40 95 Q42 100 50 98 Q58 100 60 95 Z" fill="#fff"/>
-                    <path d="M42 78 Q50 76 58 78" stroke="#000" strokeWidth="3" fill="none"/>
-                    <path d="M43 85 Q50 83 57 85" stroke="#000" strokeWidth="3" fill="none"/>
-                    <path d="M44 92 Q50 90 56 92" stroke="#000" strokeWidth="3" fill="none"/>
-                  </g>
+                  {/* Carrot lines */}
+                  <rect x="45" y="50" width="10" height="2" fill="#ff6b35"/>
+                  <rect x="43" y="58" width="14" height="2" fill="#ff6b35"/>
+                  <rect x="41" y="66" width="18" height="2" fill="#ff6b35"/>
+                  <rect x="42" y="74" width="16" height="2" fill="#ff6b35"/>
+                  
+                  {/* Carrot leaves */}
+                  <path d="M44 35 Q38 20 42 15 Q46 20 50 35" fill="#000"/>
+                  <path d="M56 35 Q62 20 58 15 Q54 20 50 35" fill="#000"/>
+                  
+                  {/* Dumbbell left */}
+                  <rect x="8" y="40" width="12" height="20" rx="6" fill="#000"/>
+                  <rect x="2" y="45" width="8" height="10" rx="4" fill="#000"/>
+                  
+                  {/* Dumbbell right */}
+                  <rect x="80" y="40" width="12" height="20" rx="6" fill="#000"/>
+                  <rect x="90" y="45" width="8" height="10" rx="4" fill="#000"/>
+                  
+                  {/* Dumbbell bar */}
+                  <rect x="20" y="47" width="60" height="6" rx="3" fill="#000"/>
                 </svg>
               </div>
               <div>
