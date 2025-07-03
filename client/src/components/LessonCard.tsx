@@ -15,7 +15,7 @@ const colorVariants = [
   "bg-purple-custom", 
   "bg-teal-light",
   "bg-plum-custom",
-  "bg-purple-light",
+  "bg-teal-custom",
   "bg-purple-light",
   "bg-orange-light",
   "bg-teal-custom",
