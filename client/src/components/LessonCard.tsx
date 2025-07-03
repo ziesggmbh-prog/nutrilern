@@ -64,7 +64,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
             className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${!isAvailable ? "grayscale hover:grayscale-0" : ""}`}
           />
           {!isAvailable && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl mb-4 group-hover:opacity-0 transition-opacity duration-300">
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl mb-4 transition-opacity duration-300">
               <Lock className="text-white opacity-40" size={32} />
             </div>
           )}
