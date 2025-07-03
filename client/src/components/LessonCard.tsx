@@ -61,7 +61,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
           <img
             src={lesson.thumbnailUrl}
             alt={lesson.title}
-            className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${!isAvailable ? "grayscale hover:grayscale-0" : ""}`}
+            className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${!isAvailable ? "grayscale group-hover:grayscale-0" : ""}`}
           />
           {!isAvailable && (
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl mb-4 transition-opacity duration-300">
