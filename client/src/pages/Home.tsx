@@ -87,7 +87,7 @@ export default function Home() {
                   alt="Logo" 
                   className="w-24 h-24 object-cover"
                   style={{
-                    filter: 'invert(1) hue-rotate(180deg) saturate(1.8) brightness(0.8)'
+                    filter: 'invert(1) hue-rotate(180deg) saturate(1.8) brightness(1.2) contrast(1.5)'
                   }}
                 />
               </div>
