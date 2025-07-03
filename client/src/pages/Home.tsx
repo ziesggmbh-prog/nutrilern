@@ -80,29 +80,34 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               <div className="w-16 h-16 bg-orange-custom rounded-full flex items-center justify-center">
                 <svg className="w-12 h-12" viewBox="0 0 100 100" fill="none">
-                  {/* Carrot body */}
-                  <path d="M50 35 L40 85 Q45 88 50 85 Q55 88 60 85 L50 35 Z" fill="#000"/>
+                  {/* Carrot body - tapered triangle shape */}
+                  <path d="M50 30 L35 85 Q40 90 50 88 Q60 90 65 85 L50 30 Z" fill="#000"/>
                   
-                  {/* Carrot lines */}
-                  <rect x="45" y="50" width="10" height="2" fill="#ff6b35"/>
-                  <rect x="43" y="58" width="14" height="2" fill="#ff6b35"/>
-                  <rect x="41" y="66" width="18" height="2" fill="#ff6b35"/>
-                  <rect x="42" y="74" width="16" height="2" fill="#ff6b35"/>
+                  {/* Carrot horizontal lines - different widths */}
+                  <ellipse cx="50" cy="45" rx="6" ry="1.5" fill="#ff6b35"/>
+                  <ellipse cx="50" cy="55" rx="8" ry="1.5" fill="#ff6b35"/>
+                  <ellipse cx="50" cy="65" rx="10" ry="1.5" fill="#ff6b35"/>
+                  <ellipse cx="50" cy="75" rx="12" ry="1.5" fill="#ff6b35"/>
                   
-                  {/* Carrot leaves */}
-                  <path d="M44 35 Q38 20 42 15 Q46 20 50 35" fill="#000"/>
-                  <path d="M56 35 Q62 20 58 15 Q54 20 50 35" fill="#000"/>
+                  {/* Carrot leaves - more organic shapes */}
+                  <path d="M42 30 Q35 15 40 10 Q45 15 48 25 Q46 28 42 30" fill="#000"/>
+                  <path d="M58 30 Q65 15 60 10 Q55 15 52 25 Q54 28 58 30" fill="#000"/>
+                  <line x1="45" y1="28" x2="50" y2="30" stroke="#000" strokeWidth="2"/>
+                  <line x1="55" y1="28" x2="50" y2="30" stroke="#000" strokeWidth="2"/>
                   
-                  {/* Dumbbell left */}
-                  <rect x="8" y="40" width="12" height="20" rx="6" fill="#000"/>
-                  <rect x="2" y="45" width="8" height="10" rx="4" fill="#000"/>
-                  
-                  {/* Dumbbell right */}
-                  <rect x="80" y="40" width="12" height="20" rx="6" fill="#000"/>
-                  <rect x="90" y="45" width="8" height="10" rx="4" fill="#000"/>
-                  
-                  {/* Dumbbell bar */}
-                  <rect x="20" y="47" width="60" height="6" rx="3" fill="#000"/>
+                  {/* Dumbbell - more rounded, integrated design */}
+                  <g fill="#000">
+                    {/* Left weight */}
+                    <ellipse cx="15" cy="50" rx="8" ry="12"/>
+                    <rect x="7" y="46" width="5" height="8" rx="2"/>
+                    
+                    {/* Right weight */}
+                    <ellipse cx="85" cy="50" rx="8" ry="12"/>
+                    <rect x="88" y="46" width="5" height="8" rx="2"/>
+                    
+                    {/* Center bar through carrot */}
+                    <rect x="23" y="48" width="54" height="4" rx="2"/>
+                  </g>
                 </svg>
               </div>
               <div>
