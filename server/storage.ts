@@ -82,7 +82,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Proteine",
-        description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist und wie du genug davon bekommst.",
+        description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 12,
         thumbnailUrl: "/assets/3_1751542243606.png",
@@ -109,7 +109,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Die Hölle",
-        description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen und wie du ihnen entkommst.",
+        description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen - und wie du ihnen entkommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 7,
         thumbnailUrl: "/assets/8_1751542243607.png",
@@ -136,7 +136,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Bewegung - Teil 2",
-        description: "Praktische Tipps, wie du mehr Bewegung in deinen Alltag integrierst auch ohne Fitnessstudio.",
+        description: "Praktische Tipps, wie du mehr Bewegung in deinen Alltag integrierst - auch ohne Fitnessstudio.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 8,
         thumbnailUrl: "/assets/9_1751542243607.png",
