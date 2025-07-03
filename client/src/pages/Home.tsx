@@ -10,6 +10,7 @@ import ProgressBar from "@/components/ProgressBar";
 import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
 import type { Lesson, UserProgress } from "@shared/schema";
+import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 
 export default function Home() {
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
@@ -80,7 +81,7 @@ export default function Home() {
             <div className="flex items-center space-x-3">
               <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center">
                 <img 
-                  src="/attached_assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png" 
+                  src={logoImage} 
                   alt="Logo" 
                   className="w-full h-full object-cover"
                 />
