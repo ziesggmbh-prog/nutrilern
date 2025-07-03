@@ -68,6 +68,11 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
               <Lock className="text-white opacity-40" size={32} />
             </div>
           )}
+          {isAvailable && !isCompleted && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl transition-opacity duration-300 group-hover:opacity-30">
+              <Play className="text-white opacity-40" size={32} />
+            </div>
+          )}
         </div>
         
         <h3 className="text-lg font-semibold mb-2">{lesson.title}</h3>
