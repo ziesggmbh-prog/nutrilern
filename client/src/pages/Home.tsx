@@ -119,13 +119,13 @@ export default function Home() {
         <ProgressBar completedLessons={completedLessonIds.length} totalLessons={lessons.length} />
 
         {/* Lesson Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {lessons.map((lesson) => {
             const isCompleted = completedLessonIds.includes(lesson.id);
             const isAvailable = lesson.id === nextAvailableLesson?.id || isCompleted;
             
             return (
-              <div key={lesson.id} className="space-y-6 mb-8">
+              <div key={lesson.id} className="space-y-8 mb-12">
                 <LessonCard
                   lesson={lesson}
                   isCompleted={isCompleted}
