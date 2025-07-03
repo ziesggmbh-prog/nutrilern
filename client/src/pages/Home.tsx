@@ -87,7 +87,7 @@ export default function Home() {
                   alt="Logo" 
                   className="w-24 h-24 object-cover"
                   style={{
-                    filter: 'hue-rotate(90deg) brightness(1.2) contrast(1.1)'
+                    filter: 'hue-rotate(120deg) saturate(2) brightness(2.5) contrast(1.5) invert(0.1)'
                   }}
                 />
               </div>
