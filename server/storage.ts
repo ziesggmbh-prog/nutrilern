@@ -142,15 +142,6 @@ export class MemStorage implements IStorage {
         thumbnailUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
         order: 9,
         isActive: true
-      },
-      {
-        title: "Nachhaltige Ernährung",
-        description: "Umweltbewusst und gesund leben",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        duration: 15,
-        thumbnailUrl: "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
-        order: 10,
-        isActive: true
       }
     ];
 
