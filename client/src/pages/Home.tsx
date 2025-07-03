@@ -150,11 +150,11 @@ export default function Home() {
                 Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich.
               </p>
             </div>
-            <div className="flex-shrink-0 w-32">
+            <div className="flex-shrink-0 w-32 flex justify-center">
               <img 
                 src={bkkFirmusLogo} 
                 alt="BKK firmus Logo" 
-                className="h-8 w-auto"
+                className="h-8 w-auto max-w-full"
               />
             </div>
           </div>
@@ -168,11 +168,11 @@ export default function Home() {
                 Entwickler der Materialien ist das Zentrum für Forschung und Diagnostik bei Implantaten, Entzündungen und Schmerzen gemeinnützige GmbH – kurz: ZIES gGmbH. Die ZIES gGmbH setzt sich ein für Beratung, Diagnostik sowie Aufklärung und Prävention. Die ZIES gGmbH ist eine gemeinnützige Initiative. Es ist unabhängig von Firmen, Verbänden oder anderen Interessengruppen.
               </p>
             </div>
-            <div className="flex-shrink-0 w-32">
+            <div className="flex-shrink-0 w-32 flex justify-center">
               <img 
                 src={ziesLogo} 
                 alt="ZIES gGmbH Logo" 
-                className="w-full h-auto"
+                className="h-8 w-auto max-w-full"
               />
             </div>
           </div>
