@@ -26,7 +26,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
   
   return (
     <motion.div
-      className={`bg-navy-light rounded-xl p-4 cursor-pointer transition-all duration-300 border-2 border-dashed ${
+      className={`bg-navy-light rounded-xl p-4 cursor-pointer transition-all duration-300 border-2 border-dashed h-20 ${
         isCompleted ? "border-green-custom" : isAvailable ? "border-purple-custom" : "border-gray-600"
       } ${
         isAvailable ? "hover:transform hover:-translate-y-1 hover:shadow-lg" : "opacity-60"
@@ -37,8 +37,8 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: (lesson.order * 0.1) + 0.1 }}
     >
-      <div className="flex items-center space-x-3">
-        <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
+      <div className="flex items-center space-x-3 h-full">
+        <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0`}>
           {isCompleted ? (
             <CheckCircle className="text-white" size={12} />
           ) : isAvailable ? (
@@ -48,17 +48,17 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           )}
         </div>
         
-        <div className="flex-1">
-          <h4 className="text-sm font-semibold text-white flex items-center">
-            <Target className="mr-1" size={14} />
-            Quest: {lesson.title}
+        <div className="flex-1 min-w-0">
+          <h4 className="text-sm font-semibold text-white flex items-center truncate">
+            <Target className="mr-1 flex-shrink-0" size={14} />
+            <span className="truncate">Quest: {lesson.title}</span>
           </h4>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-400 truncate">
             {isCompleted ? "Erfolgreich abgeschlossen" : isAvailable ? "Wissenstest verfügbar" : "Nach Video verfügbar"}
           </p>
         </div>
         
-        <div className="text-right">
+        <div className="text-right flex-shrink-0">
           <div className="flex items-center space-x-1">
             {isCompleted ? (
               <Star className="text-green-custom" size={14} />
