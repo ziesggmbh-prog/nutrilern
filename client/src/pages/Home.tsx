@@ -78,37 +78,12 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-16 h-16 bg-orange-custom rounded-full flex items-center justify-center">
-                <svg className="w-12 h-12" viewBox="0 0 100 100" fill="none">
-                  {/* Carrot body - tapered triangle shape */}
-                  <path d="M50 30 L35 85 Q40 90 50 88 Q60 90 65 85 L50 30 Z" fill="#000"/>
-                  
-                  {/* Carrot horizontal lines - different widths */}
-                  <ellipse cx="50" cy="45" rx="6" ry="1.5" fill="#ff6b35"/>
-                  <ellipse cx="50" cy="55" rx="8" ry="1.5" fill="#ff6b35"/>
-                  <ellipse cx="50" cy="65" rx="10" ry="1.5" fill="#ff6b35"/>
-                  <ellipse cx="50" cy="75" rx="12" ry="1.5" fill="#ff6b35"/>
-                  
-                  {/* Carrot leaves - more organic shapes */}
-                  <path d="M42 30 Q35 15 40 10 Q45 15 48 25 Q46 28 42 30" fill="#000"/>
-                  <path d="M58 30 Q65 15 60 10 Q55 15 52 25 Q54 28 58 30" fill="#000"/>
-                  <line x1="45" y1="28" x2="50" y2="30" stroke="#000" strokeWidth="2"/>
-                  <line x1="55" y1="28" x2="50" y2="30" stroke="#000" strokeWidth="2"/>
-                  
-                  {/* Dumbbell - more rounded, integrated design */}
-                  <g fill="#000">
-                    {/* Left weight */}
-                    <ellipse cx="15" cy="50" rx="8" ry="12"/>
-                    <rect x="7" y="46" width="5" height="8" rx="2"/>
-                    
-                    {/* Right weight */}
-                    <ellipse cx="85" cy="50" rx="8" ry="12"/>
-                    <rect x="88" y="46" width="5" height="8" rx="2"/>
-                    
-                    {/* Center bar through carrot */}
-                    <rect x="23" y="48" width="54" height="4" rx="2"/>
-                  </g>
-                </svg>
+              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center">
+                <img 
+                  src="/attached_assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png" 
+                  alt="Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h1 className="text-2xl font-bold">NutriLern</h1>
