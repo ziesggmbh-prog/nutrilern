@@ -37,21 +37,26 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            <img 
-              src={lesson.thumbnailUrl} 
-              alt={lesson.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-              <div className="text-center">
-                <Play className="text-6xl text-green-custom mb-4 mx-auto" />
-                <p className="text-lg">Video wird geladen...</p>
-                <p className="text-sm text-gray-400">{lesson.title} - {lesson.duration} Minuten</p>
-              </div>
-            </div>
+            {lesson.videoUrl.includes('.mp4') ? (
+              <video
+                controls
+                className="w-full h-full object-cover"
+                poster={lesson.thumbnailUrl}
+                preload="metadata"
+              >
+                <source src={lesson.videoUrl} type="video/mp4" />
+                Ihr Browser unterstützt das Video-Element nicht.
+              </video>
+            ) : (
+              <iframe
+                src={lesson.videoUrl}
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
           </div>
-          
-          {/* Video player would be implemented here with actual video content */}
         </div>
         
         <div className="text-center">
