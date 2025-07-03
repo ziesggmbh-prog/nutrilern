@@ -59,7 +59,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
         <img
           src={lesson.thumbnailUrl}
           alt={lesson.title}
-          className={`rounded-xl mb-4 w-full h-48 object-cover ${!isAvailable ? "grayscale" : ""}`}
+          className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${!isAvailable ? "grayscale hover:grayscale-0" : ""}`}
         />
         
         <h3 className="text-lg font-semibold mb-2">{lesson.title}</h3>
