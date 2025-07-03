@@ -78,13 +78,34 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-orange-custom rounded-full flex items-center justify-center">
-                <svg className="text-white w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none">
+                  {/* Dumbbell */}
+                  <g fill="#000">
+                    <rect x="10" y="42" width="8" height="16" rx="2"/>
+                    <rect x="82" y="42" width="8" height="16" rx="2"/>
+                    <rect x="18" y="46" width="64" height="8" rx="1"/>
+                  </g>
+                  
+                  {/* Plant/Leaves */}
+                  <g fill="#000">
+                    <path d="M50 30 Q40 15 35 20 Q40 25 50 30"/>
+                    <path d="M50 30 Q55 15 65 20 Q60 25 50 30"/>
+                    <path d="M50 30 Q45 10 50 5 Q55 10 50 30"/>
+                    <line x1="50" y1="30" x2="50" y2="46" stroke="#000" strokeWidth="2"/>
+                  </g>
+                  
+                  {/* Carrot */}
+                  <g>
+                    <path d="M50 60 L45 85 Q47 90 50 88 Q53 90 55 85 Z" fill="#ff6b35"/>
+                    <path d="M46 72 Q48 71 50 72" stroke="#000" strokeWidth="1" fill="none"/>
+                    <path d="M47 77 Q49 76 51 77" stroke="#000" strokeWidth="1" fill="none"/>
+                    <path d="M48 82 Q50 81 52 82" stroke="#000" strokeWidth="1" fill="none"/>
+                  </g>
                 </svg>
               </div>
               <div>
-                <h1 className="text-2xl font-bold">Prävention Plus</h1>
+                <h1 className="text-2xl font-bold">NutriLern</h1>
                 <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Bewegung & Ernährung</p>
               </div>
             </div>
