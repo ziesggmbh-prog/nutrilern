@@ -63,7 +63,7 @@ export class MemStorage implements IStorage {
     // Seed lessons
     const lessonData = [
       {
-        title: "Grundlagen der Ernährung",
+        title: "Intro",
         description: "Entdecke die Basics einer ausgewogenen Ernährung",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 8,
