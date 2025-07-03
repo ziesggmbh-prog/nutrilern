@@ -43,10 +43,10 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
       
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-4">
-          <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
+          <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
             <span className="text-white font-bold text-sm">{lesson.order}</span>
           </div>
-          <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
+          <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
             {isCompleted ? (
               <CheckCircle className="text-white" size={12} />
             ) : isAvailable ? (
