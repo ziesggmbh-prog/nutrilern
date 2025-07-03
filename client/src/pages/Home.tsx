@@ -83,7 +83,7 @@ export default function Home() {
                 <img 
                   src={logoImage} 
                   alt="Logo" 
-                  className="w-20 h-20 object-cover"
+                  className="w-24 h-24 object-cover"
                 />
               </div>
               <div>
