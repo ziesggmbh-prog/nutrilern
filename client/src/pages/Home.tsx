@@ -11,6 +11,7 @@ import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
 import type { Lesson, UserProgress } from "@shared/schema";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
+import bkkFirmusLogo from "@assets/Logo_BKK_firmus_5C_300dpi-removebg_1751546007429.png";
 
 export default function Home() {
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
@@ -142,9 +143,18 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8 space-y-4">
         {/* BKK firmus Support Box */}
         <div className="bg-navy-light rounded-2xl p-6 relative overflow-hidden">
-          <p className="text-white text-sm leading-relaxed relative z-10">
-            Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich.
-          </p>
+          <div className="flex items-center justify-between relative z-10">
+            <p className="text-white text-sm leading-relaxed flex-1 pr-4">
+              Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich.
+            </p>
+            <div className="flex-shrink-0">
+              <img 
+                src={bkkFirmusLogo} 
+                alt="BKK firmus Logo" 
+                className="h-12 w-auto"
+              />
+            </div>
+          </div>
         </div>
 
         {/* ZIES gGmbH Information Box */}
