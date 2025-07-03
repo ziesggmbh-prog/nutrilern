@@ -13,13 +13,13 @@ interface LessonCardProps {
 const colorVariants = [
   "bg-yellow-custom",
   "bg-purple-custom", 
-  "bg-orange-custom",
+  "bg-teal-light",
   "bg-plum-custom",
   "bg-green-custom",
   "bg-purple-light",
   "bg-orange-light",
   "bg-teal-custom",
-  "bg-teal-light"
+  "bg-orange-custom"
 ];
 
 export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }: LessonCardProps) {
