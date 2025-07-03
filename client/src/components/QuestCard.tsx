@@ -11,14 +11,15 @@ interface QuestCardProps {
 }
 
 const questColors = [
-  "bg-purple-custom",
-  "bg-teal-light", 
-  "bg-yellow-custom",
-  "bg-plum-custom",
-  "bg-purple-light",
-  "bg-orange-light",
-  "bg-teal-custom",
-  "bg-orange-custom"
+  "bg-royal-purple",
+  "bg-sage-green", 
+  "bg-lavender",
+  "bg-warm-orange",
+  "bg-deep-purple",
+  "bg-bright-purple",
+  "bg-terracotta",
+  "bg-soft-lavender",
+  "bg-teal-blue"
 ];
 
 export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClick }: QuestCardProps) {
