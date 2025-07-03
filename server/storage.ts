@@ -188,39 +188,51 @@ export class MemStorage implements IStorage {
         questions: [
           {
             id: "q1",
-            question: "Welche Kohlenhydrate sollten den größten Anteil in der Ernährung haben?",
+            question: "Welcher Makronährstoff ist der wichtigste Energielieferant für das Gehirn?",
             options: [
-              "Einfachzucker wie Glucose",
-              "Komplexe Kohlenhydrate wie Vollkornprodukte",
-              "Fruktose aus Obst",
-              "Raffinierte Zuckerarten"
+              "Proteine",
+              "Fette",
+              "Ballaststoffe",
+              "Kohlenhydrate"
             ],
-            correctAnswer: 1,
-            explanation: "Komplexe Kohlenhydrate aus Vollkornprodukten liefern langanhaltende Energie und wichtige Nährstoffe."
+            correctAnswer: 3,
+            explanation: "Das Gehirn ist auf Kohlenhydrate als Hauptenergiequelle angewiesen und verbraucht etwa 20% unseres täglichen Energiebedarfs."
           },
           {
             id: "q2",
-            question: "Was passiert mit überschüssigen Kohlenhydraten im Körper?",
+            question: "Warum sind komplexe Kohlenhydrate gesünder als einfache?",
             options: [
-              "Sie werden ausgeschieden",
-              "Sie werden als Fett gespeichert",
-              "Sie werden in Proteine umgewandelt",
-              "Sie bleiben im Blut"
+              "Sie schmecken besser",
+              "Sie sind schneller verdaut",
+              "Sie liefern gleichmäßig Energie über längere Zeit",
+              "Sie enthalten mehr Wasser"
             ],
-            correctAnswer: 1,
-            explanation: "Überschüssige Kohlenhydrate werden vom Körper in Fett umgewandelt und gespeichert."
+            correctAnswer: 2,
+            explanation: "Komplexe Kohlenhydrate werden langsamer abgebaut und sorgen für einen gleichmäßigeren Blutzuckerspiegel ohne starke Schwankungen."
           },
           {
             id: "q3",
-            question: "Welche Funktion haben Ballaststoffe im Körper?",
+            question: "In welchen Lebensmitteln finden sich überwiegend „gute" Kohlenhydrate?",
             options: [
-              "Sie liefern viel Energie",
-              "Sie fördern die Verdauung und Darmgesundheit",
-              "Sie werden zu Zucker abgebaut",
-              "Sie ersetzen Vitamine"
+              "Süßigkeiten, Weißbrot und Limonade",
+              "Chips, Käse und Wurst",
+              "Obst, Gemüse und Vollkornprodukte",
+              "Fruchtsäfte, Honig und Kekse"
             ],
-            correctAnswer: 1,
-            explanation: "Ballaststoffe fördern die Verdauung, unterstützen die Darmgesundheit und helfen bei der Blutzuckerregulation."
+            correctAnswer: 2,
+            explanation: "Obst, Gemüse und Vollkornprodukte enthalten komplexe Kohlenhydrate, Ballaststoffe und wichtige Nährstoffe."
+          },
+          {
+            id: "q4",
+            question: "Warum ist Traubenzucker vor einer Prüfung keine gute Wahl?",
+            options: [
+              "Weil er zu teuer ist",
+              "Weil er zu lange braucht, um Energie zu liefern",
+              "Weil er den Blutzuckerspiegel langfristig stabilisiert",
+              "Weil er nur kurzzeitig Energie liefert und danach müde macht"
+            ],
+            correctAnswer: 3,
+            explanation: "Traubenzucker führt zu einem schnellen Anstieg des Blutzuckers, gefolgt von einem starken Abfall, was Müdigkeit und Konzentrationsprobleme verursacht."
           }
         ]
       },
