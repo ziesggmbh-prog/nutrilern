@@ -81,7 +81,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-orange-custom">
+              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white">
                 <img 
                   src={logoImage} 
                   alt="Logo" 
