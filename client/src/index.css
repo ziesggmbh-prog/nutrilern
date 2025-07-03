@@ -36,8 +36,18 @@
   --teal-custom: hsl(172, 83%, 38%);
   --teal-light: hsl(187, 85%, 53%);
   
-  /* Background pattern */
-  --dot-bg: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  /* Background pattern - irregular dots */
+  --dot-bg: 
+    radial-gradient(circle at 15% 23%, rgba(255,255,255,0.08) 1px, transparent 1px),
+    radial-gradient(circle at 67% 11%, rgba(255,255,255,0.12) 0.8px, transparent 0.8px),
+    radial-gradient(circle at 89% 47%, rgba(255,255,255,0.06) 1.2px, transparent 1.2px),
+    radial-gradient(circle at 34% 78%, rgba(255,255,255,0.1) 0.9px, transparent 0.9px),
+    radial-gradient(circle at 52% 34%, rgba(255,255,255,0.07) 1.1px, transparent 1.1px),
+    radial-gradient(circle at 8% 61%, rgba(255,255,255,0.09) 0.7px, transparent 0.7px),
+    radial-gradient(circle at 76% 85%, rgba(255,255,255,0.11) 1px, transparent 1px),
+    radial-gradient(circle at 23% 92%, rgba(255,255,255,0.05) 1.3px, transparent 1.3px),
+    radial-gradient(circle at 91% 18%, rgba(255,255,255,0.08) 0.8px, transparent 0.8px),
+    radial-gradient(circle at 45% 6%, rgba(255,255,255,0.1) 1px, transparent 1px);
 }
 
 .dark {
@@ -117,8 +127,8 @@
   .bg-structured {
     background-color: var(--navy);
     background-image: var(--dot-bg);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
+    background-size: 150px 200px, 120px 180px, 180px 160px, 140px 190px, 110px 170px, 160px 140px, 130px 150px, 170px 200px, 100px 130px, 190px 180px;
+    background-position: 0 0, 50px 30px, 20px 80px, 90px 60px, 70px 120px, 30px 40px, 110px 100px, 60px 150px, 130px 20px, 40px 170px;
   }
   
   .text-green-custom {
