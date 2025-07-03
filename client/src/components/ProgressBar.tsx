@@ -18,23 +18,28 @@ export default function ProgressBar({ completedLessons, totalLessons }: Progress
         />
         
         <div className="relative z-10">
-          <h2 className="text-2xl font-bold mb-4">Dein Lernfortschritt</h2>
-          <div className="flex items-center space-x-4">
-            <div className="flex-1">
-              <div className="bg-gray-700 rounded-full h-3 relative overflow-hidden">
-                <motion.div
-                  className="bg-gradient-to-r from-green-custom to-green-light h-full rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${progressPercentage}%` }}
-                  transition={{ duration: 1, ease: "easeOut" }}
-                />
-              </div>
-            </div>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl font-bold">Dein Lernfortschritt</h2>
             <div className="text-right">
-              <p className="text-green-custom font-semibold">
+              <p className="text-green-custom font-semibold text-lg">
                 {completedLessons} von {totalLessons}
               </p>
               <p className="text-gray-400 text-sm">Lektionen abgeschlossen</p>
+            </div>
+          </div>
+          <div className="w-full">
+            <div className="bg-gray-700 rounded-full h-4 relative overflow-hidden">
+              <motion.div
+                className="bg-gradient-to-r from-green-custom to-green-light h-full rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: `${progressPercentage}%` }}
+                transition={{ duration: 1, ease: "easeOut" }}
+              />
+            </div>
+            <div className="mt-2 text-center">
+              <span className="text-green-custom font-medium">
+                {Math.round(progressPercentage)}% abgeschlossen
+              </span>
             </div>
           </div>
         </div>
