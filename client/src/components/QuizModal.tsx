@@ -19,6 +19,8 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [quizResults, setQuizResults] = useState<any>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [showError, setShowError] = useState(false);
   const { toast } = useToast();
 
   const { data: quiz, isLoading } = useQuery<Quiz>({
@@ -67,17 +69,36 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
   const questions = quiz.questions as QuizQuestion[];
 
   const handleAnswerSelect = (answerIndex: number) => {
-    const newAnswers = [...answers];
-    newAnswers[currentQuestion] = answerIndex;
-    setAnswers(newAnswers);
+    const question = questions[currentQuestion];
+    const isCorrect = answerIndex === question.correctAnswer;
+    
+    if (isCorrect) {
+      // Richtige Antwort - weiter zum nächsten Schritt
+      const newAnswers = [...answers];
+      newAnswers[currentQuestion] = answerIndex;
+      setAnswers(newAnswers);
+      setSelectedAnswer(answerIndex);
+      setShowError(false);
+    } else {
+      // Falsche Antwort - Fehlermeldung anzeigen
+      setSelectedAnswer(answerIndex);
+      setShowError(true);
+    }
   };
 
   const handleNext = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
+      setSelectedAnswer(null);
+      setShowError(false);
     } else {
       submitQuizMutation.mutate(answers);
     }
+  };
+
+  const handleTryAgain = () => {
+    setSelectedAnswer(null);
+    setShowError(false);
   };
 
   const handlePrevious = () => {
@@ -211,8 +232,10 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
                 <label
                   key={index}
                   className={`flex items-center p-4 rounded-xl cursor-pointer transition-colors ${
-                    answers[currentQuestion] === index
-                      ? "bg-purple-custom text-white"
+                    selectedAnswer === index && showError
+                      ? "bg-red-500 text-white"
+                      : answers[currentQuestion] === index
+                      ? "bg-green-custom text-white"
                       : "bg-gray-800 hover:bg-gray-700"
                   }`}
                 >
@@ -220,7 +243,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
                     type="radio"
                     name={`question-${currentQuestion}`}
                     value={index}
-                    checked={answers[currentQuestion] === index}
+                    checked={selectedAnswer === index || answers[currentQuestion] === index}
                     onChange={() => handleAnswerSelect(index)}
                     className="mr-3"
                   />
@@ -228,6 +251,33 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
                 </label>
               ))}
             </div>
+            
+            {/* Fehlermeldung */}
+            {showError && (
+              <motion.div
+                className="mt-4 p-4 bg-red-500/20 border border-red-500 rounded-xl"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                <div className="flex items-center space-x-3">
+                  <XCircle className="text-red-500" size={20} />
+                  <div>
+                    <p className="text-red-500 font-semibold">
+                      Diese Antwort ist leider nicht korrekt – bitte versuche es noch einmal.
+                    </p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      {questions[currentQuestion].explanation}
+                    </p>
+                  </div>
+                </div>
+                <Button
+                  onClick={handleTryAgain}
+                  className="mt-3 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+                >
+                  Erneut versuchen
+                </Button>
+              </motion.div>
+            )}
           </div>
           
           <div className="flex justify-between">
