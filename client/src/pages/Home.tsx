@@ -169,7 +169,6 @@ export default function Home() {
                 src={ziesLogo} 
                 alt="ZIES gGmbH Logo" 
                 className="h-8 w-auto"
-                style={{ maxWidth: '80px' }}
               />
             </div>
           </div>
