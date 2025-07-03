@@ -76,7 +76,7 @@ export default function Home() {
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <OrganicShape
-            className="absolute top-10 left-10 w-32 h-32 bg-green-custom animate-float"
+            className="absolute top-10 left-10 w-32 h-32 bg-yellow-custom animate-float"
             variant="default"
           />
           <OrganicShape
@@ -86,6 +86,10 @@ export default function Home() {
           <OrganicShape
             className="absolute bottom-10 left-1/3 w-20 h-20 bg-orange-custom"
             variant="default"
+          />
+          <OrganicShape
+            className="absolute bottom-20 right-10 w-16 h-16 bg-plum-custom animate-float"
+            variant="alt"
           />
         </div>
         
