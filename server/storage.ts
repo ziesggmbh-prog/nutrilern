@@ -74,7 +74,7 @@ export class MemStorage implements IStorage {
       {
         title: "Kohlenhydrate",
         description: "Erfahre, welche Rolle Kohlenhydrate in deinem Körper spielen und warum sie mehr sind als nur Zucker.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "/assets/Kohlenhydrate_V5_1751550361289.mp4",
         duration: 10,
         thumbnailUrl: "/assets/6_1751542243606.png",
         order: 2,
