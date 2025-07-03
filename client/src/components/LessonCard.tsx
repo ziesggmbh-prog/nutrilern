@@ -63,7 +63,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
         />
         
         <h3 className="text-lg font-semibold mb-2">{lesson.title}</h3>
-        <p className="text-gray-400 text-sm mb-4">{lesson.description}</p>
+        <p className="text-gray-400 text-sm mb-4 h-10 overflow-hidden">{lesson.description}</p>
         
         <div className="flex items-center justify-between">
           <span className={`text-sm font-medium ${isAvailable ? "text-green-custom" : "text-gray-500"}`}>
