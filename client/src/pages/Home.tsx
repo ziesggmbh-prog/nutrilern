@@ -86,6 +86,9 @@ export default function Home() {
                   src={logoImage} 
                   alt="Logo" 
                   className="w-24 h-24 object-cover"
+                  style={{
+                    filter: 'hue-rotate(90deg) brightness(1.2) contrast(1.1)'
+                  }}
                 />
               </div>
               <div>
