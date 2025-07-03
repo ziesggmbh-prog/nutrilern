@@ -101,6 +101,9 @@ Changelog:
 - July 03, 2025. Added footer information boxes with BKK firmus and ZIES gGmbH logos
 - July 03, 2025. Integrated user's carrot-dumbbell logo in header
 - July 03, 2025. Refined logo sizing and proportions for consistent display
+- July 03, 2025. Implemented MP4 video support with static file serving for custom video content
+- July 03, 2025. Enhanced VideoPlayer component to handle both MP4 and YouTube videos automatically
+- July 03, 2025. Fixed Video 4 thumbnail display and adjusted color scheme for Video 5
 ```
 
 ## User Preferences
