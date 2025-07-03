@@ -283,8 +283,8 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
           <div className="flex justify-between">
             <Button
               onClick={onClose}
-              variant="ghost"
-              className="text-gray-400 hover:text-white"
+              variant="outline"
+              className="text-white border-gray-600 hover:bg-gray-700"
             >
               <X className="mr-2" size={16} />
               Abbrechen
