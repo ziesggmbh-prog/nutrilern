@@ -146,7 +146,7 @@ export default function Home() {
         <div className="bg-navy-light rounded-2xl p-6 relative overflow-hidden">
           <div className="grid grid-cols-[1fr_128px] gap-4 items-start relative z-10">
             <p className="text-white text-sm leading-relaxed">
-              Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich.
+              Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich. Die BKK firmus ist eine bundesweit geöffnete Krankenkasse, die sich für die Gesundheit und Prävention ihrer Versicherten einsetzt. Durch diese Förderung können wir Ihnen qualitativ hochwertige Gesundheitsmaßnahmen kostenfrei anbieten.
             </p>
             <div className="flex justify-center">
               <img 
