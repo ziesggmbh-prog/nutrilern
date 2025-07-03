@@ -28,10 +28,9 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
   return (
     <motion.div
       className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 group ${
-        isAvailable ? "hover:transform hover:-translate-y-1 hover:shadow-xl" : "opacity-60"
+        isAvailable ? "hover:shadow-xl" : "opacity-60"
       }`}
       onClick={isAvailable ? onClick : undefined}
-      whileHover={isAvailable ? { y: -4 } : {}}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: lesson.order * 0.1 }}

@@ -29,7 +29,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       className={`bg-navy-light rounded-xl cursor-pointer transition-all duration-300 border-2 border-dashed ${
         isCompleted ? "border-green-custom" : isAvailable ? "border-purple-custom" : "border-gray-600"
       } ${
-        isAvailable ? "hover:transform hover:-translate-y-1 hover:shadow-lg" : "opacity-60"
+        isAvailable ? "hover:shadow-lg" : "opacity-60"
       }`}
       style={{ 
         height: '80px',
