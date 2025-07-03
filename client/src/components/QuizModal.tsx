@@ -283,8 +283,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
           <div className="flex justify-between">
             <Button
               onClick={onClose}
-              variant="outline"
-              className="text-white border-gray-600 hover:bg-gray-700"
+              className="bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 px-4 py-2"
             >
               <X className="mr-2" size={16} />
               Abbrechen
@@ -294,8 +293,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
               {currentQuestion > 0 && (
                 <Button
                   onClick={handlePrevious}
-                  variant="outline"
-                  className="px-6 py-3 text-white border-gray-600 hover:bg-gray-700"
+                  className="bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 px-6 py-3"
                 >
                   Zurück
                 </Button>
