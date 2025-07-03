@@ -24,19 +24,19 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* Custom nutrition app colors - Updated with user's palette */
+  /* Custom nutrition app colors - Pastel versions for better readability */
   --navy: hsl(220, 33%, 13%);
   --navy-light: hsl(220, 25%, 20%);
-  --green-custom: hsl(158, 100%, 41%);
-  --green-light: hsl(142, 71%, 45%);
-  --purple-custom: hsl(259, 100%, 35%); /* Blue-violet from user's palette */
-  --purple-light: hsl(259, 80%, 55%);
-  --orange-custom: hsl(14, 100%, 58%); /* Coral-orange from user's palette */
-  --orange-light: hsl(14, 90%, 68%);
-  --teal-custom: hsl(172, 83%, 38%);
-  --teal-light: hsl(187, 85%, 53%);
-  --yellow-custom: hsl(48, 100%, 67%); /* Warm yellow from user's palette */
-  --plum-custom: hsl(295, 37%, 35%); /* Dark plum from user's palette */
+  --green-custom: hsl(158, 45%, 65%);
+  --green-light: hsl(142, 40%, 70%);
+  --purple-custom: hsl(259, 35%, 65%); /* Pastel blue-violet */
+  --purple-light: hsl(259, 30%, 75%);
+  --orange-custom: hsl(14, 45%, 75%); /* Pastel coral-orange */
+  --orange-light: hsl(14, 40%, 80%);
+  --teal-custom: hsl(172, 35%, 65%);
+  --teal-light: hsl(187, 40%, 70%);
+  --yellow-custom: hsl(48, 40%, 80%); /* Pastel warm yellow */
+  --plum-custom: hsl(295, 25%, 65%); /* Pastel dark plum */
   
   /* Background pattern - irregular dots */
   --dot-bg: 
