@@ -76,7 +76,7 @@ export default {
         "mint-custom": "var(--mint-custom)",
         // Video-specific colors for organic forms
         "royal-purple": "var(--royal-purple)",
-        "sage-green": "var(--sage-green)",
+        "dark-navy": "var(--dark-navy)",
         "lavender": "var(--lavender)",
         "warm-orange": "var(--warm-orange)",
         "deep-purple": "var(--deep-purple)",

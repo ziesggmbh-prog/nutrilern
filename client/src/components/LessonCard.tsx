@@ -12,7 +12,7 @@ interface LessonCardProps {
 
 const colorVariants = [
   "bg-royal-purple",
-  "bg-sage-green", 
+  "bg-dark-navy", 
   "bg-lavender",
   "bg-warm-orange",
   "bg-deep-purple",

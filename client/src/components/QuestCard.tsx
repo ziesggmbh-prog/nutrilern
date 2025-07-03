@@ -12,7 +12,7 @@ interface QuestCardProps {
 
 const questColors = [
   "bg-royal-purple",
-  "bg-sage-green", 
+  "bg-dark-navy", 
   "bg-lavender",
   "bg-warm-orange",
   "bg-deep-purple",
