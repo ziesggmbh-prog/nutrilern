@@ -26,7 +26,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
   
   return (
     <div
-      className={`bg-navy-light rounded-xl cursor-pointer transition-all duration-300 border-2 border-dashed ${
+      className={`bg-navy-light rounded-xl cursor-pointer transition-all duration-300 border-2 border-dashed relative overflow-hidden ${
         isCompleted ? "border-green-custom" : isAvailable ? "border-purple-custom" : "border-gray-600"
       } ${
         isAvailable ? "hover:shadow-lg" : "opacity-60"
@@ -41,6 +41,10 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       }}
       onClick={isAvailable ? onQuizClick : undefined}
     >
+      <OrganicShape
+        className={`absolute top-0 right-0 w-16 h-16 ${isCompleted ? "bg-gray-500" : colorClass} opacity-20`}
+        variant="alt"
+      />
       <div className="flex items-center space-x-3 w-full">
         <div className={`${isCompleted ? "bg-gray-600" : isAvailable ? colorClass : "bg-gray-600"} rounded-full flex items-center justify-center`}
              style={{ width: '24px', height: '24px', flexShrink: 0 }}>
