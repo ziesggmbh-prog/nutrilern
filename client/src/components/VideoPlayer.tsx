@@ -36,11 +36,18 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         </div>
         
         <div className="relative rounded-xl overflow-hidden mb-6">
-          <div className="bg-gray-800 aspect-video flex items-center justify-center">
-            <div className="text-center">
-              <Play className="text-6xl text-green-custom mb-4 mx-auto" />
-              <p className="text-lg">Video wird geladen...</p>
-              <p className="text-sm text-gray-400">{lesson.title} - {lesson.duration} Minuten</p>
+          <div className="bg-gray-800 aspect-video relative">
+            <img 
+              src={lesson.thumbnailUrl} 
+              alt={lesson.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+              <div className="text-center">
+                <Play className="text-6xl text-green-custom mb-4 mx-auto" />
+                <p className="text-lg">Video wird geladen...</p>
+                <p className="text-sm text-gray-400">{lesson.title} - {lesson.duration} Minuten</p>
+              </div>
             </div>
           </div>
           
