@@ -14,10 +14,10 @@ export default function ProgressBar({ completedLessons, totalLessons }: Progress
       <div className="bg-navy-light rounded-2xl p-6">
         <h2 className="text-2xl font-bold mb-2">Dein Lernfortschritt</h2>
         <div className="flex items-center justify-between mb-4">
-          <div className="text-green-custom font-semibold text-lg">
+          <div className="text-purple-custom font-semibold text-lg">
             {completedLessons} von {totalLessons} Lektionen
           </div>
-          <div className="text-green-custom font-medium text-lg">
+          <div className="text-purple-custom font-medium text-lg">
             {Math.round(progressPercentage)}%
           </div>
         </div>
