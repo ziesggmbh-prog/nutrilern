@@ -147,7 +147,7 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8 space-y-4">
         {/* BKK firmus Support Box */}
         <div className="bg-navy-light rounded-2xl p-6 relative overflow-hidden">
-          <div className="grid grid-cols-[1fr_128px] gap-4 items-start relative z-10">
+          <div className="grid grid-cols-[1fr_128px] gap-8 items-start relative z-10">
             <p className="text-white text-sm leading-relaxed">
               Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich. Als Partner für innovative Gesundheitsförderung ermöglicht die BKK firmus den Zugang zu wissenschaftlich fundierten Präventionsprogrammen. Das Team der BKK firmus wünscht Ihnen bei der Absolvierung dieses Programms viel Spaß!
             </p>
@@ -163,7 +163,7 @@ export default function Home() {
 
         {/* ZIES gGmbH Information Box */}
         <div className="bg-navy-light rounded-2xl p-6 relative overflow-hidden">
-          <div className="grid grid-cols-[1fr_128px] gap-4 items-start relative z-10">
+          <div className="grid grid-cols-[1fr_128px] gap-8 items-start relative z-10">
             <p className="text-white text-sm leading-relaxed">
               Entwickler der Materialien ist das Zentrum für Forschung und Diagnostik bei Implantaten, Entzündungen und Schmerzen gemeinnützige GmbH – kurz: ZIES gGmbH. Die ZIES gGmbH setzt sich ein für Beratung, Diagnostik sowie Aufklärung und Prävention. Die ZIES gGmbH ist eine gemeinnützige Initiative. Es ist unabhängig von Firmen, Verbänden oder anderen Interessengruppen.
             </p>
