@@ -38,15 +38,27 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
             {lesson.videoUrl.includes('.mp4') ? (
-              <video
-                controls
-                className="w-full h-full object-cover"
-                poster={lesson.thumbnailUrl}
-                preload="metadata"
-              >
-                <source src={lesson.videoUrl} type="video/mp4" />
-                Ihr Browser unterstützt das Video-Element nicht.
-              </video>
+              <div className="w-full h-full">
+                <video
+                  controls
+                  className="w-full h-full object-cover"
+                  poster={lesson.thumbnailUrl}
+                  preload="metadata"
+                  onError={(e) => {
+                    console.error('Video load error:', e);
+                    console.error('Video URL:', lesson.videoUrl);
+                  }}
+                  onLoadStart={() => {
+                    console.log('Video loading started:', lesson.videoUrl);
+                  }}
+                >
+                  <source src={lesson.videoUrl} type="video/mp4" />
+                  Ihr Browser unterstützt das Video-Element nicht.
+                </video>
+                <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs p-1 rounded">
+                  Debug: {lesson.videoUrl}
+                </div>
+              </div>
             ) : (
               <iframe
                 src={lesson.videoUrl}
