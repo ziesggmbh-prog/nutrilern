@@ -111,6 +111,7 @@ Changelog:
 - July 03, 2025. Fixed button visibility in quiz modal - made "Zurück" and "Abbrechen" permanently visible
 - July 03, 2025. Synchronized quest card colors with lesson card organic form colors for consistency
 - July 03, 2025. Updated Video 2 color to dark navy blue based on user reference image
+- July 04, 2025. Improved sponsor box layout with better spacing between text and logos using flexbox
 ```
 
 ## User Preferences
