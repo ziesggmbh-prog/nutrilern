@@ -1,13 +1,28 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import path from "path";
+import fs from "fs";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Serve attached assets (videos, images) as static files
-app.use('/assets', express.static('attached_assets'));
+// Try multiple locations to ensure assets are available in all environments
+const assetsPaths = [
+  'attached_assets',
+  path.join(process.cwd(), 'attached_assets'),
+  path.join(process.cwd(), 'dist/public/assets'),
+  'dist/public/assets'
+];
+
+assetsPaths.forEach(assetsPath => {
+  if (fs.existsSync(assetsPath)) {
+    app.use('/assets', express.static(assetsPath));
+    log(`Serving assets from: ${assetsPath}`);
+  }
+});
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -56,8 +71,6 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
-    // Ensure assets are served in production mode too
-    app.use('/assets', express.static('attached_assets'));
     serveStatic(app);
   }
 
