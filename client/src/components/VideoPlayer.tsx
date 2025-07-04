@@ -47,9 +47,16 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   onError={(e) => {
                     console.error('Video load error:', e);
                     console.error('Video URL:', lesson.videoUrl);
+                    console.error('Error details:', e.target.error);
                   }}
                   onLoadStart={() => {
                     console.log('Video loading started:', lesson.videoUrl);
+                  }}
+                  onCanPlay={() => {
+                    console.log('Video can play:', lesson.videoUrl);
+                  }}
+                  onLoadedData={() => {
+                    console.log('Video data loaded:', lesson.videoUrl);
                   }}
                 >
                   <source src={lesson.videoUrl} type="video/mp4" />

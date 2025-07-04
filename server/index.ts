@@ -19,7 +19,15 @@ const assetsPaths = [
 
 assetsPaths.forEach(assetsPath => {
   if (fs.existsSync(assetsPath)) {
-    app.use('/assets', express.static(assetsPath));
+    app.use('/assets', express.static(assetsPath, {
+      setHeaders: (res, path) => {
+        if (path.endsWith('.mp4')) {
+          res.setHeader('Content-Type', 'video/mp4');
+          res.setHeader('Accept-Ranges', 'bytes');
+          res.setHeader('Cache-Control', 'public, max-age=0');
+        }
+      }
+    }));
     log(`Serving assets from: ${assetsPath}`);
   }
 });
