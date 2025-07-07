@@ -31,9 +31,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               poster={lesson.thumbnailUrl}
               preload="metadata"
               playsInline
+              crossOrigin="anonymous"
               onError={(e) => {
                 console.error('Video error:', e);
-                // Show fallback only on actual error
                 const fallback = e.currentTarget.parentElement?.querySelector('.fallback-ui') as HTMLElement;
                 if (fallback) {
                   e.currentTarget.style.display = 'none';
@@ -43,22 +43,28 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               onLoadedData={() => {
                 console.log('Video loaded successfully:', lesson.videoUrl);
               }}
+              onCanPlay={() => {
+                console.log('Video can play - hiding fallback');
+                const fallback = document.querySelector('.fallback-ui') as HTMLElement;
+                if (fallback) fallback.style.display = 'none';
+              }}
               onEnded={() => {
                 console.log('Video completed');
                 onComplete();
               }}
             >
+              <source src={lesson.videoUrl} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
               <source src={lesson.videoUrl} type="video/mp4" />
               Ihr Browser unterstützt das Video-Element nicht.
             </video>
             
-            {/* Fallback UI - only shown if video fails */}
-            <div className="fallback-ui absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex-col items-center justify-center" style={{display: 'none'}}>
+            {/* Fallback UI - shown by default, hidden when video works */}
+            <div className="fallback-ui absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex flex-col items-center justify-center">
               <div className="text-center p-6 max-w-md">
                 <div className="text-4xl mb-4">🎥</div>
                 <h3 className="text-xl font-bold mb-3">{lesson.title}</h3>
                 <p className="text-sm text-blue-200 mb-6">
-                  Video kann nicht abgespielt werden
+                  Das Video wird vorbereitet...
                 </p>
                 <div className="space-y-3">
                   <a 
@@ -76,6 +82,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                     Lektion als abgeschlossen markieren
                   </button>
                 </div>
+                <p className="text-xs text-blue-300 mt-4">
+                  Falls das Video nicht automatisch startet, verwenden Sie den Download-Button.
+                </p>
               </div>
             </div>
           </div>
