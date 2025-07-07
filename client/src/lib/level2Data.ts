@@ -15,7 +15,7 @@ export const level2Data = [
     description: "Die Schüler recherchieren online Nährwerttabellen verschiedener Lebensmittel und erstellen einen gesunden und einen ungesunden Einkaufswagen.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 20,
-    thumbnailUrl: "/assets/image_1751896297162.png",
+    thumbnailUrl: "/assets/pramod-tiwari-4fPAk2tJcoA-unsplash_1751897369775.jpg",
     order: 2,
     isActive: true
   },
