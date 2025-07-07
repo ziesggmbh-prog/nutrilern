@@ -9,6 +9,7 @@ import QuizModal from "@/components/QuizModal";
 import ProgressBar from "@/components/ProgressBar";
 import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
+import HamburgerMenu from "@/components/HamburgerMenu";
 import type { Lesson, UserProgress } from "@shared/schema";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 import bkkFirmusLogo from "@assets/Logo_BKK_firmus_5C_300dpi-removebg_1751546007429.png";
@@ -101,9 +102,7 @@ export default function Home() {
               <div className="bg-navy-light rounded-full px-4 py-2">
                 <span className="text-green-custom font-semibold">Level 1</span>
               </div>
-              <div className="w-10 h-10 bg-purple-custom rounded-full flex items-center justify-center">
-                <User className="text-white" size={20} />
-              </div>
+              <HamburgerMenu />
             </div>
           </div>
         </div>

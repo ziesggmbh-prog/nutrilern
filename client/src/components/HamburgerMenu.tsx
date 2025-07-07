@@ -1,0 +1,90 @@
+import React, { useState } from 'react';
+import { Menu, X, Home, BookOpen, Info } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+interface HamburgerMenuProps {
+  className?: string;
+}
+
+export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const menuItems = [
+    { icon: Home, label: 'Start', href: '#' },
+    { icon: BookOpen, label: 'Quellen', href: '#' },
+    { icon: Info, label: 'Über das Programm', href: '#' }
+  ];
+
+  return (
+    <div className={`relative ${className}`}>
+      {/* Hamburger Button */}
+      <button
+        onClick={toggleMenu}
+        className="w-10 h-10 bg-purple-custom rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
+        aria-label="Menü öffnen"
+      >
+        <motion.div
+          animate={{ rotate: isOpen ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {isOpen ? (
+            <X className="text-white" size={20} />
+          ) : (
+            <Menu className="text-white" size={20} />
+          )}
+        </motion.div>
+      </button>
+
+      {/* Dropdown Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute right-0 top-12 w-56 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
+          >
+            <div className="py-2">
+              {menuItems.map((item, index) => (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-purple-600 transition-colors group"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <item.icon 
+                    size={18} 
+                    className="mr-3 text-gray-400 group-hover:text-purple-600 transition-colors"
+                  />
+                  <span className="font-medium">{item.label}</span>
+                </motion.a>
+              ))}
+            </div>
+            
+            {/* Decorative Bottom */}
+            <div className="h-1 bg-gradient-to-r from-purple-custom via-green-custom to-orange-custom"></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Backdrop */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-20 z-40"
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
