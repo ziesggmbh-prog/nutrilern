@@ -35,17 +35,8 @@ assetsPaths.forEach(assetsPath => {
   }
 });
 
-// Serve videos from public/videos
-app.use('/videos', express.static(path.join(process.cwd(), 'public/videos'), {
-  setHeaders: (res, path) => {
-    if (path.endsWith('.mp4')) {
-      res.setHeader('Content-Type', 'video/mp4');
-      res.setHeader('Accept-Ranges', 'bytes');
-      res.setHeader('Cache-Control', 'no-cache');
-      res.setHeader('Access-Control-Allow-Origin', '*');
-    }
-  }
-}));
+// Serve static HTML files from public directory
+app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.use((req, res, next) => {
   const start = Date.now();
