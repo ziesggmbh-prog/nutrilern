@@ -121,6 +121,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Debug route for video testing
+  app.get("/debug/video-test", (req, res) => {
+    res.send(`
+      <!DOCTYPE html>
+      <html lang="de">
+      <head>
+        <title>Video Test</title>
+        <style>body { font-family: Arial, sans-serif; margin: 20px; }</style>
+      </head>
+      <body>
+        <h1>Video Deployment Test</h1>
+        <video controls preload="metadata" style="width: 100%; max-width: 500px;">
+          <source src="/assets/AI_Intro_X_1751549357807.mp4" type="video/mp4">
+          Video not supported
+        </video>
+        <div id="status">Testing...</div>
+        <script>
+          const video = document.querySelector('video');
+          const status = document.getElementById('status');
+          
+          video.addEventListener('loadeddata', () => {
+            status.innerHTML = '<span style="color: green;">✓ Video loaded successfully (' + video.duration.toFixed(1) + 's)</span>';
+          });
+          
+          video.addEventListener('error', (e) => {
+            status.innerHTML = '<span style="color: red;">✗ Video error: ' + (e.target.error?.code || 'Unknown') + '</span>';
+            console.error('Video error:', e.target.error);
+          });
+          
+          // Test network access
+          fetch('/assets/AI_Intro_X_1751549357807.mp4', { method: 'HEAD' })
+            .then(response => {
+              console.log('Network test:', response.status, response.headers.get('content-type'));
+              status.innerHTML += '<br>Network: HTTP ' + response.status + ' (' + response.headers.get('content-type') + ')';
+            })
+            .catch(error => {
+              console.error('Network error:', error);
+              status.innerHTML += '<br>Network: Error - ' + error.message;
+            });
+        </script>
+      </body>
+      </html>
+    `);
+  });
+
   // Mark lesson as completed (for video completion)
   app.post("/api/lessons/:id/complete", async (req, res) => {
     try {

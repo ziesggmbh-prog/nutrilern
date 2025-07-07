@@ -48,6 +48,22 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                     console.error('Video load error:', e);
                     console.error('Video URL:', lesson.videoUrl);
                     console.error('Error details:', e.target.error);
+                    const video = e.target as HTMLVideoElement;
+                    const statusEl = document.getElementById(`video-status-${lesson.id}`);
+                    if (statusEl) statusEl.textContent = `Error: ${video.error?.code || 'Unknown'}`;
+                    
+                    // Try to fetch the video URL to test accessibility
+                    fetch(lesson.videoUrl, { method: 'HEAD' })
+                      .then(response => {
+                        console.log('Video URL test:', response.status, response.headers.get('content-type'));
+                        const sizeEl = document.getElementById(`video-size-${lesson.id}`);
+                        if (sizeEl) sizeEl.textContent = `HTTP ${response.status}`;
+                      })
+                      .catch(fetchError => {
+                        console.error('Video URL fetch error:', fetchError);
+                        const sizeEl = document.getElementById(`video-size-${lesson.id}`);
+                        if (sizeEl) sizeEl.textContent = 'Network Error';
+                      });
                   }}
                   onLoadStart={() => {
                     console.log('Video loading started:', lesson.videoUrl);
@@ -55,15 +71,22 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   onCanPlay={() => {
                     console.log('Video can play:', lesson.videoUrl);
                   }}
-                  onLoadedData={() => {
+                  onLoadedData={(e) => {
                     console.log('Video data loaded:', lesson.videoUrl);
+                    const video = e.target as HTMLVideoElement;
+                    const statusEl = document.getElementById(`video-status-${lesson.id}`);
+                    const sizeEl = document.getElementById(`video-size-${lesson.id}`);
+                    if (statusEl) statusEl.textContent = 'Data Loaded';
+                    if (sizeEl) sizeEl.textContent = `${video.duration?.toFixed(1)}s`;
                   }}
                 >
                   <source src={lesson.videoUrl} type="video/mp4" />
                   Ihr Browser unterstützt das Video-Element nicht.
                 </video>
-                <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs p-1 rounded">
-                  Debug: {lesson.videoUrl}
+                <div className="absolute bottom-2 left-2 bg-black bg-opacity-75 text-white text-xs p-2 rounded space-y-1">
+                  <div>URL: {lesson.videoUrl}</div>
+                  <div>Status: <span id={`video-status-${lesson.id}`}>Loading...</span></div>
+                  <div>Size: <span id={`video-size-${lesson.id}`}>Unknown</span></div>
                 </div>
               </div>
             ) : (

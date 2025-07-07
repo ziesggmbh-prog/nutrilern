@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-container { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        .debug-info { background: #f0f0f0; padding: 10px; margin: 10px 0; }
+        video { width: 100%; max-width: 500px; height: auto; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Video Deployment Test</h1>
+    
+    <div class="test-container">
+        <h2>Test 1: Video 1 (AI Intro)</h2>
+        <video controls preload="metadata" id="video1">
+            <source src="/assets/AI_Intro_X_1751549357807.mp4" type="video/mp4">
+            Ihr Browser unterstützt das Video-Element nicht.
+        </video>
+        <div class="debug-info" id="debug1">Status: Loading...</div>
+    </div>
+    
+    <div class="test-container">
+        <h2>Test 2: Video 5 (Kohlenhydrate)</h2>
+        <video controls preload="metadata" id="video2">
+            <source src="/assets/Kohlenhydrate_V5_1751550361289.mp4" type="video/mp4">
+            Ihr Browser unterstützt das Video-Element nicht.
+        </video>
+        <div class="debug-info" id="debug2">Status: Loading...</div>
+    </div>
+    
+    <div class="test-container">
+        <h2>Network Tests</h2>
+        <div id="network-results">Testing...</div>
+        <button onclick="testNetworkAccess()">Test Network Access</button>
+    </div>
+
+    <script>
+        // Test videos
+        const videos = [
+            { id: 'video1', debugId: 'debug1', url: '/assets/AI_Intro_X_1751549357807.mp4' },
+            { id: 'video2', debugId: 'debug2', url: '/assets/Kohlenhydrate_V5_1751550361289.mp4' }
+        ];
+
+        videos.forEach(({ id, debugId, url }) => {
+            const video = document.getElementById(id);
+            const debug = document.getElementById(debugId);
+            
+            video.addEventListener('loadeddata', () => {
+                debug.innerHTML = `<span class="success">✓ Video loaded successfully (${video.duration?.toFixed(1)}s)</span>`;
+            });
+            
+            video.addEventListener('error', (e) => {
+                debug.innerHTML = `<span class="error">✗ Video error: ${e.target.error?.code || 'Unknown'}</span>`;
+                console.error('Video error:', url, e.target.error);
+            });
+            
+            video.addEventListener('canplay', () => {
+                console.log('Video can play:', url);
+            });
+        });
+
+        async function testNetworkAccess() {
+            const resultsDiv = document.getElementById('network-results');
+            resultsDiv.innerHTML = 'Testing network access...';
+            
+            const tests = [
+                '/assets/AI_Intro_X_1751549357807.mp4',
+                '/assets/Kohlenhydrate_V5_1751550361289.mp4'
+            ];
+            
+            let results = '<h3>Network Test Results:</h3>';
+            
+            for (const url of tests) {
+                try {
+                    const response = await fetch(url, { method: 'HEAD' });
+                    const size = response.headers.get('content-length');
+                    const type = response.headers.get('content-type');
+                    
+                    results += `<div class="success">✓ ${url.split('/').pop()}: ${response.status} ${response.statusText} (${Math.round(size/1024/1024)}MB, ${type})</div>`;
+                } catch (error) {
+                    results += `<div class="error">✗ ${url.split('/').pop()}: ${error.message}</div>`;
+                }
+            }
+            
+            resultsDiv.innerHTML = results;
+        }
+        
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            setTimeout(testNetworkAccess, 1000);
+        });
+    </script>
+</body>
+</html>
