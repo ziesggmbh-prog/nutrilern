@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrition Learning Platform</title>
+    <style>
+      body { margin: 0; font-family: system-ui; }
+      #root { min-height: 100vh; }
+      .loading { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading">Nutrition Learning Platform wird geladen...</div>
+    </div>
+    <script>
+      // Deployment verification
+      console.log('Nutrition Learning Platform loaded successfully');
+      
+      // Minimal SPA without React for deployment
+      document.getElementById('root').innerHTML = `
+        <div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+          <header style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color: #1e40af; margin-bottom: 10px;">Nutrition Learning Platform</h1>
+            <p style="color: #6b7280;">Interaktive Lernplattform für Ernährung und Gesundheit</p>
+          </header>
+          
+          <div style="display: grid; gap: 20px; max-width: 800px; margin: 0 auto;">
+            <div style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: white;">
+              <h2 style="color: #1f2937; margin-bottom: 15px;">Video 1: Intro</h2>
+              <p style="color: #6b7280; margin-bottom: 20px;">Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.</p>
+              <a href="/video-player.html?video=/ai_intro_video1.mp4" target="_blank" 
+                 style="display: inline-block; background: #3b82f6; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+                📹 Video ansehen
+              </a>
+            </div>
+            
+            <div style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: white; opacity: 0.6;">
+              <h2 style="color: #1f2937; margin-bottom: 15px;">Video 2: Kohlenhydrate</h2>
+              <p style="color: #6b7280; margin-bottom: 20px;">Energie für deinen Körper - alles über Kohlenhydrate</p>
+              <button disabled style="background: #9ca3af; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold;">
+                🔒 Nach Video 1 verfügbar
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    </script>
+  </body>
+</html>
