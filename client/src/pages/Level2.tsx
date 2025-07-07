@@ -145,7 +145,27 @@ export default function Level2() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <ProgressBar completedLessons={completedLessonIds.length} totalLessons={lessons.length} />
+          <div className="mb-8">
+            <div className="text-center mb-4">
+              <h3 className="text-xl font-semibold mb-2">Dein Fortschritt</h3>
+              <p className="text-gray-300 text-sm">
+                {completedLessonIds.length} von {lessons.length} Quests abgeschlossen
+              </p>
+            </div>
+            <div className="w-full bg-gray-700 rounded-full h-3">
+              <motion.div 
+                className="bg-gradient-to-r from-green-custom to-teal-custom h-3 rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: `${(completedLessonIds.length / lessons.length) * 100}%` }}
+                transition={{ duration: 0.8 }}
+              />
+            </div>
+            <div className="flex justify-between text-sm text-gray-400 mt-2">
+              <span>Start</span>
+              <span>{Math.round((completedLessonIds.length / lessons.length) * 100)}%</span>
+              <span>Abgeschlossen</span>
+            </div>
+          </div>
         </motion.div>
 
         {/* Level Info */}
@@ -190,78 +210,9 @@ export default function Level2() {
           })}
         </div>
 
-        {/* Quest Cards Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mb-12"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
-              <Play className="text-green-custom" />
-              Quests abschließen
-            </h3>
-            <p className="text-gray-300">
-              Teste dein Wissen und sammle Punkte durch das Lösen der Quests!
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {lessons.map((lesson, index) => {
-              const isCompleted = completedLessonIds.includes(lesson.id);
-              const isAvailable = lesson.id === nextAvailableLesson?.id || isCompleted;
-              
-              return (
-                <motion.div
-                  key={`quest-${lesson.id}`}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <QuestCard
-                    lesson={lesson}
-                    isCompleted={isCompleted}
-                    isAvailable={isAvailable}
-                    onQuizClick={() => handleQuizClick(lesson)}
-                  />
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
 
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          className="border-t border-gray-700 pt-8"
-        >
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm">
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4">
-                  <img src={bkkFirmusLogo} alt="BKK firmus" className="h-16 w-auto mx-auto" />
-                </div>
-                <p className="text-sm text-gray-300">
-                  Präventionsprogramm der BKK firmus für gesunde Ernährung und Lebensweise
-                </p>
-              </div>
-            </div>
 
-            <div className="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm">
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4">
-                  <img src={ziesLogo} alt="ZIES gGmbH" className="h-16 w-auto mx-auto" />
-                </div>
-                <p className="text-sm text-gray-300">
-                  Entwickelt von ZIES gGmbH - Zentrum für Innovative Ernährungsberatung und Schulung
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       {/* Modals */}
