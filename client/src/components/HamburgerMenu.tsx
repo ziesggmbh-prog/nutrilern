@@ -45,7 +45,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed right-4 top-20 w-56 bg-black bg-opacity-90 backdrop-blur-sm rounded-xl shadow-xl border border-gray-700 overflow-hidden z-[100]"
+            className="fixed right-4 top-20 w-56 bg-black bg-opacity-30 backdrop-blur-sm rounded-xl shadow-xl border border-gray-700 overflow-hidden z-[100]"
           >
             <div className="py-2">
               {menuItems.map((item, index) => (
