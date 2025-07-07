@@ -130,6 +130,7 @@ Changelog:
 - July 07, 2025. Videos now correctly serve 6-7MB files instead of 80MB+ files for deployment compatibility
 - July 07, 2025. FINAL SOLUTION: Video 1 migrated to Vimeo embedding for reliable deployment playback
 - July 07, 2025. Vimeo integration with autoplay, professional streaming, and automatic completion tracking
+- July 07, 2025. Video 2 migrated to Vimeo (1099335411) - both main videos now use professional streaming
 ```
 
 ## User Preferences

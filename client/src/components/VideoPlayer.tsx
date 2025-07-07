@@ -12,14 +12,15 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   
   // Handle video completion (auto-timer for Vimeo)
   useEffect(() => {
-    // Auto-complete after 60 seconds (estimated video duration)
+    // Auto-complete timer based on lesson duration
+    const duration = lesson.id === 1 ? 60000 : lesson.id === 2 ? 70000 : 60000; // Video 1: 60s, Video 2: 70s
     const timer = setTimeout(() => {
-      console.log('Video completed (auto-timer)');
+      console.log(`Video ${lesson.id} completed (auto-timer)`);
       onComplete();
-    }, 60000);
+    }, duration);
     
     return () => clearTimeout(timer);
-  }, [onComplete]);
+  }, [onComplete, lesson.id]);
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
@@ -36,7 +37,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            {/* Vimeo Embed for Video 1 */}
+            {/* Vimeo Embed for Video 1 & 2 */}
             {lesson.id === 1 ? (
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
@@ -46,7 +47,20 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                   title="Intro"
                   onLoad={() => {
-                    console.log('✅ Vimeo video loaded successfully');
+                    console.log('✅ Vimeo video 1 loaded successfully');
+                  }}
+                />
+              </div>
+            ) : lesson.id === 2 ? (
+              <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
+                <iframe 
+                  src="https://player.vimeo.com/video/1099335411?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                  frameBorder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+                  title="Kohlenhydrate"
+                  onLoad={() => {
+                    console.log('✅ Vimeo video 2 loaded successfully');
                   }}
                 />
               </div>
