@@ -40,7 +40,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 console.log('Video loaded successfully:', lesson.videoUrl);
               }}
               onError={(e) => {
-                console.error('Video error - showing fallback');
+                console.error('Video error - showing fallback:', e);
+                console.error('Video src:', lesson.videoUrl);
                 const video = e.currentTarget;
                 const fallback = video.parentElement?.querySelector('.fallback-ui') as HTMLElement;
                 if (fallback) {
