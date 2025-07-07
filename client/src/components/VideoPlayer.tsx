@@ -25,36 +25,34 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            <video
-              controls
-              className="w-full h-full"
-              src={lesson.videoUrl}
-              onError={(e) => {
-                console.error('Video error:', e);
-                // Fall back to simple message
-                const videoElement = e.currentTarget;
-                videoElement.style.display = 'none';
-                const parentDiv = videoElement.parentElement;
-                if (parentDiv) {
-                  parentDiv.innerHTML = `
-                    <div class="w-full h-full bg-gray-800 flex items-center justify-center text-white">
-                      <div class="text-center">
-                        <div class="text-4xl mb-4">🎥</div>
-                        <h3 class="text-xl font-bold mb-2">${lesson.title}</h3>
-                        <p class="text-gray-300">Video wird geladen...</p>
-                      </div>
-                    </div>
-                  `;
-                }
-              }}
-              onEnded={() => onComplete()}
-              style={{
-                backgroundColor: '#000',
-                objectFit: 'contain'
-              }}
-            >
-              Video wird geladen...
-            </video>
+            <div className="w-full h-full bg-gradient-to-br from-blue-900 to-purple-900 text-white flex items-center justify-center">
+              <div className="text-center p-8">
+                <div className="text-6xl mb-6">🎬</div>
+                <h2 className="text-2xl font-bold mb-4">{lesson.title}</h2>
+                <p className="text-blue-200 mb-8 max-w-md">
+                  {lesson.description}
+                </p>
+                <div className="space-y-4">
+                  <a 
+                    href={lesson.videoUrl}
+                    download
+                    className="inline-block bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg text-white font-semibold transition-colors shadow-lg"
+                  >
+                    🎥 Video ansehen
+                  </a>
+                  <br />
+                  <button 
+                    onClick={onComplete}
+                    className="inline-block bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg text-white font-semibold transition-colors shadow-lg"
+                  >
+                    ✅ Lektion abschließen
+                  </button>
+                </div>
+                <p className="text-sm text-blue-300 mt-6">
+                  Klicken Sie auf "Video ansehen" zum Download
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
