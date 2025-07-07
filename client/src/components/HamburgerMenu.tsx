@@ -45,7 +45,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed right-4 top-20 w-56 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-[100]"
+            className="fixed right-4 top-20 w-56 bg-black bg-opacity-90 backdrop-blur-sm rounded-xl shadow-xl border border-gray-700 overflow-hidden z-[100]"
           >
             <div className="py-2">
               {menuItems.map((item, index) => (
@@ -55,12 +55,12 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-purple-600 transition-colors group"
+                  className="flex items-center px-4 py-3 text-gray-300 hover:bg-purple-custom hover:bg-opacity-20 hover:text-white transition-colors group"
                   onClick={() => setIsOpen(false)}
                 >
                   <item.icon 
                     size={18} 
-                    className="mr-3 text-gray-400 group-hover:text-purple-600 transition-colors"
+                    className="mr-3 text-gray-400 group-hover:text-white transition-colors"
                   />
                   <span className="font-medium">{item.label}</span>
                 </motion.a>
