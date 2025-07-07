@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, CheckCircle } from 'lucide-react';
 
 interface VideoPlayerProps {
   lesson: any;
@@ -87,18 +87,20 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="text-center">
           <p className="text-gray-600 mb-4">{lesson.description}</p>
-          <div className="flex gap-4 justify-center">
-            <button
-              onClick={onComplete}
-              className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-            >
-              ✅ Lektion abschließen
-            </button>
+          <div className="flex justify-between items-center">
             <button
               onClick={onClose}
-              className="bg-gray-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition-colors"
+              className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
             >
-              Zurück
+              Schließen
+            </button>
+            
+            <button
+              onClick={onComplete}
+              className="px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
+            >
+              <CheckCircle size={20} />
+              Lektion abschließen
             </button>
           </div>
         </div>
