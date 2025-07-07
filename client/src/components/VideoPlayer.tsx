@@ -31,7 +31,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               poster={lesson.thumbnailUrl}
               preload="metadata"
               playsInline
-              muted
+              autoPlay
               onCanPlay={(e) => {
                 console.log('Video can play - hiding fallback');
                 const video = e.currentTarget;

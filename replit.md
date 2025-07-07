@@ -123,6 +123,8 @@ Changelog:
 - July 07, 2025. Videos show professional interface with download option and lesson completion
 - July 07, 2025. Fixed VideoPlayer component to show actual HTML5 video with fallback only on error
 - July 07, 2025. Local video playback confirmed working - ready for deployment
+- July 07, 2025. Converted videos to browser-compatible Baseline H.264 format (6-7MB vs 80MB)
+- July 07, 2025. AI_Intro_small.mp4 and Kohlenhydrate_small.mp4 confirmed working in local preview
 ```
 
 ## User Preferences
