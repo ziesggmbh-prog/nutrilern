@@ -41,9 +41,40 @@ app.get('/videos/:filename', (req, res) => {
   }
 });
 
-// Health check
+// Health check with detailed diagnostics
 app.get('/health', (req, res) => {
-  res.json({ status: 'OK', env: 'production' });
+  const videoPath = path.join(publicPath, 'ai_intro_video1.mp4');
+  const videosPath = path.join(publicPath, 'videos', 'ai_intro_video1.mp4');
+  
+  res.json({ 
+    status: 'OK', 
+    env: 'production',
+    publicPath: publicPath,
+    videoExists: fs.existsSync(videoPath),
+    videosExists: fs.existsSync(videosPath),
+    videoSize: fs.existsSync(videoPath) ? fs.statSync(videoPath).size : 0,
+    publicContents: fs.readdirSync(publicPath),
+    timestamp: new Date().toISOString()
+  });
+});
+
+// Debug endpoint for file listing
+app.get('/debug/files', (req, res) => {
+  try {
+    const files = fs.readdirSync(publicPath, { withFileTypes: true });
+    const fileList = files.map(file => ({
+      name: file.name,
+      isDirectory: file.isDirectory(),
+      size: file.isDirectory() ? null : fs.statSync(path.join(publicPath, file.name)).size
+    }));
+    
+    res.json({
+      publicPath: publicPath,
+      files: fileList
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // SPA fallback
