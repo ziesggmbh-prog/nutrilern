@@ -25,13 +25,40 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            {/* Professional video interface - NEW VERSION */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex flex-col items-center justify-center">
+            <video
+              controls
+              className="w-full h-full object-cover"
+              poster={lesson.thumbnailUrl}
+              preload="metadata"
+              playsInline
+              onError={(e) => {
+                console.error('Video error:', e);
+                // Show fallback only on actual error
+                const fallback = e.currentTarget.parentElement?.querySelector('.fallback-ui') as HTMLElement;
+                if (fallback) {
+                  e.currentTarget.style.display = 'none';
+                  fallback.style.display = 'flex';
+                }
+              }}
+              onLoadedData={() => {
+                console.log('Video loaded successfully:', lesson.videoUrl);
+              }}
+              onEnded={() => {
+                console.log('Video completed');
+                onComplete();
+              }}
+            >
+              <source src={lesson.videoUrl} type="video/mp4" />
+              Ihr Browser unterstützt das Video-Element nicht.
+            </video>
+            
+            {/* Fallback UI - only shown if video fails */}
+            <div className="fallback-ui absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex-col items-center justify-center" style={{display: 'none'}}>
               <div className="text-center p-6 max-w-md">
                 <div className="text-4xl mb-4">🎥</div>
                 <h3 className="text-xl font-bold mb-3">{lesson.title}</h3>
                 <p className="text-sm text-blue-200 mb-6">
-                  Video-Inhalt zur Verfügung gestellt von BKK firmus und ZIES gGmbH
+                  Video kann nicht abgespielt werden
                 </p>
                 <div className="space-y-3">
                   <a 
@@ -43,10 +70,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                     Video herunterladen
                   </a>
                   <button 
-                    onClick={() => {
-                      console.log('Completing lesson:', lesson.title);
-                      onComplete();
-                    }}
+                    onClick={() => onComplete()}
                     className="block w-full bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
                   >
                     Lektion als abgeschlossen markieren
