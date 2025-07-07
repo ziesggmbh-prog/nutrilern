@@ -1,8 +1,8 @@
 export const lessonData = [
   {
     id: 1,
-    title: "Grundlagen der Ernährung", 
-    description: "Entdecke die Basics einer ausgewogenen Ernährung",
+    title: "Intro", 
+    description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
     videoUrl: "/assets/AI_Intro_small.mp4",
     duration: 8,
     thumbnailUrl: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
