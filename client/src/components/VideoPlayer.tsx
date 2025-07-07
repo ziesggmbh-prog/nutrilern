@@ -67,6 +67,21 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   }}
                   onLoadStart={() => {
                     console.log('Video loading started:', lesson.videoUrl);
+                    const statusEl = document.getElementById(`video-status-${lesson.id}`);
+                    if (statusEl) statusEl.textContent = 'Loading Started';
+                    
+                    // Test URL accessibility immediately
+                    fetch(lesson.videoUrl, { method: 'HEAD' })
+                      .then(response => {
+                        console.log('URL test response:', response.status, response.headers.get('content-type'));
+                        const networkEl = document.getElementById(`video-network-${lesson.id}`);
+                        if (networkEl) networkEl.textContent = `${response.status} ${response.statusText}`;
+                      })
+                      .catch(error => {
+                        console.error('URL test failed:', error);
+                        const networkEl = document.getElementById(`video-network-${lesson.id}`);
+                        if (networkEl) networkEl.textContent = `Error: ${error.message}`;
+                      });
                   }}
                   onCanPlay={() => {
                     console.log('Video can play:', lesson.videoUrl);
@@ -85,8 +100,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 </video>
                 <div className="absolute bottom-2 left-2 bg-black bg-opacity-75 text-white text-xs p-2 rounded space-y-1">
                   <div>URL: {lesson.videoUrl}</div>
-                  <div>Status: <span id={`video-status-${lesson.id}`}>Loading...</span></div>
+                  <div>Status: <span id={`video-status-${lesson.id}`}>Testing URL...</span></div>
                   <div>Size: <span id={`video-size-${lesson.id}`}>Unknown</span></div>
+                  <div>Network: <span id={`video-network-${lesson.id}`}>Checking...</span></div>
                 </div>
               </div>
             ) : (
