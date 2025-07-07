@@ -9,6 +9,7 @@ interface VideoPlayerProps {
 
 export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayerProps) {
   console.log('NEW VideoPlayer component loaded for lesson:', lesson.title);
+  console.log('Video URL being used:', lesson.videoUrl);
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
@@ -36,12 +37,17 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 console.log('Video can play');
                 // Video is ready, no fallback needed
               }}
-              onLoadedData={() => {
+              onLoadedData={(e) => {
                 console.log('Video loaded successfully:', lesson.videoUrl);
+                console.log('Video current src:', e.currentTarget.currentSrc);
+                console.log('Video duration:', e.currentTarget.duration);
               }}
               onError={(e) => {
                 console.error('Video error - showing fallback:', e);
                 console.error('Video src:', lesson.videoUrl);
+                console.error('Video current src:', e.currentTarget.currentSrc);
+                console.error('Video network state:', e.currentTarget.networkState);
+                console.error('Video ready state:', e.currentTarget.readyState);
                 const video = e.currentTarget;
                 const fallback = video.parentElement?.querySelector('.fallback-ui') as HTMLElement;
                 if (fallback) {
