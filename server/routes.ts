@@ -192,6 +192,54 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Video streaming endpoint for better browser compatibility
+  app.get("/stream/:videoFile", (req, res) => {
+    try {
+      const videoFile = req.params.videoFile;
+      const videoPath = path.join(process.cwd(), 'dist/public/assets', videoFile);
+      
+      if (!fs.existsSync(videoPath)) {
+        return res.status(404).json({ error: "Video not found" });
+      }
+      
+      const stat = fs.statSync(videoPath);
+      const fileSize = stat.size;
+      const range = req.headers.range;
+      
+      if (range) {
+        const parts = range.replace(/bytes=/, "").split("-");
+        const start = parseInt(parts[0], 10);
+        const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
+        const chunksize = (end - start) + 1;
+        
+        const head = {
+          'Content-Range': `bytes ${start}-${end}/${fileSize}`,
+          'Accept-Ranges': 'bytes',
+          'Content-Length': chunksize,
+          'Content-Type': 'video/mp4',
+          'Cache-Control': 'public, max-age=3600'
+        };
+        
+        res.writeHead(206, head);
+        const stream = fs.createReadStream(videoPath, { start, end });
+        stream.pipe(res);
+      } else {
+        const head = {
+          'Content-Length': fileSize,
+          'Content-Type': 'video/mp4',
+          'Accept-Ranges': 'bytes',
+          'Cache-Control': 'public, max-age=3600'
+        };
+        
+        res.writeHead(200, head);
+        fs.createReadStream(videoPath).pipe(res);
+      }
+    } catch (error) {
+      console.error("Video streaming error:", error);
+      res.status(500).json({ error: "Video streaming failed" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

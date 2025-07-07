@@ -45,7 +45,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   poster={lesson.thumbnailUrl}
                   preload="metadata"
                   playsInline
-                  webkit-playsinline="true"
+                  muted
+                  autoPlay={false}
                   onError={(e) => {
                     console.error('Video load error:', e);
                     const video = e.target as HTMLVideoElement;
@@ -95,9 +96,17 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                     if (sizeEl) sizeEl.textContent = `${video.duration?.toFixed(1)}s`;
                   }}
                 >
+                  <source src={lesson.videoUrl} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
                   <source src={lesson.videoUrl} type="video/mp4" />
+                  <source src={lesson.videoUrl} type="video/webm" />
                   Ihr Browser unterstützt das Video-Element nicht. 
-                  <p>Fallback: <a href={lesson.videoUrl} target="_blank" rel="noopener noreferrer">Video direkt öffnen</a></p>
+                  <div className="text-white p-4">
+                    <p>Video kann nicht geladen werden.</p>
+                    <a href={lesson.videoUrl} target="_blank" rel="noopener noreferrer" 
+                       className="text-blue-400 underline">
+                      Video direkt herunterladen
+                    </a>
+                  </div>
                 </video>
                 <div className="absolute bottom-2 left-2 bg-black bg-opacity-75 text-white text-xs p-2 rounded space-y-1">
                   <div>URL: {lesson.videoUrl}</div>
