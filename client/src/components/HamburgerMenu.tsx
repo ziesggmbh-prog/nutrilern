@@ -45,7 +45,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 top-12 w-56 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-50"
+            className="fixed right-4 top-20 w-56 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden z-[100]"
           >
             <div className="py-2">
               {menuItems.map((item, index) => (
@@ -80,7 +80,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-20 z-40"
+            className="fixed inset-0 bg-black bg-opacity-20 z-[90]"
             onClick={() => setIsOpen(false)}
           />
         )}

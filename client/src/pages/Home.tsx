@@ -77,7 +77,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-structured text-white">
       {/* Header */}
-      <header className="relative overflow-hidden bg-black bg-opacity-30">
+      <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
