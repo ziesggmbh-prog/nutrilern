@@ -43,11 +43,25 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 console.log('Video duration:', e.currentTarget.duration);
               }}
               onError={(e) => {
-                console.error('Video error - showing fallback:', e);
-                console.error('Video src:', lesson.videoUrl);
+                console.error('❌ CRITICAL VIDEO ERROR:', e);
+                console.error('Video URL:', lesson.videoUrl);
                 console.error('Video current src:', e.currentTarget.currentSrc);
-                console.error('Video network state:', e.currentTarget.networkState);
-                console.error('Video ready state:', e.currentTarget.readyState);
+                console.error('Network state:', e.currentTarget.networkState);
+                console.error('Ready state:', e.currentTarget.readyState);
+                console.error('Error code:', e.currentTarget.error?.code);
+                console.error('Error message:', e.currentTarget.error?.message);
+                
+                // Test if video file actually exists
+                fetch(lesson.videoUrl)
+                  .then(response => {
+                    console.log('Video file fetch test:', response.status, response.statusText);
+                    console.log('Content-Type:', response.headers.get('Content-Type'));
+                    console.log('Content-Length:', response.headers.get('Content-Length'));
+                  })
+                  .catch(fetchError => {
+                    console.error('Video file fetch failed:', fetchError);
+                  });
+                
                 const video = e.currentTarget;
                 const fallback = video.parentElement?.querySelector('.fallback-ui') as HTMLElement;
                 if (fallback) {
