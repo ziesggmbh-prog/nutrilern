@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Test Page</title>
+</head>
+<body>
+    <h1>Video Test</h1>
+    
+    <h2>Test 1: Direct Video Element</h2>
+    <video controls width="400">
+        <source src="/ai_intro_video1.mp4" type="video/mp4">
+        Video not supported
+    </video>
+    
+    <h2>Test 2: Alternative Path</h2>
+    <video controls width="400">
+        <source src="./ai_intro_video1.mp4" type="video/mp4">
+        Video not supported
+    </video>
+    
+    <h2>Test 3: Videos Directory</h2>
+    <video controls width="400">
+        <source src="/videos/ai_intro_video1.mp4" type="video/mp4">
+        Video not supported
+    </video>
+    
+    <h2>Direct Links for Testing</h2>
+    <ul>
+        <li><a href="/ai_intro_video1.mp4" target="_blank">Direct video link</a></li>
+        <li><a href="/videos/ai_intro_video1.mp4" target="_blank">Videos directory link</a></li>
+        <li><a href="/video-player.html?video=ai_intro_video1.mp4" target="_blank">Video player</a></li>
+    </ul>
+    
+    <script>
+        console.log('Video test page loaded');
+        
+        // Test all video elements
+        document.querySelectorAll('video').forEach((video, index) => {
+            video.addEventListener('loadstart', () => {
+                console.log(`Video ${index + 1}: Load started`);
+            });
+            
+            video.addEventListener('error', (e) => {
+                console.error(`Video ${index + 1}: Error -`, e);
+            });
+            
+            video.addEventListener('loadeddata', () => {
+                console.log(`Video ${index + 1}: Data loaded successfully`);
+            });
+        });
+    </script>
+</body>
+</html>
