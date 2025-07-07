@@ -3,7 +3,7 @@ export const lessonData = [
     id: 1,
     title: "Intro", 
     description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
-    videoUrl: "/video-player.html?video=/assets/AI_Intro_small.mp4",
+    videoUrl: "/video-player.html?video=/ai_intro_video1.mp4",
     duration: 8,
     thumbnailUrl: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
     order: 1,

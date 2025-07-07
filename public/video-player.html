@@ -47,8 +47,7 @@
 </head>
 <body>
     <video id="mainVideo" controls autoplay>
-        <source src="/assets/AI_Intro_small.mp4" type="video/mp4">
-        <source src="/assets/Kohlenhydrate_small.mp4" type="video/mp4">
+        <source id="videoSource" src="/ai_intro_video1.mp4" type="video/mp4">
         Video nicht unterstützt
     </video>
     
@@ -64,7 +63,10 @@
         const videoUrl = urlParams.get('video');
         
         if (videoUrl) {
-            document.getElementById('mainVideo').src = videoUrl;
+            const videoElement = document.getElementById('mainVideo');
+            const sourceElement = document.getElementById('videoSource');
+            sourceElement.src = videoUrl;
+            videoElement.load(); // Reload video with new source
         }
         
         // Show controls when video ends
@@ -72,10 +74,10 @@
             document.getElementById('controls').style.display = 'block';
         });
         
-        // Auto-show controls after 3 seconds
+        // Show controls after 10 seconds for manual completion
         setTimeout(() => {
             document.getElementById('controls').style.display = 'block';
-        }, 3000);
+        }, 10000);
         
         function completeVideo() {
             if (window.parent) {

@@ -34,11 +34,13 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               allowFullScreen
               onLoad={() => {
                 console.log('Video iframe loaded');
-                // Auto-complete after 5 seconds for demo
-                setTimeout(() => {
-                  console.log('Auto-completing video after 5 seconds');
-                  onComplete();
-                }, 5000);
+                // Listen for completion message from iframe
+                window.addEventListener('message', (event) => {
+                  if (event.data === 'video-complete') {
+                    console.log('Video completed by user');
+                    onComplete();
+                  }
+                });
               }}
             />
           </div>
