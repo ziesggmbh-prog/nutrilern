@@ -28,24 +28,19 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             <video
               controls
               className="w-full h-full object-cover"
-              poster={lesson.thumbnailUrl}
-              preload="metadata"
               playsInline
-              autoPlay
-              muted={false}
-              onCanPlay={() => {
-                console.log('Video can play:', lesson.videoUrl);
-              }}
-              onLoadedData={() => {
-                console.log('Video loaded successfully:', lesson.videoUrl);
-              }}
+              muted
+              onLoadStart={() => console.log('Video load started')}
+              onLoadedMetadata={() => console.log('Video metadata loaded')}
+              onCanPlay={() => console.log('Video can play')}
               onError={(e) => {
-                console.error('Video error:', e);
+                console.error('Video error:', e.currentTarget.error);
+                if (e.currentTarget.error) {
+                  console.error('Error code:', e.currentTarget.error.code);
+                  console.error('Error message:', e.currentTarget.error.message);
+                }
               }}
-              onEnded={() => {
-                console.log('Video completed');
-                onComplete();
-              }}
+              onEnded={() => onComplete()}
             >
               <source src={lesson.videoUrl} type="video/mp4" />
               <p>Ihr Browser unterstützt das Video-Element nicht.</p>
