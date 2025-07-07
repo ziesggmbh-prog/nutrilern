@@ -38,15 +38,14 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
             {lesson.videoUrl.includes('.mp4') ? (
-              <div className="w-full h-full">
+              <div className="w-full h-full relative">
                 <video
                   controls
                   className="w-full h-full object-cover"
                   poster={lesson.thumbnailUrl}
                   preload="metadata"
                   playsInline
-                  muted
-                  autoPlay={false}
+                  controlsList="nodownload"
                   onError={(e) => {
                     console.error('Video load error:', e);
                     const video = e.target as HTMLVideoElement;
@@ -65,6 +64,12 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                     
                     if (statusEl) statusEl.textContent = `Error: ${errorMsg}`;
                     console.error('Error code:', error?.code, 'Message:', error?.message);
+                    
+                    // Show fallback interface for codec errors
+                    if (error?.code === 3 || error?.code === 4) {
+                      const fallback = document.getElementById(`video-fallback-${lesson.id}`);
+                      if (fallback) fallback.style.display = 'flex';
+                    }
                   }}
                   onLoadStart={() => {
                     console.log('Video loading started:', lesson.videoUrl);
@@ -96,18 +101,22 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                     if (sizeEl) sizeEl.textContent = `${video.duration?.toFixed(1)}s`;
                   }}
                 >
-                  <source src={lesson.videoUrl} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
                   <source src={lesson.videoUrl} type="video/mp4" />
-                  <source src={lesson.videoUrl} type="video/webm" />
-                  Ihr Browser unterstützt das Video-Element nicht. 
-                  <div className="text-white p-4">
-                    <p>Video kann nicht geladen werden.</p>
+                  Video kann nicht geladen werden.
+                </video>
+                
+                {/* Fallback für Codec-Probleme */}
+                <div className="absolute inset-0 bg-gray-900 text-white flex flex-col items-center justify-center" 
+                     id={`video-fallback-${lesson.id}`} style={{display: 'none'}}>
+                  <div className="text-center p-4">
+                    <h3 className="text-lg font-bold mb-4">Video nicht verfügbar</h3>
+                    <p className="mb-4">Das Video kann in diesem Browser nicht wiedergegeben werden.</p>
                     <a href={lesson.videoUrl} target="_blank" rel="noopener noreferrer" 
-                       className="text-blue-400 underline">
-                      Video direkt herunterladen
+                       className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white">
+                      Video herunterladen
                     </a>
                   </div>
-                </video>
+                </div>
                 <div className="absolute bottom-2 left-2 bg-black bg-opacity-75 text-white text-xs p-2 rounded space-y-1">
                   <div>URL: {lesson.videoUrl}</div>
                   <div>Status: <span id={`video-status-${lesson.id}`}>Testing URL...</span></div>

@@ -2,6 +2,8 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
+import fs from "fs";
+import path from "path";
 
 const submitQuizSchema = z.object({
   lessonId: z.number(),
