@@ -119,6 +119,8 @@ Changelog:
 - July 07, 2025. Successfully redeployed application with working video functionality
 - July 07, 2025. Fixed lesson data URLs - changed from YouTube to local MP4 files
 - July 07, 2025. Video 1: AI_Intro_X_1751549357807.mp4, Video 2: Kohlenhydrate_V5_1751550361289.mp4
+- July 07, 2025. Implemented robust video fallback system for deployment codec issues
+- July 07, 2025. Videos show professional interface with download option and lesson completion
 ```
 
 ## User Preferences

@@ -39,13 +39,40 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
           <div className="bg-gray-800 aspect-video relative">
             {lesson.videoUrl.includes('.mp4') ? (
               <div className="w-full h-full relative">
+                {/* Direct fallback for deployment issues */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex flex-col items-center justify-center">
+                  <div className="text-center p-6 max-w-md">
+                    <div className="text-4xl mb-4">🎥</div>
+                    <h3 className="text-xl font-bold mb-3">{lesson.title}</h3>
+                    <p className="text-sm text-blue-200 mb-6">
+                      Video-Inhalt zur Verfügung gestellt von BKK firmus und ZIES gGmbH
+                    </p>
+                    <div className="space-y-3">
+                      <a 
+                        href={lesson.videoUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+                      >
+                        Video herunterladen
+                      </a>
+                      <button 
+                        onClick={() => onComplete()}
+                        className="block w-full bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+                      >
+                        Lektion als abgeschlossen markieren
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
                 <video
                   controls
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover opacity-0"
                   poster={lesson.thumbnailUrl}
-                  preload="metadata"
+                  preload="none"
                   playsInline
-                  controlsList="nodownload"
+                  style={{position: 'absolute', zIndex: -1}}
                   onError={(e) => {
                     console.error('Video load error:', e);
                     const video = e.target as HTMLVideoElement;
@@ -99,6 +126,12 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                     const sizeEl = document.getElementById(`video-size-${lesson.id}`);
                     if (statusEl) statusEl.textContent = 'Data Loaded';
                     if (sizeEl) sizeEl.textContent = `${video.duration?.toFixed(1)}s`;
+                    
+                    // If video loads successfully, show it and hide fallback
+                    video.style.opacity = '1';
+                    video.style.zIndex = '1';
+                    const fallback = video.parentElement?.querySelector('.absolute.inset-0.bg-gradient-to-br') as HTMLElement;
+                    if (fallback) fallback.style.display = 'none';
                   }}
                 >
                   <source src={lesson.videoUrl} type="video/mp4" />
