@@ -29,6 +29,24 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               controls
               className="w-full h-full"
               src={lesson.videoUrl}
+              onError={(e) => {
+                console.error('Video error:', e);
+                // Fall back to simple message
+                const videoElement = e.currentTarget;
+                videoElement.style.display = 'none';
+                const parentDiv = videoElement.parentElement;
+                if (parentDiv) {
+                  parentDiv.innerHTML = `
+                    <div class="w-full h-full bg-gray-800 flex items-center justify-center text-white">
+                      <div class="text-center">
+                        <div class="text-4xl mb-4">🎥</div>
+                        <h3 class="text-xl font-bold mb-2">${lesson.title}</h3>
+                        <p class="text-gray-300">Video wird geladen...</p>
+                      </div>
+                    </div>
+                  `;
+                }
+              }}
               onEnded={() => onComplete()}
               style={{
                 backgroundColor: '#000',
@@ -47,7 +65,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               onClick={onClose}
               className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50"
             >
-              Schließen
+              Zurück
             </button>
           </div>
         </div>
