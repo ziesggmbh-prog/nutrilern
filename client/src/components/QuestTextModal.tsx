@@ -54,7 +54,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
         <div className="bg-gray-800 rounded-lg p-6 mb-6">
           <h3 className="text-lg font-semibold text-green-custom mb-3">Quest-Beschreibung:</h3>
           <p className="text-gray-300 leading-relaxed text-base">
-            {lesson.description}
+            {(lesson as any).fullDescription || lesson.description}
           </p>
         </div>
 
