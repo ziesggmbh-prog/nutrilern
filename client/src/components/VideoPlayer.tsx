@@ -27,13 +27,18 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
           <div className="bg-gray-800 aspect-video relative">
             <video
               controls
-              className="w-full h-full object-contain bg-black"
+              className="w-full h-full object-cover"
+              poster={lesson.thumbnailUrl}
+              preload="metadata"
+              playsInline
+              onLoadStart={() => console.log('Video load started')}
+              onLoadedData={() => console.log('Video loaded')}
+              onCanPlay={() => console.log('Video can play')}
+              onError={(e) => console.error('Video error:', e)}
               onEnded={onComplete}
-              preload="auto"
             >
               <source src={lesson.videoUrl} type="video/mp4" />
-              <source src={lesson.videoUrl} type="video/webm" />
-              Ihr Browser unterstützt das Video-Element nicht.
+              Your browser does not support the video tag.
             </video>
           </div>
         </div>
