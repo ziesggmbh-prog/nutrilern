@@ -44,26 +44,26 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   className="w-full h-full object-cover"
                   poster={lesson.thumbnailUrl}
                   preload="metadata"
+                  playsInline
+                  webkit-playsinline="true"
                   onError={(e) => {
                     console.error('Video load error:', e);
-                    console.error('Video URL:', lesson.videoUrl);
-                    console.error('Error details:', e.target.error);
                     const video = e.target as HTMLVideoElement;
+                    const error = video.error;
                     const statusEl = document.getElementById(`video-status-${lesson.id}`);
-                    if (statusEl) statusEl.textContent = `Error: ${video.error?.code || 'Unknown'}`;
                     
-                    // Try to fetch the video URL to test accessibility
-                    fetch(lesson.videoUrl, { method: 'HEAD' })
-                      .then(response => {
-                        console.log('Video URL test:', response.status, response.headers.get('content-type'));
-                        const sizeEl = document.getElementById(`video-size-${lesson.id}`);
-                        if (sizeEl) sizeEl.textContent = `HTTP ${response.status}`;
-                      })
-                      .catch(fetchError => {
-                        console.error('Video URL fetch error:', fetchError);
-                        const sizeEl = document.getElementById(`video-size-${lesson.id}`);
-                        if (sizeEl) sizeEl.textContent = 'Network Error';
-                      });
+                    let errorMsg = 'Unknown';
+                    if (error) {
+                      switch (error.code) {
+                        case 1: errorMsg = 'MEDIA_ERR_ABORTED'; break;
+                        case 2: errorMsg = 'MEDIA_ERR_NETWORK'; break;
+                        case 3: errorMsg = 'MEDIA_ERR_DECODE'; break;
+                        case 4: errorMsg = 'MEDIA_ERR_SRC_NOT_SUPPORTED'; break;
+                      }
+                    }
+                    
+                    if (statusEl) statusEl.textContent = `Error: ${errorMsg}`;
+                    console.error('Error code:', error?.code, 'Message:', error?.message);
                   }}
                   onLoadStart={() => {
                     console.log('Video loading started:', lesson.videoUrl);
@@ -96,7 +96,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   }}
                 >
                   <source src={lesson.videoUrl} type="video/mp4" />
-                  Ihr Browser unterstützt das Video-Element nicht.
+                  Ihr Browser unterstützt das Video-Element nicht. 
+                  <p>Fallback: <a href={lesson.videoUrl} target="_blank" rel="noopener noreferrer">Video direkt öffnen</a></p>
                 </video>
                 <div className="absolute bottom-2 left-2 bg-black bg-opacity-75 text-white text-xs p-2 rounded space-y-1">
                   <div>URL: {lesson.videoUrl}</div>

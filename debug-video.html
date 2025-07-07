@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Debug Test</title>
+</head>
+<body>
+    <h1>Direct Video Test</h1>
+    <video controls width="500">
+        <source src="/assets/AI_Intro_X_1751549357807.mp4" type="video/mp4">
+        Video not supported
+    </video>
+    
+    <div id="debug"></div>
+    
+    <script>
+        const video = document.querySelector('video');
+        const debug = document.getElementById('debug');
+        
+        video.addEventListener('error', (e) => {
+            const error = e.target.error;
+            debug.innerHTML = `Error: ${error.code} - ${error.message}`;
+        });
+        
+        video.addEventListener('loadeddata', () => {
+            debug.innerHTML = 'Success: Video loaded!';
+        });
+    </script>
+</body>
+</html>
