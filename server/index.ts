@@ -83,21 +83,23 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // Static file serving for production
-  if (app.get("env") === "production") {
-    // Serve static files from dist/public
-    app.use(express.static(path.join(process.cwd(), 'dist/public'), {
-      setHeaders: (res, filePath) => {
-        if (filePath.endsWith('.mp4')) {
-          res.setHeader('Content-Type', 'video/mp4');
-          res.setHeader('Accept-Ranges', 'bytes');
-        }
+  // Static file serving - ALWAYS serve static files regardless of environment
+  app.use(express.static(path.join(process.cwd(), 'dist/public'), {
+    setHeaders: (res, filePath) => {
+      if (filePath.endsWith('.mp4')) {
+        res.setHeader('Content-Type', 'video/mp4');
+        res.setHeader('Accept-Ranges', 'bytes');
       }
-    }));
-    
-    // Fallback to index.html for SPA routes
+    }
+  }));
+  
+  // Deployment-specific routing
+  if (process.env.NODE_ENV === "production" || process.env.REPLIT_DEPLOYMENT === "1") {
+    // Force all routes to serve index.html in deployment
     app.get('*', (req, res) => {
-      res.sendFile(path.join(process.cwd(), 'dist/public/index.html'));
+      const indexPath = path.join(process.cwd(), 'dist/public/index.html');
+      log(`Serving index.html for ${req.path} from ${indexPath}`);
+      res.sendFile(indexPath);
     });
   } else {
     await setupVite(app, server);
