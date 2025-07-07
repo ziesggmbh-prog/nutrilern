@@ -5,6 +5,7 @@ import LessonCard from "@/components/LessonCard";
 import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
 import QuizModal from "@/components/QuizModal";
+import QuestTextModal from "@/components/QuestTextModal";
 import ProgressBar from "@/components/ProgressBar";
 import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
@@ -33,6 +34,7 @@ export default function Level2() {
   const [selectedLesson, setSelectedLesson] = useState<any>(null);
   const [showVideo, setShowVideo] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [showQuestText, setShowQuestText] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentQuizLesson, setCurrentQuizLesson] = useState<any>(null);
   const [progress, setProgress] = useState(mockProgress);
@@ -52,13 +54,13 @@ export default function Level2() {
     
     if (isAvailable) {
       setSelectedLesson(lesson);
-      setShowVideo(true);
+      setShowQuestText(true);
     }
   };
 
-  const handleVideoComplete = () => {
-    setShowVideo(false);
-    // Auto-open quiz after video
+  const handleQuestTextComplete = () => {
+    setShowQuestText(false);
+    // Auto-open quiz after quest text
     if (selectedLesson) {
       setCurrentQuizLesson(selectedLesson);
       setShowQuiz(true);
@@ -181,8 +183,7 @@ export default function Level2() {
             <Star className="text-yellow-400" size={24} />
           </div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Entdecke spannende Quests rund um Kohlenhydrate! Lerne durch interaktive Aufgaben 
-            den Unterschied zwischen guten und schlechten Kohlenhydraten kennen.
+            Entdecke spannende Quests rund um das Ernährung!
           </p>
         </motion.div>
 
@@ -216,11 +217,11 @@ export default function Level2() {
       </div>
 
       {/* Modals */}
-      {showVideo && selectedLesson && (
-        <VideoPlayer
+      {showQuestText && selectedLesson && (
+        <QuestTextModal
           lesson={selectedLesson}
-          onClose={() => setShowVideo(false)}
-          onComplete={handleVideoComplete}
+          onClose={() => setShowQuestText(false)}
+          onComplete={handleQuestTextComplete}
         />
       )}
 
