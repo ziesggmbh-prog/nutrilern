@@ -138,6 +138,8 @@ Changelog:
 - July 07, 2025. Simple level dropdown menu implemented next to hamburger menu
 - July 07, 2025. Clean interface showing current level with dropdown for switching between Level 1 and Level 2
 - July 07, 2025. Fixed DOM nesting warnings and ensured proper navigation functionality
+- July 07, 2025. Updated Level 2 quest thumbnails with custom food photography images
+- July 07, 2025. Removed grayscale filters and play button overlays for colorful image display
 ```
 
 ## User Preferences

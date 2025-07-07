@@ -25,7 +25,7 @@ export const level2Data = [
     description: "Die Schüler recherchieren den Einfluss von verschiedenen Kohlenhydraten auf den Blutzuckerspiegel und erstellen Diagramme.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 25,
-    thumbnailUrl: "/assets/image_1751896297162.png",
+    thumbnailUrl: "/assets/planet-volumes-ZRqhK5roHUs-unsplash_1751897421762.jpg",
     order: 3,
     isActive: true
   },
@@ -35,7 +35,7 @@ export const level2Data = [
     description: "Jede Gruppe analysiert ein typisches Frühstück, Mittagessen oder Abendessen eines Teenagers und bewertet den Kohlenhydratgehalt.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 20,
-    thumbnailUrl: "/assets/image_1751896297162.png",
+    thumbnailUrl: "/assets/photo-1697301439928-7c60326ff1ea_1751897482970.avif",
     order: 4,
     isActive: true
   },
