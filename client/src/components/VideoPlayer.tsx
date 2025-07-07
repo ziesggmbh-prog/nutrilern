@@ -30,22 +30,11 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               width="100%"
               height="100%"
               style={{ backgroundColor: '#000' }}
-              onLoadStart={() => console.log('loadstart')}
-              onLoadedData={() => console.log('loadeddata')}
-              onCanPlay={() => console.log('canplay')}
-              onPlay={() => console.log('play')}
-              onError={(e) => {
-                console.log('VIDEO ERROR:', e);
-                console.log('Error details:', e.currentTarget.error);
-                if (e.currentTarget.error) {
-                  console.log('Error code:', e.currentTarget.error.code);
-                  console.log('Error message:', e.currentTarget.error.message);
-                }
-              }}
               onEnded={onComplete}
+              preload="metadata"
             >
               <source src={lesson.videoUrl} type="video/mp4" />
-              Video kann nicht geladen werden.
+              Dein Browser unterstützt dieses Video nicht.
             </video>
             <div style={{ textAlign: 'center', marginTop: '20px' }}>
               <button
