@@ -43,14 +43,12 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       onClick={isAvailable ? onQuizClick : undefined}
     >
       <div className="flex items-center space-x-3 w-full">
-        <div className={`${isCompleted ? "bg-gray-600" : isAvailable ? colorClass : "bg-gray-600"} rounded-full flex items-center justify-center`}
+        <div className={`${isCompleted ? "bg-gray-600" : colorClass} rounded-full flex items-center justify-center`}
              style={{ width: '24px', height: '24px', flexShrink: 0 }}>
           {isCompleted ? (
             <CheckCircle className="text-white" size={12} />
-          ) : isAvailable ? (
-            <HelpCircle className="text-white" size={12} />
           ) : (
-            <Lock className="text-white" size={12} />
+            <HelpCircle className="text-white" size={12} />
           )}
         </div>
         
@@ -60,7 +58,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
             <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Quest: {lesson.title}</span>
           </div>
           <p className="text-xs text-gray-400" style={{ lineHeight: '1.2', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-            {isCompleted ? "Erfolgreich abgeschlossen" : isAvailable ? "Wissenstest verfügbar" : "Nach Quest verfügbar"}
+            {isCompleted ? "Erfolgreich abgeschlossen" : "Quest verfügbar"}
           </p>
         </div>
         
@@ -68,13 +66,11 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           <div className="flex items-center space-x-1">
             {isCompleted ? (
               <Star className="text-green-custom" size={14} />
-            ) : isAvailable ? (
-              <Star className="text-purple-custom" size={14} />
             ) : (
-              <Lock className="text-gray-500" size={14} />
+              <Star className="text-purple-custom" size={14} />
             )}
-            <span className={`text-xs ${isCompleted ? "text-green-custom" : isAvailable ? "text-purple-custom" : "text-gray-500"}`}>
-              {isCompleted ? "Bestanden" : isAvailable ? "Starten" : "Gesperrt"}
+            <span className={`text-xs ${isCompleted ? "text-green-custom" : "text-purple-custom"}`}>
+              {isCompleted ? "Bestanden" : "Starten"}
             </span>
           </div>
         </div>

@@ -43,14 +43,12 @@ export default function Level2() {
   const quizData = level2QuizData;
 
   const completedLessonIds = progress.filter(p => p.isCompleted).map(p => p.lessonId);
-  const nextAvailableLesson = lessons.find(lesson => 
-    !completedLessonIds.includes(lesson.id) && 
-    (lesson.order === 1 || completedLessonIds.includes(lessons.find(l => l.order === lesson.order - 1)?.id || 0))
-  );
+  // All quests are available from start in Level 2
+  const nextAvailableLesson = lessons.find(lesson => !completedLessonIds.includes(lesson.id));
 
   const handleLessonClick = (lesson: any) => {
     const isCompleted = completedLessonIds.includes(lesson.id);
-    const isAvailable = lesson.id === nextAvailableLesson?.id || isCompleted;
+    const isAvailable = true; // All quests are available in Level 2
     
     if (isAvailable) {
       setSelectedLesson(lesson);
@@ -69,7 +67,7 @@ export default function Level2() {
 
   const handleQuizClick = (lesson: any) => {
     const isCompleted = completedLessonIds.includes(lesson.id);
-    const isAvailable = lesson.id === nextAvailableLesson?.id || isCompleted;
+    const isAvailable = true; // All quests are available in Level 2
     
     if (isAvailable) {
       setCurrentQuizLesson(lesson);
@@ -191,7 +189,7 @@ export default function Level2() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {lessons.map((lesson, index) => {
             const isCompleted = completedLessonIds.includes(lesson.id);
-            const isAvailable = lesson.id === nextAvailableLesson?.id || isCompleted;
+            const isAvailable = true; // All quests are available in Level 2
             
             return (
               <motion.div

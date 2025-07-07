@@ -140,6 +140,8 @@ Changelog:
 - July 07, 2025. Fixed DOM nesting warnings and ensured proper navigation functionality
 - July 07, 2025. Updated Level 2 quest thumbnails with custom food photography images
 - July 07, 2025. Removed grayscale filters and play button overlays for colorful image display
+- July 07, 2025. Replaced Level 2 videos with QuestTextModal showing full quest descriptions and images
+- July 07, 2025. Unlocked all Level 2 quests - no sequential progression required, all available from start
 ```
 
 ## User Preferences
