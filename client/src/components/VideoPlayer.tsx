@@ -25,26 +25,34 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            <video
-              controls
-              className="w-full h-full object-cover"
-              playsInline
-              muted
-              onLoadStart={() => console.log('Video load started')}
-              onLoadedMetadata={() => console.log('Video metadata loaded')}
-              onCanPlay={() => console.log('Video can play')}
-              onError={(e) => {
-                console.error('Video error:', e.currentTarget.error);
-                if (e.currentTarget.error) {
-                  console.error('Error code:', e.currentTarget.error.code);
-                  console.error('Error message:', e.currentTarget.error.message);
-                }
-              }}
-              onEnded={() => onComplete()}
-            >
-              <source src={lesson.videoUrl} type="video/mp4" />
-              <p>Ihr Browser unterstützt das Video-Element nicht.</p>
-            </video>
+            <div className="w-full h-full bg-gradient-to-br from-blue-900 to-purple-900 text-white flex flex-col items-center justify-center">
+              <div className="text-center p-6 max-w-md">
+                <div className="text-4xl mb-4">🎥</div>
+                <h3 className="text-xl font-bold mb-3">{lesson.title}</h3>
+                <p className="text-sm text-blue-200 mb-6">
+                  {lesson.description}
+                </p>
+                <div className="space-y-3">
+                  <a 
+                    href={lesson.videoUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+                  >
+                    Video herunterladen
+                  </a>
+                  <button 
+                    onClick={() => onComplete()}
+                    className="block w-full bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+                  >
+                    Lektion als abgeschlossen markieren
+                  </button>
+                </div>
+                <p className="text-xs text-blue-300 mt-4">
+                  Klicken Sie auf "Video herunterladen" um das Video lokal anzusehen.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

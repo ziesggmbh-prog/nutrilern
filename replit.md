@@ -127,6 +127,9 @@ Changelog:
 - July 07, 2025. AI_Intro_small.mp4 and Kohlenhydrate_small.mp4 confirmed working in local preview
 - July 07, 2025. Final video implementation: autoPlay with sound, no UI flash, ready for deployment
 - July 07, 2025. FIXED: Updated video URLs in both client and server storage - deployment should now work
+- July 07, 2025. CRITICAL: Local video playback consistently fails due to browser codec limitations
+- July 07, 2025. SOLUTION: Implemented download-based video system with direct file access for users
+- July 07, 2025. UI: Clean video interface with download option and manual lesson completion
 ```
 
 ## User Preferences
