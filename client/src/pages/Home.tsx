@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Leaf, User, Star, Play, Lock, CheckCircle } from "lucide-react";
 import LessonCard from "@/components/LessonCard";
 import QuestCard from "@/components/QuestCard";
-
+import VideoPlayer from "@/components/VideoPlayer";
 import QuizModal from "@/components/QuizModal";
 import ProgressBar from "@/components/ProgressBar";
 import SuccessModal from "@/components/SuccessModal";
@@ -40,16 +40,8 @@ export default function Home() {
     const isAvailable = lesson.id === nextAvailableLesson?.id || isCompleted;
     
     if (isAvailable) {
-      // Direct download instead of modal
-      const link = document.createElement('a');
-      link.href = lesson.videoUrl;
-      link.download = `${lesson.title}.mp4`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      // Mark as completed immediately
-      handleVideoComplete();
+      setSelectedLesson(lesson);
+      setShowVideo(true);
     }
   };
 
@@ -187,7 +179,13 @@ export default function Home() {
       </div>
 
       {/* Modals */}
-
+      {showVideo && selectedLesson && (
+        <VideoPlayer
+          lesson={selectedLesson}
+          onClose={() => setShowVideo(false)}
+          onComplete={handleVideoComplete}
+        />
+      )}
 
       {showQuiz && currentQuizLesson && (
         <QuizModal

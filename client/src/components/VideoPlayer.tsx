@@ -25,34 +25,16 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            <div className="w-full h-full bg-gradient-to-br from-blue-900 to-purple-900 text-white flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="text-6xl mb-6">🎬</div>
-                <h2 className="text-2xl font-bold mb-4">{lesson.title}</h2>
-                <p className="text-blue-200 mb-8 max-w-md">
-                  {lesson.description}
-                </p>
-                <div className="space-y-4">
-                  <a 
-                    href={lesson.videoUrl}
-                    download
-                    className="inline-block bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg text-white font-semibold transition-colors shadow-lg"
-                  >
-                    🎥 Video ansehen
-                  </a>
-                  <br />
-                  <button 
-                    onClick={onComplete}
-                    className="inline-block bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg text-white font-semibold transition-colors shadow-lg"
-                  >
-                    ✅ Lektion abschließen
-                  </button>
-                </div>
-                <p className="text-sm text-blue-300 mt-6">
-                  Klicken Sie auf "Video ansehen" zum Download
-                </p>
-              </div>
-            </div>
+            <video
+              controls
+              className="w-full h-full object-contain bg-black"
+              onEnded={onComplete}
+              preload="auto"
+            >
+              <source src={lesson.videoUrl} type="video/mp4" />
+              <source src={lesson.videoUrl} type="video/webm" />
+              Ihr Browser unterstützt das Video-Element nicht.
+            </video>
           </div>
         </div>
 
