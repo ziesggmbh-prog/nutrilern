@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { X } from 'lucide-react';
 
 interface VideoPlayerProps {
@@ -8,8 +8,26 @@ interface VideoPlayerProps {
 }
 
 export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayerProps) {
-  console.log('NEW VideoPlayer component loaded for lesson:', lesson.title);
-  console.log('Video URL being used:', lesson.videoUrl);
+  const [videoCompatible, setVideoCompatible] = useState(true);
+  
+  // Test video compatibility
+  useEffect(() => {
+    const video = document.createElement('video');
+    const canPlayMP4 = video.canPlayType('video/mp4');
+    const canPlayH264 = video.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+    
+    console.log('Video compatibility check:');
+    console.log('MP4 support:', canPlayMP4);
+    console.log('H.264 support:', canPlayH264);
+    
+    if (canPlayMP4 === '' && canPlayH264 === '') {
+      console.warn('No MP4 support detected - will use fallback');
+      setVideoCompatible(false);
+    }
+  }, []);
+  
+  console.log('VideoPlayer loaded for lesson:', lesson.title);
+  console.log('Video URL:', lesson.videoUrl);
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
@@ -29,10 +47,10 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             <video
               controls
               className="w-full h-full object-cover"
-              poster={lesson.thumbnailUrl}
-              preload="metadata"
+              preload="auto"
               playsInline
               autoPlay
+              muted={false}
               onCanPlay={(e) => {
                 console.log('Video can play');
                 // Video is ready, no fallback needed
@@ -74,9 +92,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 onComplete();
               }}
             >
-              <source src={lesson.videoUrl} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
               <source src={lesson.videoUrl} type="video/mp4" />
-              <source src={lesson.videoUrl} type="video/webm" />
               Ihr Browser unterstützt das Video-Element nicht.
             </video>
             
