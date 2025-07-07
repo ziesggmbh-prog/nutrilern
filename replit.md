@@ -126,6 +126,7 @@ Changelog:
 - July 07, 2025. Converted videos to browser-compatible Baseline H.264 format (6-7MB vs 80MB)
 - July 07, 2025. AI_Intro_small.mp4 and Kohlenhydrate_small.mp4 confirmed working in local preview
 - July 07, 2025. Final video implementation: autoPlay with sound, no UI flash, ready for deployment
+- July 07, 2025. FIXED: Updated video URLs in both client and server storage - deployment should now work
 ```
 
 ## User Preferences
