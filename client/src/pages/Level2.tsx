@@ -9,7 +9,7 @@ import ProgressBar from "@/components/ProgressBar";
 import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
-import LevelSelector from "@/components/LevelSelector";
+import LevelDropdown from "@/components/LevelDropdown";
 import { level2Data } from "@/lib/level2Data";
 import { level2QuizData } from "@/lib/level2QuizData";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
@@ -125,7 +125,10 @@ export default function Level2() {
                 <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Bewegung & Ernährung</p>
               </div>
             </div>
-            <HamburgerMenu />
+            <div className="flex items-center space-x-4">
+              <LevelDropdown />
+              <HamburgerMenu />
+            </div>
           </div>
         </div>
 
@@ -136,9 +139,6 @@ export default function Level2() {
 
       {/* Progress Section */}
       <div className="container mx-auto px-4 py-8">
-        {/* Level Selector */}
-        <LevelSelector className="mb-8" />
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
