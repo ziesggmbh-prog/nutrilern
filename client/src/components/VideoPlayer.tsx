@@ -28,13 +28,21 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             <video
               controls
               className="w-full h-full object-cover"
-              poster={lesson.thumbnailUrl}
-              preload="metadata"
+              preload="auto"
               playsInline
+              crossOrigin="anonymous"
               onLoadStart={() => console.log('Video load started')}
-              onLoadedData={() => console.log('Video loaded')}
+              onLoadedMetadata={() => console.log('Video metadata loaded')}
               onCanPlay={() => console.log('Video can play')}
-              onError={(e) => console.error('Video error:', e)}
+              onCanPlayThrough={() => console.log('Video can play through')}
+              onError={(e) => {
+                console.error('Video error:', e);
+                const video = e.currentTarget as HTMLVideoElement;
+                if (video.error) {
+                  console.error('Error code:', video.error.code);
+                  console.error('Error message:', video.error.message);
+                }
+              }}
               onEnded={onComplete}
             >
               <source src={lesson.videoUrl} type="video/mp4" />
