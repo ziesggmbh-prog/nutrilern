@@ -65,7 +65,7 @@ export const level2Data = [
     description: "Die Schüler entwickeln eine Mahlzeit, die langfristig Energie liefert (z.B. für eine Prüfung oder einen langen Wandertag).",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 25,
-    thumbnailUrl: "/assets/image_1751896297162.png",
+    thumbnailUrl: "/assets/ello-94KPme-Ibb4-unsplash_1751897622225.jpg",
     order: 7,
     isActive: true
   },
@@ -75,7 +75,7 @@ export const level2Data = [
     description: "Jede Gruppe recherchiert, welche Kohlenhydrate die alten Ägypter aßen und vergleicht diese mit modernen Lebensmitteln.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 30,
-    thumbnailUrl: "/assets/image_1751896297162.png",
+    thumbnailUrl: "/assets/photo-1718647405792-845204c43be7_1751897677747.avif",
     order: 8,
     isActive: true
   },
