@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Direct Video Test</title></head>
+<body>
+<h1>Direct Video Test</h1>
+<video controls width="600" height="400" preload="auto">
+  <source src="http://localhost:5000/assets/AI_Intro_small.mp4" type="video/mp4">
+  Video not supported
+</video>
+<script>
+const video = document.querySelector('video');
+video.addEventListener('loadstart', () => console.log('loadstart'));
+video.addEventListener('loadedmetadata', () => console.log('metadata loaded'));
+video.addEventListener('canplay', () => console.log('can play'));
+video.addEventListener('error', (e) => console.error('error:', e));
+</script>
+</body>
+</html>

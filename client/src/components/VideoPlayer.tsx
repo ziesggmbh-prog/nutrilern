@@ -25,29 +25,32 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            <video
-              controls
-              className="w-full h-full object-cover"
-              preload="auto"
-              playsInline
-              crossOrigin="anonymous"
-              onLoadStart={() => console.log('Video load started')}
-              onLoadedMetadata={() => console.log('Video metadata loaded')}
-              onCanPlay={() => console.log('Video can play')}
-              onCanPlayThrough={() => console.log('Video can play through')}
-              onError={(e) => {
-                console.error('Video error:', e);
-                const video = e.currentTarget as HTMLVideoElement;
-                if (video.error) {
-                  console.error('Error code:', video.error.code);
-                  console.error('Error message:', video.error.message);
-                }
-              }}
-              onEnded={onComplete}
-            >
-              <source src={lesson.videoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <div className="w-full h-full bg-gray-900 flex items-center justify-center text-white">
+              <div className="text-center">
+                <div className="text-4xl mb-4">🎥</div>
+                <h3 className="text-xl font-bold mb-4">{lesson.title}</h3>
+                <p className="text-gray-300 mb-6">{lesson.description}</p>
+                <div className="space-y-3">
+                  <a 
+                    href="http://localhost:8080/test-direct.html"
+                    target="_blank"
+                    className="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+                  >
+                    🎬 Video in neuem Tab öffnen
+                  </a>
+                  <br />
+                  <button 
+                    onClick={onComplete}
+                    className="inline-block bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+                  >
+                    ✅ Lektion abschließen
+                  </button>
+                </div>
+                <p className="text-sm text-gray-400 mt-4">
+                  Das Video wird in einem neuen Tab geöffnet
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
