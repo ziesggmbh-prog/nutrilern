@@ -27,12 +27,42 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
           <div className="bg-gray-800 aspect-video relative">
             <video
               controls
-              className="w-full h-full bg-black"
+              width="100%"
+              height="100%"
+              style={{ backgroundColor: '#000' }}
+              onLoadStart={() => console.log('loadstart')}
+              onLoadedData={() => console.log('loadeddata')}
+              onCanPlay={() => console.log('canplay')}
+              onPlay={() => console.log('play')}
+              onError={(e) => {
+                console.log('VIDEO ERROR:', e);
+                console.log('Error details:', e.currentTarget.error);
+                if (e.currentTarget.error) {
+                  console.log('Error code:', e.currentTarget.error.code);
+                  console.log('Error message:', e.currentTarget.error.message);
+                }
+              }}
               onEnded={onComplete}
             >
               <source src={lesson.videoUrl} type="video/mp4" />
-              Ihr Browser unterstützt das Video-Element nicht.
+              Video kann nicht geladen werden.
             </video>
+            <div style={{ textAlign: 'center', marginTop: '20px' }}>
+              <button
+                onClick={onComplete}
+                style={{
+                  padding: '12px 24px',
+                  backgroundColor: '#16a34a',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  fontSize: '16px',
+                  cursor: 'pointer'
+                }}
+              >
+                Video angesehen - Weiter zum Quiz
+              </button>
+            </div>
           </div>
         </div>
 
