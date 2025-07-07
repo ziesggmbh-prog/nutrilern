@@ -25,69 +25,36 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            <video
-              controls
-              className="w-full h-full object-cover"
-              poster={lesson.thumbnailUrl}
-              preload="metadata"
-              playsInline
-              autoPlay
-              onCanPlay={(e) => {
-                console.log('Video can play');
-                // Video is ready, no fallback needed
-              }}
-              onLoadedData={() => {
-                console.log('Video loaded successfully:', lesson.videoUrl);
-              }}
-              onError={(e) => {
-                console.error('Video error - showing fallback');
-                const video = e.currentTarget;
-                const fallback = video.parentElement?.querySelector('.fallback-ui') as HTMLElement;
-                if (fallback) {
-                  video.style.display = 'none';
-                  fallback.style.display = 'flex';
-                }
-              }}
-              onEnded={() => {
-                console.log('Video completed');
-                onComplete();
-              }}
-            >
-              <source src={lesson.videoUrl} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
-              <source src={lesson.videoUrl} type="video/mp4" />
-              <source src={lesson.videoUrl} type="video/webm" />
-              Ihr Browser unterstützt das Video-Element nicht.
-            </video>
-            
-            {/* Fallback UI - hidden by default, only shown on video error */}
-            <div className="fallback-ui absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex-col items-center justify-center" style={{display: 'none'}}>
-              <div className="text-center p-6 max-w-md">
-                <div className="text-4xl mb-4">🎥</div>
-                <h3 className="text-xl font-bold mb-3">{lesson.title}</h3>
-                <p className="text-sm text-blue-200 mb-6">
-                  Video kann nicht abgespielt werden
-                </p>
-                <div className="space-y-3">
-                  <a 
-                    href={lesson.videoUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
-                  >
-                    Video herunterladen
-                  </a>
-                  <button 
-                    onClick={() => onComplete()}
-                    className="block w-full bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
-                  >
-                    Lektion als abgeschlossen markieren
-                  </button>
-                </div>
-                <p className="text-xs text-blue-300 mt-4">
-                  Falls das Video nicht funktioniert, verwenden Sie den Download-Button.
-                </p>
-              </div>
-            </div>
+            {lesson.videoUrl.includes('youtube.com') || lesson.videoUrl.includes('youtu.be') ? (
+              <iframe
+                src={lesson.videoUrl}
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                onLoad={() => {
+                  console.log('YouTube video loaded successfully');
+                  // Auto-complete after 30 seconds for demo
+                  setTimeout(() => onComplete(), 30000);
+                }}
+              />
+            ) : (
+              <video
+                controls
+                className="w-full h-full object-cover"
+                poster={lesson.thumbnailUrl}
+                preload="metadata"
+                playsInline
+                autoPlay
+                onCanPlay={() => console.log('Video can play')}
+                onLoadedData={() => console.log('Video loaded successfully:', lesson.videoUrl)}
+                onError={() => console.error('Video error')}
+                onEnded={() => onComplete()}
+              >
+                <source src={lesson.videoUrl} type="video/mp4" />
+                Video kann nicht geladen werden.
+              </video>
+            )}
           </div>
         </div>
 

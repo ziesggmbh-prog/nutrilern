@@ -65,7 +65,7 @@ export class MemStorage implements IStorage {
       {
         title: "Intro",
         description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
-        videoUrl: "/assets/AI_Intro_small.mp4",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1",
         duration: 8,
         thumbnailUrl: "/assets/1_1751542243605.png",
         order: 1,
@@ -74,7 +74,7 @@ export class MemStorage implements IStorage {
       {
         title: "Kohlenhydrate",
         description: "Energie für deinen Körper - alles über Kohlenhydrate",
-        videoUrl: "/assets/Kohlenhydrate_small.mp4",
+        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1",
         duration: 10,
         thumbnailUrl: "/assets/6_1751542243606.png",
         order: 2,
