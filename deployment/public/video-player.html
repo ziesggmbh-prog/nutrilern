@@ -62,11 +62,32 @@
         const urlParams = new URLSearchParams(window.location.search);
         const videoUrl = urlParams.get('video');
         
+        console.log('Video URL requested:', videoUrl);
+        
         if (videoUrl) {
             const videoElement = document.getElementById('mainVideo');
             const sourceElement = document.getElementById('videoSource');
-            sourceElement.src = videoUrl;
+            
+            // Ensure correct path format
+            const cleanUrl = videoUrl.startsWith('/') ? videoUrl : '/' + videoUrl;
+            sourceElement.src = cleanUrl;
+            console.log('Setting video source to:', cleanUrl);
+            
             videoElement.load(); // Reload video with new source
+            
+            // Add error handling
+            videoElement.addEventListener('error', function(e) {
+                console.error('Video error:', e);
+                console.error('Video source:', sourceElement.src);
+            });
+            
+            videoElement.addEventListener('loadstart', function() {
+                console.log('Video load started');
+            });
+            
+            videoElement.addEventListener('loadeddata', function() {
+                console.log('Video data loaded successfully');
+            });
         }
         
         // Show controls when video ends
