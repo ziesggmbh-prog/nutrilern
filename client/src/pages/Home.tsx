@@ -10,6 +10,7 @@ import ProgressBar from "@/components/ProgressBar";
 import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
+import LevelSelector from "@/components/LevelSelector";
 import type { Lesson, UserProgress } from "@shared/schema";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 import bkkFirmusLogo from "@assets/Logo_BKK_firmus_5C_300dpi-removebg_1751546007429.png";
@@ -98,18 +99,16 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex items-center space-x-4">
-              <div className="bg-navy-light rounded-full px-4 py-2">
-                <span className="text-green-custom font-semibold">Level 1</span>
-              </div>
-              <HamburgerMenu />
-            </div>
+            <HamburgerMenu />
           </div>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
+        {/* Level Selector */}
+        <LevelSelector className="mb-8" />
+
         {/* Progress Overview */}
         <ProgressBar completedLessons={completedLessonIds.length} totalLessons={lessons.length} />
 

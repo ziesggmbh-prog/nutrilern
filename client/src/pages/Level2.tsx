@@ -9,6 +9,7 @@ import ProgressBar from "@/components/ProgressBar";
 import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
+import LevelSelector from "@/components/LevelSelector";
 import { level2Data } from "@/lib/level2Data";
 import { level2QuizData } from "@/lib/level2QuizData";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
@@ -108,11 +109,20 @@ export default function Level2() {
       <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <img src={logoImage} alt="Nutrition Logo" className="w-12 h-12" />
+            <div className="flex items-center space-x-6">
+              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white">
+                <img 
+                  src={logoImage} 
+                  alt="Logo" 
+                  className="w-24 h-24 object-cover"
+                  style={{
+                    filter: 'invert(1) hue-rotate(180deg) saturate(1.8) brightness(1.2) contrast(1.5)'
+                  }}
+                />
+              </div>
               <div>
-                <h1 className="text-2xl font-bold">Level 2: Kohlenhydrate Quests</h1>
-                <p className="text-sm text-gray-300">Interaktive Lernquests zur Ernährung</p>
+                <h1 className="text-2xl font-bold">NutriLern</h1>
+                <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Bewegung & Ernährung</p>
               </div>
             </div>
             <HamburgerMenu />
@@ -126,6 +136,9 @@ export default function Level2() {
 
       {/* Progress Section */}
       <div className="container mx-auto px-4 py-8">
+        {/* Level Selector */}
+        <LevelSelector className="mb-8" />
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

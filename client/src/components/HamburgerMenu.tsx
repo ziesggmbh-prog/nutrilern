@@ -13,8 +13,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { icon: Home, label: 'Level 1', href: '/' },
-    { icon: Star, label: 'Level 2', href: '/level2' },
+    { icon: Home, label: 'Start', href: '/' },
     { icon: BookOpen, label: 'Quellen', href: '#' },
     { icon: Info, label: 'Über das Programm', href: '#' }
   ];
@@ -57,32 +56,17 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  {item.href.startsWith('#') ? (
-                    <a
-                      href={item.href}
-                      className="flex items-center px-4 py-3 text-gray-300 hover:bg-purple-custom hover:bg-opacity-20 hover:text-white transition-colors group"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <item.icon 
-                        size={18} 
-                        className="mr-3 text-gray-400 group-hover:text-white transition-colors"
-                      />
-                      <span className="font-medium">{item.label}</span>
-                    </a>
-                  ) : (
-                    <Link href={item.href}>
-                      <a
-                        className="flex items-center px-4 py-3 text-gray-300 hover:bg-purple-custom hover:bg-opacity-20 hover:text-white transition-colors group"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <item.icon 
-                          size={18} 
-                          className="mr-3 text-gray-400 group-hover:text-white transition-colors"
-                        />
-                        <span className="font-medium">{item.label}</span>
-                      </a>
-                    </Link>
-                  )}
+                  <a
+                    href={item.href}
+                    className="flex items-center px-4 py-3 text-gray-300 hover:bg-purple-custom hover:bg-opacity-20 hover:text-white transition-colors group"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <item.icon 
+                      size={18} 
+                      className="mr-3 text-gray-400 group-hover:text-white transition-colors"
+                    />
+                    <span className="font-medium">{item.label}</span>
+                  </a>
                 </motion.div>
 
               ))}
