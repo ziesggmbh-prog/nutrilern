@@ -24,12 +24,12 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+      <div className="bg-navy-light rounded-xl p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold">{lesson.title}</h2>
+          <h2 className="text-2xl font-bold text-white">{lesson.title}</h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 p-2"
+            className="text-gray-400 hover:text-white p-2"
           >
             <X size={24} />
           </button>
@@ -86,7 +86,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         </div>
         
         <div className="text-center">
-          <p className="text-gray-600 mb-4">{lesson.description}</p>
+          <p className="text-gray-300 mb-4">{lesson.description}</p>
           <div className="flex justify-between items-center">
             <button
               onClick={onClose}
