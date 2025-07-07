@@ -36,7 +36,11 @@ assetsPaths.forEach(assetsPath => {
 });
 
 // Serve static HTML files from public directory
-app.use(express.static(path.join(process.cwd(), 'public')));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(process.cwd(), 'dist/public')));
+} else {
+  app.use(express.static(path.join(process.cwd(), 'public')));
+}
 
 app.use((req, res, next) => {
   const start = Date.now();
