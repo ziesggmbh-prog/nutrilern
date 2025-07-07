@@ -134,6 +134,7 @@ Changelog:
 - July 07, 2025. UX: Large buttons, clear instructions, professional gradient background design
 - July 07, 2025. DEBUGGING: Video loads but won't play - implementing external test page solution
 - July 07, 2025. WORKAROUND: Open videos in separate tab to bypass React/Vite video issues
+- July 07, 2025. RESTORED: Working Friday video solution - external tab opening with manual completion
 ```
 
 ## User Preferences

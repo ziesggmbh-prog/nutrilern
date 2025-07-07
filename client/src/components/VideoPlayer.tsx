@@ -25,31 +25,31 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            <video
-              controls
-              width="100%"
-              height="100%"
-              style={{ backgroundColor: '#000' }}
-              onEnded={onComplete}
-              preload="metadata"
-            >
-              <source src={lesson.videoUrl} type="video/mp4" />
-              Dein Browser unterstützt dieses Video nicht.
-            </video>
-            <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <div className="w-full h-full bg-gradient-to-br from-blue-900 to-purple-900 flex flex-col items-center justify-center text-white p-8">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold mb-4">Video: {lesson.title}</h3>
+                <p className="text-gray-300 mb-6">{lesson.description}</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
+                  <p className="text-lg mb-4">📹 Zum Anschauen des Videos:</p>
+                  <a
+                    href={lesson.videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200"
+                  >
+                    Video in neuem Tab öffnen
+                  </a>
+                </div>
+                <p className="text-sm text-gray-400 mb-8">
+                  Das Video öffnet sich in einem neuen Tab. Schaue es dir an und kehre dann hierher zurück.
+                </p>
+              </div>
+              
               <button
                 onClick={onComplete}
-                style={{
-                  padding: '12px 24px',
-                  backgroundColor: '#16a34a',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '8px',
-                  fontSize: '16px',
-                  cursor: 'pointer'
-                }}
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200"
               >
-                Video angesehen - Weiter zum Quiz
+                ✓ Video angeschaut - Weiter zum Quiz
               </button>
             </div>
           </div>
