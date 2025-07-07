@@ -83,13 +83,24 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
+  // Static file serving for production
+  if (app.get("env") === "production") {
+    // Serve static files from dist/public
+    app.use(express.static(path.join(process.cwd(), 'dist/public'), {
+      setHeaders: (res, filePath) => {
+        if (filePath.endsWith('.mp4')) {
+          res.setHeader('Content-Type', 'video/mp4');
+          res.setHeader('Accept-Ranges', 'bytes');
+        }
+      }
+    }));
+    
+    // Fallback to index.html for SPA routes
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(process.cwd(), 'dist/public/index.html'));
+    });
   } else {
-    serveStatic(app);
+    await setupVite(app, server);
   }
 
   // ALWAYS serve the app on port 5000
