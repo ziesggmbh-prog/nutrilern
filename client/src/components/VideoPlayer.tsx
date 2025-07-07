@@ -8,6 +8,8 @@ interface VideoPlayerProps {
 }
 
 export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayerProps) {
+  console.log('NEW VideoPlayer component loaded for lesson:', lesson.title);
+  
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
       <div className="bg-white rounded-xl p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
@@ -23,7 +25,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            {/* Professional video interface */}
+            {/* Professional video interface - NEW VERSION */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex flex-col items-center justify-center">
               <div className="text-center p-6 max-w-md">
                 <div className="text-4xl mb-4">🎥</div>
@@ -41,7 +43,10 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                     Video herunterladen
                   </a>
                   <button 
-                    onClick={() => onComplete()}
+                    onClick={() => {
+                      console.log('Completing lesson:', lesson.title);
+                      onComplete();
+                    }}
                     className="block w-full bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
                   >
                     Lektion als abgeschlossen markieren
