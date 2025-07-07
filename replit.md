@@ -133,6 +133,8 @@ Changelog:
 - July 07, 2025. Video 2 migrated to Vimeo (1099335411) - both main videos now use professional streaming
 - July 07, 2025. Hamburger navigation menu implemented replacing user icon in header
 - July 07, 2025. Menu includes "Start", "Quellen", "Über das Programm" with dark theme matching header
+- July 07, 2025. Level 2 implementation started with 9 Kohlenhydrate Quests from user-provided PDF
+- July 07, 2025. Created identical layout to Level 1 with interactive quest system and dedicated quiz data
 ```
 
 ## User Preferences
