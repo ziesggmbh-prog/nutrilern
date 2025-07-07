@@ -126,21 +126,6 @@ Changelog:
 - July 07, 2025. Converted videos to browser-compatible Baseline H.264 format (6-7MB vs 80MB)
 - July 07, 2025. AI_Intro_small.mp4 and Kohlenhydrate_small.mp4 confirmed working in local preview
 - July 07, 2025. Final video implementation: autoPlay with sound, no UI flash, ready for deployment
-- July 07, 2025. FIXED: Updated video URLs in both client and server storage - deployment should now work
-- July 07, 2025. CRITICAL: Local video playback consistently fails due to browser codec limitations
-- July 07, 2025. SOLUTION: Implemented download-based video system with direct file access for users
-- July 07, 2025. UI: Clean video interface with download option and manual lesson completion
-- July 07, 2025. FINAL SOLUTION: Download-based video system - videos download to user's device for offline viewing
-- July 07, 2025. UX: Large buttons, clear instructions, professional gradient background design
-- July 07, 2025. DEBUGGING: Video loads but won't play - implementing external test page solution
-- July 07, 2025. WORKAROUND: Open videos in separate tab to bypass React/Vite video issues
-- July 07, 2025. RESTORED: Working Friday video solution - external tab opening with manual completion
-- July 07, 2025. FINAL VIDEO SOLUTION: iframe-based video player with local MP4 files (84MB AI_Intro_X)
-- July 07, 2025. Custom video-player.html with HTML5 video element and manual completion controls
-- July 07, 2025. Ready for deployment with working video functionality
-- July 07, 2025. FULLY RESTORED: Original Friday app with dark background and all 9 lessons
-- July 07, 2025. Recreated LessonCard and QuestCard with gradient colors and organic shapes
-- July 07, 2025. All 9 lessons with proper colors: blue, navy, green, purple, orange, teal, emerald, violet, rose
 ```
 
 ## User Preferences

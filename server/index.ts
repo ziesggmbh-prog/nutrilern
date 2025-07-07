@@ -24,23 +24,13 @@ assetsPaths.forEach(assetsPath => {
         if (path.endsWith('.mp4')) {
           res.setHeader('Content-Type', 'video/mp4');
           res.setHeader('Accept-Ranges', 'bytes');
-          res.setHeader('Cache-Control', 'no-cache');
-          res.setHeader('Access-Control-Allow-Origin', '*');
-          res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
-          res.setHeader('Access-Control-Allow-Headers', 'Range');
+          res.setHeader('Cache-Control', 'public, max-age=0');
         }
       }
     }));
     log(`Serving assets from: ${assetsPath}`);
   }
 });
-
-// Serve static HTML files from public directory
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(process.cwd(), 'dist/public')));
-} else {
-  app.use(express.static(path.join(process.cwd(), 'public')));
-}
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -83,26 +73,13 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // Static file serving - ALWAYS serve static files regardless of environment
-  app.use(express.static(path.join(process.cwd(), 'dist/public'), {
-    setHeaders: (res, filePath) => {
-      if (filePath.endsWith('.mp4')) {
-        res.setHeader('Content-Type', 'video/mp4');
-        res.setHeader('Accept-Ranges', 'bytes');
-      }
-    }
-  }));
-  
-  // Deployment-specific routing
-  if (process.env.NODE_ENV === "production" || process.env.REPLIT_DEPLOYMENT === "1") {
-    // Force all routes to serve index.html in deployment
-    app.get('*', (req, res) => {
-      const indexPath = path.join(process.cwd(), 'dist/public/index.html');
-      log(`Serving index.html for ${req.path} from ${indexPath}`);
-      res.sendFile(indexPath);
-    });
-  } else {
+  // importantly only setup vite in development and after
+  // setting up all the other routes so the catch-all route
+  // doesn't interfere with the other routes
+  if (app.get("env") === "development") {
     await setupVite(app, server);
+  } else {
+    serveStatic(app);
   }
 
   // ALWAYS serve the app on port 5000

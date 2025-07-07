@@ -25,24 +25,69 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            <iframe
-              src={lesson.videoUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 'none', backgroundColor: '#000' }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              onLoad={() => {
-                console.log('Video iframe loaded');
-                // Listen for completion message from iframe
-                window.addEventListener('message', (event) => {
-                  if (event.data === 'video-complete') {
-                    console.log('Video completed by user');
-                    onComplete();
-                  }
-                });
+            <video
+              controls
+              className="w-full h-full object-cover"
+              poster={lesson.thumbnailUrl}
+              preload="metadata"
+              playsInline
+              autoPlay
+              onCanPlay={(e) => {
+                console.log('Video can play');
+                // Video is ready, no fallback needed
               }}
-            />
+              onLoadedData={() => {
+                console.log('Video loaded successfully:', lesson.videoUrl);
+              }}
+              onError={(e) => {
+                console.error('Video error - showing fallback');
+                const video = e.currentTarget;
+                const fallback = video.parentElement?.querySelector('.fallback-ui') as HTMLElement;
+                if (fallback) {
+                  video.style.display = 'none';
+                  fallback.style.display = 'flex';
+                }
+              }}
+              onEnded={() => {
+                console.log('Video completed');
+                onComplete();
+              }}
+            >
+              <source src={lesson.videoUrl} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
+              <source src={lesson.videoUrl} type="video/mp4" />
+              <source src={lesson.videoUrl} type="video/webm" />
+              Ihr Browser unterstützt das Video-Element nicht.
+            </video>
+            
+            {/* Fallback UI - hidden by default, only shown on video error */}
+            <div className="fallback-ui absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex-col items-center justify-center" style={{display: 'none'}}>
+              <div className="text-center p-6 max-w-md">
+                <div className="text-4xl mb-4">🎥</div>
+                <h3 className="text-xl font-bold mb-3">{lesson.title}</h3>
+                <p className="text-sm text-blue-200 mb-6">
+                  Video kann nicht abgespielt werden
+                </p>
+                <div className="space-y-3">
+                  <a 
+                    href={lesson.videoUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+                  >
+                    Video herunterladen
+                  </a>
+                  <button 
+                    onClick={() => onComplete()}
+                    className="block w-full bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"
+                  >
+                    Lektion als abgeschlossen markieren
+                  </button>
+                </div>
+                <p className="text-xs text-blue-300 mt-4">
+                  Falls das Video nicht funktioniert, verwenden Sie den Download-Button.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -53,7 +98,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               onClick={onClose}
               className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50"
             >
-              Zurück
+              Schließen
             </button>
           </div>
         </div>

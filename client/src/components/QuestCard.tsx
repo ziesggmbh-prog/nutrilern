@@ -1,4 +1,6 @@
-import { Lesson } from "@/shared/schema";
+import { motion } from "framer-motion";
+import { Target, Lock, CheckCircle, Star, HelpCircle } from "lucide-react";
+import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
 
 interface QuestCardProps {
@@ -8,49 +10,75 @@ interface QuestCardProps {
   onQuizClick: () => void;
 }
 
+const questColors = [
+  "bg-royal-purple",
+  "bg-dark-navy", 
+  "bg-lavender",
+  "bg-warm-orange",
+  "bg-deep-purple",
+  "bg-bright-purple",
+  "bg-terracotta",
+  "bg-soft-lavender",
+  "bg-teal-blue"
+];
+
 export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClick }: QuestCardProps) {
+  const colorClass = questColors[(lesson.order - 1) % questColors.length];
+  
   return (
-    <div 
-      className={`
-        bg-gradient-to-br ${lesson.color} border-2 border-yellow-400/30 rounded-xl p-6 cursor-pointer 
-        transition-all duration-300 hover:scale-105 hover:shadow-lg relative overflow-hidden
-        ${!isAvailable ? 'opacity-50 cursor-not-allowed' : ''}
-      `}
+    <div
+      className={`bg-navy-light rounded-xl cursor-pointer transition-all duration-300 border-2 border-dashed ${
+        isCompleted ? "border-green-custom" : isAvailable ? "border-purple-custom" : "border-gray-600"
+      } ${
+        isAvailable ? "hover:shadow-lg" : "opacity-60"
+      }`}
+      style={{ 
+        height: '80px',
+        width: '100%',
+        boxSizing: 'border-box',
+        padding: '16px',
+        display: 'flex',
+        alignItems: 'center'
+      }}
       onClick={isAvailable ? onQuizClick : undefined}
     >
-      <OrganicShape className="absolute top-0 right-0 w-24 h-24 opacity-20" variant="alt" />
-      
-      <div className="relative z-10">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-              <span className="text-yellow-800 font-bold">Q</span>
-            </div>
-            <h3 className="text-xl font-bold text-white">Quiz: {lesson.title}</h3>
-          </div>
-          {isCompleted && (
-            <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
-              <span className="text-green-800 font-bold">✓</span>
-            </div>
+      <div className="flex items-center space-x-3 w-full">
+        <div className={`${isCompleted ? "bg-gray-600" : isAvailable ? colorClass : "bg-gray-600"} rounded-full flex items-center justify-center`}
+             style={{ width: '24px', height: '24px', flexShrink: 0 }}>
+          {isCompleted ? (
+            <CheckCircle className="text-white" size={12} />
+          ) : isAvailable ? (
+            <HelpCircle className="text-white" size={12} />
+          ) : (
+            <Lock className="text-white" size={12} />
           )}
         </div>
         
-        <p className="text-gray-200 mb-4">Teste dein Wissen über {lesson.title.toLowerCase()}</p>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div className="text-sm font-semibold text-white flex items-center" style={{ lineHeight: '1.2', marginBottom: '2px' }}>
+            <Target className="mr-1" size={14} style={{ flexShrink: 0 }} />
+            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>Quest: {lesson.title}</span>
+          </div>
+          <p className="text-xs text-gray-400" style={{ lineHeight: '1.2', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {isCompleted ? "Erfolgreich abgeschlossen" : isAvailable ? "Wissenstest verfügbar" : "Nach Video verfügbar"}
+          </p>
+        </div>
         
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-300">5 Fragen</span>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-            <span className="text-sm text-gray-300">Quest</span>
+        <div style={{ flexShrink: 0, textAlign: 'right' }}>
+          <div className="flex items-center space-x-1">
+            {isCompleted ? (
+              <Star className="text-green-custom" size={14} />
+            ) : isAvailable ? (
+              <Star className="text-purple-custom" size={14} />
+            ) : (
+              <Lock className="text-gray-500" size={14} />
+            )}
+            <span className={`text-xs ${isCompleted ? "text-green-custom" : isAvailable ? "text-purple-custom" : "text-gray-500"}`}>
+              {isCompleted ? "Bestanden" : isAvailable ? "Starten" : "Gesperrt"}
+            </span>
           </div>
         </div>
       </div>
-      
-      {!isAvailable && (
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
-          <div className="text-white text-lg font-bold">🔒</div>
-        </div>
-      )}
     </div>
   );
 }
