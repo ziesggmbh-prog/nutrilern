@@ -31,22 +31,27 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               poster={lesson.thumbnailUrl}
               preload="metadata"
               playsInline
-              crossOrigin="anonymous"
-              onError={(e) => {
-                console.error('Video error:', e);
-                const fallback = e.currentTarget.parentElement?.querySelector('.fallback-ui') as HTMLElement;
+              muted
+              onCanPlay={(e) => {
+                console.log('Video can play - hiding fallback');
+                const video = e.currentTarget;
+                const fallback = video.parentElement?.querySelector('.fallback-ui') as HTMLElement;
                 if (fallback) {
-                  e.currentTarget.style.display = 'none';
-                  fallback.style.display = 'flex';
+                  fallback.style.display = 'none';
+                  video.style.display = 'block';
                 }
               }}
               onLoadedData={() => {
                 console.log('Video loaded successfully:', lesson.videoUrl);
               }}
-              onCanPlay={() => {
-                console.log('Video can play - hiding fallback');
-                const fallback = document.querySelector('.fallback-ui') as HTMLElement;
-                if (fallback) fallback.style.display = 'none';
+              onError={(e) => {
+                console.error('Video error - showing fallback');
+                const video = e.currentTarget;
+                const fallback = video.parentElement?.querySelector('.fallback-ui') as HTMLElement;
+                if (fallback) {
+                  video.style.display = 'none';
+                  fallback.style.display = 'flex';
+                }
               }}
               onEnded={() => {
                 console.log('Video completed');
@@ -55,6 +60,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             >
               <source src={lesson.videoUrl} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2" />
               <source src={lesson.videoUrl} type="video/mp4" />
+              <source src={lesson.videoUrl} type="video/webm" />
               Ihr Browser unterstützt das Video-Element nicht.
             </video>
             
