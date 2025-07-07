@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
-import { Play, Lock, CheckCircle, Star } from "lucide-react";
-import type { Lesson } from "@shared/schema";
+import { Lesson } from "@/shared/schema";
 import OrganicShape from "./OrganicShape";
 
 interface LessonCardProps {
@@ -10,92 +8,44 @@ interface LessonCardProps {
   onClick: () => void;
 }
 
-const colorVariants = [
-  "bg-royal-purple",
-  "bg-dark-navy", 
-  "bg-lavender",
-  "bg-warm-orange",
-  "bg-deep-purple",
-  "bg-bright-purple",
-  "bg-terracotta",
-  "bg-soft-lavender",
-  "bg-teal-blue"
-];
-
 export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }: LessonCardProps) {
-  const colorClass = colorVariants[(lesson.order - 1) % colorVariants.length];
-  
   return (
-    <motion.div
-      className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 group ${
-        isAvailable ? "hover:shadow-xl" : "opacity-60"
-      }`}
+    <div 
+      className={`
+        bg-gradient-to-br ${lesson.color} border-2 border-white/20 rounded-xl p-6 cursor-pointer 
+        transition-all duration-300 hover:scale-105 hover:shadow-lg relative overflow-hidden
+        ${!isAvailable ? 'opacity-50 cursor-not-allowed' : ''}
+      `}
       onClick={isAvailable ? onClick : undefined}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: lesson.order * 0.1 }}
     >
-      <OrganicShape
-        className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
-        variant="default"
-      />
+      <OrganicShape className="absolute top-0 right-0 w-24 h-24 opacity-20" />
       
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-4">
-          <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
-            <span className="text-white font-bold text-sm">{lesson.order}</span>
-          </div>
-          <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
-            {isCompleted ? (
-              <CheckCircle className="text-white" size={12} />
-            ) : isAvailable ? (
-              <Play className="text-white" size={12} />
-            ) : (
-              <Lock className="text-white" size={12} />
-            )}
-          </div>
-        </div>
-        
-        <div className="relative">
-          <img
-            src={lesson.thumbnailUrl}
-            alt={lesson.title}
-            className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${!isAvailable ? "grayscale group-hover:grayscale-0" : ""}`}
-            style={{}}
-          />
-          {!isAvailable && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl transition-opacity duration-300">
-              <Lock className="text-white opacity-40" size={32} />
-            </div>
-          )}
-          {isAvailable && !isCompleted && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl transition-opacity duration-300 group-hover:opacity-30">
-              <Play className="text-white opacity-40" size={32} />
+          <h3 className="text-xl font-bold text-white">{lesson.title}</h3>
+          {isCompleted && (
+            <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
+              <span className="text-green-800 font-bold">✓</span>
             </div>
           )}
         </div>
         
-        <h3 className="text-lg font-semibold mb-2">{lesson.title}</h3>
-        <p className="text-gray-400 text-sm mb-4 h-16 overflow-hidden leading-relaxed">{lesson.description}</p>
+        <p className="text-gray-200 mb-4">{lesson.description}</p>
         
         <div className="flex items-center justify-between">
-          <span className={`text-sm font-medium ${isAvailable ? "text-green-custom" : "text-gray-500"}`}>
-            {lesson.duration} min
-          </span>
-          <div className="flex items-center space-x-1">
-            {isCompleted ? (
-              <Star className="text-green-custom" size={16} />
-            ) : isAvailable ? (
-              <Star className="text-green-custom" size={16} />
-            ) : (
-              <Lock className="text-gray-500" size={16} />
-            )}
-            <span className={`text-sm ${isCompleted ? "text-green-custom" : isAvailable ? "text-green-custom" : "text-gray-500"}`}>
-              {isCompleted ? "Abgeschlossen" : isAvailable ? "Verfügbar" : "Gesperrt"}
-            </span>
+          <span className="text-sm text-gray-300">Dauer: {lesson.duration}</span>
+          <div className="flex items-center space-x-2">
+            <div className="w-3 h-3 bg-white rounded-full opacity-60"></div>
+            <span className="text-sm text-gray-300">Video</span>
           </div>
         </div>
       </div>
-    </motion.div>
+      
+      {!isAvailable && (
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
+          <div className="text-white text-lg font-bold">🔒</div>
+        </div>
+      )}
+    </div>
   );
 }
