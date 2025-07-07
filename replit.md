@@ -117,6 +117,8 @@ Changelog:
 - July 07, 2025. Resolved video playback issues in deployment by fixing file permissions and asset copying
 - July 07, 2025. Created automated deployment system with proper video asset handling
 - July 07, 2025. Successfully redeployed application with working video functionality
+- July 07, 2025. Fixed lesson data URLs - changed from YouTube to local MP4 files
+- July 07, 2025. Video 1: AI_Intro_X_1751549357807.mp4, Video 2: Kohlenhydrate_V5_1751550361289.mp4
 ```
 
 ## User Preferences
