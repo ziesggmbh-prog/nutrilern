@@ -121,6 +121,8 @@ Changelog:
 - July 07, 2025. Video 1: AI_Intro_X_1751549357807.mp4, Video 2: Kohlenhydrate_V5_1751550361289.mp4
 - July 07, 2025. Implemented robust video fallback system for deployment codec issues
 - July 07, 2025. Videos show professional interface with download option and lesson completion
+- July 07, 2025. Fixed VideoPlayer component to show actual HTML5 video with fallback only on error
+- July 07, 2025. Local video playback confirmed working - ready for deployment
 ```
 
 ## User Preferences
