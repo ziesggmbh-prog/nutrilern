@@ -5,7 +5,7 @@ export const level2Data = [
     description: "Jede Gruppe erhält eine Liste mit verschiedenen Lebensmitteln. Sie müssen diese in gute und schlechte Kohlenhydrate einteilen.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 15,
-    thumbnailUrl: "/assets/image_1751896297162.png",
+    thumbnailUrl: "/assets/louis-hansel-RZoCHKi87rU-unsplash_1751897216108.jpg",
     order: 1,
     isActive: true
   },
