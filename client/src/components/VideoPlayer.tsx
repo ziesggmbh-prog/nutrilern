@@ -33,13 +33,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               playsInline
               autoPlay
               onCanPlay={(e) => {
-                console.log('Video can play - hiding fallback');
-                const video = e.currentTarget;
-                const fallback = video.parentElement?.querySelector('.fallback-ui') as HTMLElement;
-                if (fallback) {
-                  fallback.style.display = 'none';
-                  video.style.display = 'block';
-                }
+                console.log('Video can play');
+                // Video is ready, no fallback needed
               }}
               onLoadedData={() => {
                 console.log('Video loaded successfully:', lesson.videoUrl);
@@ -64,13 +59,13 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               Ihr Browser unterstützt das Video-Element nicht.
             </video>
             
-            {/* Fallback UI - shown by default, hidden when video works */}
-            <div className="fallback-ui absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex flex-col items-center justify-center">
+            {/* Fallback UI - hidden by default, only shown on video error */}
+            <div className="fallback-ui absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 text-white flex-col items-center justify-center" style={{display: 'none'}}>
               <div className="text-center p-6 max-w-md">
                 <div className="text-4xl mb-4">🎥</div>
                 <h3 className="text-xl font-bold mb-3">{lesson.title}</h3>
                 <p className="text-sm text-blue-200 mb-6">
-                  Das Video wird vorbereitet...
+                  Video kann nicht abgespielt werden
                 </p>
                 <div className="space-y-3">
                   <a 
@@ -89,7 +84,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   </button>
                 </div>
                 <p className="text-xs text-blue-300 mt-4">
-                  Falls das Video nicht automatisch startet, verwenden Sie den Download-Button.
+                  Falls das Video nicht funktioniert, verwenden Sie den Download-Button.
                 </p>
               </div>
             </div>
