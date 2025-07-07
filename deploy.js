@@ -64,6 +64,18 @@ try {
   });
   
   console.log(`✅ ${videoFiles.length} videos ready for deployment`);
+  
+  // Set proper file permissions for deployment
+  videoFiles.forEach(video => {
+    const videoPath = path.join(assetsDir, video);
+    try {
+      fs.chmodSync(videoPath, 0o644);
+      console.log(`  🔒 Set permissions for ${video}`);
+    } catch (error) {
+      console.warn(`  ⚠️  Could not set permissions for ${video}:`, error.message);
+    }
+  });
+  
 } catch (error) {
   console.error('❌ Asset verification failed:', error.message);
 }
