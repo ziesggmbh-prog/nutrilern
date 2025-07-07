@@ -25,36 +25,31 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            {lesson.videoUrl.includes('youtube.com') || lesson.videoUrl.includes('youtu.be') ? (
-              <iframe
-                src={lesson.videoUrl}
-                className="w-full h-full"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                onLoad={() => {
-                  console.log('YouTube video loaded successfully');
-                  // Auto-complete after 30 seconds for demo
-                  setTimeout(() => onComplete(), 30000);
-                }}
-              />
-            ) : (
-              <video
-                controls
-                className="w-full h-full object-cover"
-                poster={lesson.thumbnailUrl}
-                preload="metadata"
-                playsInline
-                autoPlay
-                onCanPlay={() => console.log('Video can play')}
-                onLoadedData={() => console.log('Video loaded successfully:', lesson.videoUrl)}
-                onError={() => console.error('Video error')}
-                onEnded={() => onComplete()}
-              >
-                <source src={lesson.videoUrl} type="video/mp4" />
-                Video kann nicht geladen werden.
-              </video>
-            )}
+            <video
+              controls
+              className="w-full h-full object-cover"
+              poster={lesson.thumbnailUrl}
+              preload="metadata"
+              playsInline
+              autoPlay
+              muted={false}
+              onCanPlay={() => {
+                console.log('Video can play:', lesson.videoUrl);
+              }}
+              onLoadedData={() => {
+                console.log('Video loaded successfully:', lesson.videoUrl);
+              }}
+              onError={(e) => {
+                console.error('Video error:', e);
+              }}
+              onEnded={() => {
+                console.log('Video completed');
+                onComplete();
+              }}
+            >
+              <source src={lesson.videoUrl} type="video/mp4" />
+              <p>Ihr Browser unterstützt das Video-Element nicht.</p>
+            </video>
           </div>
         </div>
 
