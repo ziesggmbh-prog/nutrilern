@@ -45,7 +45,7 @@ export const level2Data = [
     description: "Jede Gruppe bekommt eine Liste von Zutaten, aus der sie ein gesundes und ein ungesundes Gericht zusammenstellen müssen.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 30,
-    thumbnailUrl: "/assets/image_1751896297162.png",
+    thumbnailUrl: "/assets/getty-images-QV0hWoH8C5Q-unsplash_1751897529780.jpg",
     order: 5,
     isActive: true
   },
@@ -55,7 +55,7 @@ export const level2Data = [
     description: "Jede Gruppe bekommt eine Tatort-Aktenmappe mit verschiedenen Verdächtigen (Lebensmitteln) und muss den Schuldigen identifizieren.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 25,
-    thumbnailUrl: "/assets/image_1751896297162.png",
+    thumbnailUrl: "/assets/tanya-yarosh-nHaDoTRsQvg-unsplash_1751897572357.jpg",
     order: 6,
     isActive: true
   },
