@@ -159,7 +159,7 @@ export default function Level2() {
             <Star className="text-yellow-400" size={24} />
           </div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Entdecke spannende Quests rund um das Ernährung!
+            Jetzt wird's praktisch: Wendet euer Wissen an und knackt die folgenden Quests als Gruppe!
           </p>
         </motion.div>
 
