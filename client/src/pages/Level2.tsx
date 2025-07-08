@@ -152,7 +152,7 @@ export default function Level2() {
             <Star className="text-yellow-400" size={24} />
           </div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Jetzt wird's praktisch: Wendet euer Wissen an und knackt die folgenden Quests als Gruppe!
+            Jetzt wird's praktisch: Wendet euer Wissen an und knackt die Quests als Gruppe!
           </p>
         </motion.div>
 
