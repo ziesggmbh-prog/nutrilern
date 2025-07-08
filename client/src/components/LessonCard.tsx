@@ -60,7 +60,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
           <img
             src={lesson.thumbnailUrl}
             alt={lesson.title}
-            className="rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300"
+            className="rounded-xl mb-4 w-full h-48 object-contain bg-gray-100 transition-all duration-300"
             style={{}}
           />
           {!isAvailable && (

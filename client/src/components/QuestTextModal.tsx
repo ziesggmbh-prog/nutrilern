@@ -46,7 +46,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
             <img 
               src={lesson.thumbnailUrl} 
               alt={lesson.title}
-              className="w-full h-48 object-cover rounded-lg"
+              className="w-full h-48 object-contain bg-gray-100 rounded-lg"
             />
           </div>
         </div>
