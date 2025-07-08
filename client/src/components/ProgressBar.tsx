@@ -4,9 +4,10 @@ import OrganicShape from "./OrganicShape";
 interface ProgressBarProps {
   completedLessons: number;
   totalLessons: number;
+  itemType?: string;
 }
 
-export default function ProgressBar({ completedLessons, totalLessons }: ProgressBarProps) {
+export default function ProgressBar({ completedLessons, totalLessons, itemType = "Lektionen" }: ProgressBarProps) {
   const progressPercentage = (completedLessons / totalLessons) * 100;
   
   return (
@@ -15,7 +16,7 @@ export default function ProgressBar({ completedLessons, totalLessons }: Progress
         <h2 className="text-2xl font-bold mb-2">Dein Lernfortschritt</h2>
         <div className="flex items-center justify-between mb-4">
           <div className="text-green-custom font-semibold text-lg">
-            {completedLessons} von {totalLessons} Lektionen
+            {completedLessons} von {totalLessons} {itemType}
           </div>
           <div className="text-green-custom font-medium text-lg">
             {Math.round(progressPercentage)}%

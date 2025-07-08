@@ -137,36 +137,14 @@ export default function Level2() {
         <OrganicShape className="absolute -bottom-5 -left-5 w-24 h-24 opacity-15" variant="alt" />
       </header>
 
-      {/* Progress Section */}
-      <div className="container mx-auto px-4 py-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-8"
-        >
-          <div className="mb-8">
-            <div className="text-center mb-4">
-              <h3 className="text-xl font-semibold mb-2">Dein Fortschritt</h3>
-              <p className="text-gray-300 text-sm">
-                {completedLessonIds.length} von {lessons.length} Quests abgeschlossen
-              </p>
-            </div>
-            <div className="w-full bg-gray-700 rounded-full h-3">
-              <motion.div 
-                className="bg-gradient-to-r from-green-custom to-teal-custom h-3 rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${(completedLessonIds.length / lessons.length) * 100}%` }}
-                transition={{ duration: 0.8 }}
-              />
-            </div>
-            <div className="flex justify-between text-sm text-gray-400 mt-2">
-              <span>Start</span>
-              <span>{Math.round((completedLessonIds.length / lessons.length) * 100)}%</span>
-              <span>Abgeschlossen</span>
-            </div>
-          </div>
-        </motion.div>
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
+        {/* Progress Overview */}
+        <ProgressBar 
+          completedLessons={completedLessonIds.length} 
+          totalLessons={lessons.length}
+          itemType="Quests"
+        />
 
         {/* Level Info */}
         <motion.div
@@ -208,11 +186,7 @@ export default function Level2() {
             );
           })}
         </div>
-
-
-
-
-      </div>
+      </main>
 
       {/* Modals */}
       {showQuestText && selectedLesson && (
