@@ -139,18 +139,11 @@ export default function Level2() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        {/* Progress Overview */}
-        <ProgressBar 
-          completedLessons={completedLessonIds.length} 
-          totalLessons={lessons.length}
-          itemType="Quests"
-        />
-
         {/* Level Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -162,6 +155,13 @@ export default function Level2() {
             Jetzt wird's praktisch: Wendet euer Wissen an und knackt die folgenden Quests als Gruppe!
           </p>
         </motion.div>
+
+        {/* Progress Overview */}
+        <ProgressBar 
+          completedLessons={completedLessonIds.length} 
+          totalLessons={lessons.length}
+          itemType="Quests"
+        />
 
         {/* Lessons Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
