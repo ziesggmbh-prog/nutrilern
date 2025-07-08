@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Leaf, User, Star, Play, Lock, CheckCircle } from "lucide-react";
 import LessonCard from "@/components/LessonCard";
@@ -11,6 +11,7 @@ import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import LevelDropdown from "@/components/LevelDropdown";
+import { useImagePreloader } from "@/hooks/useImagePreloader";
 import type { Lesson, UserProgress } from "@shared/schema";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 import bkkFirmusLogo from "@assets/Logo_BKK_firmus_5C_300dpi-removebg_1751546007429.png";
@@ -30,6 +31,10 @@ export default function Home() {
   const { data: progress = [], refetch: refetchProgress } = useQuery<UserProgress[]>({
     queryKey: ["/api/progress"],
   });
+
+  // Preload thumbnail images for faster loading
+  const thumbnailUrls = lessons.map(lesson => lesson.thumbnailUrl).filter(Boolean);
+  const { isLoaded, loadedCount } = useImagePreloader(thumbnailUrls);
 
   const completedLessonIds = progress.filter(p => p.isCompleted).map(p => p.lessonId);
   const nextAvailableLesson = lessons.find(lesson => 
