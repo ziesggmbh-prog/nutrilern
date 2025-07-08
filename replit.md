@@ -142,6 +142,10 @@ Changelog:
 - July 07, 2025. Removed grayscale filters and play button overlays for colorful image display
 - July 07, 2025. Replaced Level 2 videos with QuestTextModal showing full quest descriptions and images
 - July 07, 2025. Unlocked all Level 2 quests - no sequential progression required, all available from start
+- July 07, 2025. Level 2 progress bar implemented matching Level 1 design with "0 von 9 Quests" text
+- July 07, 2025. Quest descriptions optimized: short summaries on main page, full detailed content in modals
+- July 07, 2025. Level 1 VideoPlayer buttons styled to match Level 2 with consistent design
+- July 07, 2025. Updated Quest 3, 6, and 9 thumbnails with thematically appropriate images
 ```
 
 ## User Preferences

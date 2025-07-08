@@ -94,7 +94,7 @@ export const level2Data = [
     fullDescription: "Die Schüler erarbeiten ein Rollenspiel, in dem ein ägyptischer Priester vor den Göttern Rechenschaft über seine Ernährung ablegen muss. Anhand einer 'Waage der Wahrheit' (es reicht eine gezeichnete Version am Whiteboard) müssen sie gesunde und ungesunde Kohlenhydrate 'wiegen'.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 35,
-    thumbnailUrl: "/assets/jon-tyson-YSbh8hkt03g-unsplash_1751897844561.jpg",
+    thumbnailUrl: "/assets/paul-campbell-SVXza7LaNhI-unsplash_1751958895047.jpg",
     order: 9,
     isActive: true
   }
