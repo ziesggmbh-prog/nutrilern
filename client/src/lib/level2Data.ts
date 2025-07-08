@@ -28,7 +28,7 @@ export const level2Data = [
     fullDescription: "Die Schüler recherchieren den Einfluss von verschiedenen Kohlenhydraten auf den Blutzuckerspiegel. Sie erstellen Diagramme, um zu zeigen, wie einfache vs. komplexe Kohlenhydrate den Blutzucker beeinflussen. Die kreativste bzw. beste Darstellung gewinnt.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 25,
-    thumbnailUrl: "/assets/planet-volumes-ZRqhK5roHUs-unsplash_1751897421762.jpg",
+    thumbnailUrl: "/assets/photo-1692339687258-a1bc830b0cec_1751958622565.avif",
     order: 3,
     isActive: true
   },
@@ -61,7 +61,7 @@ export const level2Data = [
     fullDescription: "Jede Gruppe bekommt eine 'Tatort'-Aktenmappe mit verschiedenen Verdächtigen (Lebensmitteln) und muss herausfinden, welches Lebensmittel 'schuld' an plötzlichem Energiemangel oder Übergewicht ist.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     duration: 25,
-    thumbnailUrl: "/assets/tanya-yarosh-nHaDoTRsQvg-unsplash_1751897572357.jpg",
+    thumbnailUrl: "/assets/solen-feyissa-lGMIFMUTlS4-unsplash_1751958639414.jpg",
     order: 6,
     isActive: true
   },
