@@ -199,16 +199,6 @@ export default function Home() {
           onContinue={handleSuccessClose}
         />
       )}
-
-      {/* Achievement Tracker */}
-      <AchievementTracker
-        completedLessons={completedLessonIds.length}
-        totalLessons={lessons.length}
-        completedQuests={0}
-        totalQuests={9}
-        quizScore={85}
-        streakDays={3}
-      />
     </div>
   );
 }
