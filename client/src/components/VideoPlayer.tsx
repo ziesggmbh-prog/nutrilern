@@ -103,7 +103,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               className="px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
             >
               <CheckCircle size={20} />
-              Lektion abschließen
+              Quiz starten
             </button>
           </div>
         </div>
