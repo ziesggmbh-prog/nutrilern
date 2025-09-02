@@ -83,7 +83,7 @@ export class MemStorage implements IStorage {
       {
         title: "Fette",
         description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "https://player.vimeo.com/video/1115154976",
         duration: 12,
         thumbnailUrl: "/assets/3_1751542243606.png",
         order: 3,
