@@ -26,6 +26,8 @@ export default function Home() {
 
   const { data: lessons = [], isLoading: lessonsLoading } = useQuery<Lesson[]>({
     queryKey: ["/api/lessons"],
+    staleTime: 0,
+    cacheTime: 0,
   });
 
   const { data: progress = [], refetch: refetchProgress } = useQuery<UserProgress[]>({
