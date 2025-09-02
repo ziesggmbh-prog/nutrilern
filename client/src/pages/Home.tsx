@@ -24,6 +24,9 @@ export default function Home() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentQuizLesson, setCurrentQuizLesson] = useState<Lesson | null>(null);
 
+  
+
+
   // FORCE RELOAD: Cache-breaking data override
   const hardcodedLessons = [
     {
