@@ -198,8 +198,8 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">NutriLern</h1>
-                <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Ernährung & Bewegung</p>
+                <h1 className="text-2xl font-bold">NutriLern - ÄNDERUNG AKTIV!</h1>
+                <p className="text-red-500 text-lg font-bold">POSITION 3 = FETTE | POSITION 4 = PROTEINE</p>
               </div>
             </div>
             
