@@ -24,13 +24,102 @@ export default function Home() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentQuizLesson, setCurrentQuizLesson] = useState<Lesson | null>(null);
 
-  const { data: lessons = [], isLoading: lessonsLoading } = useQuery<Lesson[]>({
-    queryKey: ["/api/lessons", Math.random()], 
-    refetchOnMount: true,
-    refetchOnWindowFocus: true,
-    staleTime: 0,
-    cacheTime: 0,
-  });
+  // TEMPORARY: Direct data override to break cache
+  const hardcodedLessons = [
+    {
+      id: 1,
+      title: "Intro",
+      description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
+      videoUrl: "https://player.vimeo.com/video/1100816490",
+      duration: 8,
+      thumbnailUrl: "/assets/1_1751542243605.png",
+      order: 1,
+      isActive: true
+    },
+    {
+      id: 2,
+      title: "Kohlenhydrate",
+      description: "Erfahre, welche Rolle Kohlenhydrate in deinem Körper spielen und warum sie mehr sind als nur Zucker.",
+      videoUrl: "https://player.vimeo.com/video/1099335411",
+      duration: 10,
+      thumbnailUrl: "/assets/6_1751542243606.png",
+      order: 2,
+      isActive: true
+    },
+    {
+      id: 3,
+      title: "Fette",
+      description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
+      videoUrl: "https://player.vimeo.com/video/1115154976",
+      duration: 12,
+      thumbnailUrl: "/assets/3_1751542243606.png",
+      order: 3,
+      isActive: true
+    },
+    {
+      id: 4,
+      title: "Proteine",
+      description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst.",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      duration: 9,
+      thumbnailUrl: "/assets/4_1751549047993.png",
+      order: 4,
+      isActive: true
+    },
+    {
+      id: 5,
+      title: "Mikronährstoffe",
+      description: "Vitamine und Mineralstoffe im Fokus - klein, aber unverzichtbar für Gesundheit und Leistungsfähigkeit.",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      duration: 11,
+      thumbnailUrl: "/assets/5_1751542243606.png",
+      order: 5,
+      isActive: true
+    },
+    {
+      id: 6,
+      title: "Die Hölle",
+      description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen - und wie du ihnen entkommst.",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      duration: 7,
+      thumbnailUrl: "/assets/8_1751542243607.png",
+      order: 6,
+      isActive: true
+    },
+    {
+      id: 7,
+      title: "Trinken",
+      description: "Warum ausreichend Flüssigkeit entscheidend für Konzentration, Leistungsfähigkeit und Wohlbefinden ist.",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      duration: 13,
+      thumbnailUrl: "/assets/7_1751542243606.png",
+      order: 7,
+      isActive: true
+    },
+    {
+      id: 8,
+      title: "Bewegung - Teil 1",
+      description: "Die Grundlagen körperlicher Aktivität: Warum Bewegung essenziell für deine Gesundheit ist.",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      duration: 10,
+      thumbnailUrl: "/assets/2_1751542243605.png",
+      order: 8,
+      isActive: true
+    },
+    {
+      id: 9,
+      title: "Bewegung - Teil 2",
+      description: "Praktische Tipps, wie du mehr Bewegung in deinen Alltag integrierst - auch ohne Fitnessstudio.",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      duration: 8,
+      thumbnailUrl: "/assets/9_1751542243607.png",
+      order: 9,
+      isActive: true
+    }
+  ];
+
+  const lessons = hardcodedLessons;
+  const lessonsLoading = false;
 
   const { data: progress = [], refetch: refetchProgress } = useQuery<UserProgress[]>({
     queryKey: ["/api/progress"],
