@@ -13,7 +13,7 @@ export default function LevelSelector({ className = "" }: LevelSelectorProps) {
   const levels = [
     {
       id: 1,
-      title: "Level 1",
+      title: "Einzelspielermodus",
       subtitle: "Grundlagen der Ernährung",
       description: "Lerne die Basics durch Videos und Quizzes",
       href: "/",
@@ -25,7 +25,7 @@ export default function LevelSelector({ className = "" }: LevelSelectorProps) {
     },
     {
       id: 2,
-      title: "Level 2", 
+      title: "Gruppenmodus", 
       subtitle: "Kohlenhydrate Quests",
       description: "Interaktive Aufgaben rund um Kohlenhydrate",
       href: "/level2",
@@ -42,10 +42,10 @@ export default function LevelSelector({ className = "" }: LevelSelectorProps) {
       <div className="text-center mb-8">
         <h2 className="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
           <Star className="text-yellow-400" />
-          Level Auswahl
+          Modus Auswahl
         </h2>
         <p className="text-gray-300">
-          Wähle dein Lernlevel und starte deine Ernährungs-Reise
+          Wähle deinen Lernmodus und starte deine Ernährungs-Reise
         </p>
       </div>
 

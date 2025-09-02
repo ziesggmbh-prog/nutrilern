@@ -12,8 +12,8 @@ export default function LevelDropdown({ className = "" }: LevelDropdownProps) {
   const [location] = useLocation();
 
   const levels = [
-    { id: 1, title: 'Level 1', href: '/' },
-    { id: 2, title: 'Level 2', href: '/level2' }
+    { id: 1, title: 'Einzelspielermodus', href: '/' },
+    { id: 2, title: 'Gruppenmodus', href: '/level2' }
   ];
 
   const currentLevel = levels.find(level => level.href === location) || levels[0];
