@@ -180,7 +180,11 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-structured text-white">
+    <div className="min-h-screen bg-red-600 text-white">
+      {/* NOTFALL: Rote Hintergrundfarbe um Cache zu brechen */}
+      <div className="bg-yellow-400 text-black text-center p-4 text-2xl font-bold">
+        CACHE GEBROCHEN! POSITION 3 = FETTE, POSITION 4 = PROTEINE
+      </div>
       {/* Header */}
       <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         
@@ -198,7 +202,7 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">NutriLern - ÄNDERUNG AKTIV!</h1>
+                <h1 className="text-4xl font-bold text-yellow-400">🔴 NOTFALL: CACHE PROBLEM! 🔴</h1>
                 <p className="text-red-500 text-lg font-bold">POSITION 3 = FETTE | POSITION 4 = PROTEINE</p>
               </div>
             </div>
