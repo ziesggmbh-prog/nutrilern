@@ -10,17 +10,7 @@ interface VideoPlayerProps {
 export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayerProps) {
   console.log('VideoPlayer loaded for lesson:', lesson.title);
   
-  // Handle video completion (auto-timer for Vimeo)
-  useEffect(() => {
-    // Auto-complete timer based on lesson duration
-    const duration = lesson.id === 1 ? 60000 : lesson.id === 2 ? 70000 : 60000; // Video 1: 60s, Video 2: 70s
-    const timer = setTimeout(() => {
-      console.log(`Video ${lesson.id} completed (auto-timer)`);
-      onComplete();
-    }, duration);
-    
-    return () => clearTimeout(timer);
-  }, [onComplete, lesson.id]);
+  // No auto-completion for Vimeo videos - only manual completion via button
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
@@ -87,8 +77,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 autoPlay
                 muted={false}
                 onEnded={() => {
-                  console.log('Video completed');
-                  onComplete();
+                  console.log('Video ended - but no auto-completion. User must click "Lektion abschließen"');
+                  // No automatic completion - user must manually click the button
                 }}
               >
                 <source src={lesson.videoUrl} type="video/mp4" />
