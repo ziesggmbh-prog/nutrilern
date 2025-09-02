@@ -25,7 +25,9 @@ export default function Home() {
   const [currentQuizLesson, setCurrentQuizLesson] = useState<Lesson | null>(null);
 
   const { data: lessons = [], isLoading: lessonsLoading } = useQuery<Lesson[]>({
-    queryKey: ["/api/lessons"],
+    queryKey: ["/api/lessons", "v2"], 
+    refetchOnMount: true,
+    refetchOnWindowFocus: true,
     staleTime: 0,
     cacheTime: 0,
   });
