@@ -60,7 +60,7 @@ export class MemStorage implements IStorage {
   }
 
   private seedData() {
-    // Seed lessons
+    // Seed lessons - NEUE REIHENFOLGE
     const lessonData = [
       {
         title: "Intro",

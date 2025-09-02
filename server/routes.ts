@@ -15,6 +15,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/lessons", async (req, res) => {
     try {
       const lessons = await storage.getAllLessons();
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+      res.setHeader('Pragma', 'no-cache');  
+      res.setHeader('Expires', '0');
       res.json(lessons);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch lessons" });
