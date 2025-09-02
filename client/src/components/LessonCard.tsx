@@ -100,12 +100,10 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
         </div>
         
         <h3 className="text-lg font-semibold mb-2">
-          {lesson.id === 3 ? "Fette" : lesson.id === 4 ? "Proteine" : lesson.title}
+          {lesson.title}
         </h3>
         <p className="text-gray-400 text-sm mb-4 h-16 overflow-hidden leading-relaxed">
-          {lesson.id === 3 ? "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant." : 
-           lesson.id === 4 ? "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst." : 
-           lesson.description}
+          {lesson.description}
         </p>
         
         <div className="flex items-center justify-between">

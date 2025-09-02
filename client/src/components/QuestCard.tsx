@@ -56,7 +56,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           <div className="text-sm font-semibold text-white flex items-center" style={{ lineHeight: '1.2', marginBottom: '2px' }}>
             <Target className="mr-1" size={14} style={{ flexShrink: 0 }} />
             <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              Quest: {lesson.id === 3 ? "Fette" : lesson.id === 4 ? "Proteine" : lesson.title}
+              Quest: {lesson.title}
             </span>
           </div>
           <p className="text-xs text-gray-400" style={{ lineHeight: '1.2', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
