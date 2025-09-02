@@ -81,7 +81,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Proteine",
+        title: "Fette",
         description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 12,
@@ -90,7 +90,7 @@ export class MemStorage implements IStorage {
         isActive: true
       },
       {
-        title: "Fette",
+        title: "Proteine",
         description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 9,
