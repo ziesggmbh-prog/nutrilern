@@ -24,7 +24,7 @@ export default function Home() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentQuizLesson, setCurrentQuizLesson] = useState<Lesson | null>(null);
 
-  // TEMPORARY: Direct data override to break cache
+  // FORCE RELOAD: Cache-breaking data override
   const hardcodedLessons = [
     {
       id: 1,
@@ -118,8 +118,11 @@ export default function Home() {
     }
   ];
 
+  // FORCE IMMEDIATE RENDER - NO API CALLS
   const lessons = hardcodedLessons;
   const lessonsLoading = false;
+  
+
 
   const { data: progress = [], refetch: refetchProgress } = useQuery<UserProgress[]>({
     queryKey: ["/api/progress"],

@@ -18,6 +18,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
       res.setHeader('Pragma', 'no-cache');  
       res.setHeader('Expires', '0');
+      res.setHeader('ETag', `"${Date.now()}"`);
+      res.setHeader('Last-Modified', new Date().toUTCString());
       res.json(lessons);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch lessons" });
