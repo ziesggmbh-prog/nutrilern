@@ -99,8 +99,14 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
           )}
         </div>
         
-        <h3 className="text-lg font-semibold mb-2">{lesson.title}</h3>
-        <p className="text-gray-400 text-sm mb-4 h-16 overflow-hidden leading-relaxed">{lesson.description}</p>
+        <h3 className="text-lg font-semibold mb-2">
+          {lesson.order === 3 ? "Proteine" : lesson.order === 4 ? "Fette" : lesson.title}
+        </h3>
+        <p className="text-gray-400 text-sm mb-4 h-16 overflow-hidden leading-relaxed">
+          {lesson.order === 3 ? "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst." : 
+           lesson.order === 4 ? "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant." : 
+           lesson.description}
+        </p>
         
         <div className="flex items-center justify-between">
           <span className={`text-sm font-medium ${isAvailable ? "text-green-custom" : "text-gray-500"}`}>
