@@ -81,7 +81,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
               }`}
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageError(true)}
-              loading={lesson.order <= 3 ? "eager" : "lazy"}
+              loading={lesson.order <= 6 ? "eager" : "lazy"}
             />
           )}
           

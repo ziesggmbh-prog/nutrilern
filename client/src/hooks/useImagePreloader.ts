@@ -33,7 +33,7 @@ export function useImagePreloader(imageUrls: string[]) {
         }
       });
       
-      // Preload remaining images with slight delay
+      // Preload remaining images with reduced delay (images are now optimized and small)
       setTimeout(() => {
         const remainingImages = imageUrls.slice(3);
         remainingImages.forEach(url => {
@@ -59,7 +59,7 @@ export function useImagePreloader(imageUrls: string[]) {
             img.src = url;
           }
         });
-      }, 100);
+      }, 50);
     };
 
     if (imageUrls.length > 0) {

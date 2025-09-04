@@ -14,7 +14,7 @@ import LevelDropdown from "@/components/LevelDropdown";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 import type { Lesson, UserProgress } from "@shared/schema";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
-import bkkFirmusLogo from "@assets/Logo_BKK_firmus_5C_300dpi-removebg_1751546007429.png";
+import bkkFirmusLogo from "@assets/Logo_BKK_firmus_optimized.jpg";
 import ziesLogo from "@assets/zies_logo_transparent_1751546047870.png";
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
       description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
       videoUrl: "https://player.vimeo.com/video/1100816490",
       duration: 8,
-      thumbnailUrl: "/assets/1_1751542243605.png",
+      thumbnailUrl: "/assets/1_1751542243605_optimized.jpg",
       order: 1,
       isActive: true
     },
@@ -45,7 +45,7 @@ export default function Home() {
       description: "Erfahre, welche Rolle Kohlenhydrate in deinem Körper spielen und warum sie mehr sind als nur Zucker.",
       videoUrl: "https://player.vimeo.com/video/1099335411",
       duration: 10,
-      thumbnailUrl: "/assets/6_1751542243606.png",
+      thumbnailUrl: "/assets/6_1751542243606_optimized.jpg",
       order: 2,
       isActive: true
     },
@@ -55,7 +55,7 @@ export default function Home() {
       description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
       videoUrl: "https://player.vimeo.com/video/1115154976",
       duration: 12,
-      thumbnailUrl: "/assets/3_1751542243606.png",
+      thumbnailUrl: "/assets/3_1751542243606_optimized.jpg",
       order: 3,
       isActive: true
     },
@@ -65,7 +65,7 @@ export default function Home() {
       description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst.",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: 9,
-      thumbnailUrl: "/assets/4_1751549047993.png",
+      thumbnailUrl: "/assets/4_1751549047993_optimized.jpg",
       order: 4,
       isActive: true
     },
@@ -75,7 +75,7 @@ export default function Home() {
       description: "Vitamine und Mineralstoffe im Fokus - klein, aber unverzichtbar für Gesundheit und Leistungsfähigkeit.",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: 11,
-      thumbnailUrl: "/assets/5_1751542243606.png",
+      thumbnailUrl: "/assets/5_1751542243606_optimized.jpg",
       order: 5,
       isActive: true
     },
@@ -85,7 +85,7 @@ export default function Home() {
       description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen - und wie du ihnen entkommst.",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: 7,
-      thumbnailUrl: "/assets/8_1751542243607.png",
+      thumbnailUrl: "/assets/8_1751542243607_optimized.jpg",
       order: 6,
       isActive: true
     },
@@ -95,7 +95,7 @@ export default function Home() {
       description: "Warum ausreichend Flüssigkeit entscheidend für Konzentration, Leistungsfähigkeit und Wohlbefinden ist.",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: 13,
-      thumbnailUrl: "/assets/7_1751542243606.png",
+      thumbnailUrl: "/assets/7_1751542243606_optimized.jpg",
       order: 7,
       isActive: true
     },
@@ -105,7 +105,7 @@ export default function Home() {
       description: "Die Grundlagen körperlicher Aktivität: Warum Bewegung essenziell für deine Gesundheit ist.",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: 10,
-      thumbnailUrl: "/assets/2_1751542243605.png",
+      thumbnailUrl: "/assets/2_1751542243605_optimized.jpg",
       order: 8,
       isActive: true
     },
@@ -115,7 +115,7 @@ export default function Home() {
       description: "Praktische Tipps, wie du mehr Bewegung in deinen Alltag integrierst - auch ohne Fitnessstudio.",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: 8,
-      thumbnailUrl: "/assets/9_1751542243607.png",
+      thumbnailUrl: "/assets/9_1751542243607_optimized.jpg",
       order: 9,
       isActive: true
     }
