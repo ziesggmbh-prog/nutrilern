@@ -27,41 +27,38 @@ interface QuestDetailModalProps {
 function parseQuestDays(fullDescription: string): QuestDay[] {
   const days: QuestDay[] = [];
   
-  // Enhanced regex to match **Tag X** or **Tag X (Präsentation)** or **Tag X (Presentation)**
-  const tagPattern = /\*\*Tag \d+.*?\*\*/g;
+  // Find all tag headers and their positions
+  const tagRegex = /\*\*Tag \d+[^*]*\*\*/g;
+  const matches: { title: string; start: number; fullMatch: string }[] = [];
+  let match;
   
-  // Find all tag matches
-  const tagMatches = fullDescription.match(tagPattern);
-  if (!tagMatches) {
-    return days;
+  while ((match = tagRegex.exec(fullDescription)) !== null) {
+    matches.push({
+      title: match[0].replace(/\*\*/g, '').trim(),
+      start: match.index + match[0].length,
+      fullMatch: match[0]
+    });
   }
   
-  // Split content by these patterns
-  const sections = fullDescription.split(/\*\*Tag \d+.*?\*\*/);
-  
-  // Remove first empty element if it exists
-  if (sections[0].trim() === '') {
-    sections.shift();
-  }
-  
-  // Process each section with its corresponding tag
-  sections.forEach((section, index) => {
-    const trimmedSection = section.trim();
+  // Process each tag and extract its specific content
+  matches.forEach((currentMatch, index) => {
+    const dayNumber = index + 1;
+    const nextMatch = matches[index + 1];
     
-    if (trimmedSection && tagMatches[index]) {
-      const dayNumber = index + 1;
-      
-      // Extract the full tag title from the match
-      const fullTagTitle = tagMatches[index].replace(/\*\*/g, '').trim();
-      
-      // Check if this is a presentation day
-      const isPresentation = fullTagTitle.includes('Präsentation') || 
-                             fullTagTitle.toLowerCase().includes('presentation');
+    // Extract content from current tag start to next tag start (or end of string)
+    const contentStart = currentMatch.start;
+    const contentEnd = nextMatch ? nextMatch.fullMatch ? fullDescription.indexOf(nextMatch.fullMatch) : fullDescription.length : fullDescription.length;
+    
+    const content = fullDescription.substring(contentStart, contentEnd).trim();
+    
+    if (content) {
+      const isPresentation = currentMatch.title.includes('Präsentation') || 
+                             currentMatch.title.toLowerCase().includes('presentation');
       
       days.push({
         id: `day-${dayNumber}`,
-        title: fullTagTitle,
-        content: trimmedSection,
+        title: currentMatch.title,
+        content: content,
         order: dayNumber,
         isGeniusTask: false
       });
