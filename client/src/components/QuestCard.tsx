@@ -57,11 +57,9 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           <div className={`${isCompleted ? "bg-green-custom" : colorClass} rounded-full w-6 h-6 flex items-center justify-center`}>
             {isCompleted ? (
               <CheckCircle className="text-white" size={12} />
-            ) : isAvailable ? (
-              <HelpCircle className="text-white" size={12} />
-            ) : (
+            ) : !isAvailable ? (
               <Lock className="text-white" size={12} />
-            )}
+            ) : null}
           </div>
         </div>
         

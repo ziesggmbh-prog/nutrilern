@@ -27,26 +27,40 @@ interface QuestDetailModalProps {
 function parseQuestDays(fullDescription: string): QuestDay[] {
   const days: QuestDay[] = [];
   
-  // Split by **Tag X** pattern
-  const sections = fullDescription.split(/\*\*Tag \d+\*\*/);
+  // Enhanced regex to match **Tag X** or **Tag X (Präsentation)** or **Tag X (Presentation)**
+  const tagPattern = /\*\*Tag \d+.*?\*\*/g;
+  
+  // Find all tag matches
+  const tagMatches = fullDescription.match(tagPattern);
+  if (!tagMatches) {
+    return days;
+  }
+  
+  // Split content by these patterns
+  const sections = fullDescription.split(/\*\*Tag \d+.*?\*\*/);
   
   // Remove first empty element if it exists
   if (sections[0].trim() === '') {
     sections.shift();
   }
   
+  // Process each section with its corresponding tag
   sections.forEach((section, index) => {
-    const dayNumber = index + 1;
     const trimmedSection = section.trim();
     
-    if (trimmedSection) {
+    if (trimmedSection && tagMatches[index]) {
+      const dayNumber = index + 1;
+      
+      // Extract the full tag title from the match
+      const fullTagTitle = tagMatches[index].replace(/\*\*/g, '').trim();
+      
       // Check if this is a presentation day
-      const isPresentation = trimmedSection.includes('Präsentation') || 
-                             trimmedSection.toLowerCase().includes('presentation');
+      const isPresentation = fullTagTitle.includes('Präsentation') || 
+                             fullTagTitle.toLowerCase().includes('presentation');
       
       days.push({
         id: `day-${dayNumber}`,
-        title: isPresentation ? `Tag ${dayNumber} (Präsentation)` : `Tag ${dayNumber}`,
+        title: fullTagTitle,
         content: trimmedSection,
         order: dayNumber,
         isGeniusTask: false
