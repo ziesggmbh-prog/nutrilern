@@ -176,11 +176,11 @@ export default function Level2() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <LessonCard
+                <QuestCard
                   lesson={lesson}
                   isCompleted={isCompleted}
                   isAvailable={isAvailable}
-                  onClick={() => handleLessonClick(lesson)}
+                  onQuizClick={() => handleLessonClick(lesson)}
                 />
               </motion.div>
             );
