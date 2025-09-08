@@ -21,6 +21,7 @@ interface QuestWithDescription extends Lesson {
 interface QuestDetailModalProps {
   quest: QuestWithDescription;
   onClose: () => void;
+  onQuestComplete?: (questId: number) => void;
 }
 
 // Parser function to split quest description into individual days
@@ -81,7 +82,7 @@ const questColors = [
   "bg-teal-blue"
 ];
 
-export default function QuestDetailModal({ quest, onClose }: QuestDetailModalProps) {
+export default function QuestDetailModal({ quest, onClose, onQuestComplete }: QuestDetailModalProps) {
   const [selectedDay, setSelectedDay] = useState<QuestDay | null>(null);
   const [showDayDetail, setShowDayDetail] = useState(false);
   const [completedDays, setCompletedDays] = useState<string[]>([]);
@@ -102,7 +103,13 @@ export default function QuestDetailModal({ quest, onClose }: QuestDetailModalPro
 
   const handleDayComplete = () => {
     if (selectedDay && !completedDays.includes(selectedDay.id)) {
-      setCompletedDays(prev => [...prev, selectedDay.id]);
+      const newCompletedDays = [...completedDays, selectedDay.id];
+      setCompletedDays(newCompletedDays);
+      
+      // Check if all days are completed
+      if (newCompletedDays.length === days.length && onQuestComplete) {
+        onQuestComplete(quest.id);
+      }
     }
     setShowDayDetail(false);
     setSelectedDay(null);

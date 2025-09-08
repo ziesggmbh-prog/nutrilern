@@ -55,6 +55,17 @@ export default function Level2() {
     }
   };
 
+  const handleQuestComplete = (questId: number) => {
+    setProgress(prev => 
+      prev.map(p => 
+        p.lessonId === questId 
+          ? { ...p, isCompleted: true }
+          : p
+      )
+    );
+    setShowSuccess(true);
+  };
+
   const handleQuestTextComplete = () => {
     setShowQuestText(false);
     // Auto-open quiz after quest text
@@ -192,6 +203,7 @@ export default function Level2() {
         <QuestDetailModal
           quest={selectedLesson}
           onClose={() => setShowQuestDetail(false)}
+          onQuestComplete={handleQuestComplete}
         />
       )}
 
