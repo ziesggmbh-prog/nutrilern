@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Leaf, User, Star, Play, Lock, CheckCircle } from "lucide-react";
 import LessonCard from "@/components/LessonCard";
-import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
 import QuizModal from "@/components/QuizModal";
 import ProgressBar from "@/components/ProgressBar";
@@ -223,23 +222,13 @@ export default function Home() {
             const isAvailable = lesson.id === nextAvailableLesson?.id || isCompleted;
             
             return (
-              <div key={lesson.id} className="space-y-8 mb-12">
-                <LessonCard
-                  lesson={lesson}
-                  isCompleted={isCompleted}
-                  isAvailable={isAvailable}
-                  onClick={() => handleLessonClick(lesson)}
-                />
-                <QuestCard
-                  lesson={lesson}
-                  isCompleted={isCompleted}
-                  isAvailable={isAvailable}
-                  onQuizClick={() => {
-                    setCurrentQuizLesson(lesson);
-                    setShowQuiz(true);
-                  }}
-                />
-              </div>
+              <LessonCard
+                key={lesson.id}
+                lesson={lesson}
+                isCompleted={isCompleted}
+                isAvailable={isAvailable}
+                onClick={() => handleLessonClick(lesson)}
+              />
             );
           })}
         </div>
