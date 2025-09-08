@@ -28,37 +28,24 @@ interface QuestDetailModalProps {
 function parseQuestDays(fullDescription: string): QuestDay[] {
   const days: QuestDay[] = [];
   
-  // Find all tag headers and their positions
-  const tagRegex = /\*\*Tag \d+[^*]*\*\*/g;
-  const matches: { title: string; start: number; fullMatch: string }[] = [];
-  let match;
+  // Split by tag headers to get individual sections
+  const sections = fullDescription.split(/\*\*Tag \d+[^*]*\*\*/);
   
-  while ((match = tagRegex.exec(fullDescription)) !== null) {
-    matches.push({
-      title: match[0].replace(/\*\*/g, '').trim(),
-      start: match.index + match[0].length,
-      fullMatch: match[0]
-    });
-  }
+  // Find all tag headers
+  const tagMatches = fullDescription.match(/\*\*Tag \d+[^*]*\*\*/g) || [];
   
-  // Process each tag and extract its specific content
-  matches.forEach((currentMatch, index) => {
+  // Process each tag and its corresponding content section
+  tagMatches.forEach((tagHeader, index) => {
     const dayNumber = index + 1;
-    const nextMatch = matches[index + 1];
-    
-    // Extract content from current tag start to next tag start (or end of string)
-    const contentStart = currentMatch.start;
-    const contentEnd = nextMatch ? nextMatch.fullMatch ? fullDescription.indexOf(nextMatch.fullMatch) : fullDescription.length : fullDescription.length;
-    
-    const content = fullDescription.substring(contentStart, contentEnd).trim();
+    // Content is in sections[index + 1] (sections[0] is usually empty or intro text)
+    const content = sections[index + 1]?.trim() || "";
     
     if (content) {
-      const isPresentation = currentMatch.title.includes('Präsentation') || 
-                             currentMatch.title.toLowerCase().includes('presentation');
+      const cleanTitle = tagHeader.replace(/\*\*/g, '').trim();
       
       days.push({
         id: `day-${dayNumber}`,
-        title: currentMatch.title,
+        title: cleanTitle,
         content: content,
         order: dayNumber,
         isGeniusTask: false
