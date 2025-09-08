@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Leaf, User, Star, Play, Lock, CheckCircle } from "lucide-react";
 import LessonCard from "@/components/LessonCard";
-import QuizCard from "@/components/QuizCard";
+import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
 import QuizModal from "@/components/QuizModal";
 import ProgressBar from "@/components/ProgressBar";
@@ -232,12 +232,13 @@ export default function Home() {
                   onClick={() => handleLessonClick(lesson)}
                 />
                 
-                {/* Quiz Card (smaller, without image) */}
-                <QuizCard
+                {/* Quest Card (smaller, without image) */}
+                <QuestCard
                   lesson={lesson}
                   isCompleted={isCompleted}
                   isAvailable={isAvailable}
                   onQuizClick={() => handleQuizClick(lesson)}
+                  showImage={false}
                 />
               </div>
             );

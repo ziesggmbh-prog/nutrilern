@@ -10,6 +10,7 @@ interface QuestCardProps {
   isCompleted: boolean;
   isAvailable: boolean;
   onQuizClick: () => void;
+  showImage?: boolean; // Add option to show/hide image
 }
 
 const questColors = [
@@ -24,7 +25,7 @@ const questColors = [
   "bg-teal-blue"
 ];
 
-export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClick }: QuestCardProps) {
+export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClick, showImage = true }: QuestCardProps) {
   const colorClass = questColors[(lesson.order - 1) % questColors.length];
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -63,41 +64,43 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           </div>
         </div>
         
-        <div className="relative">
-          {/* Loading skeleton */}
-          {!imageLoaded && !imageError && (
-            <div className="rounded-xl mb-4 w-full h-48 bg-gray-700 animate-pulse flex items-center justify-center">
-              <div className="w-8 h-8 bg-gray-600 rounded-full"></div>
-            </div>
-          )}
-          
-          {/* Image */}
-          {!imageError && isVisible && (
-            <img
-              src={lesson.thumbnailUrl}
-              alt={lesson.title}
-              className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${
-                imageLoaded ? 'opacity-100' : 'opacity-0'
-              }`}
-              onLoad={() => setImageLoaded(true)}
-              onError={() => setImageError(true)}
-              loading={lesson.order <= 6 ? "eager" : "lazy"}
-            />
-          )}
-          
-          {/* Fallback gradient for failed images */}
-          {imageError && (
-            <div className={`rounded-xl mb-4 w-full h-48 ${colorClass} opacity-20 flex items-center justify-center`}>
-              <div className="text-white opacity-60 text-sm">Bild nicht verfügbar</div>
-            </div>
-          )}
-          
-          {!isAvailable && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl transition-opacity duration-300">
-              <Lock className="text-white opacity-40" size={32} />
-            </div>
-          )}
-        </div>
+        {showImage && (
+          <div className="relative">
+            {/* Loading skeleton */}
+            {!imageLoaded && !imageError && (
+              <div className="rounded-xl mb-4 w-full h-48 bg-gray-700 animate-pulse flex items-center justify-center">
+                <div className="w-8 h-8 bg-gray-600 rounded-full"></div>
+              </div>
+            )}
+            
+            {/* Image */}
+            {!imageError && isVisible && (
+              <img
+                src={lesson.thumbnailUrl}
+                alt={lesson.title}
+                className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => setImageLoaded(true)}
+                onError={() => setImageError(true)}
+                loading={lesson.order <= 6 ? "eager" : "lazy"}
+              />
+            )}
+            
+            {/* Fallback gradient for failed images */}
+            {imageError && (
+              <div className={`rounded-xl mb-4 w-full h-48 ${colorClass} opacity-20 flex items-center justify-center`}>
+                <div className="text-white opacity-60 text-sm">Bild nicht verfügbar</div>
+              </div>
+            )}
+            
+            {!isAvailable && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl transition-opacity duration-300">
+                <Lock className="text-white opacity-40" size={32} />
+              </div>
+            )}
+          </div>
+        )}
         
         <h3 className="text-lg font-semibold mb-2 flex items-center">
           <Target className="mr-2 text-purple-custom" size={18} />
