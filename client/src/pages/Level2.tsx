@@ -6,6 +6,7 @@ import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
 import QuizModal from "@/components/QuizModal";
 import QuestTextModal from "@/components/QuestTextModal";
+import QuestDetailModal from "@/components/QuestDetailModal";
 import ProgressBar from "@/components/ProgressBar";
 import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
@@ -35,6 +36,7 @@ export default function Level2() {
   const [showVideo, setShowVideo] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showQuestText, setShowQuestText] = useState(false);
+  const [showQuestDetail, setShowQuestDetail] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentQuizLesson, setCurrentQuizLesson] = useState<any>(null);
   const [progress, setProgress] = useState(mockProgress);
@@ -52,7 +54,7 @@ export default function Level2() {
     
     if (isAvailable) {
       setSelectedLesson(lesson);
-      setShowQuestText(true);
+      setShowQuestDetail(true);
     }
   };
 
@@ -189,6 +191,13 @@ export default function Level2() {
       </main>
 
       {/* Modals */}
+      {showQuestDetail && selectedLesson && (
+        <QuestDetailModal
+          quest={selectedLesson}
+          onClose={() => setShowQuestDetail(false)}
+        />
+      )}
+
       {showQuestText && selectedLesson && (
         <QuestTextModal
           lesson={selectedLesson}
