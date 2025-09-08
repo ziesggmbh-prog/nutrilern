@@ -26,9 +26,14 @@ const colorVariants = [
 
 export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }: LessonCardProps) {
   const colorClass = colorVariants[(lesson.order - 1) % colorVariants.length];
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const isVisible = useIntersectionObserver(cardRef);
   
   return (
     <motion.div
+      ref={cardRef}
       className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 group ${
         isAvailable ? "hover:shadow-xl" : "opacity-60"
       }`}
