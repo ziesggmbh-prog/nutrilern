@@ -25,10 +25,7 @@ const mockProgress = [
   { lessonId: 12, isCompleted: false },
   { lessonId: 13, isCompleted: false },
   { lessonId: 14, isCompleted: false },
-  { lessonId: 15, isCompleted: false },
-  { lessonId: 16, isCompleted: false },
-  { lessonId: 17, isCompleted: false },
-  { lessonId: 18, isCompleted: false }
+  { lessonId: 15, isCompleted: false }
 ];
 
 export default function Level2() {
