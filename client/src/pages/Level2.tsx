@@ -14,7 +14,7 @@ import LevelDropdown from "@/components/LevelDropdown";
 import { level2Data } from "@/lib/level2Data";
 import { level2QuizData } from "@/lib/level2QuizData";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
-import bkkFirmusLogo from "@assets/Logo_BKK_firmus_optimized.jpg";
+import bkkFirmusLogo from "@assets/Logo_BKK_firmus_high_quality.png";
 import ziesLogo from "@assets/zies_logo_transparent_1751546047870.png";
 
 // Simulate progress - in real app this would come from API
