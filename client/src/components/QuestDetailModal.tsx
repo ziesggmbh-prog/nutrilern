@@ -186,20 +186,33 @@ export default function QuestDetailModal({ quest, onClose }: QuestDetailModalPro
   return (
     <>
       {/* Main Quest Detail Modal */}
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div 
+        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) {
+            onClose();
+          }
+        }}
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3 }}
           className="bg-structured rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden relative"
+          onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           <div className={`${colorClass} p-6 relative overflow-hidden`}>
             <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onClose();
+              }}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-50 bg-black bg-opacity-20 rounded-full p-1 hover:bg-opacity-40"
+              style={{ zIndex: 9999 }}
             >
-              <X size={24} />
+              <X size={20} />
             </button>
             
             <div className="relative z-10">
