@@ -28,11 +28,14 @@ interface QuestDetailModalProps {
 function parseQuestDays(fullDescription: string): QuestDay[] {
   const days: QuestDay[] = [];
   
-  // Split by tag headers to get individual sections
-  const sections = fullDescription.split(/\*\*Tag \d+[^*]*\*\*/);
+  // More flexible regex to catch all possible tag variations
+  const tagRegex = /\*\*Tag \d+[^*]*?\*\*/g;
+  const tagMatches = fullDescription.match(tagRegex) || [];
   
-  // Find all tag headers
-  const tagMatches = fullDescription.match(/\*\*Tag \d+[^*]*\*\*/g) || [];
+  console.log('Found tag matches:', tagMatches); // Debug output
+  
+  // Split content by tag headers
+  const sections = fullDescription.split(tagRegex);
   
   // Process each tag and its corresponding content section
   tagMatches.forEach((tagHeader, index) => {
@@ -40,19 +43,31 @@ function parseQuestDays(fullDescription: string): QuestDay[] {
     // Content is in sections[index + 1] (sections[0] is usually empty or intro text)
     const content = sections[index + 1]?.trim() || "";
     
-    if (content) {
+    // Clean up content by removing any trailing content that belongs to next section
+    let cleanContent = content;
+    
+    // Remove any "Genie-Aufgabe" content at the end if it belongs to next section
+    if (index < tagMatches.length - 1) {
+      const nextTagStart = content.indexOf('**Tag ');
+      if (nextTagStart > 0) {
+        cleanContent = content.substring(0, nextTagStart).trim();
+      }
+    }
+    
+    if (cleanContent) {
       const cleanTitle = tagHeader.replace(/\*\*/g, '').trim();
       
       days.push({
         id: `day-${dayNumber}`,
         title: cleanTitle,
-        content: content,
+        content: cleanContent,
         order: dayNumber,
         isGeniusTask: false
       });
     }
   });
   
+  console.log('Parsed days count:', days.length); // Debug output
   return days;
 }
 
