@@ -32,7 +32,6 @@ function parseQuestDays(fullDescription: string): QuestDay[] {
   const tagRegex = /\*\*Tag \d+[^*]*?\*\*/g;
   const tagMatches = fullDescription.match(tagRegex) || [];
   
-  console.log('Found tag matches:', tagMatches); // Debug output
   
   // Split content by tag headers
   const sections = fullDescription.split(tagRegex);
@@ -67,7 +66,6 @@ function parseQuestDays(fullDescription: string): QuestDay[] {
     }
   });
   
-  console.log('Parsed days count:', days.length); // Debug output
   return days;
 }
 
