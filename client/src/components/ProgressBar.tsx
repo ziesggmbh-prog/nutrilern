@@ -13,7 +13,7 @@ export default function ProgressBar({ completedLessons, totalLessons, itemType =
   return (
     <div className="mb-8">
       <div className="bg-navy-light rounded-2xl p-6">
-        <h2 className="text-2xl font-bold mb-2">Euer Fortschritt</h2>
+        <h2 className="text-2xl font-bold mb-2">Dein Fortschritt</h2>
         <div className="flex items-center justify-between mb-4">
           <div className="text-green-custom font-semibold text-lg">
             {completedLessons} von {totalLessons} {itemType}
