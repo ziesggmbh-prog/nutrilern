@@ -28,21 +28,20 @@ interface QuestDetailModalProps {
 function parseQuestDays(fullDescription: string): QuestDay[] {
   const days: QuestDay[] = [];
   
-  // Find all **Tag X** and **Genie-Aufgabe:** patterns with their positions
-  const tagPattern = /\*\*(?:Tag \d+|Genie-Aufgabe:)[^*]*?\*\*/g;
-  const matches: Array<{ header: string; startPos: number; endPos: number; isGenius: boolean }> = [];
+  // Find all **Tag X** patterns with their positions
+  const tagPattern = /\*\*Tag \d+[^*]*?\*\*/g;
+  const matches: Array<{ header: string; startPos: number; endPos: number }> = [];
   let match;
   
   while ((match = tagPattern.exec(fullDescription)) !== null) {
     matches.push({
       header: match[0],
       startPos: match.index,
-      endPos: match.index + match[0].length,
-      isGenius: match[0].includes('Genie-Aufgabe:')
+      endPos: match.index + match[0].length
     });
   }
   
-  // Process each tag and extract ONLY its content until the next tag
+  // Process each tag and extract content until the next tag
   matches.forEach((currentMatch, index) => {
     const nextMatch = matches[index + 1];
     
@@ -50,20 +49,40 @@ function parseQuestDays(fullDescription: string): QuestDay[] {
     const contentStart = currentMatch.endPos;
     const contentEnd = nextMatch ? nextMatch.startPos : fullDescription.length;
     
-    const rawContent = fullDescription.substring(contentStart, contentEnd).trim();
+    let rawContent = fullDescription.substring(contentStart, contentEnd).trim();
+    
+    // Check if this content contains a Genie-Aufgabe
+    let hasGeniusTask = false;
+    let geniusContent = '';
+    
+    const geniusPattern = /\*\*Genie-Aufgabe:\*\*([\s\S]*?)(?=\*\*Tag|\*\*Genie-Aufgabe:|$)/;
+    const geniusMatch = rawContent.match(geniusPattern);
+    
+    if (geniusMatch) {
+      hasGeniusTask = true;
+      geniusContent = geniusMatch[1].trim();
+      // Remove the Genie-Aufgabe section from the main content
+      rawContent = rawContent.replace(/\*\*Genie-Aufgabe:\*\*[\s\S]*?(?=\*\*Tag|\*\*Genie-Aufgabe:|$)/, '').trim();
+    }
     
     // Remove any remaining **Tag patterns that might have leaked through
-    const cleanContent = rawContent.replace(/\*\*(?:Tag \d+|Genie-Aufgabe:)[^*]*?\*\*/g, '').trim();
+    const cleanContent = rawContent.replace(/\*\*Tag \d+[^*]*?\*\*/g, '').trim();
     
-    if (cleanContent) {
+    if (cleanContent || hasGeniusTask) {
       const cleanTitle = currentMatch.header.replace(/\*\*/g, '').trim();
       
+      // Combine main content with genius task if present
+      let finalContent = cleanContent;
+      if (hasGeniusTask && geniusContent) {
+        finalContent += (cleanContent ? '\n\n' : '') + '**Genie-Aufgabe:** ' + geniusContent;
+      }
+      
       days.push({
-        id: `${currentMatch.isGenius ? 'genius' : 'day'}-${index + 1}`,
+        id: `day-${index + 1}`,
         title: cleanTitle,
-        content: cleanContent,
+        content: finalContent,
         order: index + 1,
-        isGeniusTask: currentMatch.isGenius
+        isGeniusTask: hasGeniusTask
       });
     }
   });
