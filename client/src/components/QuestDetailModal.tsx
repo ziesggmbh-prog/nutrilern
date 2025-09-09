@@ -157,28 +157,20 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
       >
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-4">
-            <div>
-              <Calendar 
-                className={`${isCompleted ? "text-green-custom" : isAvailable ? "text-white" : "text-gray-500"}`}
-                size={20} 
-              />
+            <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-10 h-10 flex items-center justify-center`}>
+              <Calendar className="text-white" size={16} />
             </div>
             <div>
               {isCompleted ? (
-                <CheckCircle 
-                  className="text-green-custom"
-                  size={20} 
-                />
+                <div className="bg-green-custom rounded-full w-8 h-8 flex items-center justify-center">
+                  <CheckCircle className="text-white" size={16} />
+                </div>
               ) : isAvailable ? (
-                <Users 
-                  className="text-white"
-                  size={20} 
-                />
+                <Users className="text-white" size={20} />
               ) : (
-                <Lock 
-                  className="text-gray-500"
-                  size={20} 
-                />
+                <div className="bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center">
+                  <Lock className="text-white" size={16} />
+                </div>
               )}
             </div>
           </div>
