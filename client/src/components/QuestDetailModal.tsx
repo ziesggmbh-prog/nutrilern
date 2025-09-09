@@ -276,6 +276,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
               completedLessons={completedDays.length}
               totalLessons={days.length}
               itemType="Tage"
+              isGroupMode={true}
             />
 
             {/* Days Grid */}

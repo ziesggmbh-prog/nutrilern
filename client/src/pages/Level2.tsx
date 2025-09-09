@@ -171,6 +171,7 @@ export default function Level2() {
           completedLessons={completedLessonIds.length} 
           totalLessons={lessons.length}
           itemType="Quests"
+          isGroupMode={true}
         />
 
         {/* Lessons Grid */}
