@@ -293,20 +293,6 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
               itemType="Tage"
             />
 
-            {/* Quest Image */}
-            <div className="flex justify-center mb-6">
-              <div className="w-48 h-32 rounded-lg overflow-hidden bg-black bg-opacity-10">
-                <img 
-                  src={quest.thumbnailUrl} 
-                  alt={quest.title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-              </div>
-            </div>
-
             {/* Days Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {days.map((day) => (
