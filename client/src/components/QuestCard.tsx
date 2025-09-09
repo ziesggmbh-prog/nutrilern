@@ -50,7 +50,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               <p className="text-gray-400 text-sm">Quest verfügbar</p>
             </div>
           </div>
-          <div className="text-white font-medium">
+          <div className="text-white text-sm">
             Starten
           </div>
         </div>

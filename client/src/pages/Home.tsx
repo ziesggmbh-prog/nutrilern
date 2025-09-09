@@ -159,6 +159,11 @@ export default function Home() {
     }
   };
 
+  const handleQuizClick = (lesson: any) => {
+    setCurrentQuizLesson(lesson);
+    setShowQuiz(true);
+  };
+
   const handleQuizComplete = () => {
     setShowQuiz(false);
     setShowSuccess(true);
