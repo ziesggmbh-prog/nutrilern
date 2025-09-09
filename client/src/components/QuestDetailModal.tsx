@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { X, Star, Play, Lock, CheckCircle, Target, Calendar } from "lucide-react";
+import { X, Star, Users, Lock, CheckCircle, Target, Calendar } from "lucide-react";
 import ProgressBar from "./ProgressBar";
 import OrganicShape from "./OrganicShape";
 import QuestTextModal from "./QuestTextModal";
@@ -162,11 +162,11 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             </div>
             <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
               {isCompleted ? (
-                <CheckCircle className="text-white" size={16} />
+                <CheckCircle className="text-white" size={14} />
               ) : isAvailable ? (
-                <Play className="text-white" size={16} />
+                <Users className="text-white" size={14} />
               ) : (
-                <Lock className="text-white" size={16} />
+                <Lock className="text-white" size={14} />
               )}
             </div>
           </div>
