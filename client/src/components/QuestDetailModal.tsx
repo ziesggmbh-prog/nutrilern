@@ -273,7 +273,8 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           lesson={{
             ...quest,
             title: selectedDay.title,
-            description: selectedDay.content
+            description: selectedDay.content,
+            fullDescription: undefined // Ensure only the day-specific content is shown
           } as any}
           onClose={() => setShowDayDetail(false)}
           onComplete={handleDayComplete}
