@@ -162,27 +162,79 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
               style={{ 
                 width: '40px', 
                 height: '40px',
-                display: 'grid',
-                placeItems: 'center'
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative'
               }}
             >
-              <Calendar className="text-white" size={16} style={{ margin: '0', padding: '0' }} />
+              <Calendar 
+                className="text-white" 
+                size={14} 
+                style={{ 
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-48%, -48%)',
+                  margin: '0',
+                  padding: '0',
+                  verticalAlign: 'baseline'
+                }} 
+              />
             </div>
             <div 
               className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full`} 
               style={{ 
                 width: '32px', 
                 height: '32px',
-                display: 'grid',
-                placeItems: 'center'
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative'
               }}
             >
               {isCompleted ? (
-                <CheckCircle className="text-white" size={16} style={{ margin: '0', padding: '0' }} />
+                <CheckCircle 
+                  className="text-white" 
+                  size={14} 
+                  style={{ 
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-48%, -48%)',
+                    margin: '0',
+                    padding: '0',
+                    verticalAlign: 'baseline'
+                  }} 
+                />
               ) : isAvailable ? (
-                <Users className="text-white" size={16} style={{ margin: '0', padding: '0' }} />
+                <Users 
+                  className="text-white" 
+                  size={14} 
+                  style={{ 
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-48%, -48%)',
+                    margin: '0',
+                    padding: '0',
+                    verticalAlign: 'baseline'
+                  }} 
+                />
               ) : (
-                <Lock className="text-white" size={16} style={{ margin: '0', padding: '0' }} />
+                <Lock 
+                  className="text-white" 
+                  size={14} 
+                  style={{ 
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-48%, -48%)',
+                    margin: '0',
+                    padding: '0',
+                    verticalAlign: 'baseline'
+                  }} 
+                />
               )}
             </div>
           </div>
