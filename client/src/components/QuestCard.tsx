@@ -42,16 +42,20 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <div className="bg-purple-custom rounded-full w-8 h-8 flex items-center justify-center mr-3">
-              <Target className="text-white" size={16} />
+            <div className={`${isAvailable ? "bg-purple-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center mr-3`}>
+              {isAvailable ? (
+                <Target className="text-white" size={16} />
+              ) : (
+                <Lock className="text-white" size={16} />
+              )}
             </div>
             <div>
               <h4 className="text-white font-medium">Quest: {lesson.title}</h4>
-              <p className="text-gray-400 text-sm">Quest verfügbar</p>
+              <p className="text-gray-400 text-sm">{isAvailable ? "Quest verfügbar" : "Nicht verfügbar"}</p>
             </div>
           </div>
-          <div className="text-white text-sm">
-            Starten
+          <div className={`text-sm ${isAvailable ? "text-white" : "text-gray-500"}`}>
+            {isAvailable ? "Starten" : "Gesperrt"}
           </div>
         </div>
       </motion.div>
