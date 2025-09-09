@@ -162,23 +162,18 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
               style={{ 
                 width: '40px', 
                 height: '40px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
                 position: 'relative'
               }}
             >
               <Calendar 
                 className="text-white" 
-                size={14} 
+                size={16} 
                 style={{ 
                   position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-48%, -48%)',
+                  top: '12px',
+                  left: '12px',
                   margin: '0',
-                  padding: '0',
-                  verticalAlign: 'baseline'
+                  padding: '0'
                 }} 
               />
             </div>
@@ -187,52 +182,43 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
               style={{ 
                 width: '32px', 
                 height: '32px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
                 position: 'relative'
               }}
             >
               {isCompleted ? (
                 <CheckCircle 
                   className="text-white" 
-                  size={14} 
+                  size={16} 
                   style={{ 
                     position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-48%, -48%)',
+                    top: '8px',
+                    left: '8px',
                     margin: '0',
-                    padding: '0',
-                    verticalAlign: 'baseline'
+                    padding: '0'
                   }} 
                 />
               ) : isAvailable ? (
                 <Users 
                   className="text-white" 
-                  size={14} 
+                  size={16} 
                   style={{ 
                     position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-48%, -48%)',
+                    top: '8px',
+                    left: '8px',
                     margin: '0',
-                    padding: '0',
-                    verticalAlign: 'baseline'
+                    padding: '0'
                   }} 
                 />
               ) : (
                 <Lock 
                   className="text-white" 
-                  size={14} 
+                  size={16} 
                   style={{ 
                     position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-48%, -48%)',
+                    top: '8px',
+                    left: '8px',
                     margin: '0',
-                    padding: '0',
-                    verticalAlign: 'baseline'
+                    padding: '0'
                   }} 
                 />
               )}
