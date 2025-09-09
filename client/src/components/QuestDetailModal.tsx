@@ -28,39 +28,40 @@ interface QuestDetailModalProps {
 function parseQuestDays(fullDescription: string): QuestDay[] {
   const days: QuestDay[] = [];
   
-  // More flexible regex to catch all possible tag variations
-  const tagRegex = /\*\*Tag \d+[^*]*?\*\*/g;
-  const tagMatches = fullDescription.match(tagRegex) || [];
+  // Find all **Tag X** patterns with their positions
+  const tagPattern = /\*\*Tag \d+[^*]*?\*\*/g;
+  const matches: Array<{ header: string; startPos: number; endPos: number }> = [];
+  let match;
   
+  while ((match = tagPattern.exec(fullDescription)) !== null) {
+    matches.push({
+      header: match[0],
+      startPos: match.index,
+      endPos: match.index + match[0].length
+    });
+  }
   
-  // Split content by tag headers
-  const sections = fullDescription.split(tagRegex);
-  
-  // Process each tag and its corresponding content section
-  tagMatches.forEach((tagHeader, index) => {
-    const dayNumber = index + 1;
-    // Content is in sections[index + 1] (sections[0] is usually empty or intro text)
-    const content = sections[index + 1]?.trim() || "";
+  // Process each tag and extract ONLY its content until the next tag
+  matches.forEach((currentMatch, index) => {
+    const nextMatch = matches[index + 1];
     
-    // Clean up content by removing any trailing content that belongs to next section
-    let cleanContent = content;
+    // Extract content from end of current tag header to start of next tag header
+    const contentStart = currentMatch.endPos;
+    const contentEnd = nextMatch ? nextMatch.startPos : fullDescription.length;
     
-    // Remove any "Genie-Aufgabe" content at the end if it belongs to next section
-    if (index < tagMatches.length - 1) {
-      const nextTagStart = content.indexOf('**Tag ');
-      if (nextTagStart > 0) {
-        cleanContent = content.substring(0, nextTagStart).trim();
-      }
-    }
+    const rawContent = fullDescription.substring(contentStart, contentEnd).trim();
+    
+    // Remove any remaining **Tag patterns that might have leaked through
+    const cleanContent = rawContent.replace(/\*\*Tag \d+[^*]*?\*\*/g, '').trim();
     
     if (cleanContent) {
-      const cleanTitle = tagHeader.replace(/\*\*/g, '').trim();
+      const cleanTitle = currentMatch.header.replace(/\*\*/g, '').trim();
       
       days.push({
-        id: `day-${dayNumber}`,
+        id: `day-${index + 1}`,
         title: cleanTitle,
         content: cleanContent,
-        order: dayNumber,
+        order: index + 1,
         isGeniusTask: false
       });
     }
