@@ -28,28 +28,33 @@ const questColors = [
 export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClick, showImage = true }: QuestCardProps) {
   const colorClass = questColors[(lesson.order - 1) % questColors.length];
   
-  // If showImage is false (single player mode), render simple deployed version style
+  // If showImage is false (single player mode), render deployed version style
   if (!showImage) {
     return (
-      <div className="mt-2">
-        <h4 className="text-sm font-medium text-white mb-1">
-          Quest: {lesson.title}
-        </h4>
-        <p className="text-xs text-gray-400 mb-2">
-          Quest verfügbar
-        </p>
-        <button
-          onClick={isAvailable ? onQuizClick : undefined}
-          disabled={!isAvailable}
-          className={`px-3 py-1 rounded text-xs font-medium transition-colors ${
-            isAvailable 
-              ? "bg-purple-custom text-white hover:bg-purple-600" 
-              : "bg-gray-600 text-gray-400 cursor-not-allowed"
-          }`}
-        >
-          Starten
-        </button>
-      </div>
+      <motion.div
+        className={`bg-navy-light rounded-2xl p-4 cursor-pointer relative overflow-hidden transition-all duration-300 group border-2 border-purple-custom ${
+          isAvailable ? "hover:shadow-xl" : "opacity-60"
+        }`}
+        onClick={isAvailable ? onQuizClick : undefined}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: lesson.order * 0.1 + 0.2 }}
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <div className="bg-purple-custom rounded-full w-8 h-8 flex items-center justify-center mr-3">
+              <Target className="text-white" size={16} />
+            </div>
+            <div>
+              <h4 className="text-white font-medium">Quest: {lesson.title}</h4>
+              <p className="text-gray-400 text-sm">Quest verfügbar</p>
+            </div>
+          </div>
+          <div className="text-purple-custom font-medium">
+            Starten
+          </div>
+        </div>
+      </motion.div>
     );
   }
 
