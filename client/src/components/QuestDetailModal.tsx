@@ -28,16 +28,17 @@ interface QuestDetailModalProps {
 function parseQuestDays(fullDescription: string): QuestDay[] {
   const days: QuestDay[] = [];
   
-  // Find all **Tag X** patterns with their positions
-  const tagPattern = /\*\*Tag \d+[^*]*?\*\*/g;
-  const matches: Array<{ header: string; startPos: number; endPos: number }> = [];
+  // Find all **Tag X** and **Genie-Aufgabe:** patterns with their positions
+  const tagPattern = /\*\*(?:Tag \d+|Genie-Aufgabe:)[^*]*?\*\*/g;
+  const matches: Array<{ header: string; startPos: number; endPos: number; isGenius: boolean }> = [];
   let match;
   
   while ((match = tagPattern.exec(fullDescription)) !== null) {
     matches.push({
       header: match[0],
       startPos: match.index,
-      endPos: match.index + match[0].length
+      endPos: match.index + match[0].length,
+      isGenius: match[0].includes('Genie-Aufgabe:')
     });
   }
   
@@ -52,17 +53,17 @@ function parseQuestDays(fullDescription: string): QuestDay[] {
     const rawContent = fullDescription.substring(contentStart, contentEnd).trim();
     
     // Remove any remaining **Tag patterns that might have leaked through
-    const cleanContent = rawContent.replace(/\*\*Tag \d+[^*]*?\*\*/g, '').trim();
+    const cleanContent = rawContent.replace(/\*\*(?:Tag \d+|Genie-Aufgabe:)[^*]*?\*\*/g, '').trim();
     
     if (cleanContent) {
       const cleanTitle = currentMatch.header.replace(/\*\*/g, '').trim();
       
       days.push({
-        id: `day-${index + 1}`,
+        id: `${currentMatch.isGenius ? 'genius' : 'day'}-${index + 1}`,
         title: cleanTitle,
         content: cleanContent,
         order: index + 1,
-        isGeniusTask: false
+        isGeniusTask: currentMatch.isGenius
       });
     }
   });
