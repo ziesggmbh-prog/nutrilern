@@ -27,6 +27,33 @@ const questColors = [
 
 export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClick, showImage = true }: QuestCardProps) {
   const colorClass = questColors[(lesson.order - 1) % questColors.length];
+  
+  // If showImage is false (single player mode), render simple deployed version style
+  if (!showImage) {
+    return (
+      <div className="mt-2">
+        <h4 className="text-sm font-medium text-white mb-1">
+          Quest: {lesson.title}
+        </h4>
+        <p className="text-xs text-gray-400 mb-2">
+          Quest verfügbar
+        </p>
+        <button
+          onClick={isAvailable ? onQuizClick : undefined}
+          disabled={!isAvailable}
+          className={`px-3 py-1 rounded text-xs font-medium transition-colors ${
+            isAvailable 
+              ? "bg-purple-custom text-white hover:bg-purple-600" 
+              : "bg-gray-600 text-gray-400 cursor-not-allowed"
+          }`}
+        >
+          Starten
+        </button>
+      </div>
+    );
+  }
+
+  // Full version for group mode with images
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -35,7 +62,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
   return (
     <motion.div
       ref={cardRef}
-      className={`bg-navy-light ${showImage ? 'rounded-2xl p-6' : 'rounded-xl p-4'} cursor-pointer relative overflow-hidden transition-all duration-300 group ${
+      className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 group ${
         isCompleted ? "border-2 border-green-custom" : isAvailable ? "border-2 border-purple-custom" : "opacity-60 border-2 border-gray-600"
       } ${
         isAvailable ? "hover:shadow-xl" : ""
@@ -46,68 +73,66 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       transition={{ delay: lesson.order * 0.1 }}
     >
       <OrganicShape
-        className={`absolute top-0 right-0 ${showImage ? 'w-20 h-20' : 'w-12 h-12'} ${colorClass} opacity-20`}
+        className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
         variant="default"
       />
       
       <div className="relative z-10">
-        <div className={`flex items-center justify-between ${showImage ? 'mb-4' : 'mb-3'}`}>
-          <div className={`${isCompleted ? "bg-green-custom" : colorClass} rounded-full ${showImage ? 'w-8 h-8' : 'w-6 h-6'} flex items-center justify-center`}>
-            <Target className="text-white" size={showImage ? 16 : 12} />
+        <div className="flex items-center justify-between mb-4">
+          <div className={`${isCompleted ? "bg-green-custom" : colorClass} rounded-full w-8 h-8 flex items-center justify-center`}>
+            <Target className="text-white" size={16} />
           </div>
-          <div className={`${isCompleted ? "bg-green-custom" : colorClass} rounded-full ${showImage ? 'w-6 h-6' : 'w-5 h-5'} flex items-center justify-center`}>
+          <div className={`${isCompleted ? "bg-green-custom" : colorClass} rounded-full w-6 h-6 flex items-center justify-center`}>
             {isCompleted ? (
-              <CheckCircle className="text-white" size={showImage ? 12 : 10} />
+              <CheckCircle className="text-white" size={12} />
             ) : !isAvailable ? (
-              <Lock className="text-white" size={showImage ? 12 : 10} />
+              <Lock className="text-white" size={12} />
             ) : null}
           </div>
         </div>
         
-        {showImage && (
-          <div className="relative">
-            {/* Loading skeleton */}
-            {!imageLoaded && !imageError && (
-              <div className="rounded-xl mb-4 w-full h-48 bg-gray-700 animate-pulse flex items-center justify-center">
-                <div className="w-8 h-8 bg-gray-600 rounded-full"></div>
-              </div>
-            )}
-            
-            {/* Image */}
-            {!imageError && isVisible && (
-              <img
-                src={lesson.thumbnailUrl}
-                alt={lesson.title}
-                className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${
-                  imageLoaded ? 'opacity-100' : 'opacity-0'
-                }`}
-                onLoad={() => setImageLoaded(true)}
-                onError={() => setImageError(true)}
-                loading={lesson.order <= 6 ? "eager" : "lazy"}
-              />
-            )}
-            
-            {/* Fallback gradient for failed images */}
-            {imageError && (
-              <div className={`rounded-xl mb-4 w-full h-48 ${colorClass} opacity-20 flex items-center justify-center`}>
-                <div className="text-white opacity-60 text-sm">Bild nicht verfügbar</div>
-              </div>
-            )}
-            
-            {!isAvailable && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl transition-opacity duration-300">
-                <Lock className="text-white opacity-40" size={32} />
-              </div>
-            )}
-          </div>
-        )}
+        <div className="relative">
+          {/* Loading skeleton */}
+          {!imageLoaded && !imageError && (
+            <div className="rounded-xl mb-4 w-full h-48 bg-gray-700 animate-pulse flex items-center justify-center">
+              <div className="w-8 h-8 bg-gray-600 rounded-full"></div>
+            </div>
+          )}
+          
+          {/* Image */}
+          {!imageError && isVisible && (
+            <img
+              src={lesson.thumbnailUrl}
+              alt={lesson.title}
+              className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => setImageLoaded(true)}
+              onError={() => setImageError(true)}
+              loading={lesson.order <= 6 ? "eager" : "lazy"}
+            />
+          )}
+          
+          {/* Fallback gradient for failed images */}
+          {imageError && (
+            <div className={`rounded-xl mb-4 w-full h-48 ${colorClass} opacity-20 flex items-center justify-center`}>
+              <div className="text-white opacity-60 text-sm">Bild nicht verfügbar</div>
+            </div>
+          )}
+          
+          {!isAvailable && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl transition-opacity duration-300">
+              <Lock className="text-white opacity-40" size={32} />
+            </div>
+          )}
+        </div>
         
-        <h3 className={`${showImage ? 'text-lg' : 'text-sm'} font-semibold ${showImage ? 'mb-2' : 'mb-1'} flex items-center`}>
-          <Target className={`mr-2 text-purple-custom`} size={showImage ? 18 : 14} />
+        <h3 className="text-lg font-semibold mb-2 flex items-center">
+          <Target className="mr-2 text-purple-custom" size={18} />
           Quest: {lesson.title}
         </h3>
-        <p className={`text-gray-400 text-sm ${showImage ? 'mb-4 h-16' : 'mb-3 h-8'} overflow-hidden leading-relaxed`}>
-          {showImage ? lesson.description : 'Beantworte Fragen zu diesem Thema'}
+        <p className="text-gray-400 text-sm mb-4 h-16 overflow-hidden leading-relaxed">
+          {lesson.description}
         </p>
         
         <div className="flex items-center justify-between">
