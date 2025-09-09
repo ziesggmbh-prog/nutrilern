@@ -157,17 +157,21 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
       >
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-4">
-            <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full relative`} style={{ width: '40px', height: '40px' }}>
-              <Calendar className="text-white absolute" size={16} style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+            <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-10 h-10 flex items-center justify-center`}>
+              <span className="flex items-center justify-center" style={{ width: '16px', height: '16px' }}>
+                <Calendar className="text-white" size={16} />
+              </span>
             </div>
-            <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full relative`} style={{ width: '32px', height: '32px' }}>
-              {isCompleted ? (
-                <CheckCircle className="text-white absolute" size={16} style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-              ) : isAvailable ? (
-                <Users className="text-white absolute" size={16} style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-              ) : (
-                <Lock className="text-white absolute" size={16} style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-              )}
+            <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
+              <span className="flex items-center justify-center" style={{ width: '16px', height: '16px' }}>
+                {isCompleted ? (
+                  <CheckCircle className="text-white" size={16} />
+                ) : isAvailable ? (
+                  <Users className="text-white" size={16} />
+                ) : (
+                  <Lock className="text-white" size={16} />
+                )}
+              </span>
             </div>
           </div>
 
