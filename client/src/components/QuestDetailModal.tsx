@@ -157,69 +157,27 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
       >
         <div className="relative z-10">
           <div className="flex items-center justify-between mb-4">
-            <div 
-              className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full`} 
-              style={{ 
-                width: '40px', 
-                height: '40px',
-                position: 'relative'
-              }}
-            >
+            <div>
               <Calendar 
-                className="text-white" 
-                size={16} 
-                style={{ 
-                  position: 'absolute',
-                  top: '12px',
-                  left: '12px',
-                  margin: '0',
-                  padding: '0'
-                }} 
+                className={`${isCompleted ? "text-green-custom" : isAvailable ? "text-white" : "text-gray-500"}`}
+                size={20} 
               />
             </div>
-            <div 
-              className={`${isCompleted ? "bg-green-custom" : isAvailable ? colorClass : "bg-gray-600"} rounded-full`} 
-              style={{ 
-                width: '32px', 
-                height: '32px',
-                position: 'relative'
-              }}
-            >
+            <div>
               {isCompleted ? (
                 <CheckCircle 
-                  className="text-white" 
-                  size={16} 
-                  style={{ 
-                    position: 'absolute',
-                    top: '8px',
-                    left: '8px',
-                    margin: '0',
-                    padding: '0'
-                  }} 
+                  className="text-green-custom"
+                  size={20} 
                 />
               ) : isAvailable ? (
                 <Users 
-                  className="text-white" 
-                  size={16} 
-                  style={{ 
-                    position: 'absolute',
-                    top: '8px',
-                    left: '8px',
-                    margin: '0',
-                    padding: '0'
-                  }} 
+                  className="text-white"
+                  size={20} 
                 />
               ) : (
                 <Lock 
-                  className="text-white" 
-                  size={16} 
-                  style={{ 
-                    position: 'absolute',
-                    top: '8px',
-                    left: '8px',
-                    margin: '0',
-                    padding: '0'
-                  }} 
+                  className="text-gray-500"
+                  size={20} 
                 />
               )}
             </div>
