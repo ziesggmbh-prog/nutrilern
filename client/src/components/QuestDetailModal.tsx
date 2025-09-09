@@ -202,9 +202,6 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           </div>
         </div>
 
-        {/* Decorative organic shape */}
-        <OrganicShape className={`absolute -top-2 -right-2 w-16 h-16 ${colorClass} opacity-20`} />
-
         {/* Lock overlay for unavailable days */}
         {!isAvailable && (
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl">
