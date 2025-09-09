@@ -244,38 +244,21 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             </button>
             
             <div className="relative z-10">
-              <div className="flex items-start gap-6">
-                {/* Left side: Text content */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Target className="text-white" size={28} />
-                    <h2 className="text-2xl font-bold text-white">Quest: {quest.title}</h2>
-                  </div>
-                  <p className="text-gray-200 mb-4">{quest.description}</p>
-                  
-                  {/* Quest Stats */}
-                  <div className="flex items-center gap-6 text-white">
-                    <div className="flex items-center gap-2">
-                      <Calendar size={18} />
-                      <span>{days.length} Tage</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Star size={18} />
-                      <span>{completedDays.length * 10} / {days.length * 10} XP</span>
-                    </div>
-                  </div>
+              <div className="flex items-center gap-3 mb-2">
+                <Target className="text-white" size={28} />
+                <h2 className="text-2xl font-bold text-white">Quest: {quest.title}</h2>
+              </div>
+              <p className="text-gray-200 mb-4">{quest.description}</p>
+              
+              {/* Quest Stats */}
+              <div className="flex items-center gap-6 text-white">
+                <div className="flex items-center gap-2">
+                  <Calendar size={18} />
+                  <span>{days.length} Tage</span>
                 </div>
-                
-                {/* Right side: Quest image */}
-                <div className="w-32 h-24 rounded-lg overflow-hidden bg-black bg-opacity-20 shrink-0">
-                  <img 
-                    src={quest.thumbnailUrl} 
-                    alt={quest.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
+                <div className="flex items-center gap-2">
+                  <Star size={18} />
+                  <span>{completedDays.length * 10} / {days.length * 10} XP</span>
                 </div>
               </div>
             </div>
@@ -293,6 +276,20 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
               totalLessons={days.length}
               itemType="Tage"
             />
+
+            {/* Quest Image */}
+            <div className="flex justify-center mb-6">
+              <div className="w-48 h-32 rounded-lg overflow-hidden bg-black bg-opacity-10">
+                <img 
+                  src={quest.thumbnailUrl} 
+                  alt={quest.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+              </div>
+            </div>
 
             {/* Days Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
