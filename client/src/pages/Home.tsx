@@ -53,7 +53,7 @@ export default function Home() {
       id: 3,
       title: "Fette",
       description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
-      videoUrl: "https://player.vimeo.com/video/1115154976",
+      videoUrl: "https://player.vimeo.com/video/1117810836",
       duration: 12,
       thumbnailUrl: "/assets/3_1751542243606_optimized.jpg",
       order: 3,
