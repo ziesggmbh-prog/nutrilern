@@ -27,103 +27,10 @@ export default function Home() {
   
 
 
-  // FINAL SOLUTION: Correct lesson order with Fette/Proteine swap
-  const hardcodedLessons = [
-    {
-      id: 1,
-      title: "Intro",
-      description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
-      videoUrl: "https://player.vimeo.com/video/1100816490",
-      duration: 2,
-      thumbnailUrl: "/assets/1_1751542243605_optimized.jpg",
-      order: 1,
-      isActive: true
-    },
-    {
-      id: 2,
-      title: "Kohlenhydrate",
-      description: "Erfahre, welche Rolle Kohlenhydrate in deinem Körper spielen und warum sie mehr sind als nur Zucker.",
-      videoUrl: "https://player.vimeo.com/video/1099335411",
-      duration: 5,
-      thumbnailUrl: "/assets/6_1751542243606_optimized.jpg",
-      order: 2,
-      isActive: true
-    },
-    {
-      id: 3,
-      title: "Fette",
-      description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
-      videoUrl: "https://player.vimeo.com/video/1117810836",
-      duration: 5,
-      thumbnailUrl: "/assets/3_1751542243606_optimized.jpg",
-      order: 3,
-      isActive: true
-    },
-    {
-      id: 4,
-      title: "Proteine",
-      description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: 5,
-      thumbnailUrl: "/assets/4_1751549047993_optimized.jpg",
-      order: 4,
-      isActive: true
-    },
-    {
-      id: 5,
-      title: "Mikronährstoffe",
-      description: "Vitamine und Mineralstoffe im Fokus - klein, aber unverzichtbar für Gesundheit und Leistungsfähigkeit.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: 5,
-      thumbnailUrl: "/assets/5_1751542243606_optimized.jpg",
-      order: 5,
-      isActive: true
-    },
-    {
-      id: 6,
-      title: "Unterwelt",
-      description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen - und wie du ihnen entkommst.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: 5,
-      thumbnailUrl: "/assets/8_1751542243607_optimized.jpg",
-      order: 6,
-      isActive: true
-    },
-    {
-      id: 7,
-      title: "Trinken",
-      description: "Warum ausreichend Flüssigkeit entscheidend für Konzentration, Leistungsfähigkeit und Wohlbefinden ist.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: 5,
-      thumbnailUrl: "/assets/7_1751542243606_optimized.jpg",
-      order: 7,
-      isActive: true
-    },
-    {
-      id: 8,
-      title: "Bewegung - Teil 1",
-      description: "Die Grundlagen körperlicher Aktivität: Warum Bewegung essenziell für deine Gesundheit ist.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: 5,
-      thumbnailUrl: "/assets/2_1751542243605_optimized.jpg",
-      order: 8,
-      isActive: true
-    },
-    {
-      id: 9,
-      title: "Bewegung - Teil 2",
-      description: "Praktische Tipps, wie du mehr Bewegung in deinen Alltag integrierst - auch ohne Fitnessstudio.",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: 5,
-      thumbnailUrl: "/assets/9_1751542243607_optimized.jpg",
-      order: 9,
-      isActive: true
-    }
-  ];
-
-  // FORCE IMMEDIATE RENDER - NO API CALLS
-  const lessons = hardcodedLessons;
-  const lessonsLoading = false;
+  // Load lessons from API
+  const { data: lessons = [], isLoading: lessonsLoading } = useQuery<Lesson[]>({
+    queryKey: ["/api/lessons"],
+  });
   
 
 
@@ -134,6 +41,15 @@ export default function Home() {
   // Preload thumbnail images for faster loading
   const thumbnailUrls = lessons.map(lesson => lesson.thumbnailUrl).filter(Boolean);
   const { isLoaded, loadedCount } = useImagePreloader(thumbnailUrls);
+
+  // Show loading state while lessons are being fetched
+  if (lessonsLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center">
+        <div className="text-lg text-gray-600">Lade Lektionen...</div>
+      </div>
+    );
+  }
 
   const completedLessonIds = progress.filter(p => p.isCompleted).map(p => p.lessonId);
   const nextAvailableLesson = lessons.find(lesson => 
