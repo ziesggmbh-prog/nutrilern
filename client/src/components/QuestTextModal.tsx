@@ -112,7 +112,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
             className="px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
           >
             <CheckCircle size={20} />
-            Quest abschließen
+            Tag abschließen
           </button>
         </div>
       </motion.div>
