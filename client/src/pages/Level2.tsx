@@ -132,7 +132,7 @@ export default function Level2() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold">NutriLern</h1>
-                <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Ernährung & Bewegung</p>
+                <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Ernährung</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
