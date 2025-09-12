@@ -162,17 +162,11 @@ export default function Level2() {
             <Star className="text-yellow-400" size={24} />
           </div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Jetzt wird's praktisch: Wendet euer Wissen an und knackt die Quests als Gruppe!
+            Jetzt wird's praktisch: Wendet euer Wissen an und meistert die Quests als Gruppe!
           </p>
         </motion.div>
 
-        {/* Progress Overview */}
-        <ProgressBar 
-          completedLessons={completedLessonIds.length} 
-          totalLessons={lessons.length}
-          itemType="Quests"
-          isGroupMode={true}
-        />
+        {/* Progress Overview removed */}
 
         {/* Lessons Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -192,6 +186,7 @@ export default function Level2() {
                   isCompleted={isCompleted}
                   isAvailable={isAvailable}
                   onQuizClick={() => handleLessonClick(lesson)}
+                  isGroupMode={true}
                 />
               </motion.div>
             );
