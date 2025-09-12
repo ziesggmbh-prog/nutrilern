@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, CheckCircle } from 'lucide-react';
+import { quizData } from '@/lib/quizData';
 
 interface VideoPlayerProps {
   lesson: any;
@@ -9,6 +10,9 @@ interface VideoPlayerProps {
 
 export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayerProps) {
   console.log('VideoPlayer loaded for lesson:', lesson.title);
+  
+  // Check if this lesson has a quiz
+  const hasQuiz = quizData.some(quiz => quiz.lessonId === lesson.id);
   
   // No auto-completion for Vimeo videos - only manual completion via button
   
@@ -103,7 +107,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               className="px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
             >
               <CheckCircle size={20} />
-              Quiz starten
+              {hasQuiz ? "Quiz starten" : "Video schließen"}
             </button>
           </div>
         </div>

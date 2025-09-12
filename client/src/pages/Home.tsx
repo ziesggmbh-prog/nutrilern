@@ -12,6 +12,8 @@ import HamburgerMenu from "@/components/HamburgerMenu";
 import LevelDropdown from "@/components/LevelDropdown";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 import type { Lesson, UserProgress } from "@shared/schema";
+import { quizData } from "@/lib/quizData";
+import { queryClient } from "@/lib/queryClient";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 import bkkFirmusLogo from "@assets/Logo_BKK_firmus_high_quality.png";
 import ziesLogo from "@assets/zies_logo_transparent_1751546047870.png";
@@ -149,11 +151,40 @@ export default function Home() {
     }
   };
 
-  const handleVideoComplete = () => {
+  const handleVideoComplete = async () => {
     setShowVideo(false);
     if (selectedLesson) {
-      setCurrentQuizLesson(selectedLesson);
-      setShowQuiz(true);
+      // Check if this lesson has a quiz
+      const hasQuiz = quizData.some(quiz => quiz.lessonId === selectedLesson.id);
+      
+      if (hasQuiz) {
+        // Show quiz modal
+        setCurrentQuizLesson(selectedLesson);
+        setShowQuiz(true);
+      } else {
+        // No quiz - directly mark lesson as completed (for Intro)
+        try {
+          await queryClient.fetchQuery({
+            queryKey: [`/api/progress/complete`],
+            queryFn: async () => {
+              const response = await fetch('/api/progress/complete', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ lessonId: selectedLesson.id })
+              });
+              return response.json();
+            }
+          });
+          
+          // Reset states and refresh progress
+          setSelectedLesson(null);
+          refetchProgress();
+        } catch (error) {
+          console.error('Error completing lesson:', error);
+          // Fallback - just reset states
+          setSelectedLesson(null);
+        }
+      }
     }
   };
 
@@ -231,14 +262,16 @@ export default function Home() {
                   onClick={() => handleLessonClick(lesson)}
                 />
                 
-                {/* Quest Card (smaller, without image) */}
-                <QuestCard
-                  lesson={lesson}
-                  isCompleted={isCompleted}
-                  isAvailable={isAvailable}
-                  onQuizClick={() => handleQuizClick(lesson)}
-                  showImage={false}
-                />
+                {/* Quest Card (smaller, without image) - but NOT for Intro */}
+                {lesson.id !== 1 && (
+                  <QuestCard
+                    lesson={lesson}
+                    isCompleted={isCompleted}
+                    isAvailable={isAvailable}
+                    onQuizClick={() => handleQuizClick(lesson)}
+                    showImage={false}
+                  />
+                )}
               </div>
             );
           })}
