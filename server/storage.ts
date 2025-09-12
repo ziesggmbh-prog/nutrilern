@@ -212,7 +212,7 @@ export class MemStorage implements IStorage {
             id: "f1",
             question: "Welche Funktion haben Fette im Körper neben der Energielieferung?",
             options: [
-              "Sie bilden Muskeln auf",
+              "Sie dienen dem Muskelaufbau.",
               "Sie sind Bestandteil der Zellmembran",
               "Sie speichern ausschließlich Wasser",
               "Sie bauen Kohlenhydrate ab"
