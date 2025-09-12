@@ -59,7 +59,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
         {/* NO IMAGE - this is the key difference for single player mode */}
         
         <h3 className="text-lg font-semibold mb-2">
-          Quest zu {lesson.title}
+          Quiz zu {lesson.title}
         </h3>
         <p className="text-gray-400 text-sm mb-4 h-16 overflow-hidden leading-relaxed">
           Beantworte Fragen zu diesem Thema und teste dein Wissen.
