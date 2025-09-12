@@ -224,10 +224,10 @@ export class MemStorage implements IStorage {
             id: "f2",
             question: "Wie viel Energie liefert 1 Gramm Fett im Vergleich zu 1 Gramm Kohlenhydrate oder Proteine?",
             options: [
-              "Gleich viel Energie",
-              "Weniger Energie", 
-              "Doppelt so viel Energie",
-              "Viermal so viel Energie"
+              "Gleich viel",
+              "Weniger", 
+              "Mehr als doppelt so viel",
+              "Viermal so viel"
             ],
             correctAnswer: 2,
             explanation: "Fette liefern etwa doppelt so viel Energie wie Kohlenhydrate oder Proteine - das macht sie zum energiereichsten Nährstoff."
