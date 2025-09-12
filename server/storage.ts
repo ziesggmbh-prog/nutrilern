@@ -214,7 +214,7 @@ export class MemStorage implements IStorage {
             options: [
               "Sie dienen dem Muskelaufbau.",
               "Sie sind Bestandteil der Zellmembran",
-              "Sie speichern ausschließlich Wasser",
+              "Sie speichern Wasser.",
               "Sie bauen Kohlenhydrate ab"
             ],
             correctAnswer: 1,
