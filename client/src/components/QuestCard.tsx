@@ -50,8 +50,8 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               )}
             </div>
             <div>
-              <h4 className="text-white font-medium">Quest: {lesson.title}</h4>
-              <p className="text-gray-400 text-sm">{isAvailable ? "Quest verfügbar" : "Nicht verfügbar"}</p>
+              <h4 className="text-white font-medium">Quiz: {lesson.title}</h4>
+              <p className="text-gray-400 text-sm">{isAvailable ? "Quiz verfügbar" : "Nicht verfügbar"}</p>
             </div>
           </div>
           <div className={`text-sm ${isAvailable ? "text-white" : "text-gray-500"}`}>
@@ -138,7 +138,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
         
         <h3 className="text-lg font-semibold mb-2 flex items-center">
           <Target className="mr-2 text-purple-custom" size={18} />
-          Quest: {lesson.title}
+          Quiz: {lesson.title}
         </h3>
         <p className="text-gray-400 text-sm mb-4 h-16 overflow-hidden leading-relaxed">
           {lesson.description}
