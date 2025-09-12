@@ -7,7 +7,6 @@ import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
 import QuizModal from "@/components/QuizModal";
 import ProgressBar from "@/components/ProgressBar";
-import SuccessModal from "@/components/SuccessModal";
 import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import LevelDropdown from "@/components/LevelDropdown";
@@ -21,7 +20,6 @@ export default function Home() {
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
   const [showVideo, setShowVideo] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
   const [currentQuizLesson, setCurrentQuizLesson] = useState<Lesson | null>(null);
 
   
@@ -166,15 +164,11 @@ export default function Home() {
 
   const handleQuizComplete = () => {
     setShowQuiz(false);
-    setShowSuccess(true);
+    setSelectedLesson(null);
+    setCurrentQuizLesson(null);
     refetchProgress();
   };
 
-  const handleSuccessClose = () => {
-    setShowSuccess(false);
-    setSelectedLesson(null);
-    setCurrentQuizLesson(null);
-  };
 
   if (lessonsLoading) {
     return (
@@ -303,12 +297,6 @@ export default function Home() {
         />
       )}
 
-      {showSuccess && (
-        <SuccessModal
-          onClose={handleSuccessClose}
-          onContinue={handleSuccessClose}
-        />
-      )}
     </div>
   );
 }
