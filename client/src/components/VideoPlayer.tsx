@@ -95,16 +95,19 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         <div className="text-center">
           <p className="text-gray-300 mb-4">{lesson.description}</p>
           <div className="flex justify-between items-center">
-            <button
-              onClick={onClose}
-              className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
-            >
-              Schließen
-            </button>
+            {/* Only show left "Schließen" button if lesson has quiz */}
+            {hasQuiz && (
+              <button
+                onClick={onClose}
+                className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Schließen
+              </button>
+            )}
             
             <button
               onClick={onComplete}
-              className="px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
+              className={`px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 ${!hasQuiz ? 'mx-auto' : ''}`}
             >
               <CheckCircle size={20} />
               {hasQuiz ? "Quiz starten" : "Video schließen"}
