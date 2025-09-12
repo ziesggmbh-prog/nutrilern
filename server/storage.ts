@@ -222,7 +222,7 @@ export class MemStorage implements IStorage {
           },
           {
             id: "f2",
-            question: "Wie viel Energie liefert 1 Gramm Fett im Vergleich zu 1 Gramm Kohlenhydraten oder Proteinen?",
+            question: "Wie viel Energie liefert 1 Gramm Fett im Vergleich zu 1 Gramm Kohlenhydrate oder Proteine?",
             options: [
               "Gleich viel Energie",
               "Weniger Energie", 
