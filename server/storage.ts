@@ -66,7 +66,7 @@ export class MemStorage implements IStorage {
         title: "Intro",
         description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
         videoUrl: "https://player.vimeo.com/video/1100816490",
-        duration: 8,
+        duration: 2,
         thumbnailUrl: "/assets/1_1751542243605_optimized.jpg",
         order: 1,
         isActive: true
@@ -75,7 +75,7 @@ export class MemStorage implements IStorage {
         title: "Kohlenhydrate",
         description: "Erfahre, welche Rolle Kohlenhydrate in deinem Körper spielen und warum sie mehr sind als nur Zucker.",
         videoUrl: "https://player.vimeo.com/video/1099335411",
-        duration: 10,
+        duration: 5,
         thumbnailUrl: "/assets/6_1751542243606_optimized.jpg",
         order: 2,
         isActive: true
@@ -84,7 +84,7 @@ export class MemStorage implements IStorage {
         title: "Fette",
         description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
         videoUrl: "https://player.vimeo.com/video/1117810836",
-        duration: 12,
+        duration: 5,
         thumbnailUrl: "/assets/3_1751542243606_optimized.jpg",
         order: 3,
         isActive: true
@@ -93,7 +93,7 @@ export class MemStorage implements IStorage {
         title: "Proteine",
         description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        duration: 9,
+        duration: 5,
         thumbnailUrl: "/assets/4_1751549047993_optimized.jpg",
         order: 4,
         isActive: true
@@ -102,7 +102,7 @@ export class MemStorage implements IStorage {
         title: "Mikronährstoffe",
         description: "Vitamine und Mineralstoffe im Fokus - klein, aber unverzichtbar für Gesundheit und Leistungsfähigkeit.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        duration: 11,
+        duration: 5,
         thumbnailUrl: "/assets/5_1751542243606_optimized.jpg",
         order: 5,
         isActive: true
@@ -111,7 +111,7 @@ export class MemStorage implements IStorage {
         title: "Die Hölle",
         description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen - und wie du ihnen entkommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        duration: 7,
+        duration: 5,
         thumbnailUrl: "/assets/8_1751542243607_optimized.jpg",
         order: 6,
         isActive: true
@@ -120,7 +120,7 @@ export class MemStorage implements IStorage {
         title: "Trinken",
         description: "Warum ausreichend Flüssigkeit entscheidend für Konzentration, Leistungsfähigkeit und Wohlbefinden ist.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        duration: 13,
+        duration: 5,
         thumbnailUrl: "/assets/7_1751542243606_optimized.jpg",
         order: 7,
         isActive: true
@@ -129,7 +129,7 @@ export class MemStorage implements IStorage {
         title: "Bewegung - Teil 1",
         description: "Die Grundlagen körperlicher Aktivität: Warum Bewegung essenziell für deine Gesundheit ist.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        duration: 10,
+        duration: 5,
         thumbnailUrl: "/assets/2_1751542243605_optimized.jpg",
         order: 8,
         isActive: true
@@ -138,7 +138,7 @@ export class MemStorage implements IStorage {
         title: "Bewegung - Teil 2",
         description: "Praktische Tipps, wie du mehr Bewegung in deinen Alltag integrierst - auch ohne Fitnessstudio.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-        duration: 8,
+        duration: 5,
         thumbnailUrl: "/assets/9_1751542243607_optimized.jpg",
         order: 9,
         isActive: true
