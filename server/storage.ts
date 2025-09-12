@@ -64,7 +64,7 @@ export class MemStorage implements IStorage {
     const lessonData = [
       {
         title: "Intro",
-        description: "Ein kurzer Überblick über das, was dich in dieser Videoreihe rund um Ernährung, Bewegung und Gesundheit erwartet.",
+        description: "Eine kurze Einführung in die Bild- und Gedankenwelt der Videoreihe.",
         videoUrl: "https://player.vimeo.com/video/1100816490",
         duration: 2,
         thumbnailUrl: "/assets/1_1751542243605_optimized.jpg",
@@ -73,7 +73,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Kohlenhydrate",
-        description: "Erfahre, welche Rolle Kohlenhydrate in deinem Körper spielen und warum sie mehr sind als nur Zucker.",
+        description: "Erfahre, warum Kohlenhydrate ein wichtiger Bestandteil deiner Ernährung sind und wie sie dir am meisten nützen.",
         videoUrl: "https://player.vimeo.com/video/1099335411",
         duration: 5,
         thumbnailUrl: "/assets/6_1751542243606_optimized.jpg",
@@ -82,7 +82,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Fette",
-        description: "Gesunde vs. ungesunde Fette: Wir klären, warum Fett nicht dein Feind ist, sondern ein wichtiger Energielieferant.",
+        description: "Wir klären, welche Rolle Fette in deinem Körper spielen und was es mit ‚guten' und ‚schlechten' Fetten auf sich hat.",
         videoUrl: "https://player.vimeo.com/video/1117810836",
         duration: 5,
         thumbnailUrl: "/assets/3_1751542243606_optimized.jpg",
@@ -91,7 +91,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Proteine",
-        description: "Warum Eiweiß für Muskeln, Immunsystem und Regeneration so wichtig ist - und wie du genug davon bekommst.",
+        description: "Wofür Eiweiß wichtig ist, wie du ausreichend davon bekommst und wie das Thema mit den Fetten zusammenhängt.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 5,
         thumbnailUrl: "/assets/4_1751549047993_optimized.jpg",
@@ -100,7 +100,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Mikronährstoffe",
-        description: "Vitamine und Mineralstoffe im Fokus - klein, aber unverzichtbar für Gesundheit und Leistungsfähigkeit.",
+        description: "Ein Einblick in die faszinierende Welt der Mikronährstoffe und ihre Bedeutung für die Ernährung.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 5,
         thumbnailUrl: "/assets/5_1751542243606_optimized.jpg",
@@ -109,7 +109,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Unterwelt",
-        description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen - und wie du ihnen entkommst.",
+        description: "Welche Stoffe wirklich ungesund sind und wie du ihnen entkommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 5,
         thumbnailUrl: "/assets/8_1751542243607_optimized.jpg",
