@@ -145,23 +145,25 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           {lesson.description}
         </p>
         
-        <div className="flex items-center justify-between">
-          <span className={`text-sm font-medium ${isAvailable ? "text-purple-custom" : "text-gray-500"}`}>
-            {lesson.duration} min
-          </span>
-          <div className="flex items-center space-x-1">
-            {isCompleted ? (
-              <Star className="text-green-custom" size={16} />
-            ) : isAvailable ? (
-              <Star className="text-purple-custom" size={16} />
-            ) : (
-              <Lock className="text-gray-500" size={16} />
-            )}
-            <span className={`text-sm ${isCompleted ? "text-green-custom" : isAvailable ? "text-purple-custom" : "text-gray-500"}`}>
-              {isCompleted ? "Abgeschlossen" : isAvailable ? "Verfügbar" : "Gesperrt"}
+        {!isGroupMode && (
+          <div className="flex items-center justify-between">
+            <span className={`text-sm font-medium ${isAvailable ? "text-purple-custom" : "text-gray-500"}`}>
+              {lesson.duration} min
             </span>
+            <div className="flex items-center space-x-1">
+              {isCompleted ? (
+                <Star className="text-green-custom" size={16} />
+              ) : isAvailable ? (
+                <Star className="text-purple-custom" size={16} />
+              ) : (
+                <Lock className="text-gray-500" size={16} />
+              )}
+              <span className={`text-sm ${isCompleted ? "text-green-custom" : isAvailable ? "text-purple-custom" : "text-gray-500"}`}>
+                {isCompleted ? "Abgeschlossen" : isAvailable ? "Verfügbar" : "Gesperrt"}
+              </span>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </motion.div>
   );
