@@ -81,7 +81,7 @@ export default function Home() {
     },
     {
       id: 6,
-      title: "Die Hölle",
+      title: "Unterwelt",
       description: "Ein Blick auf ungesunde Ernährungsmuster und Lebensweisen - und wie du ihnen entkommst.",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: 5,
