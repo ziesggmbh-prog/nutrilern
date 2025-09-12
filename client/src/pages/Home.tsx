@@ -164,17 +164,14 @@ export default function Home() {
       } else {
         // No quiz - directly mark lesson as completed (for Intro)
         try {
-          await queryClient.fetchQuery({
-            queryKey: [`/api/progress/complete`],
-            queryFn: async () => {
-              const response = await fetch('/api/progress/complete', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ lessonId: selectedLesson.id })
-              });
-              return response.json();
-            }
+          const response = await fetch(`/api/lessons/${selectedLesson.id}/complete`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
           });
+          
+          if (!response.ok) {
+            throw new Error('Failed to complete lesson');
+          }
           
           // Reset states and refresh progress
           setSelectedLesson(null);
