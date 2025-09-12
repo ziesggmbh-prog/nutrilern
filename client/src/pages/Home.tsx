@@ -287,7 +287,7 @@ export default function Home() {
               <img 
                 src={bkkFirmusLogo} 
                 alt="BKK firmus Logo" 
-                className="h-8 w-auto max-w-full object-contain"
+                className="h-10 w-auto max-w-full object-contain"
               />
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function Home() {
               <img 
                 src={ziesLogo} 
                 alt="ZIES gGmbH Logo" 
-                className="h-8 w-auto max-w-full object-contain"
+                className="h-10 w-auto max-w-full object-contain"
               />
             </div>
           </div>
