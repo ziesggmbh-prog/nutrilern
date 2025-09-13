@@ -2,6 +2,15 @@ import React, { useState, useRef, useEffect } from 'react';
 import { X, CheckCircle } from 'lucide-react';
 import { quizData } from '@/lib/quizData';
 
+// Declare Vimeo Player for TypeScript
+declare global {
+  interface Window {
+    Vimeo: {
+      Player: any;
+    };
+  }
+}
+
 interface VideoPlayerProps {
   lesson: any;
   onClose: () => void;
@@ -15,71 +24,81 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const hasQuiz = quizData.some(quiz => quiz.lessonId === lesson.id);
   const showDualButtons = lesson.id === 2 || lesson.id === 3;
   
-  // Function to exit fullscreen mode - improved with multiple fallbacks
-  const exitFullscreen = () => {
-    console.log('Attempting to exit fullscreen mode...');
+  // Refs for Vimeo iframes
+  const vimeoRef1 = useRef<HTMLIFrameElement>(null);
+  const vimeoRef2 = useRef<HTMLIFrameElement>(null);
+  const vimeoRef3 = useRef<HTMLIFrameElement>(null);
+  
+  // Fallback function to exit fullscreen mode
+  const fallbackExitFullscreen = async () => {
+    console.log('🔄 Fallback: Attempting to exit fullscreen mode...');
     
-    // Check multiple fullscreen properties for better browser compatibility
     const isFullscreen = document.fullscreenElement || 
                         (document as any).webkitFullscreenElement || 
                         (document as any).mozFullScreenElement || 
                         (document as any).msFullscreenElement;
     
     if (isFullscreen) {
-      console.log('Fullscreen detected, attempting to exit...');
-      
-      // Try multiple exit fullscreen methods for browser compatibility
-      if (document.exitFullscreen) {
-        document.exitFullscreen().then(() => {
-          console.log('✅ Successfully exited fullscreen');
-        }).catch((err) => {
-          console.log('❌ Failed to exit fullscreen:', err);
-        });
-      } else if ((document as any).webkitExitFullscreen) {
-        (document as any).webkitExitFullscreen();
-        console.log('✅ Used webkit exitFullscreen');
-      } else if ((document as any).mozCancelFullScreen) {
-        (document as any).mozCancelFullScreen();
-        console.log('✅ Used moz cancelFullScreen');
-      } else if ((document as any).msExitFullscreen) {
-        (document as any).msExitFullscreen();
-        console.log('✅ Used ms exitFullscreen');
+      try {
+        if (document.exitFullscreen) {
+          await document.exitFullscreen();
+          console.log('✅ Fallback: Successfully exited fullscreen');
+        } else if ((document as any).webkitExitFullscreen) {
+          (document as any).webkitExitFullscreen();
+          console.log('✅ Fallback: Used webkit exitFullscreen');
+        }
+      } catch (err) {
+        console.log('❌ Fallback: Failed to exit fullscreen:', err);
       }
     } else {
-      console.log('No fullscreen mode detected');
+      console.log('ℹ️ Fallback: No fullscreen mode detected');
     }
   };
   
-  // Listen for Vimeo video end events - improved error handling
+  // Setup Vimeo Player API when component mounts
   useEffect(() => {
-    const handleVimeoMessage = (event: MessageEvent) => {
-      console.log('Received message from:', event.origin, 'Data:', event.data);
-      
-      if (event.origin !== 'https://player.vimeo.com') {
-        console.log('Message not from Vimeo, ignoring');
+    const setupVimeoPlayer = async () => {
+      // Wait for Vimeo Player API to be available
+      if (typeof window.Vimeo === 'undefined') {
+        console.log('⏳ Waiting for Vimeo Player API...');
+        setTimeout(setupVimeoPlayer, 100);
         return;
       }
       
-      try {
-        const data = JSON.parse(event.data);
-        console.log('Parsed Vimeo data:', data);
-        
-        if (data.event === 'ended') {
-          console.log('🎬 Vimeo video ended - attempting to exit fullscreen');
-          // Add small delay to ensure video has fully ended
-          setTimeout(exitFullscreen, 500);
+      console.log('🎬 Setting up Vimeo Player API...');
+      
+      // Setup player for each lesson
+      const setupPlayer = (ref: React.RefObject<HTMLIFrameElement>, lessonId: number) => {
+        if (ref.current && lesson.id === lessonId) {
+          try {
+            const player = new window.Vimeo.Player(ref.current);
+            
+            player.on('ended', async () => {
+              console.log(`🎬 Vimeo video ${lessonId} ended - exiting fullscreen via Player API`);
+              try {
+                await player.exitFullscreen();
+                console.log('✅ Successfully exited fullscreen via Player API');
+              } catch (err) {
+                console.log('⚠️ Player.exitFullscreen failed, trying fallback:', err);
+                await fallbackExitFullscreen();
+              }
+            });
+            
+            console.log(`✅ Vimeo Player ${lessonId} setup complete`);
+          } catch (error) {
+            console.log(`❌ Failed to setup Vimeo Player ${lessonId}:`, error);
+          }
         }
-      } catch (error) {
-        console.log('Failed to parse Vimeo message data:', error);
-      }
+      };
+      
+      // Setup players for different lessons
+      setupPlayer(vimeoRef1, 1);
+      setupPlayer(vimeoRef2, 2);
+      setupPlayer(vimeoRef3, 3);
     };
     
-    window.addEventListener('message', handleVimeoMessage);
-    
-    return () => {
-      window.removeEventListener('message', handleVimeoMessage);
-    };
-  }, []);
+    setupVimeoPlayer();
+  }, [lesson.id]);
   
   // No auto-completion for Vimeo videos - only manual completion via button
   
@@ -98,12 +117,14 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
-            {/* Vimeo Embed for Video 1 & 2 */}
+            {/* Vimeo Embed for Videos 1, 2 & 3 with Player API */}
             {lesson.id === 1 ? (
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
-                  src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&api=1"
-                  frameBorder="0" 
+                  ref={vimeoRef1}
+                  src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&autoplay=1"
+                  frameBorder="0"
+                  allowFullScreen
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                   title="Intro"
@@ -115,8 +136,10 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             ) : lesson.id === 2 ? (
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
-                  src="https://player.vimeo.com/video/1099335411?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&api=1"
-                  frameBorder="0" 
+                  ref={vimeoRef2}
+                  src="https://player.vimeo.com/video/1099335411?badge=0&autopause=0&autoplay=1"
+                  frameBorder="0"
+                  allowFullScreen
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                   title="Kohlenhydrate"
@@ -128,8 +151,10 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             ) : lesson.id === 3 ? (
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
-                  src="https://player.vimeo.com/video/1117810836?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&api=1"
-                  frameBorder="0" 
+                  ref={vimeoRef3}
+                  src="https://player.vimeo.com/video/1117810836?badge=0&autopause=0&autoplay=1"
+                  frameBorder="0"
+                  allowFullScreen
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
                   title="Fette"
@@ -150,7 +175,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 onEnded={() => {
                   console.log('🎬 HTML5 video ended - attempting to exit fullscreen');
                   // Add small delay to ensure video has fully ended
-                  setTimeout(exitFullscreen, 500);
+                  setTimeout(fallbackExitFullscreen, 500);
                   // No automatic completion - user must manually click the button
                 }}
               >
