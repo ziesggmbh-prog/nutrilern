@@ -203,7 +203,8 @@ export default function Home() {
               <img 
                 src={bkkFirmusLogo} 
                 alt="BKK firmus Logo" 
-                className="h-16 w-auto max-w-full object-contain"
+                className="h-20 w-auto max-w-full object-contain" 
+                style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
           </div>
@@ -219,7 +220,8 @@ export default function Home() {
               <img 
                 src={ziesLogo} 
                 alt="ZIES gGmbH Logo" 
-                className="h-16 w-auto max-w-full object-contain"
+                className="h-20 w-auto max-w-full object-contain" 
+                style={{ imageRendering: 'crisp-edges' }}
               />
             </div>
           </div>
