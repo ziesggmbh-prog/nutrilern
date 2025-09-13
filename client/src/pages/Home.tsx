@@ -16,7 +16,7 @@ import { quizData } from "@/lib/quizData";
 import { queryClient } from "@/lib/queryClient";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 import bkkFirmusLogo from "@assets/bkk_firmus_logo.svg";
-import ziesLogo from "@assets/zies_logo.svg";
+import ziesLogo from "@assets/zies_logo_high_quality.png";
 
 export default function Home() {
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
