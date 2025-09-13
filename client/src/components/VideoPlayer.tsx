@@ -253,7 +253,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               className={`px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 ${!showDualButtons ? 'mx-auto' : ''}`}
             >
               <CheckCircle size={20} />
-              {showDualButtons ? "Quiz starten" : (lesson.id === 1 ? "Zur ersten Lektion" : "Video schließen")}
+              {showDualButtons ? "Quiz starten" : (lesson.id === 1 ? "Intro abschließen" : "Video schließen")}
             </button>
           </div>
         </div>
