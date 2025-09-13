@@ -196,10 +196,10 @@ export default function Home() {
         {/* BKK firmus Support Box */}
         <div className="bg-navy-light rounded-2xl p-6 relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-start gap-6 relative z-10">
-            <p className="text-white text-base leading-relaxed md:flex-1 md:max-w-3xl">
+            <p className="text-white text-base leading-relaxed flex-1">
               Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich. Als Partner für innovative Gesundheitsförderung ermöglicht die BKK firmus den Zugang zu wissenschaftlich fundierten Präventionsprogrammen. Das Team der BKK firmus wünscht Ihnen bei der Absolvierung des Programms viel Spaß!
             </p>
-            <div className="flex justify-center md:justify-end md:w-40 md:flex-shrink-0">
+            <div className="flex justify-end md:w-32 md:flex-shrink-0">
               <img 
                 src={bkkFirmusLogo} 
                 alt="BKK firmus Logo" 
@@ -212,10 +212,10 @@ export default function Home() {
         {/* ZIES gGmbH Information Box */}
         <div className="bg-navy-light rounded-2xl p-6 relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-start gap-6 relative z-10">
-            <p className="text-white text-base leading-relaxed md:flex-1 md:max-w-3xl">
+            <p className="text-white text-base leading-relaxed flex-1">
               Entwickler der Materialien ist das Zentrum für Forschung und Diagnostik bei Implantaten, Entzündungen und Schmerzen gemeinnützige GmbH. Die ZIES gGmbH setzt sich ein für Beratung und Diagnostik, Aufklärung und Prävention. Als gemeinnützige Initiative ist sie unabhängig von Firmen, Verbänden oder anderen Interessengruppen.
             </p>
-            <div className="flex justify-center md:justify-end md:w-40 md:flex-shrink-0">
+            <div className="flex justify-end md:w-32 md:flex-shrink-0">
               <img 
                 src={ziesLogo} 
                 alt="ZIES gGmbH Logo" 
