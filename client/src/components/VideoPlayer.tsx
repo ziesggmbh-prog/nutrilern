@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, CheckCircle } from 'lucide-react';
+import { X, CheckCircle, RotateCcw } from 'lucide-react';
 import { quizData } from '@/lib/quizData';
 
 // Declare Vimeo Player for TypeScript
@@ -24,10 +24,15 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const hasQuiz = quizData.some(quiz => quiz.lessonId === lesson.id);
   const showDualButtons = lesson.id === 2 || lesson.id === 3;
   
-  // Refs for Vimeo iframes
+  // State for replay functionality
+  const [videoEnded, setVideoEnded] = useState(false);
+  const [vimeoPlayer, setVimeoPlayer] = useState<any>(null);
+  
+  // Refs for Vimeo iframes and HTML5 video
   const vimeoRef1 = useRef<HTMLIFrameElement>(null);
   const vimeoRef2 = useRef<HTMLIFrameElement>(null);
   const vimeoRef3 = useRef<HTMLIFrameElement>(null);
+  const htmlVideoRef = useRef<HTMLVideoElement>(null);
   
   // Fallback function to exit fullscreen mode
   const fallbackExitFullscreen = async () => {
@@ -74,7 +79,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             const player = new window.Vimeo.Player(ref.current);
             
             player.on('ended', async () => {
-              console.log(`🎬 Vimeo video ${lessonId} ended - waiting 2.5 seconds before exiting fullscreen`);
+              console.log(`🎬 Vimeo video ${lessonId} ended - showing replay button`);
+              setVideoEnded(true);
               setTimeout(async () => {
                 try {
                   await player.exitFullscreen();
@@ -85,6 +91,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 }
               }, 2500);
             });
+            
+            // Store player reference for replay functionality
+            setVimeoPlayer(player);
             
             console.log(`✅ Vimeo Player ${lessonId} setup complete`);
           } catch (error) {
@@ -101,6 +110,29 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
     
     setupVimeoPlayer();
   }, [lesson.id]);
+  
+  // Replay functionality
+  const handleReplay = async () => {
+    console.log('🔁 Replaying video...');
+    setVideoEnded(false);
+    
+    if (lesson.id <= 3 && vimeoPlayer) {
+      // Vimeo player replay
+      try {
+        await vimeoPlayer.setCurrentTime(0);
+        await vimeoPlayer.play();
+        console.log('✅ Vimeo video restarted successfully');
+      } catch (error) {
+        console.log('⚠️ Failed to restart Vimeo video:', error);
+      }
+    } else if (htmlVideoRef.current) {
+      // HTML5 video replay
+      const video = htmlVideoRef.current;
+      video.currentTime = 0;
+      video.play();
+      console.log('✅ HTML5 video restarted successfully');
+    }
+  };
   
   // No auto-completion for Vimeo videos - only manual completion via button
   
@@ -175,15 +207,31 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 autoPlay
                 muted={false}
                 onEnded={() => {
-                  console.log('🎬 HTML5 video ended - waiting 2.5 seconds before exiting fullscreen');
+                  console.log('🎬 HTML5 video ended - showing replay button');
+                  setVideoEnded(true);
                   // Add 2.5 second delay to ensure video has fully ended
                   setTimeout(fallbackExitFullscreen, 2500);
                   // No automatic completion - user must manually click the button
                 }}
+                ref={htmlVideoRef}
               >
                 <source src={lesson.videoUrl} type="video/mp4" />
                 Ihr Browser unterstützt das Video-Element nicht.
               </video>
+            )}
+            
+            {/* Replay Button Overlay */}
+            {videoEnded && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                <button
+                  onClick={handleReplay}
+                  className="bg-green-custom hover:bg-green-700 text-white rounded-full p-4 transition-colors flex items-center gap-2 shadow-lg"
+                  data-testid="button-replay"
+                >
+                  <RotateCcw size={24} />
+                  <span className="font-medium">Video wiederholen</span>
+                </button>
+              </div>
             )}
           </div>
         </div>
