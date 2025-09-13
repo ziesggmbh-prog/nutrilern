@@ -11,8 +11,9 @@ interface VideoPlayerProps {
 export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayerProps) {
   console.log('VideoPlayer loaded for lesson:', lesson.title);
   
-  // Check if this lesson has a quiz
+  // Check if this lesson has a quiz or should show dual buttons (lessons 2 and 3)
   const hasQuiz = quizData.some(quiz => quiz.lessonId === lesson.id);
+  const showDualButtons = lesson.id === 2 || lesson.id === 3;
   
   // Function to exit fullscreen mode
   const exitFullscreen = () => {
@@ -124,8 +125,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         <div className="text-center">
           <p className="text-gray-300 mb-4">{lesson.description}</p>
           <div className="flex justify-between items-center">
-            {/* Only show left "Schließen" button if lesson has quiz */}
-            {hasQuiz && (
+            {/* Show left "Schließen" button for lessons 2 and 3 */}
+            {showDualButtons && (
               <button
                 onClick={onClose}
                 className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
@@ -136,10 +137,10 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             
             <button
               onClick={onComplete}
-              className={`px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 ${!hasQuiz ? 'mx-auto' : ''}`}
+              className={`px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 ${!showDualButtons ? 'mx-auto' : ''}`}
             >
               <CheckCircle size={20} />
-              {hasQuiz ? "Quiz starten" : (lesson.id === 1 ? "Zur ersten Lektion" : "Video schließen")}
+              {showDualButtons ? "Quiz starten" : (lesson.id === 1 ? "Zur ersten Lektion" : "Video schließen")}
             </button>
           </div>
         </div>
