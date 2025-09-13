@@ -1,5 +1,70 @@
 export const quizData = [
   {
+    lessonId: 2,
+    questions: [
+      {
+        id: "c1",
+        question: "Welche Hauptfunktion haben Kohlenhydrate in unserem Körper?",
+        options: [
+          "Sie bauen Muskeln auf",
+          "Sie liefern schnell verfügbare Energie",
+          "Sie regulieren die Körpertemperatur",
+          "Sie transportieren Sauerstoff"
+        ],
+        correctAnswer: 1,
+        explanation: "Kohlenhydrate sind die wichtigste und schnellste Energiequelle für unseren Körper, besonders für das Gehirn."
+      },
+      {
+        id: "c2",
+        question: "Was ist der Unterschied zwischen einfachen und komplexen Kohlenhydraten?",
+        options: [
+          "Einfache sind süßer, komplexe sind salziger",
+          "Einfache gehen schnell ins Blut, komplexe werden langsamer aufgenommen",
+          "Einfache enthalten mehr Vitamine",
+          "Es gibt keinen Unterschied"
+        ],
+        correctAnswer: 1,
+        explanation: "Einfache Kohlenhydrate (Zucker) gehen schnell ins Blut und liefern kurzfristig Energie. Komplexe Kohlenhydrate werden langsamer abgebaut und liefern länger anhaltende Energie."
+      },
+      {
+        id: "c3",
+        question: "Welche Lebensmittel enthalten 'gute' komplexe Kohlenhydrate?",
+        options: [
+          "Weißbrot und Süßigkeiten",
+          "Vollkornbrot, Haferflocken und Hülsenfrüchte",
+          "Nur Obst und Gemüse",
+          "Fast Food und Fertiggerichte"
+        ],
+        correctAnswer: 1,
+        explanation: "Vollkornprodukte, Haferflocken und Hülsenfrüchte enthalten komplexe Kohlenhydrate, die den Blutzucker stabil halten und lange satt machen."
+      },
+      {
+        id: "c4",
+        question: "Warum sollten Sie vor einer Prüfung keine einfachen Zucker essen?",
+        options: [
+          "Sie machen müde",
+          "Sie sind zu teuer",
+          "Der Blutzucker steigt schnell an und fällt dann wieder ab",
+          "Sie schmecken nicht gut"
+        ],
+        correctAnswer: 2,
+        explanation: "Einfache Zucker führen zu einem schnellen Blutzuckeranstieg, gefolgt von einem starken Abfall. Das kann zu Konzentrationsproblemen und Müdigkeit führen."
+      },
+      {
+        id: "c5",
+        question: "Welches Organ ist besonders auf Kohlenhydrate als Energiequelle angewiesen?",
+        options: [
+          "Die Leber",
+          "Das Herz",
+          "Das Gehirn",
+          "Die Nieren"
+        ],
+        correctAnswer: 2,
+        explanation: "Das Gehirn benötigt kontinuierlich Glukose als Energiequelle und verbraucht etwa 20% der gesamten Körperenergie, hauptsächlich aus Kohlenhydraten."
+      }
+    ]
+  },
+  {
     lessonId: 3,
     questions: [
       {
