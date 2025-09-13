@@ -74,14 +74,16 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             const player = new window.Vimeo.Player(ref.current);
             
             player.on('ended', async () => {
-              console.log(`🎬 Vimeo video ${lessonId} ended - exiting fullscreen via Player API`);
-              try {
-                await player.exitFullscreen();
-                console.log('✅ Successfully exited fullscreen via Player API');
-              } catch (err) {
-                console.log('⚠️ Player.exitFullscreen failed, trying fallback:', err);
-                await fallbackExitFullscreen();
-              }
+              console.log(`🎬 Vimeo video ${lessonId} ended - waiting 1.5 seconds before exiting fullscreen`);
+              setTimeout(async () => {
+                try {
+                  await player.exitFullscreen();
+                  console.log('✅ Successfully exited fullscreen via Player API');
+                } catch (err) {
+                  console.log('⚠️ Player.exitFullscreen failed, trying fallback:', err);
+                  await fallbackExitFullscreen();
+                }
+              }, 1500);
             });
             
             console.log(`✅ Vimeo Player ${lessonId} setup complete`);
@@ -173,9 +175,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 autoPlay
                 muted={false}
                 onEnded={() => {
-                  console.log('🎬 HTML5 video ended - attempting to exit fullscreen');
-                  // Add small delay to ensure video has fully ended
-                  setTimeout(fallbackExitFullscreen, 500);
+                  console.log('🎬 HTML5 video ended - waiting 1.5 seconds before exiting fullscreen');
+                  // Add 1.5 second delay to ensure video has fully ended
+                  setTimeout(fallbackExitFullscreen, 1500);
                   // No automatic completion - user must manually click the button
                 }}
               >
