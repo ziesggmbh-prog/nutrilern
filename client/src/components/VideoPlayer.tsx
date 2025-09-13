@@ -15,24 +15,62 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const hasQuiz = quizData.some(quiz => quiz.lessonId === lesson.id);
   const showDualButtons = lesson.id === 2 || lesson.id === 3;
   
-  // Function to exit fullscreen mode
+  // Function to exit fullscreen mode - improved with multiple fallbacks
   const exitFullscreen = () => {
-    if (document.fullscreenElement) {
-      document.exitFullscreen().catch(() => {
-        console.log('Could not exit fullscreen mode');
-      });
+    console.log('Attempting to exit fullscreen mode...');
+    
+    // Check multiple fullscreen properties for better browser compatibility
+    const isFullscreen = document.fullscreenElement || 
+                        (document as any).webkitFullscreenElement || 
+                        (document as any).mozFullScreenElement || 
+                        (document as any).msFullscreenElement;
+    
+    if (isFullscreen) {
+      console.log('Fullscreen detected, attempting to exit...');
+      
+      // Try multiple exit fullscreen methods for browser compatibility
+      if (document.exitFullscreen) {
+        document.exitFullscreen().then(() => {
+          console.log('✅ Successfully exited fullscreen');
+        }).catch((err) => {
+          console.log('❌ Failed to exit fullscreen:', err);
+        });
+      } else if ((document as any).webkitExitFullscreen) {
+        (document as any).webkitExitFullscreen();
+        console.log('✅ Used webkit exitFullscreen');
+      } else if ((document as any).mozCancelFullScreen) {
+        (document as any).mozCancelFullScreen();
+        console.log('✅ Used moz cancelFullScreen');
+      } else if ((document as any).msExitFullscreen) {
+        (document as any).msExitFullscreen();
+        console.log('✅ Used ms exitFullscreen');
+      }
+    } else {
+      console.log('No fullscreen mode detected');
     }
   };
   
-  // Listen for Vimeo video end events
+  // Listen for Vimeo video end events - improved error handling
   useEffect(() => {
     const handleVimeoMessage = (event: MessageEvent) => {
-      if (event.origin !== 'https://player.vimeo.com') return;
+      console.log('Received message from:', event.origin, 'Data:', event.data);
       
-      const data = JSON.parse(event.data);
-      if (data.event === 'ended') {
-        console.log('Vimeo video ended - exiting fullscreen');
-        exitFullscreen();
+      if (event.origin !== 'https://player.vimeo.com') {
+        console.log('Message not from Vimeo, ignoring');
+        return;
+      }
+      
+      try {
+        const data = JSON.parse(event.data);
+        console.log('Parsed Vimeo data:', data);
+        
+        if (data.event === 'ended') {
+          console.log('🎬 Vimeo video ended - attempting to exit fullscreen');
+          // Add small delay to ensure video has fully ended
+          setTimeout(exitFullscreen, 500);
+        }
+      } catch (error) {
+        console.log('Failed to parse Vimeo message data:', error);
       }
     };
     
@@ -110,8 +148,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 autoPlay
                 muted={false}
                 onEnded={() => {
-                  console.log('Video ended - exiting fullscreen and waiting for user interaction');
-                  exitFullscreen();
+                  console.log('🎬 HTML5 video ended - attempting to exit fullscreen');
+                  // Add small delay to ensure video has fully ended
+                  setTimeout(exitFullscreen, 500);
                   // No automatic completion - user must manually click the button
                 }}
               >
