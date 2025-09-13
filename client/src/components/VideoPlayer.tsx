@@ -74,7 +74,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             const player = new window.Vimeo.Player(ref.current);
             
             player.on('ended', async () => {
-              console.log(`🎬 Vimeo video ${lessonId} ended - waiting 1.5 seconds before exiting fullscreen`);
+              console.log(`🎬 Vimeo video ${lessonId} ended - waiting 2.5 seconds before exiting fullscreen`);
               setTimeout(async () => {
                 try {
                   await player.exitFullscreen();
@@ -83,7 +83,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   console.log('⚠️ Player.exitFullscreen failed, trying fallback:', err);
                   await fallbackExitFullscreen();
                 }
-              }, 1500);
+              }, 2500);
             });
             
             console.log(`✅ Vimeo Player ${lessonId} setup complete`);
@@ -175,9 +175,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 autoPlay
                 muted={false}
                 onEnded={() => {
-                  console.log('🎬 HTML5 video ended - waiting 1.5 seconds before exiting fullscreen');
-                  // Add 1.5 second delay to ensure video has fully ended
-                  setTimeout(fallbackExitFullscreen, 1500);
+                  console.log('🎬 HTML5 video ended - waiting 2.5 seconds before exiting fullscreen');
+                  // Add 2.5 second delay to ensure video has fully ended
+                  setTimeout(fallbackExitFullscreen, 2500);
                   // No automatic completion - user must manually click the button
                 }}
               >
