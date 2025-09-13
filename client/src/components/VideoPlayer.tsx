@@ -14,6 +14,34 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // Check if this lesson has a quiz
   const hasQuiz = quizData.some(quiz => quiz.lessonId === lesson.id);
   
+  // Function to exit fullscreen mode
+  const exitFullscreen = () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {
+        console.log('Could not exit fullscreen mode');
+      });
+    }
+  };
+  
+  // Listen for Vimeo video end events
+  useEffect(() => {
+    const handleVimeoMessage = (event: MessageEvent) => {
+      if (event.origin !== 'https://player.vimeo.com') return;
+      
+      const data = JSON.parse(event.data);
+      if (data.event === 'ended') {
+        console.log('Vimeo video ended - exiting fullscreen');
+        exitFullscreen();
+      }
+    };
+    
+    window.addEventListener('message', handleVimeoMessage);
+    
+    return () => {
+      window.removeEventListener('message', handleVimeoMessage);
+    };
+  }, []);
+  
   // No auto-completion for Vimeo videos - only manual completion via button
   
   return (
@@ -35,7 +63,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             {lesson.id === 1 ? (
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
-                  src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                  src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&api=1"
                   frameBorder="0" 
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -48,7 +76,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             ) : lesson.id === 2 ? (
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
-                  src="https://player.vimeo.com/video/1099335411?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                  src="https://player.vimeo.com/video/1099335411?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&api=1"
                   frameBorder="0" 
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -61,7 +89,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             ) : lesson.id === 3 ? (
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
-                  src="https://player.vimeo.com/video/1117810836?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1"
+                  src="https://player.vimeo.com/video/1117810836?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&api=1"
                   frameBorder="0" 
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -81,7 +109,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 autoPlay
                 muted={false}
                 onEnded={() => {
-                  console.log('Video ended - but no auto-completion. User must click "Lektion abschließen"');
+                  console.log('Video ended - exiting fullscreen and waiting for user interaction');
+                  exitFullscreen();
                   // No automatic completion - user must manually click the button
                 }}
               >
