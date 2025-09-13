@@ -141,7 +141,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           <Target className="mr-2 text-purple-custom" size={18} />
           {isGroupMode ? lesson.title : `Quiz: ${lesson.title}`}
         </h3>
-        <p className="text-gray-400 text-sm mb-4 h-16 overflow-hidden leading-relaxed">
+        <p className="text-gray-400 text-sm mb-4 leading-relaxed min-h-[4rem]">
           {lesson.description}
         </p>
         
