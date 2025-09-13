@@ -199,11 +199,11 @@ export default function Home() {
             <p className="text-white text-base leading-relaxed md:w-[85%] md:flex-shrink-0">
               Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der BKK firmus im Rahmen des Präventionsgesetzes möglich. Als Partner für innovative Gesundheitsförderung ermöglicht die BKK firmus den Zugang zu wissenschaftlich fundierten Präventionsprogrammen. Das Team der BKK firmus wünscht Ihnen bei der Absolvierung des Programms viel Spaß!
             </p>
-            <div className="flex justify-end md:w-[15%] md:flex-shrink-0">
+            <div className="flex justify-end md:w-[15%] md:flex-shrink-0 p-2">
               <img 
                 src={bkkFirmusLogo} 
                 alt="BKK firmus Logo" 
-                className="h-20 w-auto max-w-full object-contain"
+                className="h-16 w-auto max-w-full object-contain"
               />
             </div>
           </div>
@@ -215,11 +215,11 @@ export default function Home() {
             <p className="text-white text-base leading-relaxed md:w-[85%] md:flex-shrink-0">
               Entwickler der Materialien ist das Zentrum für Forschung und Diagnostik bei Implantaten, Entzündungen und Schmerzen gemeinnützige GmbH. Die ZIES gGmbH setzt sich ein für Beratung und Diagnostik, Aufklärung und Prävention. Als gemeinnützige Initiative ist sie unabhängig von Firmen, Verbänden oder anderen Interessengruppen.
             </p>
-            <div className="flex justify-end md:w-[15%] md:flex-shrink-0">
+            <div className="flex justify-end md:w-[15%] md:flex-shrink-0 p-2">
               <img 
                 src={ziesLogo} 
                 alt="ZIES gGmbH Logo" 
-                className="h-20 w-auto max-w-full object-contain"
+                className="h-16 w-auto max-w-full object-contain"
               />
             </div>
           </div>
