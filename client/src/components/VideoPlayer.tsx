@@ -225,10 +225,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
                 <button
                   onClick={handleReplay}
-                  className="bg-green-custom hover:bg-green-700 text-white rounded-full p-4 transition-colors flex items-center gap-2 shadow-lg"
+                  className="bg-gray-800 hover:bg-gray-700 text-white rounded-lg px-6 py-3 transition-colors shadow-lg"
                   data-testid="button-replay"
                 >
-                  <RotateCcw size={24} />
                   <span className="font-medium">Video wiederholen</span>
                 </button>
               </div>
