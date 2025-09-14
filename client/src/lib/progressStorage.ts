@@ -1,6 +1,7 @@
 // Utility functions for persisting quest progress in localStorage
 
 const LEVEL2_PROGRESS_KEY = 'nutri-app-level2-progress';
+const LEVEL2_DAYS_KEY = 'nutri-app-level2-days';
 
 export interface QuestProgress {
   lessonId: number;
@@ -20,6 +21,7 @@ const defaultLevel2Progress: QuestProgress[] = [
 export function getLevel2Progress(): QuestProgress[] {
   try {
     const saved = localStorage.getItem(LEVEL2_PROGRESS_KEY);
+    
     if (saved) {
       const parsed = JSON.parse(saved);
       // Validate that the structure is correct
@@ -41,7 +43,8 @@ export function getLevel2Progress(): QuestProgress[] {
 
 export function saveLevel2Progress(progress: QuestProgress[]): void {
   try {
-    localStorage.setItem(LEVEL2_PROGRESS_KEY, JSON.stringify(progress));
+    const serialized = JSON.stringify(progress);
+    localStorage.setItem(LEVEL2_PROGRESS_KEY, serialized);
   } catch (error) {
     console.warn('Error saving Level 2 progress to localStorage:', error);
   }
@@ -63,4 +66,31 @@ export function markQuestCompleted(lessonId: number): void {
       : p
   );
   saveLevel2Progress(updatedProgress);
+}
+
+// Functions for persisting completed days within quests
+export function getCompletedDays(questId: number): string[] {
+  try {
+    const saved = localStorage.getItem(`${LEVEL2_DAYS_KEY}-${questId}`);
+    
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed)) {
+        return parsed;
+      }
+    }
+  } catch (error) {
+    console.warn(`Error loading completed days for quest ${questId}:`, error);
+  }
+  
+  return [];
+}
+
+export function saveCompletedDays(questId: number, completedDays: string[]): void {
+  try {
+    const serialized = JSON.stringify(completedDays);
+    localStorage.setItem(`${LEVEL2_DAYS_KEY}-${questId}`, serialized);
+  } catch (error) {
+    console.warn(`Error saving completed days for quest ${questId}:`, error);
+  }
 }

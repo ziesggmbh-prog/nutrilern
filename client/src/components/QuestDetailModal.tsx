@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { X, Star, Users, Lock, CheckCircle, Target, Calendar } from "lucide-react";
 import ProgressBar from "./ProgressBar";
 import OrganicShape from "./OrganicShape";
 import QuestTextModal from "./QuestTextModal";
+import { getCompletedDays, saveCompletedDays } from "@/lib/progressStorage";
 import type { Lesson } from "@shared/schema";
 
 interface QuestDay {
@@ -106,7 +107,13 @@ const questColors = [
 export default function QuestDetailModal({ quest, onClose, onQuestComplete }: QuestDetailModalProps) {
   const [selectedDay, setSelectedDay] = useState<QuestDay | null>(null);
   const [showDayDetail, setShowDayDetail] = useState(false);
-  const [completedDays, setCompletedDays] = useState<string[]>([]);
+  const [completedDays, setCompletedDays] = useState<string[]>(() => getCompletedDays(quest.id));
+
+  // Load completed days from storage when quest changes
+  useEffect(() => {
+    const savedDays = getCompletedDays(quest.id);
+    setCompletedDays(savedDays);
+  }, [quest.id]);
 
   const days = parseQuestDays(quest.fullDescription || "");
   const colorClass = questColors[(quest.order - 1) % questColors.length];
@@ -126,6 +133,9 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
     if (selectedDay && !completedDays.includes(selectedDay.id)) {
       const newCompletedDays = [...completedDays, selectedDay.id];
       setCompletedDays(newCompletedDays);
+      
+      // Save completed days to persistent storage
+      saveCompletedDays(quest.id, newCompletedDays);
       
       // Check if all days are completed
       if (newCompletedDays.length === days.length && onQuestComplete) {
