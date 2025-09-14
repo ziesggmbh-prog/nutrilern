@@ -71,7 +71,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           <img
             src={bkkFirmusLogo}
             alt="BKK firmus Logo"
-            className="h-16 mx-auto mb-6 filter brightness-0 invert"
+            className="h-16 mx-auto mb-6"
           />
           
           <div className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent text-center text-sm leading-relaxed font-medium">
