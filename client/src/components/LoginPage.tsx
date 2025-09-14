@@ -33,7 +33,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
     await new Promise(resolve => setTimeout(resolve, 500));
 
     // Check password (hashed for basic security)
-    const expectedHash = -1439402065; // Hash of "xnutrix"
+    const expectedHash = -1907880724; // Hash of "xnutrix"
     const inputHash = hashPassword(password);
 
     if (inputHash === expectedHash) {
