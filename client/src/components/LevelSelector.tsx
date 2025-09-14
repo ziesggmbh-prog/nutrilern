@@ -13,7 +13,7 @@ export default function LevelSelector({ className = "" }: LevelSelectorProps) {
   const levels = [
     {
       id: 1,
-      title: "Einzelspielermodus",
+      title: "Lernmodus",
       subtitle: "Grundlagen der Ernährung",
       description: "Lerne die Basics durch Videos und Quizzes",
       href: "/",

@@ -92,12 +92,12 @@ export default function Teachers() {
               <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                 <Users className="text-blue-600" size={20} />
               </div>
-              <h2 className="text-2xl font-bold text-gray-800">Einzelspielermodus</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Lernmodus</h2>
             </div>
             
             <div className="prose max-w-none text-gray-700 leading-relaxed">
               <p className="text-lg mb-4">
-                Im Einzelspielermodus erlernen die Schüler:innen das grundlegende Wissen zum Thema gesunde Ernährung. 
+                Im Lernmodus erlernen die Schüler:innen das grundlegende Wissen zum Thema gesunde Ernährung. 
                 Sie sehen sich die Filme eigenständig auf ihrem Endgerät an und beantworten das 'Quiz' zum jeweiligen Film.
               </p>
 
@@ -145,7 +145,7 @@ export default function Teachers() {
                 <p className="font-semibold text-red-800 mb-2">Wichtig:</p>
                 <p className="text-red-700">
                   Wenn die Schüler:innen zur Gruppenarbeit übergehen, müssen sie oben rechts neben dem 
-                  'Hamburger-Menü' vom Einzelspielermodus in den Gruppenmodus wechseln.
+                  'Hamburger-Menü' vom Lernmodus in den Gruppenmodus wechseln.
                 </p>
               </div>
 

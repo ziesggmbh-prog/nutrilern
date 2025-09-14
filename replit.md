@@ -146,6 +146,9 @@ Changelog:
 - July 07, 2025. Quest descriptions optimized: short summaries on main page, full detailed content in modals
 - July 07, 2025. Level 1 VideoPlayer buttons styled to match Level 2 with consistent design
 - July 07, 2025. Updated Quest 3, 6, and 9 thumbnails with thematically appropriate images
+- September 14, 2025. Successfully restored login authentication with correct hash verification for "xnutrix" password
+- September 14, 2025. Removed PHD-Lernspiel from app after stakeholder feedback - complete removal from navigation and routes
+- September 14, 2025. Renamed "Einzelspielermodus" to "Lernmodus" throughout app interface and teacher documentation
 ```
 
 ## User Preferences
