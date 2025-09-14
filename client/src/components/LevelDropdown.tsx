@@ -12,7 +12,7 @@ export default function LevelDropdown({ className = "" }: LevelDropdownProps) {
   const [location] = useLocation();
 
   const levels = [
-    { id: 1, title: 'Einzelspielermodus', href: '/' },
+    { id: 1, title: 'Lernmodus', href: '/' },
     { id: 2, title: 'Gruppenmodus', href: '/level2' }
   ];
 
