@@ -39,7 +39,7 @@ export default function SuccessModal({ onClose, onContinue }: SuccessModalProps)
           
           <h2 className="text-2xl font-bold mb-2">Gratulation!</h2>
           <p className="text-gray-400 mb-6">
-            Du hast das Quiz erfolgreich abgeschlossen. Die nächste Lektion ist jetzt verfügbar!
+            Ihr habt diese Quest erfolgreich gemeistert.
           </p>
           
           <Button
