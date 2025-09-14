@@ -75,9 +75,11 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           />
           
           <div className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent text-center text-sm leading-relaxed font-medium">
-            Die kostenfreie Nutzung dieser Maßnahme wird durch die Unterstützung der 
+            Die kostenfreie Nutzung dieser Maßnahme wird
             <br />
-            <span className="font-semibold">BKK firmus</span> im Rahmen des Präventionsgesetzes möglich.
+            durch die Unterstützung der <span className="font-semibold">BKK firmus</span> im Rahmen
+            <br />
+            des Präventionsgesetzes möglich.
           </div>
         </motion.div>
 
