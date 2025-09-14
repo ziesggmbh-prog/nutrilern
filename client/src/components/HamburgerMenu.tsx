@@ -15,6 +15,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
   const menuItems = [
     { icon: Home, label: 'Start', href: '/' },
     { icon: GraduationCap, label: 'Für Lehrer:innen', href: '/teachers' },
+    { icon: Star, label: 'PHD-Lernspiel', href: '/phd-game' },
     { icon: BookOpen, label: 'Quellen', href: '#' },
     { icon: Info, label: 'Über das Programm', href: '#' }
   ];
