@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Maximize2, Minimize2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useFullscreenSync } from '@/hooks/useFullscreenSync';
 
 interface FullscreenToggleProps {
   className?: string;
 }
 
 export default function FullscreenToggle({ className = "" }: FullscreenToggleProps) {
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const isFullscreen = useFullscreenSync();
 
   // Check if fullscreen is supported
   const isFullscreenSupported = () => {
@@ -62,31 +63,6 @@ export default function FullscreenToggle({ className = "" }: FullscreenTogglePro
     }
   };
 
-  // Listen for fullscreen changes
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      const fullscreenElement = 
-        document.fullscreenElement ||
-        (document as any).webkitFullscreenElement ||
-        (document as any).mozFullScreenElement ||
-        (document as any).msFullscreenElement;
-      
-      setIsFullscreen(!!fullscreenElement);
-    };
-
-    // Add event listeners for all browser variants
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-
-    return () => {
-      document.removeEventListener('fullscreenchange', handleFullscreenChange);
-      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
-      document.removeEventListener('mozfullscreenchange', handleFullscreenChange);
-      document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
-    };
-  }, []);
 
   // Don't render if fullscreen is not supported
   if (!isFullscreenSupported()) {

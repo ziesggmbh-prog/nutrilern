@@ -11,6 +11,7 @@ import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import LevelDropdown from "@/components/LevelDropdown";
 import FullscreenToggle from "@/components/FullscreenToggle";
+import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 import type { Lesson, UserProgress } from "@shared/schema";
 import { quizData } from "@/lib/quizData";
@@ -20,6 +21,9 @@ import bkkFirmusLogo from "@assets/bkk_firmus_logo.svg";
 import ziesLogo from "@assets/zies_logo_official.svg";
 
 export default function Home() {
+  // Initialize fullscreen sync to restore fullscreen if needed
+  useFullscreenSync();
+  
   const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
   const [showVideo, setShowVideo] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);

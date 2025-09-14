@@ -13,6 +13,7 @@ import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import LevelDropdown from "@/components/LevelDropdown";
 import FullscreenToggle from "@/components/FullscreenToggle";
+import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 import { level2Data } from "@/lib/level2Data";
 import { level2QuizData } from "@/lib/level2QuizData";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
@@ -30,6 +31,9 @@ const mockProgress = [
 ];
 
 export default function Level2() {
+  // Initialize fullscreen sync to restore fullscreen if needed
+  useFullscreenSync();
+  
   const [selectedLesson, setSelectedLesson] = useState<any>(null);
   const [showVideo, setShowVideo] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
