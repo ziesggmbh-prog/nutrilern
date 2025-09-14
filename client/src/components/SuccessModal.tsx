@@ -46,7 +46,7 @@ export default function SuccessModal({ onClose, onContinue }: SuccessModalProps)
             onClick={onContinue}
             className="bg-green-custom hover:bg-green-custom/90 text-white px-6 py-3 rounded-xl font-semibold"
           >
-            Zurück zu allen Quests
+            Zurück zu den Quests
           </Button>
         </div>
       </motion.div>
