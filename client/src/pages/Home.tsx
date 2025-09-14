@@ -10,6 +10,7 @@ import ProgressBar from "@/components/ProgressBar";
 import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import LevelDropdown from "@/components/LevelDropdown";
+import FullscreenToggle from "@/components/FullscreenToggle";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 import type { Lesson, UserProgress } from "@shared/schema";
 import { quizData } from "@/lib/quizData";
@@ -148,6 +149,7 @@ export default function Home() {
             
             <div className="flex items-center space-x-4">
               <LevelDropdown />
+              <FullscreenToggle />
               <HamburgerMenu />
             </div>
           </div>
