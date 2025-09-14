@@ -17,19 +17,12 @@ import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotific
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 import { level2Data } from "@/lib/level2Data";
 import { level2QuizData } from "@/lib/level2QuizData";
+import { getLevel2Progress, saveLevel2Progress, QuestProgress } from "@/lib/progressStorage";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 import bkkFirmusLogo from "@assets/Logo_BKK_firmus_high_quality.png";
 import ziesLogo from "@assets/zies_logo_transparent_1751546047870.png";
 
-// Simulate progress - in real app this would come from API
-const mockProgress = [
-  { lessonId: 10, isCompleted: false },
-  { lessonId: 11, isCompleted: false },
-  { lessonId: 12, isCompleted: false },
-  { lessonId: 13, isCompleted: false },
-  { lessonId: 14, isCompleted: false },
-  { lessonId: 15, isCompleted: false }
-];
+// Load progress from persistent storage
 
 export default function Level2() {
   // Initialize fullscreen sync to restore fullscreen if needed
@@ -42,7 +35,7 @@ export default function Level2() {
   const [showQuestDetail, setShowQuestDetail] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentQuizLesson, setCurrentQuizLesson] = useState<any>(null);
-  const [progress, setProgress] = useState(mockProgress);
+  const [progress, setProgress] = useState<QuestProgress[]>(() => getLevel2Progress());
 
   const lessons = level2Data;
   const quizData = level2QuizData;
@@ -62,13 +55,13 @@ export default function Level2() {
   };
 
   const handleQuestComplete = (questId: number) => {
-    setProgress(prev => 
-      prev.map(p => 
-        p.lessonId === questId 
-          ? { ...p, isCompleted: true }
-          : p
-      )
+    const newProgress = progress.map(p => 
+      p.lessonId === questId 
+        ? { ...p, isCompleted: true }
+        : p
     );
+    setProgress(newProgress);
+    saveLevel2Progress(newProgress); // Persist to localStorage
     setShowSuccess(true);
   };
 
@@ -97,13 +90,13 @@ export default function Level2() {
     
     // Mark lesson as completed
     if (currentQuizLesson) {
-      setProgress(prev => 
-        prev.map(p => 
-          p.lessonId === currentQuizLesson.id 
-            ? { ...p, isCompleted: true }
-            : p
-        )
+      const newProgress = progress.map(p => 
+        p.lessonId === currentQuizLesson.id 
+          ? { ...p, isCompleted: true }
+          : p
       );
+      setProgress(newProgress);
+      saveLevel2Progress(newProgress); // Persist to localStorage
     }
   };
 
