@@ -11,6 +11,7 @@ import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import LevelDropdown from "@/components/LevelDropdown";
 import FullscreenToggle from "@/components/FullscreenToggle";
+import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 import type { Lesson, UserProgress } from "@shared/schema";
@@ -129,6 +130,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-structured text-white">
+      {/* Fullscreen Restore Notification */}
+      <FullscreenRestoreNotification />
+      
       {/* Header */}
       <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         

@@ -13,6 +13,7 @@ import OrganicShape from "@/components/OrganicShape";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import LevelDropdown from "@/components/LevelDropdown";
 import FullscreenToggle from "@/components/FullscreenToggle";
+import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 import { level2Data } from "@/lib/level2Data";
 import { level2QuizData } from "@/lib/level2QuizData";
@@ -120,6 +121,9 @@ export default function Level2() {
 
   return (
     <div className="min-h-screen bg-structured text-white">
+      {/* Fullscreen Restore Notification */}
+      <FullscreenRestoreNotification />
+      
       {/* Header */}
       <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         <div className="container mx-auto px-4 py-6 relative z-10">

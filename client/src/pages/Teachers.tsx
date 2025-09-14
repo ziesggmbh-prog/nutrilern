@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, Users, Clock, BookOpen, Target } from "lucide-react";
 import FullscreenToggle from "@/components/FullscreenToggle";
+import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 
 export default function Teachers() {
@@ -63,6 +64,9 @@ export default function Teachers() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      {/* Fullscreen Restore Notification */}
+      <FullscreenRestoreNotification />
+      
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 py-4">

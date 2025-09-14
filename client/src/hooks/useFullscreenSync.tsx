@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 
+// Use localStorage to persist fullscreen state across navigations
+const FULLSCREEN_KEY = 'nutri-app-fullscreen-mode';
+
 // Global state for fullscreen synchronization across pages
-let globalFullscreenState = false;
+let globalFullscreenState = localStorage.getItem(FULLSCREEN_KEY) === 'true';
 const fullscreenListeners: Set<(isFullscreen: boolean) => void> = new Set();
 
 export function useFullscreenSync() {
@@ -24,7 +27,7 @@ export function useFullscreenSync() {
       );
       
       if (actualFullscreen !== globalFullscreenState) {
-        updateGlobalFullscreenState(actualFullscreen);
+        updateGlobalFullscreenState(actualFullscreen, false);
       }
     };
 
@@ -39,7 +42,8 @@ export function useFullscreenSync() {
         (document as any).msFullscreenElement
       );
       
-      updateGlobalFullscreenState(actualFullscreen);
+      // Only update localStorage if this was a user-initiated change
+      updateGlobalFullscreenState(actualFullscreen, true);
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -59,24 +63,32 @@ export function useFullscreenSync() {
 
   // If we're navigating to a page and were previously in fullscreen, restore it
   useEffect(() => {
-    if (globalFullscreenState && !document.fullscreenElement) {
-      // Small delay to allow page to render before going fullscreen
+    const storedFullscreen = localStorage.getItem(FULLSCREEN_KEY) === 'true';
+    
+    if (storedFullscreen && !document.fullscreenElement) {
+      console.log('Attempting to restore fullscreen mode...');
+      
+      // Longer delay to ensure page is fully loaded and stable
       const timer = setTimeout(async () => {
         try {
           if (document.documentElement.requestFullscreen) {
             await document.documentElement.requestFullscreen();
+            console.log('Fullscreen restored successfully');
           } else if ((document.documentElement as any).webkitRequestFullscreen) {
             await (document.documentElement as any).webkitRequestFullscreen();
+            console.log('Fullscreen restored successfully (webkit)');
           } else if ((document.documentElement as any).mozRequestFullScreen) {
             await (document.documentElement as any).mozRequestFullScreen();
+            console.log('Fullscreen restored successfully (moz)');
           } else if ((document.documentElement as any).msRequestFullscreen) {
             await (document.documentElement as any).msRequestFullscreen();
+            console.log('Fullscreen restored successfully (ms)');
           }
         } catch (error) {
-          console.warn('Could not restore fullscreen:', error);
-          updateGlobalFullscreenState(false);
+          console.warn('Could not restore fullscreen (this is normal in some browsers):', error);
+          // Don't clear the localStorage state here - user might want to try again
         }
-      }, 100);
+      }, 500); // Increased delay
 
       return () => clearTimeout(timer);
     }
@@ -85,8 +97,18 @@ export function useFullscreenSync() {
   return isFullscreen;
 }
 
-function updateGlobalFullscreenState(newState: boolean) {
+function updateGlobalFullscreenState(newState: boolean, updateStorage: boolean = true) {
   globalFullscreenState = newState;
+  
+  // Update localStorage to persist across navigation
+  if (updateStorage) {
+    if (newState) {
+      localStorage.setItem(FULLSCREEN_KEY, 'true');
+    } else {
+      localStorage.removeItem(FULLSCREEN_KEY);
+    }
+  }
+  
   // Notify all listening components
   fullscreenListeners.forEach(listener => listener(newState));
 }
