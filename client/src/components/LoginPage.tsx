@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Lock, Eye, EyeOff } from 'lucide-react';
 import bkkFirmusLogo from "@assets/bkk_firmus_logo.svg";
+import ziesLogo from "@assets/zies_logo_official.svg";
 
 interface LoginPageProps {
   onLogin: () => void;
@@ -148,11 +149,18 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
             im Rahmen des Präventionsgesetzes möglich.
           </div>
           
-          <img
-            src={bkkFirmusLogo}
-            alt="BKK firmus Logo"
-            className="h-12 mx-auto"
-          />
+          <div className="flex items-center justify-center gap-6">
+            <img
+              src={bkkFirmusLogo}
+              alt="BKK firmus Logo"
+              className="h-12"
+            />
+            <img
+              src={ziesLogo}
+              alt="ZIES gGmbH Logo"
+              className="h-12"
+            />
+          </div>
         </motion.div>
 
         {/* Decorative Elements */}
