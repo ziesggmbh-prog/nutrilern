@@ -6,7 +6,6 @@ import fs from "fs";
 import path from "path";
 
 const submitQuizSchema = z.object({
-  lessonId: z.number(),
   answers: z.array(z.number()),
 });
 
