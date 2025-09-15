@@ -61,28 +61,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         transition={{ duration: 0.8 }}
         className="relative bg-black/30 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-700/50 p-8 w-full max-w-md"
       >
-        {/* BKK firmus Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-center mb-8"
-        >
-          <img
-            src={bkkFirmusLogo}
-            alt="BKK firmus Logo"
-            className="h-16 mx-auto mb-6"
-          />
-          
-          <div className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent text-center text-sm leading-relaxed font-medium">
-            Die kostenfreie Nutzung dieser Maßnahme wird
-            <br />
-            durch die Unterstützung der <span className="font-semibold">BKK firmus</span>
-            <br />
-            im Rahmen des Präventionsgesetzes möglich.
-          </div>
-        </motion.div>
-
         {/* Login Form */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -153,6 +131,28 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
               )}
             </motion.button>
           </form>
+        </motion.div>
+
+        {/* BKK firmus Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
+          className="text-center mt-8"
+        >
+          <img
+            src={bkkFirmusLogo}
+            alt="BKK firmus Logo"
+            className="h-16 mx-auto mb-6"
+          />
+          
+          <div className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent text-center text-sm leading-relaxed font-medium">
+            Die kostenfreie Nutzung dieser Maßnahme wird
+            <br />
+            durch die Unterstützung der <span className="font-semibold">BKK firmus</span>
+            <br />
+            im Rahmen des Präventionsgesetzes möglich.
+          </div>
         </motion.div>
 
         {/* Decorative Elements */}
