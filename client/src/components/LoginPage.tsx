@@ -149,16 +149,16 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
             im Rahmen des Präventionsgesetzes möglich.
           </div>
           
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center gap-4">
             <img
               src={bkkFirmusLogo}
               alt="BKK firmus Logo"
-              className="h-12"
+              className="h-6"
             />
             <img
               src={ziesLogo}
               alt="ZIES gGmbH Logo"
-              className="h-12"
+              className="h-6"
             />
           </div>
         </motion.div>
