@@ -139,9 +139,9 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="mt-8"
+          className="mt-6 -mx-8 -mb-8"
         >
-          <div className="bg-gray-700/30 rounded-2xl p-6 text-center">
+          <div className="bg-gray-600/40 rounded-b-3xl p-8 pt-6 text-center">
             <div className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent text-center text-sm leading-relaxed font-medium mb-6">
               Die kostenfreie Nutzung dieser Maßnahme wird
               <br />
