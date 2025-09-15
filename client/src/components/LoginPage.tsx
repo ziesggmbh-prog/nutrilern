@@ -133,26 +133,26 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           </form>
         </motion.div>
 
-        {/* BKK firmus Logo */}
+        {/* BKK firmus Info */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.7, duration: 0.6 }}
           className="text-center mt-8"
         >
-          <img
-            src={bkkFirmusLogo}
-            alt="BKK firmus Logo"
-            className="h-16 mx-auto mb-6"
-          />
-          
-          <div className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent text-center text-sm leading-relaxed font-medium">
+          <div className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent text-center text-sm leading-relaxed font-medium mb-6">
             Die kostenfreie Nutzung dieser Maßnahme wird
             <br />
             durch die Unterstützung der <span className="font-semibold">BKK firmus</span>
             <br />
             im Rahmen des Präventionsgesetzes möglich.
           </div>
+          
+          <img
+            src={bkkFirmusLogo}
+            alt="BKK firmus Logo"
+            className="h-12 mx-auto"
+          />
         </motion.div>
 
         {/* Decorative Elements */}
