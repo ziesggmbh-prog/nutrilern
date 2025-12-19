@@ -94,7 +94,7 @@ export class MemStorage implements IStorage {
         description: "Wofür Eiweiß wichtig ist, wie du ausreichend davon bekommst und wie das Thema mit den Fetten zusammenhängt.",
         videoUrl: "https://player.vimeo.com/video/1148007412",
         duration: 5,
-        thumbnailUrl: "https://i.vimeocdn.com/video/1999918668-8e6e27e09e1d9d9ec89b1f3e85e76c94ea3f7fe24f42e8d62c7f24b33a64f7c5-d_640",
+        thumbnailUrl: "https://vumbnail.com/1148007412.jpg",
         order: 4,
         isActive: true
       },
