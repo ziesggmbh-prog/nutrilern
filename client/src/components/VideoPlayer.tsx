@@ -22,7 +22,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   
   // Check if this lesson has a quiz or should show dual buttons (lessons 2 and 3)
   const hasQuiz = quizData.some(quiz => quiz.lessonId === lesson.id);
-  const showDualButtons = lesson.id === 2 || lesson.id === 3;
+  const showDualButtons = lesson.id === 2 || lesson.id === 3 || lesson.id === 4;
   
   // State for replay functionality
   const [videoEnded, setVideoEnded] = useState(false);
@@ -32,6 +32,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const vimeoRef1 = useRef<HTMLIFrameElement>(null);
   const vimeoRef2 = useRef<HTMLIFrameElement>(null);
   const vimeoRef3 = useRef<HTMLIFrameElement>(null);
+  const vimeoRef4 = useRef<HTMLIFrameElement>(null);
   const htmlVideoRef = useRef<HTMLVideoElement>(null);
   
   // Fallback function to exit fullscreen mode
@@ -106,6 +107,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
       setupPlayer(vimeoRef1, 1);
       setupPlayer(vimeoRef2, 2);
       setupPlayer(vimeoRef3, 3);
+      setupPlayer(vimeoRef4, 4);
     };
     
     setupVimeoPlayer();
@@ -116,7 +118,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
     console.log('🔁 Replaying video...');
     setVideoEnded(false);
     
-    if (lesson.id <= 3 && vimeoPlayer) {
+    if (lesson.id <= 4 && vimeoPlayer) {
       // Vimeo player replay
       try {
         await vimeoPlayer.setCurrentTime(0);
@@ -194,6 +196,21 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   title="Fette"
                   onLoad={() => {
                     console.log('✅ Vimeo video 3 loaded successfully');
+                  }}
+                />
+              </div>
+            ) : lesson.id === 4 ? (
+              <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
+                <iframe 
+                  ref={vimeoRef4}
+                  src="https://player.vimeo.com/video/1148007412?badge=0&autopause=0&autoplay=1"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+                  title="Proteine"
+                  onLoad={() => {
+                    console.log('✅ Vimeo video 4 loaded successfully');
                   }}
                 />
               </div>
