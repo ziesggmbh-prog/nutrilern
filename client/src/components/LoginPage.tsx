@@ -73,7 +73,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
             <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
               <Lock className="text-white" size={20} />
             </div>
-            Zugang erforderlich
+            Passwort eingeben
           </h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
