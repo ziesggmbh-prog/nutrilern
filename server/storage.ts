@@ -115,6 +115,15 @@ export class MemStorage implements IStorage {
         thumbnailUrl: "/assets/8_1751542243607_optimized.jpg",
         order: 6,
         isActive: true
+      },
+      {
+        title: "Outro",
+        description: "Zusammenfassung und Abschluss des Lernprogramms.",
+        videoUrl: "",
+        duration: 3,
+        thumbnailUrl: "/assets/4_1751549047993_optimized.jpg",
+        order: 7,
+        isActive: true
       }
     ];
 

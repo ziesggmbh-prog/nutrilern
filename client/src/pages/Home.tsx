@@ -186,7 +186,7 @@ export default function Home() {
                 />
                 
                 {/* Quest Card (smaller, without image) - but NOT for Intro */}
-                {lesson.id !== 1 && (
+                {lesson.id !== 1 && lesson.id !== 7 && (
                   <QuestCard
                     lesson={lesson}
                     isCompleted={isCompleted}
