@@ -127,13 +127,6 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
         >
-          <OrganicShape
-            className={`absolute top-0 right-0 w-24 h-24 ${
-              quizResults.passed ? "bg-green-custom" : "bg-red-500"
-            } opacity-20`}
-            variant="default"
-          />
-          
           <div className="relative z-10">
             <div className={`w-16 h-16 ${
               quizResults.passed ? "bg-green-custom" : "bg-red-500"
