@@ -81,10 +81,21 @@ export default function Home() {
     setupIntroPlayer();
   }, [showIntroOverlay, introPlaying]);
 
-  const handleSkipIntro = () => {
+  const handleSkipIntro = async () => {
     localStorage.setItem('introSeen', 'true');
     setShowIntroOverlay(false);
     introPlayerRef.current = null;
+    try {
+      const response = await fetch('/api/lessons/1/complete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }
+      });
+      if (response.ok) {
+        refetchProgress();
+      }
+    } catch (error) {
+      console.log('Failed to complete intro lesson:', error);
+    }
   };
 
   const handleReplayIntro = async () => {
