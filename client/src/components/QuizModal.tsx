@@ -142,13 +142,13 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
               {quizResults.passed ? "Gratulation!" : "Leider nicht bestanden"}
             </h2>
             
-            <p className="text-gray-400 mb-4">
-              Du hast {quizResults.correctAnswers} von {quizResults.totalQuestions} Fragen richtig beantwortet.
-            </p>
-            
-            <div className="text-3xl font-bold text-green-custom mb-6">
+            <div className="text-3xl font-bold text-green-custom mb-4">
               {quizResults.score}%
             </div>
+            
+            <p className="text-gray-400 mb-6">
+              Du hast {quizResults.correctAnswers} von {quizResults.totalQuestions} Fragen richtig beantwortet.
+            </p>
             
             <p className="text-gray-400 mb-6">
               {quizResults.passed
