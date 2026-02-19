@@ -38,12 +38,6 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
     onSuccess: (data) => {
       setQuizResults(data);
       setShowResults(true);
-      if (data.passed) {
-        toast({
-          title: "Quiz bestanden!",
-          description: `Du hast ${data.score}% erreicht.`,
-        });
-      }
     },
     onError: () => {
       toast({
