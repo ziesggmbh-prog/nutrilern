@@ -276,12 +276,11 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <p className="text-gray-300 mb-4">Eine kurze Einführung in die Bild- und Gedankenwelt der Videoreihe.</p>
                   <button
                     onClick={handleSkipIntro}
-                    className="px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 mx-auto"
+                    className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 mx-auto"
                   >
-                    <CheckCircle size={20} />
+                    <CheckCircle size={24} />
                     Intro abschließen
                   </button>
                 </div>
