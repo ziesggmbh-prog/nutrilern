@@ -69,12 +69,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           transition={{ delay: 0.5, duration: 0.6 }}
         >
           <h2 className="text-2xl font-bold text-white text-center mb-6">Willkommen bei NutriLern</h2>
-          <h1 className="text-xl font-bold text-white text-center mb-8 flex items-center justify-center gap-3">
-            <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
-              <Lock className="text-white" size={20} />
-            </div>
-            Zugangscode eingeben
-          </h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
