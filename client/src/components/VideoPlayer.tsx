@@ -28,6 +28,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const [videoEnded, setVideoEnded] = useState(false);
   const [vimeoPlayer, setVimeoPlayer] = useState<any>(null);
   
+  const hasEndedRef = useRef(false);
+  
   // Refs for Vimeo iframes and HTML5 video
   const vimeoRef1 = useRef<HTMLIFrameElement>(null);
   const vimeoRef2 = useRef<HTMLIFrameElement>(null);
@@ -79,8 +81,10 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
           try {
             const player = new window.Vimeo.Player(ref.current);
             
-            player.on('ended', async () => {
-              console.log(`🎬 Vimeo video ${lessonId} ended - showing replay button`);
+            const handleVideoEnd = async () => {
+              if (hasEndedRef.current) return;
+              hasEndedRef.current = true;
+              console.log(`🎬 Vimeo video ${lessonId} ended - exiting fullscreen in 1.5s`);
               setTimeout(async () => {
                 try {
                   await player.exitFullscreen();
@@ -91,6 +95,18 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 }
                 setVideoEnded(true);
               }, 1500);
+            };
+            
+            player.on('ended', handleVideoEnd);
+            
+            player.on('timeupdate', async (data: any) => {
+              if (data.percent >= 0.99 && !hasEndedRef.current) {
+                const duration = await player.getDuration();
+                const currentTime = await player.getCurrentTime();
+                if (duration - currentTime < 1) {
+                  handleVideoEnd();
+                }
+              }
             });
             
             player.ready().then(() => {
@@ -121,6 +137,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const handleReplay = async () => {
     console.log('🔁 Replaying video...');
     setVideoEnded(false);
+    hasEndedRef.current = false;
     
     if (lesson.id <= 4 && vimeoPlayer) {
       // Vimeo player replay
