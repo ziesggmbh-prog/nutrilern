@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Play, Lock, CheckCircle, Star } from "lucide-react";
+import { Play, Lock, CheckCircle, Circle } from "lucide-react";
 import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
 import { useState, useRef } from "react";
@@ -112,9 +112,9 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
           </span>
           <div className="flex items-center space-x-1">
             {isCompleted ? (
-              <Star className="text-green-custom" size={16} />
+              <CheckCircle className="text-green-custom" size={16} />
             ) : isAvailable ? (
-              <Star className="text-green-custom" size={16} />
+              <Circle className="text-green-custom" size={16} />
             ) : (
               <Lock className="text-gray-500" size={16} />
             )}
