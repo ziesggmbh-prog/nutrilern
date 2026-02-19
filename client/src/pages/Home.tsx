@@ -59,7 +59,16 @@ export default function Home() {
           const player = new window.Vimeo.Player(introIframeRef.current);
           introPlayerRef.current = player;
           player.on('ended', () => {
-            setIntroEnded(true);
+            setTimeout(() => {
+              player.exitFullscreen().catch(() => {
+                if (document.fullscreenElement) {
+                  document.exitFullscreen().catch(() => {});
+                } else if ((document as any).webkitFullscreenElement) {
+                  (document as any).webkitExitFullscreen();
+                }
+              });
+              setIntroEnded(true);
+            }, 1500);
           });
           player.ready().then(() => {
             player.requestFullscreen().catch(() => {});
