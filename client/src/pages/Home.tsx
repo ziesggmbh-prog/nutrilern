@@ -198,7 +198,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 bg-black bg-opacity-90 z-[100] flex flex-col items-center justify-center"
+            className={`fixed inset-0 z-[100] flex flex-col items-center justify-center ${introPlaying ? 'bg-black bg-opacity-75' : 'bg-black bg-opacity-90'}`}
           >
             {!introPlaying ? (
               <>
@@ -220,35 +220,50 @@ export default function Home() {
                 </button>
               </>
             ) : (
-              <div className="relative w-full max-w-5xl px-4" style={{ height: '75vh' }}>
-                <button
-                  onClick={handleSkipIntro}
-                  className="absolute -top-10 right-4 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white transition-colors z-10"
-                  aria-label="Schließen"
-                >
-                  <X size={24} />
-                </button>
-                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gray-900">
-                  <iframe
-                    ref={introIframeRef}
-                    src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&autoplay=1"
-                    frameBorder="0"
-                    allowFullScreen
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                    title="Intro"
-                  />
-                  {introEnded && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
-                      <button
-                        onClick={handleReplayIntro}
-                        className="flex items-center gap-3 px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-xl transition-colors shadow-lg text-lg"
-                      >
-                        <RotateCcw size={24} />
-                        Video wiederholen
-                      </button>
+              <div className="bg-navy-light rounded-xl p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+                <div className="flex justify-between items-center mb-4">
+                  <h2 className="text-2xl font-bold text-white">Intro</h2>
+                  <button
+                    onClick={handleSkipIntro}
+                    className="text-gray-400 hover:text-white p-2"
+                  >
+                    <X size={24} />
+                  </button>
+                </div>
+                <div className="relative rounded-xl overflow-hidden mb-6">
+                  <div className="bg-gray-800 aspect-video relative">
+                    <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
+                      <iframe
+                        ref={introIframeRef}
+                        src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&autoplay=1"
+                        frameBorder="0"
+                        allowFullScreen
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                        title="Intro"
+                      />
                     </div>
-                  )}
+                    {introEnded && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                        <button
+                          onClick={handleReplayIntro}
+                          className="bg-gray-800 hover:bg-gray-700 text-white rounded-lg px-6 py-3 transition-colors shadow-lg"
+                        >
+                          <span className="font-medium">Video wiederholen</span>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <p className="text-gray-300 mb-4">Eine kurze Einführung in die Bild- und Gedankenwelt der Videoreihe.</p>
+                  <button
+                    onClick={handleSkipIntro}
+                    className="px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 mx-auto"
+                  >
+                    <CheckCircle size={20} />
+                    Intro abschließen
+                  </button>
                 </div>
               </div>
             )}
