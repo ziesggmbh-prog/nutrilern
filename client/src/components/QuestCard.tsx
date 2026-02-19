@@ -33,7 +33,9 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
   if (!showImage) {
     return (
       <motion.div
-        className={`bg-navy-light rounded-2xl p-4 cursor-pointer relative overflow-hidden transition-all duration-300 group border-2 border-purple-custom ${
+        className={`bg-navy-light rounded-2xl p-4 cursor-pointer relative overflow-hidden transition-all duration-300 group border-2 ${
+          isCompleted ? "border-green-custom" : "border-purple-custom"
+        } ${
           isAvailable ? "hover:shadow-xl" : "opacity-60"
         }`}
         onClick={isAvailable ? onQuizClick : undefined}
@@ -43,8 +45,10 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <div className={`${isAvailable ? "bg-purple-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center mr-3`}>
-              {isAvailable ? (
+            <div className={`${isCompleted ? "bg-green-custom" : isAvailable ? "bg-purple-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center mr-3`}>
+              {isCompleted ? (
+                <CheckCircle className="text-white" size={16} />
+              ) : isAvailable ? (
                 <Target className="text-white" size={16} />
               ) : (
                 <Lock className="text-white" size={16} />
@@ -52,11 +56,13 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
             </div>
             <div>
               <h4 className="text-white font-medium">{isGroupMode ? lesson.title : `Quiz: ${lesson.title}`}</h4>
-              <p className="text-gray-400 text-sm">{isAvailable ? "Quiz verfügbar" : "Nicht verfügbar"}</p>
+              <p className={`text-sm ${isCompleted ? "text-green-custom" : "text-gray-400"}`}>
+                {isCompleted ? "Abgeschlossen" : isAvailable ? "Quiz verfügbar" : "Nicht verfügbar"}
+              </p>
             </div>
           </div>
-          <div className={`text-sm ${isAvailable ? "text-white" : "text-gray-500"}`}>
-            {isAvailable ? "Starten" : "Gesperrt"}
+          <div className={`text-sm ${isCompleted ? "text-green-custom" : isAvailable ? "text-white" : "text-gray-500"}`}>
+            {isCompleted ? "✓" : isAvailable ? "Starten" : "Gesperrt"}
           </div>
         </div>
       </motion.div>
