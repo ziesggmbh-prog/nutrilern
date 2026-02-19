@@ -201,7 +201,15 @@ export default function Home() {
               <>
                 <h2 className="text-3xl font-bold text-white mb-10">Willkommen bei Nutri-Lern</h2>
                 <button
-                  onClick={() => setIntroPlaying(true)}
+                  onClick={() => {
+                    setIntroPlaying(true);
+                    const el = document.documentElement;
+                    if (el.requestFullscreen) {
+                      el.requestFullscreen().catch(() => {});
+                    } else if ((el as any).webkitRequestFullscreen) {
+                      (el as any).webkitRequestFullscreen();
+                    }
+                  }}
                   className="w-24 h-24 rounded-full bg-green-custom hover:bg-green-600 flex items-center justify-center transition-colors shadow-2xl mb-6"
                 >
                   <Play size={40} className="text-white ml-2" fill="white" />
