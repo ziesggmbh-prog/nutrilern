@@ -179,11 +179,6 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
       >
-        <OrganicShape
-          className="absolute top-0 right-0 w-32 h-32 bg-purple-custom opacity-20"
-          variant="default"
-        />
-        
         <div className="relative z-10">
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-purple-custom rounded-full flex items-center justify-center mx-auto mb-4">
