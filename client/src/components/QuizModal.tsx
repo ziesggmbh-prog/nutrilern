@@ -241,17 +241,9 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                <div className="flex items-center space-x-3">
-                  <XCircle className="text-red-500" size={20} />
-                  <div>
-                    <p className="text-red-500 font-semibold">
-                      Diese Antwort ist leider nicht korrekt – bitte versuche es noch einmal.
-                    </p>
-                    <p className="text-gray-400 text-sm mt-1">
-                      {questions[currentQuestion].explanation}
-                    </p>
-                  </div>
-                </div>
+                <p className="text-red-500 font-semibold">
+                  Diese Antwort ist leider nicht korrekt – bitte versuche es noch einmal.
+                </p>
                 <Button
                   onClick={handleTryAgain}
                   className="mt-3 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
