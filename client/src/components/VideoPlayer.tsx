@@ -81,7 +81,6 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             
             player.on('ended', async () => {
               console.log(`🎬 Vimeo video ${lessonId} ended - showing replay button`);
-              setVideoEnded(true);
               setTimeout(async () => {
                 try {
                   await player.exitFullscreen();
@@ -90,7 +89,12 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                   console.log('⚠️ Player.exitFullscreen failed, trying fallback:', err);
                   await fallbackExitFullscreen();
                 }
-              }, 2500);
+                setVideoEnded(true);
+              }, 1500);
+            });
+            
+            player.ready().then(() => {
+              player.requestFullscreen().catch(() => {});
             });
             
             // Store player reference for replay functionality
@@ -253,13 +257,11 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         </div>
         
         <div className="text-center">
-          <p className="text-gray-300 mb-4">{lesson.description}</p>
           <div className="flex justify-between items-center">
-            {/* Show left "Schließen" button for lessons 2 and 3 */}
             {showDualButtons && (
               <button
                 onClick={onClose}
-                className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                className="px-8 py-3 text-lg bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
               >
                 Schließen
               </button>
@@ -267,10 +269,10 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             
             <button
               onClick={onComplete}
-              className={`px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 ${!showDualButtons ? 'mx-auto' : ''}`}
+              className={`px-8 py-3 text-lg bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 ${!showDualButtons ? 'mx-auto' : ''}`}
             >
-              <CheckCircle size={20} />
-              {showDualButtons ? "Quiz starten" : (lesson.id === 1 ? "Intro abschließen" : "Video schließen")}
+              <CheckCircle size={24} />
+              {showDualButtons ? "Quiz starten" : (lesson.id === 1 ? "Intro abschließen" : "Video abschließen")}
             </button>
           </div>
         </div>
