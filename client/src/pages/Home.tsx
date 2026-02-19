@@ -202,7 +202,7 @@ export default function Home() {
           >
             {!introPlaying ? (
               <>
-                <h2 className="text-3xl font-bold text-white mb-10">Willkommen bei Nutri-Lern</h2>
+                <h2 className="text-3xl font-bold text-white mb-10">Willkommen bei NutriLern</h2>
                 <button
                   onClick={() => {
                     setIntroPlaying(true);
