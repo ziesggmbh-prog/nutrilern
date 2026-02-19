@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, User, Star, Play, Lock, CheckCircle, RotateCcw } from "lucide-react";
+import { Leaf, User, Star, Play, Lock, CheckCircle, RotateCcw, X } from "lucide-react";
 import LessonCard from "@/components/LessonCard";
 import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -41,13 +41,12 @@ export default function Home() {
   const [showIntroOverlay, setShowIntroOverlay] = useState(() => {
     return !localStorage.getItem('introSeen');
   });
-  const [introPlaying, setIntroPlaying] = useState(false);
   const [introEnded, setIntroEnded] = useState(false);
   const introIframeRef = useRef<HTMLIFrameElement>(null);
   const introPlayerRef = useRef<any>(null);
 
   useEffect(() => {
-    if (!showIntroOverlay || !introPlaying) return;
+    if (!showIntroOverlay) return;
     
     const setupIntroPlayer = () => {
       if (typeof window.Vimeo === 'undefined') {
@@ -67,7 +66,7 @@ export default function Home() {
       }
     };
     setupIntroPlayer();
-  }, [showIntroOverlay, introPlaying]);
+  }, [showIntroOverlay]);
 
   const handleSkipIntro = () => {
     localStorage.setItem('introSeen', 'true');
@@ -195,53 +194,39 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 bg-black bg-opacity-90 z-[100] flex flex-col items-center justify-center"
+            className="fixed inset-0 bg-black bg-opacity-90 z-[100] flex items-center justify-center"
           >
-            <div className="w-full max-w-5xl px-4" style={{ height: '75vh' }}>
+            <div className="relative w-full max-w-5xl px-4" style={{ height: '75vh' }}>
+              <button
+                onClick={handleSkipIntro}
+                className="absolute -top-10 right-4 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white transition-colors z-10"
+                aria-label="Schließen"
+              >
+                <X size={24} />
+              </button>
               <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gray-900">
-                {!introPlaying ? (
-                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800">
-                    <h2 className="text-3xl font-bold text-white mb-8">Willkommen bei NutriLern</h2>
+                <iframe
+                  ref={introIframeRef}
+                  src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&autoplay=1"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  title="Intro"
+                />
+                {introEnded && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
                     <button
-                      onClick={() => setIntroPlaying(true)}
-                      className="w-24 h-24 rounded-full bg-green-custom hover:bg-green-600 flex items-center justify-center transition-colors shadow-2xl"
+                      onClick={handleReplayIntro}
+                      className="flex items-center gap-3 px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-xl transition-colors shadow-lg text-lg"
                     >
-                      <Play size={40} className="text-white ml-2" fill="white" />
+                      <RotateCcw size={24} />
+                      Video wiederholen
                     </button>
-                    <p className="text-gray-400 mt-6 text-lg">Intro-Video ansehen</p>
                   </div>
-                ) : (
-                  <>
-                    <iframe
-                      ref={introIframeRef}
-                      src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&autoplay=1"
-                      frameBorder="0"
-                      allowFullScreen
-                      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                      title="Intro"
-                    />
-                    {introEnded && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60">
-                        <button
-                          onClick={handleReplayIntro}
-                          className="flex items-center gap-3 px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-xl transition-colors shadow-lg text-lg"
-                        >
-                          <RotateCcw size={24} />
-                          Video wiederholen
-                        </button>
-                      </div>
-                    )}
-                  </>
                 )}
               </div>
             </div>
-            <button
-              onClick={handleSkipIntro}
-              className="mt-6 px-8 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-xl transition-colors text-lg font-medium"
-            >
-              Intro überspringen
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
