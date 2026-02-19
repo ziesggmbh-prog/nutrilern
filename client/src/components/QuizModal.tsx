@@ -150,11 +150,11 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
               Du hast {quizResults.correctAnswers} von {quizResults.totalQuestions} Fragen richtig beantwortet.
             </p>
             
-            <p className="text-gray-400 mb-6">
-              {quizResults.passed
-                ? "Die nächste Lektion ist jetzt verfügbar!"
-                : "Du benötigst mindestens 70% um fortzufahren. Versuche es erneut!"}
-            </p>
+            {!quizResults.passed && (
+              <p className="text-gray-400 mb-6">
+                Du benötigst mindestens 70% um fortzufahren. Versuche es erneut!
+              </p>
+            )}
             
             <Button
               onClick={handleComplete}
