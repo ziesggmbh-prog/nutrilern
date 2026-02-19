@@ -79,7 +79,6 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
-                Passwort eingeben
               </label>
               <div className="relative">
                 <input
