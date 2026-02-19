@@ -206,7 +206,7 @@ export default function Home() {
                 >
                   <Play size={40} className="text-white ml-2" fill="white" />
                 </button>
-                <p className="text-white text-lg font-medium mb-4">Intro starten</p>
+                <p className="text-white text-lg font-medium mb-16">Intro starten</p>
                 <button
                   onClick={handleSkipIntro}
                   className="text-gray-400 hover:text-white transition-colors text-base"
