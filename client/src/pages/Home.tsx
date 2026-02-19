@@ -61,6 +61,9 @@ export default function Home() {
           player.on('ended', () => {
             setIntroEnded(true);
           });
+          player.ready().then(() => {
+            player.requestFullscreen().catch(() => {});
+          });
         } catch (e) {
           console.log('Failed to setup intro player:', e);
         }
@@ -203,18 +206,12 @@ export default function Home() {
                 <button
                   onClick={() => {
                     setIntroPlaying(true);
-                    const el = document.documentElement;
-                    if (el.requestFullscreen) {
-                      el.requestFullscreen().catch(() => {});
-                    } else if ((el as any).webkitRequestFullscreen) {
-                      (el as any).webkitRequestFullscreen();
-                    }
                   }}
                   className="w-24 h-24 rounded-full bg-green-custom hover:bg-green-600 flex items-center justify-center transition-colors shadow-2xl mb-6"
                 >
                   <Play size={40} className="text-white ml-2" fill="white" />
                 </button>
-                <p className="text-white text-lg font-medium mb-16">Intro starten</p>
+                <p className="text-white text-lg font-medium mb-24">Intro starten</p>
                 <button
                   onClick={handleSkipIntro}
                   className="text-gray-400 hover:text-white transition-colors text-base"
