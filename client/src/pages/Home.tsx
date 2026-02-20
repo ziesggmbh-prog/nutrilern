@@ -367,6 +367,9 @@ export default function Home() {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
+                        <div className={`${isAvailable ? "bg-purple-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center mr-3`}>
+                          <Search className="text-white" size={16} />
+                        </div>
                         <div>
                           <h4 className="text-white font-medium">Vertiefende Fragen</h4>
                         </div>
