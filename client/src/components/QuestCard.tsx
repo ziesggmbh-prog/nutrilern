@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Puzzle, Lock, CheckCircle, Star, HelpCircle } from "lucide-react";
+import { Compass, Lock, CheckCircle, Star, HelpCircle } from "lucide-react";
 import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
 import { useState, useRef } from "react";
@@ -60,7 +60,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               {isCompleted ? (
                 <CheckCircle className="text-white" size={16} />
               ) : isAvailable ? (
-                <Puzzle className="text-white" size={16} />
+                <Compass className="text-white" size={16} />
               ) : (
                 <Lock className="text-white" size={16} />
               )}
@@ -110,7 +110,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
             {isCompleted ? (
               <CheckCircle className="text-white" size={12} />
             ) : isAvailable ? (
-              isGroupMode ? <Puzzle className="text-white" size={12} /> : null
+              isGroupMode ? <Compass className="text-white" size={12} /> : null
             ) : (
               <Lock className="text-white" size={12} />
             )}
