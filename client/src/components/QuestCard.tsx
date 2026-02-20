@@ -96,13 +96,13 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: lesson.order * 0.1 }}
     >
-      <div className="absolute top-0 right-0 w-20 h-20">
+      <div className="absolute top-0 right-0 w-20 h-20 z-0">
         <OrganicShape
-          className={`w-20 h-20 ${colorClass} opacity-20`}
+          className={`w-20 h-20 ${colorClass} ${isGroupMode ? 'opacity-40' : 'opacity-20'}`}
           variant="default"
         />
         {isGroupMode && (
-          <Puzzle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-40" size={20} />
+          <Puzzle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-80" size={22} />
         )}
       </div>
       
