@@ -48,6 +48,14 @@
   --soft-lavender: hsl(260, 60%, 75%); /* Soft lavender for Video 8 */
   --teal-blue: hsl(185, 45%, 50%); /* Teal blue for Video 9 */
   
+  /* Group mode colors (distinct from learning mode) */
+  --coral-red: hsl(0, 65%, 55%);
+  --golden-amber: hsl(30, 80%, 50%);
+  --forest-green: hsl(150, 50%, 40%);
+  --ocean-blue: hsl(200, 70%, 50%);
+  --dusty-rose: hsl(340, 45%, 55%);
+  --slate-teal: hsl(170, 40%, 45%);
+  
   /* Background pattern - irregular dots */
   --dot-bg: 
     radial-gradient(circle at 15% 23%, rgba(255,255,255,0.08) 1px, transparent 1px),

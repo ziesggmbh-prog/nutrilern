@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, Lock, CheckCircle, Star, HelpCircle } from "lucide-react";
+import { Puzzle, Lock, CheckCircle, Star, HelpCircle } from "lucide-react";
 import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
 import { useState, useRef } from "react";
@@ -26,8 +26,19 @@ const questColors = [
   "bg-teal-blue"
 ];
 
+const groupColors = [
+  "bg-coral-red",
+  "bg-golden-amber",
+  "bg-forest-green",
+  "bg-ocean-blue",
+  "bg-dusty-rose",
+  "bg-slate-teal"
+];
+
 export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClick, showImage = true, isGroupMode = false }: QuestCardProps) {
-  const colorClass = questColors[(lesson.order - 1) % questColors.length];
+  const colorClass = isGroupMode 
+    ? groupColors[(lesson.order - 1) % groupColors.length]
+    : questColors[(lesson.order - 1) % questColors.length];
   
   // If showImage is false (single player mode), render deployed version style
   if (!showImage) {
@@ -49,7 +60,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               {isCompleted ? (
                 <CheckCircle className="text-white" size={16} />
               ) : isAvailable ? (
-                <Target className="text-white" size={16} />
+                <Puzzle className="text-white" size={16} />
               ) : (
                 <Lock className="text-white" size={16} />
               )}
@@ -85,10 +96,15 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: lesson.order * 0.1 }}
     >
-      <OrganicShape
-        className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
-        variant="default"
-      />
+      <div className="absolute top-0 right-0 w-20 h-20">
+        <OrganicShape
+          className={`w-20 h-20 ${colorClass} opacity-20`}
+          variant="default"
+        />
+        {isGroupMode && (
+          <Puzzle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-40" size={20} />
+        )}
+      </div>
       
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-4">

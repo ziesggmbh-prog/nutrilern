@@ -84,6 +84,12 @@ export default {
         "terracotta": "var(--terracotta)",
         "soft-lavender": "var(--soft-lavender)",
         "teal-blue": "var(--teal-blue)",
+        "coral-red": "var(--coral-red)",
+        "golden-amber": "var(--golden-amber)",
+        "forest-green": "var(--forest-green)",
+        "ocean-blue": "var(--ocean-blue)",
+        "dusty-rose": "var(--dusty-rose)",
+        "slate-teal": "var(--slate-teal)",
       },
       keyframes: {
         "accordion-down": {
