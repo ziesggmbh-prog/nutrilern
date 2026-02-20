@@ -16,8 +16,7 @@ function WideOpenLock({ size = 16, className = "" }: { size?: number; className?
     <svg width={size} height={size} viewBox="0 0 28 28" fill="currentColor" className={className}>
       <path d="M9 13h12a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-7a3 3 0 0 1 3-3z" />
       <rect x="13.5" y="18" width="3" height="5" rx="1.5" style={{ fill: 'var(--lock-hole, #1a1a2e)' }} />
-      <path d="M12 13V9a5 5 0 0 0-10 0v0" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
-      <path d="M2 9V3" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+      <path d="M12 13V9a5 5 0 0 0-10 0" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
     </svg>
   );
 }
