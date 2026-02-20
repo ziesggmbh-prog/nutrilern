@@ -67,7 +67,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               )}
             </div>
             <div>
-              <h4 className="text-white font-medium">{isGroupMode ? lesson.title : `Quiz: ${lesson.title}`}</h4>
+              <h4 className="text-white font-medium">{isGroupMode ? lesson.title : "Quiz"}</h4>
             </div>
           </div>
           <div className={`text-sm ${isCompleted ? "text-green-custom" : isAvailable ? "text-white" : "text-gray-500"}`}>

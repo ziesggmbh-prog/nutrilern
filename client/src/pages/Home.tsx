@@ -371,7 +371,7 @@ export default function Home() {
                           <Search className="text-white" size={16} />
                         </div>
                         <div>
-                          <h4 className="text-white font-medium">Vertiefende Fragen: {lesson.title}</h4>
+                          <h4 className="text-white font-medium">Vertiefende Fragen</h4>
                         </div>
                       </div>
                       <div className={`text-sm ${isAvailable ? "text-white" : "text-gray-500"}`}>
