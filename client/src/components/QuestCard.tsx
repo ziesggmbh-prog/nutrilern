@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Compass, Lock, CheckCircle, Star, HelpCircle } from "lucide-react";
+import { Search, Lock, CheckCircle, Star, HelpCircle } from "lucide-react";
 import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
 import { useState, useRef } from "react";
@@ -27,17 +27,18 @@ const questColors = [
 ];
 
 const groupColors = [
-  "bg-coral-red",
-  "bg-golden-amber",
-  "bg-forest-green",
-  "bg-ocean-blue",
-  "bg-dusty-rose",
-  "bg-slate-teal"
+  { bg: "bg-coral-red", text: "text-coral-red" },
+  { bg: "bg-golden-amber", text: "text-golden-amber" },
+  { bg: "bg-forest-green", text: "text-forest-green" },
+  { bg: "bg-ocean-blue", text: "text-ocean-blue" },
+  { bg: "bg-dusty-rose", text: "text-dusty-rose" },
+  { bg: "bg-slate-teal", text: "text-slate-teal" },
 ];
 
 export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClick, showImage = true, isGroupMode = false }: QuestCardProps) {
+  const groupColor = groupColors[(lesson.order - 1) % groupColors.length];
   const colorClass = isGroupMode 
-    ? groupColors[(lesson.order - 1) % groupColors.length]
+    ? groupColor.bg
     : questColors[(lesson.order - 1) % questColors.length];
   
   // If showImage is false (single player mode), render deployed version style
@@ -60,7 +61,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               {isCompleted ? (
                 <CheckCircle className="text-white" size={16} />
               ) : isAvailable ? (
-                <Compass className="text-white" size={16} />
+                <Search className="text-white" size={16} />
               ) : (
                 <Lock className="text-white" size={16} />
               )}
@@ -96,10 +97,14 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: lesson.order * 0.1 }}
     >
-      <OrganicShape
-        className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
-        variant="default"
-      />
+      {isGroupMode ? (
+        <Search className={`absolute top-4 right-4 ${groupColor.text} opacity-30`} size={28} />
+      ) : (
+        <OrganicShape
+          className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
+          variant="default"
+        />
+      )}
       
       <div className={`relative z-10 ${isGroupMode ? "flex flex-col flex-1" : ""}`}>
         <div className="flex items-center justify-between mb-4">
@@ -108,15 +113,15 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               <span className="text-white font-bold text-sm">{lesson.order}</span>
             </div>
           )}
-          <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center ${isGroupMode ? "ml-auto" : ""}`}>
-            {isCompleted ? (
-              <CheckCircle className="text-white" size={12} />
-            ) : isAvailable ? (
-              isGroupMode ? <Compass className="text-white" size={12} /> : null
-            ) : (
-              <Lock className="text-white" size={12} />
-            )}
-          </div>
+          {!isGroupMode && (
+            <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
+              {isCompleted ? (
+                <CheckCircle className="text-white" size={12} />
+              ) : isAvailable ? null : (
+                <Lock className="text-white" size={12} />
+              )}
+            </div>
+          )}
         </div>
         
         <div className="relative">
