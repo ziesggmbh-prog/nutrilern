@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { X, MessageCircleQuestion, Users } from "lucide-react";
+import { X, MessageCircleQuestion, HelpCircle } from "lucide-react";
 import type { VertiefendeFrage } from "@/lib/vertiefendeFragen";
 
 interface VertiefendeFragenModalProps {
@@ -41,8 +41,8 @@ export default function VertiefendeFragenModal({ data, onClose }: VertiefendeFra
           {data.gruppen.map((g) => (
             <div key={g.gruppe} className="bg-gray-800 rounded-lg p-5">
               <div className="flex items-center gap-2 mb-3">
-                <Users className="text-green-custom" size={18} />
-                <h3 className="text-lg font-bold text-green-custom">Gruppe {g.gruppe}</h3>
+                <HelpCircle className="text-green-custom" size={18} />
+                <h3 className="text-lg font-bold text-green-custom">Frage {g.gruppe}</h3>
               </div>
               <p className="text-gray-300 leading-relaxed">{g.fragen}</p>
             </div>
