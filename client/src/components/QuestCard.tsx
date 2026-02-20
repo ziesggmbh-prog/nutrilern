@@ -96,27 +96,24 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: lesson.order * 0.1 }}
     >
-      <div className="absolute top-0 right-0 w-20 h-20 z-0">
-        <OrganicShape
-          className={`w-20 h-20 ${colorClass} ${isGroupMode ? 'opacity-40' : 'opacity-20'}`}
-          variant="default"
-        />
-        {isGroupMode && (
-          <Puzzle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-80" size={22} />
-        )}
-      </div>
+      <OrganicShape
+        className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
+        variant="default"
+      />
       
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-4">
           <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
             <span className="text-white font-bold text-sm">{lesson.order}</span>
           </div>
-          <div className={`${isCompleted ? "bg-green-custom" : colorClass} rounded-full w-6 h-6 flex items-center justify-center`}>
+          <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
             {isCompleted ? (
               <CheckCircle className="text-white" size={12} />
-            ) : !isAvailable ? (
+            ) : isAvailable ? (
+              isGroupMode ? <Puzzle className="text-white" size={12} /> : null
+            ) : (
               <Lock className="text-white" size={12} />
-            ) : null}
+            )}
           </div>
         </div>
         
