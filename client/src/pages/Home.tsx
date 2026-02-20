@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, User, Star, Play, Lock, CheckCircle, RotateCcw, X } from "lucide-react";
+import { Leaf, User, Star, Play, Lock, CheckCircle, RotateCcw, X, Search } from "lucide-react";
 import LessonCard from "@/components/LessonCard";
 import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -17,6 +17,8 @@ import { useImagePreloader } from "@/hooks/useImagePreloader";
 import type { Lesson, UserProgress } from "@shared/schema";
 import { quizData } from "@/lib/quizData";
 import { queryClient } from "@/lib/queryClient";
+import { getVertiefendeFragenForLesson } from "@/lib/vertiefendeFragen";
+import VertiefendeFragenModal from "@/components/VertiefendeFragenModal";
 import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
 import bkkFirmusLogo from "@assets/bkk_firmus_logo.svg";
 import ziesLogo from "@assets/zies_logo_official.svg";
@@ -37,6 +39,8 @@ export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
   const [showQuiz, setShowQuiz] = useState(false);
   const [currentQuizLesson, setCurrentQuizLesson] = useState<Lesson | null>(null);
+  const [showVertiefendeFragen, setShowVertiefendeFragen] = useState(false);
+  const [vertiefendeLesson, setVertiefendeLesson] = useState<Lesson | null>(null);
 
   const [showIntroOverlay, setShowIntroOverlay] = useState(() => {
     return !localStorage.getItem('introSeen');
@@ -345,6 +349,38 @@ export default function Home() {
                   onClick={() => handleLessonClick(lesson)}
                 />
                 
+                {/* Vertiefende Fragen Card - between video and quiz */}
+                {getVertiefendeFragenForLesson(lesson.order) && (
+                  <motion.div
+                    className={`bg-navy-light rounded-2xl p-4 cursor-pointer relative overflow-hidden transition-all duration-300 group border-2 border-purple-custom ${
+                      isAvailable ? "hover:shadow-xl" : "opacity-60"
+                    }`}
+                    onClick={() => {
+                      if (isAvailable) {
+                        setVertiefendeLesson(lesson);
+                        setShowVertiefendeFragen(true);
+                      }
+                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: lesson.order * 0.1 + 0.15 }}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className={`${isAvailable ? "bg-purple-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center mr-3`}>
+                          <Search className="text-white" size={16} />
+                        </div>
+                        <div>
+                          <h4 className="text-white font-medium">Vertiefende Fragen: {lesson.title}</h4>
+                        </div>
+                      </div>
+                      <div className={`text-sm ${isAvailable ? "text-white" : "text-gray-500"}`}>
+                        {isAvailable ? "Öffnen" : "Gesperrt"}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
                 {/* Quest Card (smaller, without image) - but NOT for Intro */}
                 {lesson.id !== 1 && lesson.id !== 7 && (
                   <QuestCard
@@ -412,6 +448,13 @@ export default function Home() {
           lesson={currentQuizLesson}
           onClose={() => setShowQuiz(false)}
           onComplete={handleQuizComplete}
+        />
+      )}
+
+      {showVertiefendeFragen && vertiefendeLesson && getVertiefendeFragenForLesson(vertiefendeLesson.order) && (
+        <VertiefendeFragenModal
+          data={getVertiefendeFragenForLesson(vertiefendeLesson.order)!}
+          onClose={() => setShowVertiefendeFragen(false)}
         />
       )}
 
