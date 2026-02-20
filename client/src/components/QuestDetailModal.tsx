@@ -158,7 +158,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: dayIndex * 0.1 }}
-          className={`relative rounded-xl cursor-pointer transition-all duration-300 border-2 overflow-hidden flex flex-col ${
+          className={`relative rounded-xl cursor-pointer transition-all duration-300 border-2 overflow-hidden ${
             isCompleted 
               ? "border-green-custom shadow-lg" 
               : isAvailable 
@@ -170,7 +170,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           <img 
             src={quest.thumbnailUrl} 
             alt={quest.title}
-            className="w-full flex-1 object-cover"
+            className="w-full h-32 object-cover"
           />
           <div className="p-4 bg-navy-light text-center">
             <h3 className="text-lg font-bold text-white mb-1">Tag 5</h3>
@@ -315,7 +315,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             />
 
             {/* Days Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {days.map((day) => (
                 <DayCard key={day.id} day={day} />
               ))}
