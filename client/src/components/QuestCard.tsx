@@ -111,11 +111,13 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
                 <CheckCircle className="text-white" size={12} />
               </div>
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="1.5" opacity="0.6" />
-                <circle cx="12" cy="12" r="6" stroke="white" strokeWidth="1.5" opacity="0.6" />
-                <circle cx="12" cy="12" r="2.5" fill="white" opacity="0.6" />
-              </svg>
+              <div className="bg-gray-600 rounded-full w-6 h-6 flex items-center justify-center">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" />
+                  <circle cx="12" cy="12" r="5.5" stroke="white" strokeWidth="2" />
+                  <circle cx="12" cy="12" r="2" fill="white" />
+                </svg>
+              </div>
             )}
           </div>
         )}
