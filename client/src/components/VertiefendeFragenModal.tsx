@@ -43,7 +43,14 @@ export default function VertiefendeFragenModal({ data, onClose }: VertiefendeFra
                 <HelpCircle className="text-green-custom" size={18} />
                 <h3 className="text-lg font-bold text-green-custom">Frage {g.gruppe}</h3>
               </div>
-              <p className="text-gray-300 leading-relaxed">{g.fragen}</p>
+              <ul className="text-gray-300 leading-relaxed space-y-2">
+                {g.fragen.split("?").filter(f => f.trim()).map((frage, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="mt-0.5">–</span>
+                    <span>{frage.trim()}?</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
