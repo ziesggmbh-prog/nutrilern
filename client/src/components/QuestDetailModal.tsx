@@ -195,7 +195,6 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
 
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Target className={isCompleted ? "text-green-custom" : isAvailable ? "text-purple-custom" : "text-gray-500"} size={16} />
               <span className={`text-sm font-medium ${
                 isCompleted ? "text-green-custom" : isAvailable ? "text-purple-custom" : "text-gray-500"
               }`}>
@@ -250,7 +249,6 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-2">
-                <Target className="text-white" size={28} />
                 <h2 className="text-2xl font-bold text-white">Quest: {quest.title}</h2>
               </div>
               <p className="text-gray-200 mb-4">{quest.description}</p>
