@@ -1,13 +1,23 @@
 import { motion } from "framer-motion";
 import { Search, Lock, CheckCircle, Star, HelpCircle, Circle } from "lucide-react";
 
+function FilledClosedLock({ size = 16, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 28" fill="currentColor" className={className}>
+      <path d="M6 12h12a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7a3 3 0 0 1 3-3z" />
+      <rect x="10.5" y="17" width="3" height="5" rx="1.5" style={{ fill: 'var(--lock-hole, #1a1a2e)' }} />
+      <path d="M7 12V8a5 5 0 0 1 10 0v4" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function WideOpenLock({ size = 16, className = "" }: { size?: number; className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <rect x="3" y="15" width="16" height="11" rx="2" ry="2" />
-      <path d="M7 15V11a5 5 0 0 1 10 0" />
-      <path d="M17 11V2" />
-      <path d="M17 2h6" />
+    <svg width={size} height={size} viewBox="0 0 24 28" fill="currentColor" className={className}>
+      <path d="M6 12h12a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7a3 3 0 0 1 3-3z" />
+      <rect x="10.5" y="17" width="3" height="5" rx="1.5" fill="currentColor" className="text-purple-custom dark:text-gray-600" style={{ fill: 'var(--lock-hole, #1a1a2e)' }} />
+      <path d="M7 12V8a5 5 0 0 1 10 0v0" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+      <path d="M17 8V3" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -74,7 +84,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               ) : isAvailable ? (
                 <WideOpenLock className="text-white" size={16} />
               ) : (
-                <Lock className="text-white" size={16} />
+                <FilledClosedLock className="text-white" size={16} />
               )}
             </div>
             <div>
