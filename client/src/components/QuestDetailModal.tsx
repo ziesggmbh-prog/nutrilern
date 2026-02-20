@@ -172,7 +172,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             alt={quest.title}
             className="w-full h-32 object-cover"
           />
-          <div className="p-4 bg-navy-light text-center">
+          <div className="p-4 text-center">
             <h3 className="text-lg font-bold text-white mb-1">Tag 5</h3>
             <h3 className="text-xl font-bold text-green-custom">
               Präsentation
