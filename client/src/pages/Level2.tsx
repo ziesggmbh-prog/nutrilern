@@ -160,9 +160,7 @@ export default function Level2() {
           className="text-center mb-12"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Star className="text-yellow-400" size={24} />
             <h2 className="text-3xl font-bold">Gruppenmodus</h2>
-            <Star className="text-yellow-400" size={24} />
           </div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Jetzt wird's praktisch: Wendet euer Wissen an und meistert die Quests als Gruppe!

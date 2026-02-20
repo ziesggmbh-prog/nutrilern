@@ -203,12 +203,6 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
               </span>
             </div>
             
-            {isCompleted && (
-              <div className="flex items-center space-x-1">
-                <Star className="text-yellow-400" size={16} />
-                <span className="text-yellow-400 text-sm font-bold">+10 XP</span>
-              </div>
-            )}
           </div>
         </div>
 
