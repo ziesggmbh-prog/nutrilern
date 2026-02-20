@@ -103,13 +103,11 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       />
       
       <div className={`relative z-10 ${isGroupMode ? "flex flex-col flex-1" : ""}`}>
-        <div className="flex items-center justify-between mb-4">
-          {!isGroupMode && (
+        {!isGroupMode ? (
+          <div className="flex items-center justify-between mb-4">
             <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
               <span className="text-white font-bold text-sm">{lesson.order}</span>
             </div>
-          )}
-          {!isGroupMode && (
             <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
               {isCompleted ? (
                 <CheckCircle className="text-white" size={12} />
@@ -117,8 +115,10 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
                 <Lock className="text-white" size={12} />
               )}
             </div>
-          )}
-        </div>
+          </div>
+        ) : (
+          <div className="mb-4"></div>
+        )}
         
         <div className="relative">
           {/* Loading skeleton */}
