@@ -261,10 +261,6 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
                   <Calendar size={18} />
                   <span>{days.length} Tage</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Star size={18} />
-                  <span>{completedDays.length * 10} / {days.length * 10} XP</span>
-                </div>
               </div>
             </div>
             
