@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, User, Star, Play, Lock, Unlock, CheckCircle, RotateCcw, X, Search } from "lucide-react";
+import { Leaf, User, Star, Play, Lock, LockOpen, CheckCircle, RotateCcw, X, Search } from "lucide-react";
 import LessonCard from "@/components/LessonCard";
 import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -368,7 +368,7 @@ export default function Home() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
                         <div className={`${isAvailable ? "bg-purple-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center mr-3`}>
-                          {isAvailable ? <Unlock className="text-white" size={16} /> : <Lock className="text-white" size={16} />}
+                          {isAvailable ? <LockOpen className="text-white" size={16} /> : <Lock className="text-white" size={16} />}
                         </div>
                         <div>
                           <h4 className="text-white font-medium">Vertiefende Fragen</h4>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, Lock, CheckCircle, Star, HelpCircle, Circle } from "lucide-react";
+import { Search, Lock, LockOpen, CheckCircle, Star, HelpCircle, Circle } from "lucide-react";
 import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
 import { useState, useRef } from "react";
@@ -61,7 +61,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               {isCompleted ? (
                 <CheckCircle className="text-white" size={16} />
               ) : isAvailable ? (
-                <Search className="text-white" size={16} />
+                <LockOpen className="text-white" size={16} />
               ) : (
                 <Lock className="text-white" size={16} />
               )}
