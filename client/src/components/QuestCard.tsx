@@ -90,7 +90,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
         isCompleted ? "border-2 border-green-custom" : isAvailable ? "border-2 border-purple-custom" : "opacity-60 border-2 border-gray-600"
       } ${
         isAvailable ? "hover:shadow-xl" : ""
-      }`}
+      } ${isGroupMode ? "h-[420px] flex flex-col" : ""}`}
       onClick={isAvailable ? onQuizClick : undefined}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
         variant="default"
       />
       
-      <div className="relative z-10">
+      <div className={`relative z-10 ${isGroupMode ? "flex flex-col flex-1" : ""}`}>
         <div className="flex items-center justify-between mb-4">
           {!isGroupMode && (
             <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
@@ -155,10 +155,10 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           )}
         </div>
         
-        <h3 className="text-lg font-semibold mb-2 flex items-center">
+        <h3 className={`text-lg font-semibold mb-2 flex items-center ${isGroupMode ? "min-h-[3.5rem]" : ""}`}>
           {isGroupMode ? lesson.title : `Quiz: ${lesson.title}`}
         </h3>
-        <p className="text-gray-400 text-sm mb-4 leading-relaxed min-h-[4rem]">
+        <p className={`text-gray-400 text-sm mb-4 leading-relaxed ${isGroupMode ? "flex-1" : "min-h-[4rem]"}`}>
           {lesson.description}
         </p>
         
