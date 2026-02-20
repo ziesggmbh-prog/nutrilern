@@ -14,7 +14,16 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
     onClose();
   };
 
-  // Convert markdown-like formatting to JSX
+  const splitDescriptionByTag5 = (text: string) => {
+    const tag5Marker = '**Tag 5**';
+    const idx = text.indexOf(tag5Marker);
+    if (idx === -1) return { days1to4: text, day5: null };
+    return {
+      days1to4: text.substring(0, idx).trimEnd(),
+      day5: text.substring(idx + tag5Marker.length).trim()
+    };
+  };
+
   const formatDescription = (text: string) => {
     const parts = text.split('\n');
     const elements: JSX.Element[] = [];
@@ -23,10 +32,8 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
       const line = parts[i];
       
       if (line.trim() === '') {
-        // Empty line - add spacing
         elements.push(<div key={i} className="h-4"></div>);
       } else if (line.startsWith('**') && line.endsWith('**')) {
-        // Bold headers (Tag 1, Tag 2, etc.)
         const text = line.replace(/\*\*/g, '');
         elements.push(
           <h4 key={i} className="text-lg font-bold text-yellow-400 mt-6 mb-3 first:mt-0">
@@ -34,7 +41,6 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
           </h4>
         );
       } else if (line.startsWith('• ')) {
-        // Bullet points
         const text = line.substring(2);
         elements.push(
           <div key={i} className="flex items-start mb-2">
@@ -43,7 +49,6 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
           </div>
         );
       } else if (line.trim() !== '') {
-        // Regular text
         elements.push(
           <p key={i} className="text-gray-300 leading-relaxed mb-3">
             {line}
@@ -54,6 +59,9 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
     
     return elements;
   };
+
+  const fullText = (lesson as any).fullDescription || lesson.description;
+  const { days1to4, day5 } = splitDescriptionByTag5(fullText);
 
   return (
     <motion.div 
@@ -95,8 +103,21 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
         <div className="bg-gray-800 rounded-lg p-6 mb-6 max-h-96 overflow-y-auto">
           <h3 className="text-lg font-semibold text-green-custom mb-4">Quest-Beschreibung:</h3>
           <div className="text-base">
-            {formatDescription((lesson as any).fullDescription || lesson.description)}
+            {formatDescription(days1to4)}
           </div>
+
+          {day5 !== null && (
+            <div className="mt-8 border-t border-gray-600 pt-6">
+              <img 
+                src={lesson.thumbnailUrl} 
+                alt={lesson.title}
+                className="w-full h-96 object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-2xl font-bold text-green-custom text-center">
+                Präsentation
+              </h3>
+            </div>
+          )}
         </div>
 
         <div className="flex justify-between items-center">
