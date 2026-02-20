@@ -90,7 +90,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
         isCompleted ? "border-2 border-green-custom" : isAvailable ? "border-2 border-purple-custom" : "opacity-60 border-2 border-gray-600"
       } ${
         isAvailable ? "hover:shadow-xl" : ""
-      } ${isGroupMode ? "h-[420px] flex flex-col" : ""}`}
+      } ${isGroupMode ? "h-full flex flex-col" : ""}`}
       onClick={isAvailable ? onQuizClick : undefined}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
