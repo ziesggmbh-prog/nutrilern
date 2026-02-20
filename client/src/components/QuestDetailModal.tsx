@@ -150,6 +150,42 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
     const dayIndex = day.order - 1;
     const isCompleted = completedDays.includes(day.id);
     const isAvailable = dayIndex === 0 || completedDays.includes(days[dayIndex - 1]?.id);
+    const isDay5 = day.order === 5;
+
+    if (isDay5) {
+      return (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: dayIndex * 0.1 }}
+          className={`relative rounded-xl cursor-pointer transition-all duration-300 border-2 overflow-hidden ${
+            isCompleted 
+              ? "border-green-custom shadow-lg" 
+              : isAvailable 
+                ? "border-purple-custom hover:shadow-lg" 
+                : "border-gray-600 opacity-60"
+          }`}
+          onClick={() => handleDayClick(day)}
+        >
+          <img 
+            src={quest.thumbnailUrl} 
+            alt={quest.title}
+            className="w-full h-64 object-cover"
+          />
+          <div className="p-6 bg-navy-light text-center">
+            <h3 className="text-xl font-bold text-green-custom">
+              Präsentation
+            </h3>
+          </div>
+
+          {!isAvailable && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl">
+              <Lock className="text-white opacity-40" size={32} />
+            </div>
+          )}
+        </motion.div>
+      );
+    }
 
     return (
       <motion.div
