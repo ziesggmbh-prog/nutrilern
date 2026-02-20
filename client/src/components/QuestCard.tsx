@@ -101,7 +101,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
     >
       <div className="absolute top-0 right-0 w-20 h-20">
         <OrganicShape
-          className={`w-20 h-20 ${isGroupMode && isCompleted ? "bg-green-custom" : colorClass} opacity-20`}
+          className={`w-20 h-20 ${colorClass} opacity-20`}
           variant="default"
         />
         {isGroupMode && (
