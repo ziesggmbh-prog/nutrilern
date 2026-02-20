@@ -97,14 +97,10 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: lesson.order * 0.1 }}
     >
-      {isGroupMode ? (
-        <Search className={`absolute top-4 right-4 ${groupColor.text} opacity-30`} size={28} />
-      ) : (
-        <OrganicShape
-          className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
-          variant="default"
-        />
-      )}
+      <OrganicShape
+        className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
+        variant="default"
+      />
       
       <div className={`relative z-10 ${isGroupMode ? "flex flex-col flex-1" : ""}`}>
         <div className="flex items-center justify-between mb-4">
