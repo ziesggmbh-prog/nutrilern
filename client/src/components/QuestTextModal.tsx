@@ -96,7 +96,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
               />
             </div>
             <div className="text-center mb-6">
-              <p className="text-sm text-gray-400 mb-1">Tag 5</p>
+              <h3 className="text-lg font-bold text-white mb-1">Tag 5</h3>
               <h2 className="text-2xl font-bold text-green-custom">Präsentation</h2>
             </div>
           </>
