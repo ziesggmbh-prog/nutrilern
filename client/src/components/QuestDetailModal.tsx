@@ -173,6 +173,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             className="w-full h-64 object-cover"
           />
           <div className="p-6 bg-navy-light text-center">
+            <p className="text-sm text-gray-400 mb-1">Tag 5</p>
             <h3 className="text-xl font-bold text-green-custom">
               Präsentation
             </h3>
@@ -330,10 +331,11 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             ...quest,
             title: selectedDay.title,
             description: selectedDay.content,
-            fullDescription: undefined // Ensure only the day-specific content is shown
+            fullDescription: undefined
           } as any}
           onClose={() => setShowDayDetail(false)}
           onComplete={handleDayComplete}
+          isPresentationDay={selectedDay.order === 5}
         />
       )}
     </>

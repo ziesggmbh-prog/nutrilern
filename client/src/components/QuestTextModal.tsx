@@ -6,9 +6,10 @@ interface QuestTextModalProps {
   lesson: Lesson;
   onClose: () => void;
   onComplete: () => void;
+  isPresentationDay?: boolean;
 }
 
-export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTextModalProps) {
+export default function QuestTextModal({ lesson, onClose, onComplete, isPresentationDay }: QuestTextModalProps) {
   const handleComplete = () => {
     onComplete();
     onClose();
@@ -85,40 +86,58 @@ export default function QuestTextModal({ lesson, onClose, onComplete }: QuestTex
           <X size={24} />
         </button>
 
-        <div className="text-center mb-6">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Target className="text-purple-custom" size={24} />
-            <h2 className="text-2xl font-bold text-white">{lesson.title}</h2>
-          </div>
-          
-          <div className="mb-6">
-            <img 
-              src={lesson.thumbnailUrl} 
-              alt={lesson.title}
-              className="w-full h-48 object-cover rounded-lg"
-            />
-          </div>
-        </div>
-
-        <div className="bg-gray-800 rounded-lg p-6 mb-6 max-h-96 overflow-y-auto">
-          <h3 className="text-lg font-semibold text-green-custom mb-4">Quest-Beschreibung:</h3>
-          <div className="text-base">
-            {formatDescription(days1to4)}
-          </div>
-
-          {day5 !== null && (
-            <div className="mt-8 border-t border-gray-600 pt-6">
+        {isPresentationDay ? (
+          <>
+            <div className="mb-6 rounded-lg overflow-hidden">
               <img 
                 src={lesson.thumbnailUrl} 
                 alt={lesson.title}
-                className="w-full h-96 object-cover rounded-lg mb-4"
+                className="w-full h-64 object-cover"
               />
-              <h3 className="text-2xl font-bold text-green-custom text-center">
-                Präsentation
-              </h3>
             </div>
-          )}
-        </div>
+            <div className="text-center mb-6">
+              <p className="text-sm text-gray-400 mb-1">Tag 5</p>
+              <h2 className="text-2xl font-bold text-green-custom">Präsentation</h2>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="text-center mb-6">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Target className="text-purple-custom" size={24} />
+                <h2 className="text-2xl font-bold text-white">{lesson.title}</h2>
+              </div>
+              
+              <div className="mb-6">
+                <img 
+                  src={lesson.thumbnailUrl} 
+                  alt={lesson.title}
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+              </div>
+            </div>
+
+            <div className="bg-gray-800 rounded-lg p-6 mb-6 max-h-96 overflow-y-auto">
+              <h3 className="text-lg font-semibold text-green-custom mb-4">Quest-Beschreibung:</h3>
+              <div className="text-base">
+                {formatDescription(days1to4)}
+              </div>
+
+              {day5 !== null && (
+                <div className="mt-8 border-t border-gray-600 pt-6">
+                  <img 
+                    src={lesson.thumbnailUrl} 
+                    alt={lesson.title}
+                    className="w-full h-96 object-cover rounded-lg mb-4"
+                  />
+                  <h3 className="text-2xl font-bold text-green-custom text-center">
+                    Präsentation
+                  </h3>
+                </div>
+              )}
+            </div>
+          </>
+        )}
 
         <div className="flex justify-between items-center">
           <button
