@@ -117,7 +117,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
             </div>
           </div>
         ) : (
-          <div className="mb-4"></div>
+          <div className="h-8 mb-4"></div>
         )}
         
         <div className="relative">
