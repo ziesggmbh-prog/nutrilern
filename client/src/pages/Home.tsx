@@ -15,11 +15,11 @@ function FilledClosedLock({ size = 16, className = "" }: { size?: number; classN
 
 function WideOpenLock({ size = 16, className = "" }: { size?: number; className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 28" fill="currentColor" className={className}>
-      <path d="M6 12h12a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7a3 3 0 0 1 3-3z" />
-      <rect x="10.5" y="17" width="3" height="5" rx="1.5" fill="currentColor" className="text-purple-custom dark:text-gray-600" style={{ fill: 'var(--lock-hole, #1a1a2e)' }} />
-      <path d="M7 12V8a5 5 0 0 1 10 0v0" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
-      <path d="M17 8V3" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+    <svg width={size} height={size} viewBox="0 0 28 28" fill="currentColor" className={className}>
+      <path d="M9 13h12a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-7a3 3 0 0 1 3-3z" />
+      <rect x="13.5" y="18" width="3" height="5" rx="1.5" style={{ fill: 'var(--lock-hole, #1a1a2e)' }} />
+      <path d="M12 13V9a5 5 0 0 0-10 0v0" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+      <path d="M2 9V3" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
     </svg>
   );
 }
