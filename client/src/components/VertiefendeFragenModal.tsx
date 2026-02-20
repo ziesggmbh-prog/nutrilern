@@ -30,8 +30,7 @@ export default function VertiefendeFragenModal({ data, onClose }: VertiefendeFra
           <X size={24} />
         </button>
 
-        <div className="flex items-center gap-3 mb-6">
-          <MessageCircleQuestion className="text-purple-custom" size={24} />
+        <div className="mb-6">
           <h2 className="text-2xl font-bold text-white">
             Vertiefende Fragen: {data.lessonTitle}
           </h2>
