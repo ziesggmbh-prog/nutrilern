@@ -1,7 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Leaf, User, Star, Play, Lock, LockOpen, CheckCircle, RotateCcw, X, Search } from "lucide-react";
+import { Leaf, User, Star, Play, Lock, CheckCircle, RotateCcw, X, Search } from "lucide-react";
+
+function WideOpenLock({ size = 16, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+      <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+    </svg>
+  );
+}
 import LessonCard from "@/components/LessonCard";
 import QuestCard from "@/components/QuestCard";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -368,7 +377,7 @@ export default function Home() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
                         <div className={`${isAvailable ? "bg-purple-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center mr-3`}>
-                          {isAvailable ? <LockOpen className="text-white" size={16} /> : <Lock className="text-white" size={16} />}
+                          {isAvailable ? <WideOpenLock className="text-white" size={16} /> : <Lock className="text-white" size={16} />}
                         </div>
                         <div>
                           <h4 className="text-white font-medium">Vertiefende Fragen</h4>
