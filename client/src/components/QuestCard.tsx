@@ -139,7 +139,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           </div>
         ) : (
           <div className="h-8 mb-4">
-            <span className="text-white font-bold text-sm">Gruppe {lesson.order}</span>
+            <span className="text-white font-bold text-lg">Gruppe {lesson.order}</span>
           </div>
         )}
         
