@@ -88,19 +88,36 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
     <motion.div
       ref={cardRef}
       className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 group ${
-        isCompleted ? "border-2 border-green-custom" : isAvailable ? "border-2 border-purple-custom" : "opacity-60 border-2 border-gray-600"
+        isGroupMode
+          ? (isAvailable ? "hover:shadow-xl" : "opacity-60")
+          : (isCompleted ? "border-2 border-green-custom" : isAvailable ? "border-2 border-purple-custom" : "opacity-60 border-2 border-gray-600")
       } ${
-        isAvailable ? "hover:shadow-xl" : ""
+        !isGroupMode && isAvailable ? "hover:shadow-xl" : ""
       } ${isGroupMode ? "h-full flex flex-col" : ""}`}
       onClick={isAvailable ? onQuizClick : undefined}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: lesson.order * 0.1 }}
     >
-      <OrganicShape
-        className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}
-        variant="default"
-      />
+      <div className="absolute top-0 right-0 w-20 h-20">
+        <OrganicShape
+          className={`w-20 h-20 ${isGroupMode && isCompleted ? "bg-green-custom" : colorClass} opacity-20`}
+          variant="default"
+        />
+        {isGroupMode && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            {isCompleted ? (
+              <CheckCircle className="text-green-custom" size={24} />
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="opacity-40">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" className="text-white" />
+                <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" className="text-white" />
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" className="text-white" />
+              </svg>
+            )}
+          </div>
+        )}
+      </div>
       
       <div className={`relative z-10 ${isGroupMode ? "flex flex-col flex-1" : ""}`}>
         {!isGroupMode ? (
