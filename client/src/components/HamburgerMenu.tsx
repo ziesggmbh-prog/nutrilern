@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, BookOpen, Info, Star, GraduationCap } from 'lucide-react';
+import { Menu, X, Home, BookOpen, Info, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'wouter';
 
@@ -14,8 +14,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
 
   const menuItems = [
     { icon: Home, label: 'Start', href: '/' },
-    { icon: GraduationCap, label: 'Für Lehrer:innen', href: '/teachers' },
-    { icon: BookOpen, label: 'Quellen', href: '#' },
+    { icon: BookOpen, label: 'Für Lehrer:innen', href: '/teachers' },
     { icon: Info, label: 'Über das Programm', href: '#' }
   ];
 
