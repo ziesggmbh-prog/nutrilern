@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, Lock, CheckCircle, Star, HelpCircle } from "lucide-react";
+import { Search, Lock, CheckCircle, Star, HelpCircle, Play } from "lucide-react";
 import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
 import { useState, useRef } from "react";
@@ -106,15 +106,13 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
         />
         {isGroupMode && (
           <div className="absolute inset-0 flex items-center justify-center">
-            {isCompleted ? (
-              <CheckCircle className="text-green-custom" size={24} />
-            ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="opacity-40">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" className="text-white" />
-                <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="1.5" className="text-white" />
-                <circle cx="12" cy="12" r="2.5" fill="currentColor" className="text-white" />
-              </svg>
-            )}
+            <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-6 h-6 flex items-center justify-center`}>
+              {isCompleted ? (
+                <CheckCircle className="text-white" size={12} />
+              ) : (
+                <Play className="text-white" size={12} />
+              )}
+            </div>
           </div>
         )}
       </div>
