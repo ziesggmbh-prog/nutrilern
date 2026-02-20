@@ -92,7 +92,7 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
       
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-4">
-          <div className={`${isCompleted ? "bg-green-custom" : colorClass} rounded-full w-8 h-8 flex items-center justify-center`}>
+          <div className={`${isCompleted ? "bg-green-custom" : "bg-gray-600"} rounded-full w-8 h-8 flex items-center justify-center`}>
             <span className="text-white font-bold text-sm">{lesson.order}</span>
           </div>
           <div className={`${isCompleted ? "bg-green-custom" : colorClass} rounded-full w-6 h-6 flex items-center justify-center`}>
