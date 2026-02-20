@@ -170,7 +170,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           <img 
             src={quest.thumbnailUrl} 
             alt={quest.title}
-            className="w-full h-36 object-cover"
+            className="w-full h-40 object-cover"
           />
           <div className="p-4 text-center">
             <h3 className="text-lg font-bold text-white mb-1">Tag 5</h3>
@@ -193,7 +193,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: dayIndex * 0.1 }}
-        className={`relative rounded-xl p-7 cursor-pointer transition-all duration-300 border-2 ${
+        className={`relative rounded-xl p-8 cursor-pointer transition-all duration-300 border-2 ${
           isCompleted 
             ? "bg-navy-light border-green-custom shadow-lg" 
             : isAvailable 
