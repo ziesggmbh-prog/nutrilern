@@ -255,38 +255,6 @@ export default function LehrerManual() {
         isOpen={!!openSections[1]}
         onToggle={() => toggle(1)}
       >
-        {/* Fragen */}
-        <div className="mb-8">
-          <button
-            onClick={() => setFragenOpen(!fragenOpen)}
-            className="flex items-center gap-3 mb-4 w-full text-left cursor-pointer"
-          >
-            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-              <Users className="text-blue-600" size={16} />
-            </div>
-            <h4 className="text-lg font-bold text-gray-800 flex-1">Fragen für die Gruppenarbeit</h4>
-            {fragenOpen ? <ChevronUp className="text-blue-600" size={20} /> : <ChevronDown className="text-blue-600" size={20} />}
-          </button>
-          {fragenOpen && <div className="space-y-3 ml-4">
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
-              <p className="font-semibold text-blue-800 mb-1">Gruppe 1:</p>
-              <p className="text-blue-700">Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für das Gehirn?</p>
-            </div>
-            <div className="bg-green-50 border-l-4 border-green-400 p-4">
-              <p className="font-semibold text-green-800 mb-1">Gruppe 2:</p>
-              <p className="text-green-700">Worin unterscheiden sich komplexe Kohlenhydrate von Einfachzuckern (chemisch gesehen) und welche Folgen hat das für die Verdauung? Wie funktioniert die Verwertung von Kohlenhydraten?</p>
-            </div>
-            <div className="bg-orange-50 border-l-4 border-orange-400 p-4">
-              <p className="font-semibold text-orange-800 mb-1">Gruppe 3:</p>
-              <p className="text-orange-700">Welche Kohlenhydrate können als ‚gut' gelten und warum? In welchen Lebensmitteln befinden sie sich? Welche Kohlenhydrate müssen als ‚schlecht' gelten und warum? In welchen Lebensmitteln befinden sie sich?</p>
-            </div>
-            <div className="bg-purple-50 border-l-4 border-purple-400 p-4">
-              <p className="font-semibold text-purple-800 mb-1">Gruppe 4:</p>
-              <p className="text-purple-700">Welche Folgen hat der Konsum von Einfachzuckern für unser Körpergefühl und unsere Leistungsfähigkeit, welche der Konsum von komplexen Kohlenhydraten? Warum ist es möglich, durch Essen einer Banane vor Prüfungen die Effekte beider Arten von Kohlenhydraten optimal auszunutzen?</p>
-            </div>
-          </div>}
-        </div>
-
         {/* Hintergrund */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -365,6 +333,38 @@ export default function LehrerManual() {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Fragen */}
+        <div className="mb-8">
+          <button
+            onClick={() => setFragenOpen(!fragenOpen)}
+            className="flex items-center gap-3 mb-4 w-full text-left cursor-pointer"
+          >
+            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+              <Users className="text-blue-600" size={16} />
+            </div>
+            <h4 className="text-lg font-bold text-gray-800 flex-1">Fragen für die Gruppenarbeit</h4>
+            {fragenOpen ? <ChevronUp className="text-blue-600" size={20} /> : <ChevronDown className="text-blue-600" size={20} />}
+          </button>
+          {fragenOpen && <div className="space-y-3 ml-4">
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
+              <p className="font-semibold text-blue-800 mb-1">Gruppe 1:</p>
+              <p className="text-blue-700">Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für das Gehirn?</p>
+            </div>
+            <div className="bg-green-50 border-l-4 border-green-400 p-4">
+              <p className="font-semibold text-green-800 mb-1">Gruppe 2:</p>
+              <p className="text-green-700">Worin unterscheiden sich komplexe Kohlenhydrate von Einfachzuckern (chemisch gesehen) und welche Folgen hat das für die Verdauung? Wie funktioniert die Verwertung von Kohlenhydraten?</p>
+            </div>
+            <div className="bg-orange-50 border-l-4 border-orange-400 p-4">
+              <p className="font-semibold text-orange-800 mb-1">Gruppe 3:</p>
+              <p className="text-orange-700">Welche Kohlenhydrate können als ‚gut' gelten und warum? In welchen Lebensmitteln befinden sie sich? Welche Kohlenhydrate müssen als ‚schlecht' gelten und warum? In welchen Lebensmitteln befinden sie sich?</p>
+            </div>
+            <div className="bg-purple-50 border-l-4 border-purple-400 p-4">
+              <p className="font-semibold text-purple-800 mb-1">Gruppe 4:</p>
+              <p className="text-purple-700">Welche Folgen hat der Konsum von Einfachzuckern für unser Körpergefühl und unsere Leistungsfähigkeit, welche der Konsum von komplexen Kohlenhydraten? Warum ist es möglich, durch Essen einer Banane vor Prüfungen die Effekte beider Arten von Kohlenhydraten optimal auszunutzen?</p>
+            </div>
+          </div>}
         </div>
 
         {/* Weiterführende Informationen */}
