@@ -114,7 +114,7 @@ export default function Teachers() {
                 </div>
                 <h2 className="text-xl font-bold text-gray-800 mb-3">Ablauf</h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Hier finden Sie Informationen zum Ablauf der Unterrichtseinheit und zu den Funktionen der App
+                  Hier finden Sie Informationen zum Ablauf der Unterrichtseinheit und zu den Funktionen der App.
                 </p>
               </div>
             </motion.div>
@@ -131,7 +131,7 @@ export default function Teachers() {
                 </div>
                 <h2 className="text-xl font-bold text-gray-800 mb-3">Lehrer:innen-Manual</h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Hier erhalten Sie Zusammenfassungen zu den Inhalten der Lehrfilme und vertiefende Informationen
+                  Hier erhalten Sie Zusammenfassungen zu den Inhalten der Lehrfilme und vertiefende Informationen.
                 </p>
               </div>
             </motion.div>
