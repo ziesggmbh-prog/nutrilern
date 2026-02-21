@@ -155,6 +155,7 @@ function AccordionSection({ number, title, color, bgColor, textColor, isOpen, on
 export default function LehrerManual() {
   const [openSections, setOpenSections] = useState<Record<number, boolean>>({});
   const [weiterOpen, setWeiterOpen] = useState(false);
+  const [fragenOpen, setFragenOpen] = useState(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -166,8 +167,10 @@ export default function LehrerManual() {
 
     const prevSections = { ...openSections };
     const prevWeiter = weiterOpen;
+    const prevFragen = fragenOpen;
     setOpenSections({ 1: true, 2: true, 3: true, 4: true, 5: true });
     setWeiterOpen(true);
+    setFragenOpen(true);
 
     await new Promise(r => setTimeout(r, 500));
 
@@ -224,6 +227,7 @@ export default function LehrerManual() {
     } finally {
       setOpenSections(prevSections);
       setWeiterOpen(prevWeiter);
+      setFragenOpen(prevFragen);
       setIsGeneratingPdf(false);
     }
   };
@@ -253,13 +257,17 @@ export default function LehrerManual() {
       >
         {/* Fragen */}
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
+          <button
+            onClick={() => setFragenOpen(!fragenOpen)}
+            className="flex items-center gap-3 mb-4 w-full text-left cursor-pointer"
+          >
             <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
               <Users className="text-blue-600" size={16} />
             </div>
-            <h4 className="text-lg font-bold text-gray-800">Fragen für die Gruppenarbeit</h4>
-          </div>
-          <div className="space-y-3 ml-4">
+            <h4 className="text-lg font-bold text-gray-800 flex-1">Fragen für die Gruppenarbeit</h4>
+            {fragenOpen ? <ChevronUp className="text-blue-600" size={20} /> : <ChevronDown className="text-blue-600" size={20} />}
+          </button>
+          {fragenOpen && <div className="space-y-3 ml-4">
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
               <p className="font-semibold text-blue-800 mb-1">Gruppe 1:</p>
               <p className="text-blue-700">Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für das Gehirn?</p>
@@ -276,7 +284,7 @@ export default function LehrerManual() {
               <p className="font-semibold text-purple-800 mb-1">Gruppe 4:</p>
               <p className="text-purple-700">Welche Folgen hat der Konsum von Einfachzuckern für unser Körpergefühl und unsere Leistungsfähigkeit, welche der Konsum von komplexen Kohlenhydraten? Warum ist es möglich, durch Essen einer Banane vor Prüfungen die Effekte beider Arten von Kohlenhydraten optimal auszunutzen?</p>
             </div>
-          </div>
+          </div>}
         </div>
 
         {/* Hintergrund */}
