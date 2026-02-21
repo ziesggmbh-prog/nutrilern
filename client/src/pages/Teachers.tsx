@@ -5,6 +5,7 @@ import { ArrowLeft, Users, Clock, BookOpen, Target, ListOrdered, FileText } from
 import FullscreenToggle from "@/components/FullscreenToggle";
 import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
+import LehrerManual from "@/components/LehrerManual";
 
 export default function Teachers() {
   useFullscreenSync();
@@ -327,11 +328,8 @@ export default function Teachers() {
               </div>
               <h2 className="text-2xl font-bold text-gray-800">Lehrer:innen-Manual</h2>
             </div>
-            <div className="prose max-w-none text-gray-700 leading-relaxed">
-              <p className="text-lg">
-                Dieser Bereich wird in Kürze mit Zusammenfassungen zu den Inhalten der Lehrfilme und vertiefenden Informationen ergänzt.
-              </p>
-            </div>
+            <p className="text-gray-600 mb-6">Fragen für die Gruppenarbeit + zentrale Hintergründe zur Erklärung</p>
+            <LehrerManual />
           </motion.div>
         )}
 
