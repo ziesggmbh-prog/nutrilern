@@ -206,7 +206,7 @@ export default function LehrerManual() {
           </div>
           <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
             <p className="mb-3">Über die Nahrung nimmt unser Körper zwei Arten von Nährstoffen auf: <strong>Makronährstoffe</strong> und <strong>Mikronährstoffe</strong>.</p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Makronährstoffe benötigt der Körper zur Energiegewinnung.</li>
               <li>Sämtliche lebenswichtigen Körperfunktionen verbrauchen Energie.</li>
               <li>Wenn dem Körper nicht genügend Energie durch die Nahrung bereitgestellt wird, kann er nicht gesund funktionieren.</li>
@@ -216,7 +216,7 @@ export default function LehrerManual() {
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Kohlenhydrate als Energielieferant</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Kohlenhydrate sind ein wichtiger Energielieferant (Makronährstoff) für unseren Körper.</li>
               <li>Kohlenhydrate werden vom Körper zu Glucose verstoffwechselt.</li>
               <li>Glucose ist der wichtigste Energielieferant für das Gehirn, auch andere Organe benötigen Glucose.</li>
@@ -225,7 +225,7 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Komplexität der Kohlenhydrate</h5>
             <p className="mb-3">Kohlenhydrate kommen in Nahrungsmitteln in unterschiedlicher Form vor: Sie können mehr oder weniger komplex aufgebaut sein.</p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Die Komplexität der Kohlenhydrate hat einen Einfluss darauf, wie schnell sie vom Körper zu Glucose verstoffwechselt werden können.</li>
               <li>Je komplexer die Kohlenhydrate, desto langsamer werden sie zu Glucose verarbeitet.</li>
               <li>Komplexe Kohlenhydrate bestehen aus langen Ketten aus vielen Einfachzuckern. Hier dauert der Gewinn von Glucose lange.</li>
@@ -235,7 +235,7 @@ export default function LehrerManual() {
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Einfachzucker vs. komplexe Kohlenhydrate</h5>
             <div className="bg-orange-50 border-l-4 border-orange-400 p-4 mb-4">
               <p className="font-semibold text-orange-800 mb-2">Einfachzucker:</p>
-              <ul className="list-disc list-inside space-y-1 text-orange-700">
+              <ul className="list-disc pl-5 space-y-1 text-orange-700">
                 <li>Bei Nahrungsmitteln mit Einfachzuckern gelangt die enthaltene Glucose sehr schnell ins Blut.</li>
                 <li>Die Folge: ein schneller Energieschub – aber die Energie ist schnell wieder verbraucht.</li>
                 <li>Ist keine Glucose mehr verfügbar, fühlen wir uns schlapp. Wir bekommen schnell wieder Hunger und haben immer wieder ‚Lust auf Süßes'.</li>
@@ -243,7 +243,7 @@ export default function LehrerManual() {
             </div>
             <div className="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
               <p className="font-semibold text-green-800 mb-2">Komplexe Kohlenhydrate:</p>
-              <ul className="list-disc list-inside space-y-1 text-green-700">
+              <ul className="list-disc pl-5 space-y-1 text-green-700">
                 <li>Komplexe Kohlenhydrate sind für eine gleichmäßige Energieversorgung deutlich vorteilhafter als Einfachzucker.</li>
                 <li>Bei Nahrungsmitteln mit komplexen Kohlenhydraten hält die Energieversorgung durch die Glucose länger an.</li>
                 <li>Wir fühlen uns länger wach, konzentriert und satt.</li>
@@ -251,13 +251,13 @@ export default function LehrerManual() {
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Lebensmittel mit komplexen Kohlenhydraten</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Gemüse und Obst</li>
               <li>Vollkornprodukte</li>
               <li>Hülsenfrüchte</li>
             </ul>
             <p className="mb-2">Diese Lebensmittel enthalten außerdem wichtige <strong>Ballaststoffe</strong>.</p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Ballaststoffe = Nahrungsbestandteile, die vom Körper nicht verdaut werden können.</li>
               <li>zögern die Verdauung hinaus</li>
               <li>wirken sich positiv auf eine langsame, gleichmäßige Energieversorgung des Körpers mit Glucose aus</li>
@@ -265,7 +265,7 @@ export default function LehrerManual() {
 
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
               <p className="font-semibold text-yellow-800 mb-2">Beispiel Banane:</p>
-              <ul className="list-disc list-inside space-y-1 text-yellow-700">
+              <ul className="list-disc pl-5 space-y-1 text-yellow-700">
                 <li>enthält Glucose in schnell und weniger schnell verfügbarer Form (komplexe Kohlenhydrate)</li>
                 <li>enthält viele Ballaststoffe</li>
                 <li>versorgt den Körper sowohl schnell als auch länger anhaltend mit Energie</li>
@@ -315,13 +315,13 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Aufbau der Stärke</h5>
             <p className="mb-3">Im Gegensatz zu den Einfach- und Zweifachzuckern ist Stärke ein sogenanntes „komplexes Kohlenhydrat". In der Stärke sind die Einfachzucker zu linearen oder verzweigten Ketten verbunden.</p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li><strong>Amylose</strong> (20–30 % der Stärke): lineare Ketten mit einer schraubenartigen Struktur.</li>
               <li><strong>Amylopektin</strong> (70–80 % der Stärke): vielfach verzweigte, netzartige Strukturen, die sehr große Moleküle bilden.</li>
             </ul>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Wichtige stärkehaltige Nahrungsquellen</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li><strong>Getreide:</strong> Weizen, Roggen, Gerste, Dinkel, Mais, Reis, Hafer</li>
               <li><strong>Kartoffeln</strong></li>
               <li><strong>Hülsenfrüchte:</strong> Bohnen, Erbsen, Erdnüsse, Kichererbsen, Linsen, Sojabohnen, Hirse</li>
@@ -395,7 +395,7 @@ export default function LehrerManual() {
           </div>
           <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
             <p className="mb-3">Fette sind auch ein Energielieferant (Makronährstoff) für unseren Körper. Außerdem erfüllen sie weitere wichtige Funktionen:</p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Wir benötigen Fette, damit bestimmte Vitamine vom Körper aufgenommen werden.</li>
               <li>Fette sind Bestandteil der Zellmembran, d.i. die Hülle, die die Körperzellen umschließt.</li>
             </ul>
@@ -407,7 +407,7 @@ export default function LehrerManual() {
             <p className="mb-3">Fette setzen sich aus Fettsäuren zusammen, von diesen Fettsäuren gibt es unterschiedliche Arten mit unterschiedlichen Funktionen und Effekten. Es gibt gesättigte und ungesättigte Fettsäuren.</p>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Gesättigte Fettsäuren</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>kommen vor allem in tierischen Lebensmitteln vor, z.B. in Fleisch, Milchprodukten und Eigelb.</li>
               <li>pflanzliche Fette, die gesättigte Fettsäuren enthalten: Kokosfett und Palmöl</li>
               <li>Gesättigte Fettsäuren kann der Körper selbst herstellen.</li>
@@ -416,14 +416,14 @@ export default function LehrerManual() {
             </ul>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Einfach ungesättigte Fettsäuren</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Lebensmittel: pflanzliche Öle (z.B. Olivenöl und Rapsöl), Nüsse und Samen, Avocados.</li>
               <li>Einfach ungesättigte Fettsäuren kann der Körper ebenfalls selbst herstellen.</li>
               <li>Einfach ungesättigte Fettsäuren gelten auch in größeren Mengen als gesund.</li>
             </ul>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Mehrfach ungesättigte Fettsäuren</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Lebensmittel: bestimmte pflanzliche Öle, Nüsse und Samen, fetter Seefisch (z.B. Lachs, Hering, Tunfisch).</li>
               <li>Auch die sogenannten Omega-3- und Omega-6-Fettsäuren sind mehrfach ungesättigte Fettsäuren – für den Körper besonders wertvoll.</li>
             </ul>
@@ -433,7 +433,7 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Die ‚Fett-Faustregeln'</h5>
             <div className="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
-              <ul className="list-disc list-inside space-y-2 text-green-700">
+              <ul className="list-disc pl-5 space-y-2 text-green-700">
                 <li>Fette sollten bei der Ernährung maximal ein Drittel ausmachen.</li>
                 <li>Nicht mehr als 10 Prozent sollte aus gesättigten Fettsäuren bestehen.</li>
                 <li>Man sollte möglichst viele ungesättigte Fettsäuren zu sich nehmen, vor allem mehrfach ungesättigte Fettsäuren.</li>
@@ -491,7 +491,7 @@ export default function LehrerManual() {
           </div>
           <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
             <p className="mb-3">Proteine sind auch Energielieferanten (Makronährstoffe) für unseren Körper. Außerdem erfüllen sie weitere wichtige Funktionen:</p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>wichtig beim Aufbau von Muskeln und Gewebe</li>
               <li>übernehmen die Rolle von Enzymen, Hormonen und Antikörpern</li>
               <li>ermöglichen die Kommunikation zwischen den Körperzellen</li>
@@ -499,7 +499,7 @@ export default function LehrerManual() {
             </ul>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Aminosäuren</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Proteine bestehen aus sogenannten Aminosäuren.</li>
               <li>Aminosäuren werden vom Körper zu Ketten verbunden und bilden räumliche Strukturen aus.</li>
               <li>Wenn wir Proteine zu uns nehmen, zerlegt unser Stoffwechsel sie in einzelne Aminosäuren.</li>
@@ -511,7 +511,7 @@ export default function LehrerManual() {
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Tierisches Protein</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>ist dem Protein in unserem Körper strukturell ähnlich</li>
               <li>enthält in der Regel alle essentiellen Aminosäuren</li>
               <li>kann sehr gut verwertet werden</li>
@@ -523,7 +523,7 @@ export default function LehrerManual() {
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Pflanzliches Protein</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>ist dem körpereigenen Protein weniger ähnlich</li>
               <li>enthält in der Regel nicht alle essentiellen Aminosäuren</li>
               <li>kann weniger gut verwertet werden</li>
@@ -535,14 +535,14 @@ export default function LehrerManual() {
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Quellen für pflanzliches Protein</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Getreide (z.B. Reis, Dinkel, Hafer)</li>
               <li>Hülsenfrüchte (z.B. Bohnen, Linsen, Erbsen)</li>
               <li>Nüsse (z.B. Mandeln, Haselnüsse, Walnüsse)</li>
             </ul>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
               <p className="font-semibold text-blue-800 mb-1">Vorteile von pflanzlichem Protein:</p>
-              <ul className="list-disc list-inside space-y-1 text-blue-700">
+              <ul className="list-disc pl-5 space-y-1 text-blue-700">
                 <li>kommt häufig in Lebensmitteln vor, die keine gesättigten Fettsäuren enthalten</li>
                 <li>kommt häufig in Lebensmitteln vor, die wertvolle Ballaststoffe und Vitamine oder auch ungesättigte Fettsäuren enthalten</li>
               </ul>
@@ -601,13 +601,13 @@ export default function LehrerManual() {
             <p className="mb-3">Mikronährstoffe sind, anders als die Makronährstoffe, keine Energielieferanten des Körpers. Es gibt zwei Gruppen von Mikronährstoffen: <strong>Vitamine</strong> und <strong>Mineralstoffe</strong>.</p>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Vitamine</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>wichtig für die Verwertung der Makronährstoffe: Vitamine ermöglichen die Energiegewinnung des Körpers aus Kohlenhydraten, Fetten und Proteinen.</li>
               <li>unerlässlich hierfür: B-Vitamine. Alle acht B-Vitamine müssen vorhanden sein, damit der Körper Energie aus Makronährstoffen gewinnen kann.</li>
             </ul>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
               <p className="font-semibold text-blue-800 mb-1">Vitamine unterstützen das Immunsystem:</p>
-              <ul className="list-disc list-inside space-y-1 text-blue-700">
+              <ul className="list-disc pl-5 space-y-1 text-blue-700">
                 <li>Vitamin A: Stärkung der Schleimhäute gegen Krankheitserreger</li>
                 <li>Vitamin C: fördert Bildung von Immunzellen</li>
                 <li>Vitamin D: steuert die gesamte Immunreaktion</li>
@@ -615,7 +615,7 @@ export default function LehrerManual() {
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Mineralstoffe</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>wie die Vitamine beteiligt an Verwertung der Makronährstoffe, Unterstützung des Immunsystems</li>
               <li>außerdem wichtig für unser Nervensystem: Mineralstoffe regulieren das Nervensystem und stabilisieren seine Funktionen.</li>
               <li>Beispiele: Magnesium, Kalzium, Kalium, Zink, Eisen.</li>
@@ -623,7 +623,7 @@ export default function LehrerManual() {
             </ul>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Die Versorgung des Körpers mit „Mikro"-Nährstoffen</h5>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Der Körper benötigt Mikronährstoffe – verglichen mit den Makronährstoffen – in kleineren Mengen.</li>
               <li>Eine ausgewogene Ernährung reicht aus, um den Bedarf an Vitaminen und Mineralstoffen zu decken.</li>
               <li>Eine ausgewogene Ernährung ist aber unerlässlich für eine gute Versorgung, weil die meisten Mikronährstoffe essentiell sind: Der Körper kann sie nicht selbst herstellen.</li>
@@ -643,7 +643,7 @@ export default function LehrerManual() {
               <p className="text-blue-700">Höchstens 5 Gramm Salz pro Tag (entspricht einem nicht zu vollen Teelöffel).</p>
             </div>
             <p className="mb-2 font-semibold">Tipps:</p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>auf Salzgehalt von Lebensmitteln achten: Fertigprodukte enthalten oft viel Salz.</li>
               <li>beim Kochen wenig salzen, nicht voreilig nachsalzen.</li>
             </ul>
@@ -704,7 +704,7 @@ export default function LehrerManual() {
               <p className="font-semibold text-red-800 mb-1">Das Risiko:</p>
               <p className="text-red-700">Der Konsum von mit Süßstoffen gesüßten Lebensmitteln kann unser Verlangen nach Süßem deutlich steigern.</p>
             </div>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Der Konsum von Süßstoffen verändert auf Dauer unser Süße-Empfinden.</li>
               <li>Süßstoffe sind häufig deutlich süßer als Zucker.</li>
               <li>Typisches Beispiel: Zuckerfreie, mit Süßstoffen gesüßte Getränke (Energy-Drinks, Coke Zero etc.)</li>
@@ -719,7 +719,7 @@ export default function LehrerManual() {
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Transfette</h5>
             <p className="mb-3">Transfette sind Fettsäuren, die durch das Härten pflanzlicher Öle entstehen. Transfettsäuren sind für den menschlichen Körper besonders ungesund.</p>
             <h6 className="text-sm font-semibold text-gray-800 mt-4 mb-2">Wie entstehen Transfettsäuren?</h6>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Transfette entstehen natürlicherweise z.B. im Magen von Wiederkäuern (z.B. Kühen) durch bestimmte Mikroorganismen.</li>
               <li>Problematisch ist die industrielle Härtung, z.B. bei der Herstellung von Margarine aus flüssigen Pflanzenölen.</li>
               <li>Die ursprünglich gesunden ungesättigten Fettsäuren der Pflanzenöle werden nicht ganz durchgehärtet – es bilden sich ungesättigte Fettsäuren mit einer speziellen chemischen Struktur = Transfettsäuren.</li>
@@ -727,7 +727,7 @@ export default function LehrerManual() {
 
             <div className="bg-orange-50 border-l-4 border-orange-400 p-4 mb-4">
               <p className="font-semibold text-orange-800 mb-1">Typische Lebensmittel mit Transfettsäuren:</p>
-              <ul className="list-disc list-inside space-y-1 text-orange-700">
+              <ul className="list-disc pl-5 space-y-1 text-orange-700">
                 <li>Backwaren (z.B. Croissants, Berliner/Krapfen, Kekse)</li>
                 <li>Süßigkeiten und Snacks (z.B. Chips)</li>
                 <li>Fertigprodukte (z.B. Fertigpizza, Fertigsuppen)</li>
@@ -741,7 +741,7 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Protein: Shakes, Riegel etc.</h5>
             <p className="mb-3">Über eine ausgewogene Ernährung kann der Körper ausreichend mit Protein versorgt werden. Eine Ergänzung durch künstliche Protein-Produkte ist nicht notwendig.</p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
+            <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Künstliche Protein-Produkte enthalten oft viele Zusatzstoffe. Bei vielen dieser Stoffe wissen wir nichts über die Effekte auf unseren Körper.</li>
               <li>In natürlichen Lebensmitteln kommt Protein immer gepaart mit anderen Nährstoffen vor, die der Körper ebenfalls benötigt.</li>
               <li>Nahrungsergänzungsmittel sollten nie reguläre Mahlzeiten ersetzen.</li>
