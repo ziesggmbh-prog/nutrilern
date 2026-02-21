@@ -83,7 +83,7 @@ export default function Teachers() {
                   Zurück zur Startseite
                 </motion.button>
               </Link>
-              <h1 className="text-2xl font-bold text-gray-800">Hinweise für Lehrer:innen</h1>
+              <h1 className="text-2xl font-bold text-gray-800 ml-4">Hinweise für Lehrer:innen</h1>
             </div>
             
             <FullscreenToggle />
