@@ -1,13 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, Users, Clock, BookOpen, Target } from "lucide-react";
+import { ArrowLeft, Users, Clock, BookOpen, Target, ListOrdered, FileText } from "lucide-react";
 import FullscreenToggle from "@/components/FullscreenToggle";
 import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 
 export default function Teachers() {
-  // Initialize fullscreen sync to restore fullscreen if needed
   useFullscreenSync();
+  const [activeSection, setActiveSection] = useState<"fork" | "ablauf" | "manual">("fork");
   const dailySchedule = [
     {
       day: 1,
@@ -92,6 +93,70 @@ export default function Teachers() {
 
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4 py-8">
+
+        {/* Fork Selection */}
+        {activeSection === "fork" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="grid md:grid-cols-2 gap-6"
+          >
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setActiveSection("ablauf")}
+              className="bg-white rounded-2xl shadow-lg p-8 cursor-pointer hover:shadow-xl transition-shadow border-2 border-transparent hover:border-purple-300"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-5">
+                  <ListOrdered className="text-purple-600" size={32} />
+                </div>
+                <h2 className="text-xl font-bold text-gray-800 mb-3">Ablauf</h2>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Hier finden Sie Informationen zum Ablauf der Unterrichtseinheit und zu den Funktionen der App
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setActiveSection("manual")}
+              className="bg-white rounded-2xl shadow-lg p-8 cursor-pointer hover:shadow-xl transition-shadow border-2 border-transparent hover:border-green-300"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-5">
+                  <FileText className="text-green-600" size={32} />
+                </div>
+                <h2 className="text-xl font-bold text-gray-800 mb-3">Lehrer:innen-Manual</h2>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Hier erhalten Sie Zusammenfassungen zu den Inhalten der Lehrfilme und vertiefende Informationen
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Back button for sub-sections */}
+        {activeSection !== "fork" && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="mb-6"
+          >
+            <button
+              onClick={() => setActiveSection("fork")}
+              className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              <ArrowLeft size={16} />
+              Zurück zur Übersicht
+            </button>
+          </motion.div>
+        )}
+
+        {/* Ablauf Section (existing content) */}
+        {activeSection === "ablauf" && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -246,6 +311,30 @@ export default function Teachers() {
             </div>
           </div>
         </motion.div>
+        )}
+
+        {/* Manual Section */}
+        {activeSection === "manual" && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-2xl shadow-lg p-8 mb-8"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                <FileText className="text-green-600" size={20} />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-800">Lehrer:innen-Manual</h2>
+            </div>
+            <div className="prose max-w-none text-gray-700 leading-relaxed">
+              <p className="text-lg">
+                Dieser Bereich wird in Kürze mit Zusammenfassungen zu den Inhalten der Lehrfilme und vertiefenden Informationen ergänzt.
+              </p>
+            </div>
+          </motion.div>
+        )}
+
       </div>
     </div>
   );
