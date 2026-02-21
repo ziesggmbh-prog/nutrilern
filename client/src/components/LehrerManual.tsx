@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { ChevronDown, ChevronUp, Users, BookOpen, Lightbulb } from "lucide-react";
+import { useState, useRef } from "react";
+import { ChevronDown, ChevronUp, Users, BookOpen, Lightbulb, Download } from "lucide-react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 function PhotosyntheseDiagram() {
   return (
@@ -153,11 +155,92 @@ function AccordionSection({ number, title, color, bgColor, textColor, isOpen, on
 export default function LehrerManual() {
   const [openSections, setOpenSections] = useState<Record<number, boolean>>({});
   const [weiterOpen, setWeiterOpen] = useState(false);
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const toggle = (n: number) => setOpenSections(prev => ({ ...prev, [n]: !prev[n] }));
 
+  const handleDownloadPdf = async () => {
+    if (!contentRef.current || isGeneratingPdf) return;
+    setIsGeneratingPdf(true);
+
+    const prevSections = { ...openSections };
+    const prevWeiter = weiterOpen;
+    setOpenSections({ 1: true, 2: true, 3: true, 4: true, 5: true });
+    setWeiterOpen(true);
+
+    await new Promise(r => setTimeout(r, 500));
+
+    try {
+      const element = contentRef.current;
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        windowWidth: 900,
+      });
+
+      const imgData = canvas.toDataURL("image/jpeg", 0.95);
+      const pdf = new jsPDF("p", "mm", "a4");
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const margin = 10;
+      const usableWidth = pdfWidth - margin * 2;
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = usableWidth / imgWidth;
+      const scaledHeight = imgHeight * ratio;
+      const usableHeight = pdfHeight - margin * 2;
+
+      let yOffset = 0;
+      let page = 0;
+
+      while (yOffset < scaledHeight) {
+        if (page > 0) pdf.addPage();
+        const sourceY = (yOffset / ratio);
+        const sourceHeight = Math.min(usableHeight / ratio, imgHeight - sourceY);
+        const destHeight = sourceHeight * ratio;
+
+        const pageCanvas = document.createElement("canvas");
+        pageCanvas.width = imgWidth;
+        pageCanvas.height = sourceHeight;
+        const ctx = pageCanvas.getContext("2d");
+        if (ctx) {
+          ctx.fillStyle = "#ffffff";
+          ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+          ctx.drawImage(canvas, 0, sourceY, imgWidth, sourceHeight, 0, 0, imgWidth, sourceHeight);
+        }
+
+        const pageImgData = pageCanvas.toDataURL("image/jpeg", 0.95);
+        pdf.addImage(pageImgData, "JPEG", margin, margin, usableWidth, destHeight);
+
+        yOffset += usableHeight;
+        page++;
+      }
+
+      pdf.save("Lehrer-innen-Manual.pdf");
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+    } finally {
+      setOpenSections(prevSections);
+      setWeiterOpen(prevWeiter);
+      setIsGeneratingPdf(false);
+    }
+  };
+
   return (
     <div>
+      <div className="flex justify-end mb-4">
+        <button
+          onClick={handleDownloadPdf}
+          disabled={isGeneratingPdf}
+          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-wait text-sm font-medium"
+        >
+          <Download size={16} />
+          {isGeneratingPdf ? "PDF wird erstellt..." : "Manual als PDF herunterladen"}
+        </button>
+      </div>
+      <div ref={contentRef}>
       {/* Section 1: Kohlenhydrate */}
       <AccordionSection
         number={1}
@@ -753,6 +836,7 @@ export default function LehrerManual() {
           </div>
         </div>
       </AccordionSection>
+      </div>
     </div>
   );
 }
