@@ -152,6 +152,7 @@ function AccordionSection({ number, title, color, bgColor, textColor, isOpen, on
 
 export default function LehrerManual() {
   const [openSections, setOpenSections] = useState<Record<number, boolean>>({});
+  const [weiterOpen, setWeiterOpen] = useState(false);
 
   const toggle = (n: number) => setOpenSections(prev => ({ ...prev, [n]: !prev[n] }));
 
@@ -277,13 +278,17 @@ export default function LehrerManual() {
 
         {/* Weiterführende Informationen */}
         <div>
-          <div className="flex items-center gap-3 mb-4">
+          <button
+            onClick={() => setWeiterOpen(!weiterOpen)}
+            className="flex items-center gap-3 mb-4 w-full text-left group cursor-pointer"
+          >
             <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
               <Lightbulb className="text-indigo-600" size={16} />
             </div>
-            <h4 className="text-lg font-bold text-gray-800">Weiterführende Informationen für Lehrkräfte</h4>
-          </div>
-          <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
+            <h4 className="text-lg font-bold text-gray-800 flex-1">Weiterführende Informationen für Lehrkräfte</h4>
+            {weiterOpen ? <ChevronUp className="text-indigo-600" size={20} /> : <ChevronDown className="text-indigo-600" size={20} />}
+          </button>
+          {weiterOpen && <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
             <h5 className="text-base font-semibold text-gray-800 mt-4 mb-2">Wie entstehen Kohlenhydrate?</h5>
             <p className="mb-3">Grundlage für die Bildung von Kohlenhydraten ist die Photosynthese durch grüne Pflanzen. Dabei bilden die Pflanzen aus Wasser und Kohlendioxid (CO₂) das energiehaltige Molekül Glucose. Als Energiequelle dient dabei das Sonnenlicht.</p>
 
@@ -338,7 +343,7 @@ export default function LehrerManual() {
             <p className="mb-3">Unser Gehirn hat nur einen kleinen Anteil am Körpergewicht, dafür aber einen exorbitant hohen Energieverbrauch. Es benötigt 20 Prozent der Gesamtenergie, die unser Körper täglich braucht.</p>
             <p className="mb-3">Dies liegt unter anderem daran, dass unser Gehirn rund um die Uhr aktiv ist. Außerdem benötigt die tägliche Arbeit der Nervenzellen besonders viel Energie. Auch der Transport von Molekülen und Botenstoffen ist energetisch sehr aufwändig.</p>
             <p className="mb-3">Nervenzellen können die Glucose aber nicht speichern. Daher ist eine stetige, ausreichende Versorgung unerlässlich, denn unser Gehirn verbrennt etwa 130 Gramm Glucose am Tag.</p>
-          </div>
+          </div>}
         </div>
       </AccordionSection>
 
