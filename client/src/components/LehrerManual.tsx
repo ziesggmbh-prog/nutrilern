@@ -259,18 +259,18 @@ export default function LehrerManual() {
             <p className="mb-2">Diese Lebensmittel enthalten außerdem wichtige <strong>Ballaststoffe</strong>.</p>
             <ul className="list-disc list-inside space-y-2 mb-4">
               <li>Ballaststoffe = Nahrungsbestandteile, die vom Körper nicht verdaut werden können.</li>
-              <li>Sie zögern die Verdauung hinaus.</li>
-              <li>Sie wirken sich positiv auf eine langsame, gleichmäßige Energieversorgung des Körpers mit Glucose aus.</li>
+              <li>zögern die Verdauung hinaus</li>
+              <li>wirken sich positiv auf eine langsame, gleichmäßige Energieversorgung des Körpers mit Glucose aus</li>
             </ul>
 
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
               <p className="font-semibold text-yellow-800 mb-2">Beispiel Banane:</p>
               <ul className="list-disc list-inside space-y-1 text-yellow-700">
-                <li>Enthält Glucose in schnell und weniger schnell verfügbarer Form (komplexe Kohlenhydrate).</li>
-                <li>Enthält viele Ballaststoffe.</li>
-                <li>Versorgt den Körper sowohl schnell als auch länger anhaltend mit Energie.</li>
-                <li>Gut geeignet als Snack zur Konzentrationssteigerung (etwa vor einer Prüfung).</li>
-                <li>Vergleich mit Schokolade: Schokolade enthält ausschließlich Einfachzucker, keine komplexen Kohlenhydrate und keine Ballaststoffe.</li>
+                <li>enthält Glucose in schnell und weniger schnell verfügbarer Form (komplexe Kohlenhydrate)</li>
+                <li>enthält viele Ballaststoffe</li>
+                <li>versorgt den Körper sowohl schnell als auch länger anhaltend mit Energie</li>
+                <li>gut geeignet als Snack zur Konzentrationssteigerung (etwa vor einer Prüfung)</li>
+                <li>Vergleich mit Schokolade: Schokolade enthält ausschließlich Einfachzucker, keine Kohlenhydrate und keine Ballaststoffe.</li>
               </ul>
             </div>
           </div>
@@ -290,7 +290,7 @@ export default function LehrerManual() {
           </button>
           {weiterOpen && <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
             <h5 className="text-base font-semibold text-gray-800 mt-4 mb-2">Wie entstehen Kohlenhydrate?</h5>
-            <p className="mb-3">Grundlage für die Bildung von Kohlenhydraten ist die Photosynthese durch grüne Pflanzen. Dabei bilden die Pflanzen aus Wasser und Kohlendioxid (CO₂) das energiehaltige Molekül Glucose. Als Energiequelle dient dabei das Sonnenlicht.</p>
+            <p className="mb-3">Grundlage für die Bildung von Kohlenhydraten die Photosynthese durch grüne Pflanzen. Dabei bilden die Pflanzen aus Wasser und Kohlendioxid (CO₂) das energiehaltige Molekül Glucose. Als Energiequelle dient dabei das Sonnenlicht.</p>
 
             <PhotosyntheseDiagram />
 
@@ -304,7 +304,7 @@ export default function LehrerManual() {
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Zuckerarten</h5>
-            <p className="mb-2"><strong>Einfachzucker:</strong> Die wichtigsten Einfachzucker, die in unserer Ernährung eine Rolle spielen, sind Traubenzucker (Glucose) und Fruchtzucker (Fructose). Glucose ist die Hauptenergiequelle für das Gehirn und die Muskeln.</p>
+            <p className="mb-2"><strong>Einfachzucker:</strong> Die wichtigsten Einfachzucker, die in unserer Ernährung eine Rolle spielen, sind Traubenzucker (Glucose) und Fruchtzucker (Fructose). Glukose ist die Hauptenergiequelle für das Gehirn und die Muskeln.</p>
             <p className="mb-2"><strong>Zweifachzucker:</strong> Der bekannteste Zweifachzucker ist die Saccharose, unser „Haushaltszucker". Er ist aus Fructose und Glucose zusammengesetzt.</p>
             <p className="mb-2"><strong>Mehrfachzucker:</strong> Die Zuckermoleküle können miteinander verbunden werden. Dann entstehen Mehrfachzucker (Polysaccharide). Tatsächlich liegt in der Natur der meiste Zucker als Mehrfachzucker vor.</p>
 
@@ -329,19 +329,19 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Verdauung von Stärke und Energiegewinnung</h5>
             <p className="mb-3">Die Verdauung von Stärke in unserer Nahrung beginnt bereits im Mund. Unser Speichel enthält das stärkespaltende Enzym Alpha-Amylase. Die Amylase spaltet die Stärke zu Dextrinen (Bruchstücke der Stärke). Daher ist es wichtig, dass man lange und gründlich kaut.</p>
-            <p className="mb-3">Die Dextrine werden im Dünndarm durch die Pankreas-Amylase und Saccharidasen weiter gespalten. Die schließlich entstehenden Einzelzucker (Monosaccharide) werden durch die Darmzellen aufgenommen und gelangen ins Blut, von wo sie in alle Organe, Gewebe und Zellen des Körpers transportiert werden.</p>
+            <p className="mb-3">Die Dextrine, welche die Alpha-Amylase gebildet hat, werden im Dünndarm durch die Pankreas-Amylase und Saccharidasen weiter gespalten. Die schließlich entstehenden Einzelzucker (Monosaccharide) werden durch die Darmzellen aufgenommen und gelangen ins Blut, von wo sie in alle Organe, Gewebe und Zellen des Körpers transportiert werden.</p>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Gewinnung von Energie</h5>
-            <p className="mb-3">Unsere Zellen nehmen die Zuckermoleküle auf, die über den Blutstrom angeliefert werden. Dies wird durch das Hormon Insulin reguliert. In den Zellen erfolgt der Abbau des Zuckers durch den Vorgang der Zellatmung.</p>
+            <p className="mb-3">Unsere Zellen nehmen die Zuckermoleküle auf, die über den Blutstrom angeliefert werden. Dies wird durch das Hormon Insulin reguliert. In den Zellen erfolgt der Abbau des Zuckers ebenfalls von zahlreichen Enzymen gesteuert durch den Vorgang der Zellatmung.</p>
             <p className="mb-3">Die gesamte Reaktion besteht aus drei aufeinander folgenden Teilprozessen – einer mehrstufigen Kaskade von enzymgesteuerten chemischen Reaktionen, bei denen die Glucose zu Kohlendioxid (CO₂) und Wasser abgebaut wird. Die Reaktionsschritte nutzt die Zelle zur Bildung von Adenosin-Triphosphat (ATP). Dieses energiereiche Molekül dient als Treibstoff für nahezu alle Prozesse, die in Zellen und Organen ablaufen.</p>
 
             <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 mb-4">
-              <p className="font-semibold text-indigo-800">ATP (Adenosin-Triphosphat) – der universelle Energieträger der Zelle.</p>
+              <p className="font-semibold text-indigo-800">ATP (Adenosin-Triphosphat), der universelle Energieträger der Zelle.</p>
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Glucose ist der Treibstoff für unser Gehirn</h5>
             <p className="mb-3">Unser Gehirn hat nur einen kleinen Anteil am Körpergewicht, dafür aber einen exorbitant hohen Energieverbrauch. Es benötigt 20 Prozent der Gesamtenergie, die unser Körper täglich braucht.</p>
-            <p className="mb-3">Dies liegt unter anderem daran, dass unser Gehirn rund um die Uhr aktiv ist. Außerdem benötigt die tägliche Arbeit der Nervenzellen besonders viel Energie. Auch der Transport von Molekülen und Botenstoffen ist energetisch sehr aufwändig.</p>
+            <p className="mb-3">Dies liegt unteranderem daran, dass unser Gehirn rund um die Uhr aktiv ist. Außerdem benötigt die tägliche Arbeit der Nervenzellen besonders viel Energie. Auch der Transport von Molekülen und Botenstoffen ist energetisch sehr aufwändig.</p>
             <p className="mb-3">Nervenzellen können die Glucose aber nicht speichern. Daher ist eine stetige, ausreichende Versorgung unerlässlich, denn unser Gehirn verbrennt etwa 130 Gramm Glucose am Tag.</p>
           </div>}
         </div>
@@ -408,8 +408,8 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Gesättigte Fettsäuren</h5>
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li>Kommen vor allem in tierischen Lebensmitteln vor, z.B. in Fleisch, Milchprodukten und Eigelb.</li>
-              <li>Pflanzliche Fette, die gesättigte Fettsäuren enthalten: Kokosfett und Palmöl.</li>
+              <li>kommen vor allem in tierischen Lebensmitteln vor, z.B. in Fleisch, Milchprodukten und Eigelb.</li>
+              <li>pflanzliche Fette, die gesättigte Fettsäuren enthalten: Kokosfett und Palmöl</li>
               <li>Gesättigte Fettsäuren kann der Körper selbst herstellen.</li>
               <li>Gesättigte Fettsäuren stehen im Verdacht, die Menge an schädlichem Cholesterin im Blut zu erhöhen – das kann negative Effekte für die Gesundheit haben.</li>
               <li>Gesättigte Fettsäuren sollten nicht unbegrenzt konsumiert werden.</li>
@@ -424,7 +424,7 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Mehrfach ungesättigte Fettsäuren</h5>
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li>Lebensmittel: bestimmte pflanzliche Öle, Nüsse und Samen, fetter Seefisch (z.B. Lachs, Hering, Thunfisch).</li>
+              <li>Lebensmittel: bestimmte pflanzliche Öle, Nüsse und Samen, fetter Seefisch (z.B. Lachs, Hering, Tunfisch).</li>
               <li>Auch die sogenannten Omega-3- und Omega-6-Fettsäuren sind mehrfach ungesättigte Fettsäuren – für den Körper besonders wertvoll.</li>
             </ul>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
@@ -492,10 +492,10 @@ export default function LehrerManual() {
           <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
             <p className="mb-3">Proteine sind auch Energielieferanten (Makronährstoffe) für unseren Körper. Außerdem erfüllen sie weitere wichtige Funktionen:</p>
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li>Wichtig beim Aufbau von Muskeln und Gewebe</li>
-              <li>Übernehmen die Rolle von Enzymen, Hormonen und Antikörpern</li>
-              <li>Ermöglichen die Kommunikation zwischen den Körperzellen</li>
-              <li>Transportieren wichtige Stoffe</li>
+              <li>wichtig beim Aufbau von Muskeln und Gewebe</li>
+              <li>übernehmen die Rolle von Enzymen, Hormonen und Antikörpern</li>
+              <li>ermöglichen die Kommunikation zwischen den Körperzellen</li>
+              <li>transportieren wichtige Stoffe</li>
             </ul>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Aminosäuren</h5>
@@ -512,21 +512,21 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Tierisches Protein</h5>
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li>Ist dem Protein in unserem Körper strukturell ähnlich</li>
-              <li>Enthält in der Regel alle essentiellen Aminosäuren</li>
-              <li>Kann sehr gut verwertet werden</li>
+              <li>ist dem Protein in unserem Körper strukturell ähnlich</li>
+              <li>enthält in der Regel alle essentiellen Aminosäuren</li>
+              <li>kann sehr gut verwertet werden</li>
               <li>Quellen: Fleisch, Eier, Milchprodukte</li>
             </ul>
             <div className="bg-orange-50 border-l-4 border-orange-400 p-4 mb-4">
               <p className="font-semibold text-orange-800 mb-1">Nachteile von tierischem Protein:</p>
-              <p className="text-orange-700">Kommt häufig in Lebensmitteln vor, die auch gesättigte Fettsäuren enthalten. Ausnahme: Fettreicher Seefisch – reich an tierischem Protein und essentiellen Fettsäuren, enthält kaum gesättigte Fettsäuren.</p>
+              <p className="text-orange-700">kommt häufig in Lebensmitteln vor, die auch gesättigte Fettsäuren enthalten. Ausnahme: Fettreicher Seefisch – reich an tierischem Protein und essentiellen Fettsäuren, enthält kaum gesättigte Fettsäuren.</p>
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Pflanzliches Protein</h5>
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li>Ist dem körpereigenen Protein weniger ähnlich</li>
-              <li>Enthält in der Regel nicht alle essentiellen Aminosäuren</li>
-              <li>Kann weniger gut verwertet werden</li>
+              <li>ist dem körpereigenen Protein weniger ähnlich</li>
+              <li>enthält in der Regel nicht alle essentiellen Aminosäuren</li>
+              <li>kann weniger gut verwertet werden</li>
             </ul>
             <div className="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
               <p className="font-semibold text-green-800 mb-2">Aber:</p>
@@ -543,8 +543,8 @@ export default function LehrerManual() {
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
               <p className="font-semibold text-blue-800 mb-1">Vorteile von pflanzlichem Protein:</p>
               <ul className="list-disc list-inside space-y-1 text-blue-700">
-                <li>Kommt häufig in Lebensmitteln vor, die keine gesättigten Fettsäuren enthalten</li>
-                <li>Kommt häufig in Lebensmitteln vor, die wertvolle Ballaststoffe und Vitamine oder auch ungesättigte Fettsäuren enthalten</li>
+                <li>kommt häufig in Lebensmitteln vor, die keine gesättigten Fettsäuren enthalten</li>
+                <li>kommt häufig in Lebensmitteln vor, die wertvolle Ballaststoffe und Vitamine oder auch ungesättigte Fettsäuren enthalten</li>
               </ul>
             </div>
           </div>
@@ -602,8 +602,8 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Vitamine</h5>
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li>Wichtig für die Verwertung der Makronährstoffe: Vitamine ermöglichen die Energiegewinnung des Körpers aus Kohlenhydraten, Fetten und Proteinen.</li>
-              <li>Unerlässlich hierfür: B-Vitamine. Alle acht B-Vitamine müssen vorhanden sein, damit der Körper Energie aus Makronährstoffen gewinnen kann.</li>
+              <li>wichtig für die Verwertung der Makronährstoffe: Vitamine ermöglichen die Energiegewinnung des Körpers aus Kohlenhydraten, Fetten und Proteinen.</li>
+              <li>unerlässlich hierfür: B-Vitamine. Alle acht B-Vitamine müssen vorhanden sein, damit der Körper Energie aus Makronährstoffen gewinnen kann.</li>
             </ul>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
               <p className="font-semibold text-blue-800 mb-1">Vitamine unterstützen das Immunsystem:</p>
@@ -616,13 +616,13 @@ export default function LehrerManual() {
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Mineralstoffe</h5>
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li>Wie die Vitamine beteiligt an der Verwertung der Makronährstoffe und der Unterstützung des Immunsystems.</li>
-              <li>Außerdem wichtig für unser Nervensystem: Mineralstoffe regulieren das Nervensystem und stabilisieren seine Funktionen.</li>
+              <li>wie die Vitamine beteiligt an Verwertung der Makronährstoffe, Unterstützung des Immunsystems</li>
+              <li>außerdem wichtig für unser Nervensystem: Mineralstoffe regulieren das Nervensystem und stabilisieren seine Funktionen.</li>
               <li>Beispiele: Magnesium, Kalzium, Kalium, Zink, Eisen.</li>
-              <li>Wirken sich auch auf die psychische Gesundheit aus und beeinflussen Aufmerksamkeit und Denkleistung.</li>
+              <li>wirken sich auch auf die psychische Gesundheit aus und beeinflussen Aufmerksamkeit und Denkleistung.</li>
             </ul>
 
-            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Die Versorgung des Körpers mit Mikronährstoffen</h5>
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Die Versorgung des Körpers mit „Mikro"-Nährstoffen</h5>
             <ul className="list-disc list-inside space-y-2 mb-4">
               <li>Der Körper benötigt Mikronährstoffe – verglichen mit den Makronährstoffen – in kleineren Mengen.</li>
               <li>Eine ausgewogene Ernährung reicht aus, um den Bedarf an Vitaminen und Mineralstoffen zu decken.</li>
@@ -633,19 +633,19 @@ export default function LehrerManual() {
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Salz</h5>
-            <p className="mb-3">Salz versorgt den Körper mit den Nährstoffen Natrium und Chlorid.</p>
+            <p className="mb-3">versorgt den Körper mit den Nährstoffen Natrium und Chlorid</p>
             <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
               <p className="font-semibold text-red-800 mb-1">Gefahr einer Überversorgung:</p>
               <p className="text-red-700">Bei zu viel Salzkonsum gelangt zu viel Natrium ins Blut. Natrium bindet Wasser im Blut, dies führt zu Wassereinlagerungen im umliegenden Gewebe. Krankheiten wie Herzinfarkt und Schlaganfall werden so begünstigt.</p>
             </div>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
-              <p className="font-semibold text-blue-800 mb-1">Salz-Empfehlung der WHO:</p>
+              <p className="font-semibold text-blue-800 mb-1">Salz-Empfehlung der Weltgesundheitsorganisation („WHO": „World Health Organization"):</p>
               <p className="text-blue-700">Höchstens 5 Gramm Salz pro Tag (entspricht einem nicht zu vollen Teelöffel).</p>
             </div>
             <p className="mb-2 font-semibold">Tipps:</p>
             <ul className="list-disc list-inside space-y-2 mb-4">
-              <li>Auf Salzgehalt von Lebensmitteln achten: Fertigprodukte enthalten oft viel Salz.</li>
-              <li>Beim Kochen wenig salzen, nicht voreilig nachsalzen.</li>
+              <li>auf Salzgehalt von Lebensmitteln achten: Fertigprodukte enthalten oft viel Salz.</li>
+              <li>beim Kochen wenig salzen, nicht voreilig nachsalzen.</li>
             </ul>
           </div>
         </div>
@@ -736,7 +736,7 @@ export default function LehrerManual() {
             </div>
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
               <p className="font-semibold text-blue-800 mb-1">Wie erkenne ich Transfettsäuren?</p>
-              <p className="text-blue-700">Lebensmittel, auf deren Verpackung „teilweise gehärtete Fette" angegeben sind, enthalten Transfettsäuren.</p>
+              <p className="text-blue-700">Lebensmitteln, auf deren Verpackung „teilweise gehärtete Fette" angegeben sind, enthalten Transfettsäuren.</p>
             </div>
 
             <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Protein: Shakes, Riegel etc.</h5>
