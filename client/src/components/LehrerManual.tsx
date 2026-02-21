@@ -156,6 +156,7 @@ export default function LehrerManual() {
   const [openSections, setOpenSections] = useState<Record<number, boolean>>({});
   const [weiterOpen, setWeiterOpen] = useState(false);
   const [fragenOpen, setFragenOpen] = useState(false);
+  const [hintergrundOpen, setHintergrundOpen] = useState(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -168,9 +169,11 @@ export default function LehrerManual() {
     const prevSections = { ...openSections };
     const prevWeiter = weiterOpen;
     const prevFragen = fragenOpen;
+    const prevHintergrund = hintergrundOpen;
     setOpenSections({ 1: true, 2: true, 3: true, 4: true, 5: true });
     setWeiterOpen(true);
     setFragenOpen(true);
+    setHintergrundOpen(true);
 
     await new Promise(r => setTimeout(r, 500));
 
@@ -228,6 +231,7 @@ export default function LehrerManual() {
       setOpenSections(prevSections);
       setWeiterOpen(prevWeiter);
       setFragenOpen(prevFragen);
+      setHintergrundOpen(prevHintergrund);
       setIsGeneratingPdf(false);
     }
   };
@@ -257,13 +261,17 @@ export default function LehrerManual() {
       >
         {/* Hintergrund */}
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
+          <button
+            onClick={() => setHintergrundOpen(!hintergrundOpen)}
+            className="flex items-center gap-3 mb-4 w-full text-left cursor-pointer"
+          >
             <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
               <BookOpen className="text-green-600" size={16} />
             </div>
-            <h4 className="text-lg font-bold text-gray-800">Hintergrund zur Beantwortung</h4>
-          </div>
-          <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
+            <h4 className="text-lg font-bold text-gray-800 flex-1">Hintergrund zur Beantwortung</h4>
+            {hintergrundOpen ? <ChevronUp className="text-green-600" size={20} /> : <ChevronDown className="text-green-600" size={20} />}
+          </button>
+          {hintergrundOpen && <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
             <p className="mb-3">Über die Nahrung nimmt unser Körper zwei Arten von Nährstoffen auf: <strong>Makronährstoffe</strong> und <strong>Mikronährstoffe</strong>.</p>
             <ul className="list-disc pl-5 space-y-2 mb-4">
               <li>Makronährstoffe benötigt der Körper zur Energiegewinnung.</li>
@@ -332,7 +340,7 @@ export default function LehrerManual() {
                 <li>Vergleich mit Schokolade: Schokolade enthält ausschließlich Einfachzucker, keine Kohlenhydrate und keine Ballaststoffe.</li>
               </ul>
             </div>
-          </div>
+          </div>}
         </div>
 
         {/* Fragen */}
