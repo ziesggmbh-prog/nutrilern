@@ -1,7 +1,5 @@
 import { useState, useRef } from "react";
 import { ChevronDown, ChevronUp, Users, BookOpen, Lightbulb, Download } from "lucide-react";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
 
 function PhotosyntheseDiagram() {
   return (
@@ -155,77 +153,123 @@ function AccordionSection({ number, title, color, bgColor, textColor, isOpen, on
 export default function LehrerManual() {
   const [openSections, setOpenSections] = useState<Record<number, boolean>>({});
   const [weiterOpen, setWeiterOpen] = useState(false);
-  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const toggle = (n: number) => setOpenSections(prev => ({ ...prev, [n]: !prev[n] }));
 
-  const handleDownloadPdf = async () => {
-    if (!contentRef.current || isGeneratingPdf) return;
-    setIsGeneratingPdf(true);
+  const handleDownloadPdf = () => {
+    if (!contentRef.current) return;
 
     const prevSections = { ...openSections };
     const prevWeiter = weiterOpen;
     setOpenSections({ 1: true, 2: true, 3: true, 4: true, 5: true });
     setWeiterOpen(true);
 
-    await new Promise(r => setTimeout(r, 500));
+    setTimeout(() => {
+      const content = contentRef.current;
+      if (!content) return;
 
-    try {
-      const element = contentRef.current;
-      const canvas = await html2canvas(element, {
-        scale: 2,
-        useCORS: true,
-        logging: false,
-        windowWidth: 900,
+      const inlineStyles = (source: Element, target: Element) => {
+        const computed = window.getComputedStyle(source);
+        const dominated = [
+          "color", "background-color", "background",
+          "font-size", "font-weight", "font-family", "line-height", "text-align",
+          "padding", "padding-top", "padding-right", "padding-bottom", "padding-left",
+          "margin", "margin-top", "margin-right", "margin-bottom", "margin-left",
+          "border", "border-left", "border-top", "border-right", "border-bottom",
+          "border-radius", "border-color", "border-left-color", "border-left-width", "border-left-style",
+          "display", "flex-direction", "align-items", "justify-content", "gap", "flex-shrink", "flex-grow",
+          "width", "height", "min-width", "min-height", "max-width",
+          "list-style-type", "list-style-position",
+          "overflow", "white-space", "word-break",
+        ];
+        const style: string[] = [];
+        dominated.forEach(prop => {
+          const val = computed.getPropertyValue(prop);
+          if (val && val !== "" && val !== "none" && val !== "normal" && val !== "auto") {
+            style.push(`${prop}:${val}`);
+          }
+        });
+        (target as HTMLElement).setAttribute("style", style.join(";"));
+        (target as HTMLElement).removeAttribute("class");
+
+        const srcChildren = source.children;
+        const tgtChildren = target.children;
+        for (let i = 0; i < srcChildren.length && i < tgtChildren.length; i++) {
+          inlineStyles(srcChildren[i], tgtChildren[i]);
+        }
+      };
+
+      const clone = content.cloneNode(true) as HTMLElement;
+      inlineStyles(content, clone);
+
+      clone.querySelectorAll("button, [role='button']").forEach(btn => {
+        const div = document.createElement("div");
+        div.innerHTML = (btn as HTMLElement).innerHTML;
+        const s = (btn as HTMLElement).getAttribute("style");
+        if (s) div.setAttribute("style", s);
+        btn.replaceWith(div);
       });
 
-      const imgData = canvas.toDataURL("image/jpeg", 0.95);
-      const pdf = new jsPDF("p", "mm", "a4");
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const margin = 10;
-      const usableWidth = pdfWidth - margin * 2;
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = usableWidth / imgWidth;
-      const scaledHeight = imgHeight * ratio;
-      const usableHeight = pdfHeight - margin * 2;
-
-      let yOffset = 0;
-      let page = 0;
-
-      while (yOffset < scaledHeight) {
-        if (page > 0) pdf.addPage();
-        const sourceY = (yOffset / ratio);
-        const sourceHeight = Math.min(usableHeight / ratio, imgHeight - sourceY);
-        const destHeight = sourceHeight * ratio;
-
-        const pageCanvas = document.createElement("canvas");
-        pageCanvas.width = imgWidth;
-        pageCanvas.height = sourceHeight;
-        const ctx = pageCanvas.getContext("2d");
-        if (ctx) {
-          ctx.fillStyle = "#ffffff";
-          ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
-          ctx.drawImage(canvas, 0, sourceY, imgWidth, sourceHeight, 0, 0, imgWidth, sourceHeight);
+      clone.querySelectorAll("div").forEach(div => {
+        const style = div.getAttribute("style") || "";
+        if (style.includes("border-left-width") && style.includes("border-left-style")) {
+          div.setAttribute("data-avoid-break", "true");
         }
+      });
 
-        const pageImgData = pageCanvas.toDataURL("image/jpeg", 0.95);
-        pdf.addImage(pageImgData, "JPEG", margin, margin, usableWidth, destHeight);
+      const chevrons = clone.querySelectorAll("svg");
+      chevrons.forEach(svg => {
+        const parent = svg.parentElement;
+        if (!svg.getAttribute("viewBox") && parent) {
+          svg.remove();
+        }
+      });
 
-        yOffset += usableHeight;
-        page++;
+      const printWindow = window.open("", "_blank");
+      if (!printWindow) {
+        setOpenSections(prevSections);
+        setWeiterOpen(prevWeiter);
+        return;
       }
 
-      pdf.save("Lehrer-innen-Manual.pdf");
-    } catch (err) {
-      console.error("PDF generation failed:", err);
-    } finally {
-      setOpenSections(prevSections);
-      setWeiterOpen(prevWeiter);
-      setIsGeneratingPdf(false);
-    }
+      printWindow.document.write(`<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lehrer:innen-Manual – NutriLern</title>
+<style>
+  @page { size: A4; margin: 18mm 15mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 11pt; line-height: 1.5; color: #1f2937;
+    margin: 0; padding: 16px;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1 { font-size: 18pt; text-align: center; margin-bottom: 4pt; color: #111827; }
+  .subtitle { text-align: center; color: #6b7280; margin-bottom: 16pt; font-size: 10pt; }
+  h4, h5, h6 { break-after: avoid; page-break-after: avoid; }
+  li { break-inside: avoid; page-break-inside: avoid; }
+  svg { max-width: 100%; height: auto; break-inside: avoid; page-break-inside: avoid; }
+  div[data-avoid-break] { break-inside: avoid; page-break-inside: avoid; }
+</style>
+</head>
+<body>
+<h1>NutriLern – Manual für Lehrkräfte</h1>
+<p class="subtitle">Fragen für die Gruppenarbeit + zentrale Hintergründe zur Erklärung</p>
+`);
+
+      printWindow.document.write(clone.innerHTML);
+      printWindow.document.write("</body></html>");
+      printWindow.document.close();
+
+      setTimeout(() => {
+        printWindow.print();
+        setOpenSections(prevSections);
+        setWeiterOpen(prevWeiter);
+      }, 600);
+    }, 400);
   };
 
   return (
@@ -233,11 +277,10 @@ export default function LehrerManual() {
       <div className="flex justify-end mb-4">
         <button
           onClick={handleDownloadPdf}
-          disabled={isGeneratingPdf}
-          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-wait text-sm font-medium"
+          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
         >
           <Download size={16} />
-          {isGeneratingPdf ? "PDF wird erstellt..." : "Manual als PDF herunterladen"}
+          Manual als PDF herunterladen
         </button>
       </div>
       <div ref={contentRef}>
