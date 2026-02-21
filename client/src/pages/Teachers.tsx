@@ -114,7 +114,7 @@ export default function Teachers() {
                 </div>
                 <h2 className="text-xl font-bold text-gray-800 mb-3">Ablauf</h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Hier finden Sie Informationen zum Ablauf der Unterrichtseinheit und zur Bedienung der App.
+                  Hier finden Sie Informationen zur Durchführung der Unterrichtseinheit.
                 </p>
               </div>
             </motion.div>
