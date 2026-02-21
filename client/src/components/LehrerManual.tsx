@@ -7,43 +7,40 @@ function PhotosyntheseDiagram() {
   return (
     <div className="my-6">
       <h4 className="text-lg font-semibold text-gray-800 mb-3">Photosynthese: Bildung von Glucose durch grüne Pflanzen</h4>
-      <svg viewBox="0 0 700 220" className="w-full max-w-2xl mx-auto" aria-label="Photosynthese Diagramm">
-        <rect x="0" y="0" width="700" height="220" fill="#f0fdf4" rx="12" />
-        <circle cx="80" cy="60" r="32" fill="#fbbf24" stroke="#f59e0b" strokeWidth="2" />
-        <text x="80" y="65" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#92400e">Sonne</text>
-        {[0,45,90,135,180,225,270,315].map((angle, i) => (
-          <line
-            key={i}
-            x1={80 + Math.cos(angle * Math.PI / 180) * 34}
-            y1={60 + Math.sin(angle * Math.PI / 180) * 34}
-            x2={80 + Math.cos(angle * Math.PI / 180) * 44}
-            y2={60 + Math.sin(angle * Math.PI / 180) * 44}
-            stroke="#f59e0b" strokeWidth="2"
-          />
-        ))}
-        <g transform="translate(200, 40)">
-          <ellipse cx="30" cy="50" rx="18" ry="30" fill="#22c55e" />
-          <ellipse cx="18" cy="30" rx="14" ry="22" fill="#16a34a" transform="rotate(-20, 18, 30)" />
-          <ellipse cx="42" cy="30" rx="14" ry="22" fill="#16a34a" transform="rotate(20, 42, 30)" />
-          <rect x="27" y="70" width="6" height="25" fill="#854d0e" rx="2" />
-          <text x="30" y="115" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#166534">Pflanze</text>
-        </g>
-        <line x1="125" y1="60" x2="190" y2="70" stroke="#f59e0b" strokeWidth="2" markerEnd="url(#arrowYellow)" />
+      <svg viewBox="0 0 720 280" className="w-full max-w-2xl mx-auto" aria-label="Photosynthese Diagramm">
+        <rect x="0" y="0" width="720" height="280" fill="#f0fdf4" rx="12" />
         <defs>
-          <marker id="arrowYellow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#f59e0b" /></marker>
-          <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#16a34a" /></marker>
+          <marker id="arrowGreenP" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#16a34a" /></marker>
+          <marker id="arrowYellowP" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#eab308" /></marker>
         </defs>
-        <text x="200" y="185" textAnchor="middle" fontSize="11" fill="#0369a1">Wasser (H₂O)</text>
-        <line x1="200" y1="175" x2="230" y2="150" stroke="#0369a1" strokeWidth="1.5" strokeDasharray="4" />
-        <text x="340" y="185" textAnchor="middle" fontSize="11" fill="#6b7280">Kohlendioxid (CO₂)</text>
-        <line x1="340" y1="175" x2="260" y2="120" stroke="#6b7280" strokeWidth="1.5" strokeDasharray="4" />
-        <text x="350" y="30" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#166534">+</text>
-        <line x1="280" y1="80" x2="400" y2="80" stroke="#16a34a" strokeWidth="2.5" markerEnd="url(#arrowGreen)" />
-        <rect x="420" y="40" width="120" height="40" rx="8" fill="#dcfce7" stroke="#16a34a" strokeWidth="2" />
-        <text x="480" y="65" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#166534">Glucose</text>
-        <text x="480" y="110" textAnchor="middle" fontSize="13" fill="#166534">+</text>
-        <rect x="420" y="120" width="120" height="40" rx="8" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2" />
-        <text x="480" y="145" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#1e40af">Sauerstoff (O₂)</text>
+        <circle cx="100" cy="70" r="38" fill="#fbbf24" stroke="#eab308" strokeWidth="2" />
+        <text x="100" y="67" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#713f12">Sonnen-</text>
+        <text x="100" y="82" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#713f12">licht</text>
+        {[0,30,60,90,120,150,180,210,240,270,300,330].map((angle, i) => (
+          <line key={i} x1={100 + Math.cos(angle * Math.PI / 180) * 40} y1={70 + Math.sin(angle * Math.PI / 180) * 40} x2={100 + Math.cos(angle * Math.PI / 180) * 52} y2={70 + Math.sin(angle * Math.PI / 180) * 52} stroke="#eab308" strokeWidth="2.5" />
+        ))}
+        <line x1="155" y1="70" x2="210" y2="100" stroke="#eab308" strokeWidth="2" markerEnd="url(#arrowYellowP)" />
+        <g transform="translate(220, 50)">
+          <rect x="0" y="80" width="8" height="40" fill="#854d0e" rx="2" />
+          <rect x="60" y="80" width="8" height="40" fill="#854d0e" rx="2" />
+          <ellipse cx="34" cy="55" rx="50" ry="40" fill="#22c55e" stroke="#16a34a" strokeWidth="2" />
+          <ellipse cx="34" cy="55" rx="32" ry="25" fill="#16a34a" opacity="0.4" />
+          <text x="34" y="60" textAnchor="middle" fontSize="13" fontWeight="bold" fill="white">Pflanze</text>
+        </g>
+        <rect x="70" y="185" width="150" height="38" rx="8" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2" />
+        <text x="145" y="208" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1e40af">Wasser (H₂O)</text>
+        <line x1="220" y1="200" x2="250" y2="165" stroke="#3b82f6" strokeWidth="1.5" markerEnd="url(#arrowGreenP)" />
+        <rect x="280" y="185" width="190" height="38" rx="8" fill="#f3f4f6" stroke="#6b7280" strokeWidth="2" />
+        <text x="375" y="208" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#4b5563">Kohlendioxid (CO₂)</text>
+        <line x1="330" y1="185" x2="280" y2="155" stroke="#6b7280" strokeWidth="1.5" markerEnd="url(#arrowGreenP)" />
+        <line x1="320" y1="100" x2="430" y2="100" stroke="#16a34a" strokeWidth="3" markerEnd="url(#arrowGreenP)" />
+        <rect x="450" y="55" width="140" height="40" rx="10" fill="#dcfce7" stroke="#16a34a" strokeWidth="2" />
+        <text x="520" y="80" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#166534">Glucose</text>
+        <text x="520" y="125" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#166534">+</text>
+        <rect x="450" y="140" width="140" height="40" rx="10" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2" />
+        <text x="520" y="165" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#1e40af">Sauerstoff (O₂)</text>
+        <text x="70" y="248" fontSize="11" fill="#6b7280" fontStyle="italic">Eingangsstoffe</text>
+        <text x="470" y="210" fontSize="11" fill="#6b7280" fontStyle="italic">Produkte</text>
       </svg>
     </div>
   );
@@ -52,35 +49,37 @@ function PhotosyntheseDiagram() {
 function AtmungDiagram() {
   return (
     <div className="my-6">
-      <h4 className="text-lg font-semibold text-gray-800 mb-3">Atmung: Nutzung von Glucose zur Energiegewinnung</h4>
-      <svg viewBox="0 0 700 220" className="w-full max-w-2xl mx-auto" aria-label="Atmung Diagramm">
-        <rect x="0" y="0" width="700" height="220" fill="#eff6ff" rx="12" />
-        <g transform="translate(60, 20)">
-          <circle cx="40" cy="25" r="18" fill="#93c5fd" stroke="#3b82f6" strokeWidth="2" />
-          <rect x="25" y="43" width="30" height="45" rx="8" fill="#93c5fd" stroke="#3b82f6" strokeWidth="2" />
-          <line x1="25" y1="55" x2="5" y2="75" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
-          <line x1="55" y1="55" x2="75" y2="75" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
-          <line x1="32" y1="88" x2="22" y2="130" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
-          <line x1="48" y1="88" x2="58" y2="130" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round" />
-          <text x="40" y="160" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1e40af">Mensch</text>
-        </g>
-        <rect x="170" y="30" width="110" height="36" rx="8" fill="#dcfce7" stroke="#16a34a" strokeWidth="2" />
-        <text x="225" y="53" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#166534">Glucose</text>
-        <text x="225" y="90" textAnchor="middle" fontSize="13" fill="#1e40af">+</text>
-        <rect x="170" y="100" width="110" height="36" rx="8" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2" />
-        <text x="225" y="123" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1e40af">Sauerstoff (O₂)</text>
+      <h4 className="text-lg font-semibold text-gray-800 mb-3">Atmung: Nutzung von Glucose zur Energiegewinnung für unseren Organismus</h4>
+      <svg viewBox="0 0 720 260" className="w-full max-w-2xl mx-auto" aria-label="Atmung Diagramm">
+        <rect x="0" y="0" width="720" height="260" fill="#eff6ff" rx="12" />
         <defs>
-          <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ea580c" /></marker>
+          <marker id="arrowOrangeA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#ea580c" /></marker>
         </defs>
-        <line x1="290" y1="85" x2="400" y2="85" stroke="#ea580c" strokeWidth="2.5" markerEnd="url(#arrowOrange)" />
-        <rect x="420" y="20" width="130" height="40" rx="8" fill="#fff7ed" stroke="#ea580c" strokeWidth="2" />
-        <text x="485" y="45" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#ea580c">Energie</text>
-        <text x="485" y="85" textAnchor="middle" fontSize="13" fill="#ea580c">+</text>
-        <rect x="420" y="95" width="130" height="36" rx="8" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2" />
-        <text x="485" y="118" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#0369a1">Wasser (H₂O)</text>
-        <text x="485" y="150" textAnchor="middle" fontSize="13" fill="#0369a1">+</text>
-        <rect x="420" y="158" width="130" height="36" rx="8" fill="#f3f4f6" stroke="#6b7280" strokeWidth="2" />
-        <text x="485" y="180" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#4b5563">Kohlendioxid (CO₂)</text>
+        <g transform="translate(40, 30)">
+          <circle cx="50" cy="28" r="22" fill="#bfdbfe" stroke="#3b82f6" strokeWidth="2" />
+          <ellipse cx="50" cy="80" rx="22" ry="30" fill="#bfdbfe" stroke="#3b82f6" strokeWidth="2" />
+          <line x1="28" y1="65" x2="8" y2="95" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" />
+          <line x1="72" y1="65" x2="92" y2="95" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" />
+          <line x1="40" y1="110" x2="30" y2="160" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" />
+          <line x1="60" y1="110" x2="70" y2="160" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" />
+          <text x="50" y="185" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#1e40af">Mensch</text>
+        </g>
+        <rect x="160" y="40" width="130" height="40" rx="10" fill="#dcfce7" stroke="#16a34a" strokeWidth="2" />
+        <text x="225" y="65" textAnchor="middle" fontSize="14" fontWeight="bold" fill="#166534">Glucose</text>
+        <text x="225" y="110" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#3b82f6">+</text>
+        <rect x="160" y="120" width="130" height="40" rx="10" fill="#dbeafe" stroke="#3b82f6" strokeWidth="2" />
+        <text x="225" y="145" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#1e40af">Sauerstoff (O₂)</text>
+        <line x1="300" y1="100" x2="420" y2="100" stroke="#ea580c" strokeWidth="3" markerEnd="url(#arrowOrangeA)" />
+        <rect x="440" y="25" width="150" height="44" rx="10" fill="#fff7ed" stroke="#ea580c" strokeWidth="2" />
+        <text x="515" y="52" textAnchor="middle" fontSize="15" fontWeight="bold" fill="#ea580c">Energie</text>
+        <text x="515" y="95" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#ea580c">+</text>
+        <rect x="440" y="105" width="150" height="40" rx="10" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2" />
+        <text x="515" y="130" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0369a1">Wasser (H₂O)</text>
+        <text x="515" y="170" textAnchor="middle" fontSize="16" fontWeight="bold" fill="#4b5563">+</text>
+        <rect x="440" y="180" width="150" height="40" rx="10" fill="#f3f4f6" stroke="#6b7280" strokeWidth="2" />
+        <text x="515" y="205" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#4b5563">Kohlendioxid (CO₂)</text>
+        <text x="175" y="195" fontSize="11" fill="#6b7280" fontStyle="italic">Eingangsstoffe</text>
+        <text x="460" y="240" fontSize="11" fill="#6b7280" fontStyle="italic">Produkte</text>
       </svg>
     </div>
   );
@@ -89,29 +88,33 @@ function AtmungDiagram() {
 function ZuckerartenDiagram() {
   return (
     <div className="my-6">
-      <h4 className="text-lg font-semibold text-gray-800 mb-3">Zuckerarten – schematisch</h4>
-      <svg viewBox="0 0 700 160" className="w-full max-w-2xl mx-auto" aria-label="Zuckerarten Diagramm">
-        <rect x="0" y="0" width="700" height="160" fill="#fefce8" rx="12" />
-        <circle cx="80" cy="60" r="22" fill="#fbbf24" stroke="#f59e0b" strokeWidth="2" />
-        <text x="80" y="65" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#92400e">Glucose</text>
-        <text x="80" y="110" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#78350f">Einfachzucker</text>
-        <text x="80" y="128" textAnchor="middle" fontSize="10" fill="#92400e">(Monosaccharid)</text>
-        <circle cx="260" cy="60" r="22" fill="#fbbf24" stroke="#f59e0b" strokeWidth="2" />
-        <text x="260" y="65" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#92400e">Glu</text>
-        <line x1="282" y1="60" x2="298" y2="60" stroke="#f59e0b" strokeWidth="2" />
-        <circle cx="320" cy="60" r="22" fill="#fb923c" stroke="#ea580c" strokeWidth="2" />
-        <text x="320" y="65" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#9a3412">Fru</text>
-        <text x="290" y="110" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#78350f">Zweifachzucker</text>
-        <text x="290" y="128" textAnchor="middle" fontSize="10" fill="#92400e">(Disaccharid)</text>
-        {[0,1,2,3,4,5,6].map((i) => (
-          <g key={i}>
-            <circle cx={480 + i * 32} cy={60} r={14} fill={i % 2 === 0 ? "#fbbf24" : "#fb923c"} stroke={i % 2 === 0 ? "#f59e0b" : "#ea580c"} strokeWidth="2" />
-            {i < 6 && <line x1={494 + i * 32} y1={60} x2={498 + i * 32} y2={60} stroke="#d97706" strokeWidth="2" />}
-          </g>
-        ))}
-        <text x="480" y="18" textAnchor="start" fontSize="9" fill="#92400e">... viele Einheiten</text>
-        <text x="590" y="110" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#78350f">Mehrfachzucker</text>
-        <text x="590" y="128" textAnchor="middle" fontSize="10" fill="#92400e">(Polysaccharid)</text>
+      <h4 className="text-lg font-semibold text-gray-800 mb-3">Zuckerarten schematisch</h4>
+      <svg viewBox="0 0 720 180" className="w-full max-w-2xl mx-auto" aria-label="Zuckerarten Diagramm">
+        <rect x="0" y="0" width="720" height="180" fill="#fefce8" rx="12" />
+        <circle cx="70" cy="65" r="26" fill="#fbbf24" stroke="#d97706" strokeWidth="2.5" />
+        <text x="70" y="115" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#78350f">Einfachzucker</text>
+        <text x="70" y="133" textAnchor="middle" fontSize="10" fill="#92400e">(Monosaccharid)</text>
+        <line x1="135" y1="65" x2="175" y2="65" stroke="#d4d4d8" strokeWidth="1" strokeDasharray="6" />
+        <circle cx="220" cy="65" r="24" fill="#fbbf24" stroke="#d97706" strokeWidth="2.5" />
+        <line x1="244" y1="65" x2="276" y2="65" stroke="#d97706" strokeWidth="3" />
+        <circle cx="300" cy="65" r="24" fill="#fb923c" stroke="#c2410c" strokeWidth="2.5" />
+        <text x="260" y="115" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#78350f">Zweifachzucker</text>
+        <text x="260" y="133" textAnchor="middle" fontSize="10" fill="#92400e">(Disaccharid)</text>
+        <line x1="365" y1="65" x2="405" y2="65" stroke="#d4d4d8" strokeWidth="1" strokeDasharray="6" />
+        {[0,1,2,3,4,5,6,7].map((i) => {
+          const cx = 440 + i * 34;
+          const colors = ["#fbbf24","#fb923c","#fbbf24","#fb923c","#fbbf24","#fb923c","#fbbf24","#fb923c"];
+          const strokes = ["#d97706","#c2410c","#d97706","#c2410c","#d97706","#c2410c","#d97706","#c2410c"];
+          return (
+            <g key={i}>
+              <circle cx={cx} cy={65} r={15} fill={colors[i]} stroke={strokes[i]} strokeWidth="2.5" />
+              {i < 7 && <line x1={cx + 15} y1={65} x2={cx + 19} y2={65} stroke="#d97706" strokeWidth="3" />}
+            </g>
+          );
+        })}
+        <text x="558" y="115" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#78350f">Mehrfachzucker</text>
+        <text x="558" y="133" textAnchor="middle" fontSize="10" fill="#92400e">(Polysaccharid)</text>
+        <text x="670" y="55" fontSize="10" fill="#92400e">...</text>
       </svg>
     </div>
   );
