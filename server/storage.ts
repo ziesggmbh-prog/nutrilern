@@ -83,7 +83,7 @@ export class MemStorage implements IStorage {
       {
         title: "Fette",
         description: "Wir klären, welche Rolle Fette in deinem Körper spielen und was es mit ‚guten' und ‚schlechten' Fetten auf sich hat.",
-        videoUrl: "https://player.vimeo.com/video/1117810836",
+        videoUrl: "https://player.vimeo.com/video/1172530056",
         duration: 5,
         thumbnailUrl: "/assets/ziesggmbh_59072_people_in_pink_lab_coats_construct_an_oversiz_431d5cd8-1fd6-49bb-ab81-53f245fa746c_0_1757676310861.png",
         order: 3,
