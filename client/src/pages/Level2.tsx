@@ -18,7 +18,7 @@ import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 import { level2Data } from "@/lib/level2Data";
 import { level2QuizData } from "@/lib/level2QuizData";
 import { getLevel2Progress, saveLevel2Progress, QuestProgress } from "@/lib/progressStorage";
-import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
+import logoImage from "@assets/ziesggmbh_59072_ultra_minimalist_line_art_logo_layered_horizo__1773223503584.png";
 import bkkFirmusLogo from "@assets/Logo_BKK_firmus_high_quality.png";
 import ziesLogo from "@assets/zies_logo_transparent_1751546047870.png";
 
@@ -122,14 +122,11 @@ export default function Level2() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
-              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white">
+              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center">
                 <img 
                   src={logoImage} 
                   alt="Logo" 
-                  className="w-24 h-24 object-cover"
-                  style={{
-                    filter: 'invert(1) hue-rotate(180deg) saturate(1.8) brightness(1.2) contrast(1.5)'
-                  }}
+                  className="w-16 h-16 object-cover rounded-full"
                 />
               </div>
               <div>

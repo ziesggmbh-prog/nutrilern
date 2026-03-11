@@ -39,7 +39,7 @@ import { quizData } from "@/lib/quizData";
 import { queryClient } from "@/lib/queryClient";
 import { getVertiefendeFragenForLesson } from "@/lib/vertiefendeFragen";
 import VertiefendeFragenModal from "@/components/VertiefendeFragenModal";
-import logoImage from "@assets/ziesggmbh_59072_a_simple_logo_consisting_of_a_vegetable_and_a_856abd27-b8ca-4aa9-9037-bcb5845c1f60_3_1751544974839.png";
+import logoImage from "@assets/ziesggmbh_59072_ultra_minimalist_line_art_logo_layered_horizo__1773223503584.png";
 import bkkFirmusLogo from "@assets/bkk_firmus_logo.svg";
 import ziesLogo from "@assets/zies_logo_official.svg";
 
@@ -323,14 +323,11 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
-              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-white">
+              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center">
                 <img 
                   src={logoImage} 
                   alt="Logo" 
-                  className="w-24 h-24 object-cover"
-                  style={{
-                    filter: 'invert(1) hue-rotate(180deg) saturate(1.8) brightness(1.2) contrast(1.5)'
-                  }}
+                  className="w-16 h-16 object-cover rounded-full"
                 />
               </div>
               <div>
