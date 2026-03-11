@@ -121,7 +121,7 @@ export class MemStorage implements IStorage {
         description: "Die Umsetzung des Ernährungswissens im Alltag.",
         videoUrl: "",
         duration: 3,
-        thumbnailUrl: "/assets/4_1751549047993_optimized.jpg",
+        thumbnailUrl: "/assets/outro_thumbnail_1773234406911.png",
         order: 7,
         isActive: true
       }
