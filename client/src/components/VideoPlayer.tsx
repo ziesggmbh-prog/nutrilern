@@ -179,7 +179,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef1}
-                  src="https://player.vimeo.com/video/1100816490?badge=0&autopause=0&autoplay=1"
+                  src="https://player.vimeo.com/video/1172528318?badge=0&autopause=0&autoplay=1"
                   frameBorder="0"
                   allowFullScreen
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -194,7 +194,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef2}
-                  src="https://player.vimeo.com/video/1099335411?badge=0&autopause=0&autoplay=1"
+                  src="https://player.vimeo.com/video/1172528646?badge=0&autopause=0&autoplay=1"
                   frameBorder="0"
                   allowFullScreen
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
@@ -209,7 +209,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef3}
-                  src="https://player.vimeo.com/video/1117810836?badge=0&autopause=0&autoplay=1"
+                  src="https://player.vimeo.com/video/1172530056?badge=0&autopause=0&autoplay=1"
                   frameBorder="0"
                   allowFullScreen
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
