@@ -15,7 +15,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
   const menuItems = [
     { icon: Home, label: 'Start', href: '/' },
     { icon: BookOpen, label: 'Für Lehrer:innen', href: '/teachers' },
-    { icon: Info, label: 'Über das Programm', href: '#' }
+    { icon: Info, label: 'Über das Programm', href: '/about' }
   ];
 
   return (

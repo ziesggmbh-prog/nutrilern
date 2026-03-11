@@ -8,6 +8,7 @@ import LoginPage from "@/components/LoginPage";
 import Home from "@/pages/Home";
 import Level2 from "@/pages/Level2";
 import Teachers from "@/pages/Teachers";
+import About from "@/pages/About";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/level2" component={Level2} />
       <Route path="/teachers" component={Teachers} />
+      <Route path="/about" component={About} />
       <Route component={NotFound} />
     </Switch>
   );
