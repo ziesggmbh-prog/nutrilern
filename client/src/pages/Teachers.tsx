@@ -15,15 +15,11 @@ export default function Teachers() {
       day: 1,
       title: "Einführung und Kohlenhydrate",
       individual: [
-        "Einführung in die Unterrichtseinheit durch die Lehrerin/den Lehrer",
-        "Gemeinsames Anschauen des Intros (digitale Schultafel oder Beamer)",
-        "Kurzer Gedankenaustausch zum Gesehenen",
-        "Individuelles Anschauen des Films 'Kohlenhydrate'",
-        "Erneutes Anschauen und Notieren von Fragen",
-        "Erarbeiten zentraler Zusammenhänge in Gruppen",
-        "Vorstellung im Klassenverband",
-        "Klärung offener Fragen",
-        "Quiz"
+        "Einführung in die Unterrichtseinheit durch die Lehrkraft",
+        "Erstes Anschauen des Films 'Kohlenhydrate' (digitale Schultafel/Smartboard oder Beamer)",
+        "Zweites Anschauen des Films und Notieren von Fragen",
+        "Bearbeitung der vertiefenden Fragen in Gruppen",
+        "Vorstellung der Ergebnisse im Klassenverband"
       ],
       hours: "3 Schulstunden",
       groupHours: "3 Schulstunden"
@@ -55,7 +51,7 @@ export default function Teachers() {
       individual: [
         "Bearbeitung des Films 'Unterwelt' nach dem Schema von Tag 1",
         "Vorstellung der Gruppenarbeiten",
-        "Gemeinsames Anschauen des Schlussfilms (digitale Schultafel oder Beamer)",
+        "Gemeinsames Anschauen des Outros (digitale Schultafel/Smartboard oder Beamer)",
         "Abschlussdiskussion"
       ],
       hours: "2 Schulstunden",
@@ -175,31 +171,32 @@ export default function Teachers() {
             
             <div className="prose max-w-none text-gray-700 leading-relaxed">
               <p className="text-lg mb-4">
-                Im Lernmodus erlernen die Schüler:innen das grundlegende Wissen zum Thema gesunde Ernährung. 
-                Sie sehen sich die Filme eigenständig auf ihrem Endgerät an und beantworten das 'Quiz' zum jeweiligen Film.
+                Im Lernmodus erarbeiten sich die Schüler:innen das grundlegende Wissen zum Thema gesunde Ernährung. 
+                Sie sehen die Filme an, beantworten Fragen und absolvieren jeweils ein Quiz.
+              </p>
+              <p className="text-base mb-6">
+                Die einzelnen ‚Lektionen', bestehend aus Lehrfilm, vertiefenden Fragen und Quiz, bauen aufeinander auf. 
+                Das Absolvieren des Quiz am Ende führt zur Freischaltung der nächsten Lektion.
               </p>
 
-              <div className="bg-orange-50 border-l-4 border-orange-400 p-4 mb-6">
-                <p className="font-semibold text-orange-800 mb-2">Wichtiger Hinweis:</p>
-                <p className="text-orange-700">
-                  Es ist unerlässlich, die Schüler:innen den Film wiederholt anschauen zu lassen. 
-                  Beim zweiten Anschauen notieren sie Fragen zu unverstandenen Begriffen und/oder Zusammenhängen.
-                </p>
-              </div>
-
               <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Ablauf einer Unterrichtseinheit:</h3>
-              <ol className="list-decimal list-inside space-y-2 ml-4">
-                <li>Anschließend werden in Gruppen die zentralen Zusammenhänge des Films diskutiert, zusammengefasst und im Klassenverband einander vorgestellt. Jede Gruppe konzentriert sich auf einen bestimmten Aspekt.</li>
-                <li>Danach kontrollieren die Schüler:innen, ob von den notierten Fragen noch welche offen geblieben sind. Diese Fragen werden im Klassenverband geklärt, ggf. anhand des Films.</li>
+              <ol className="list-decimal pl-6 space-y-3 mb-6">
+                <li>Die Schüler:innen schauen den jeweiligen Film einmal im Klassenverband auf der digitalen Tafel/dem Smartboard (oder Beamer) und einmal auf ihrem Endgerät mit Kopfhörern an. Beim zweiten Anschauen notieren sie Fragen zu unverstandenen Begriffen und/oder Zusammenhängen.</li>
+                <li>Danach werden in kleinen Lerngruppen vertiefende Fragen zu zentralen Zusammenhängen des Films bearbeitet und die Ergebnisse im Klassenverband vorgestellt. Jede Gruppe bearbeitet einen von vier Fragenkomplexen. Zur Beantwortung darf auf Internetrecherche zurückgegriffen werden (falls verfügbar).</li>
+                <li>Die Fragen sind unter dem jeweiligen Film hinterlegt (‚Vertiefende Fragen'). Zu Intro und Outro gibt es keine vertiefenden Fragen.</li>
+                <li>Nun kontrollieren die Schüler:innen, ob von den beim zweiten Anschauen des Films notierten Fragen noch welche offen geblieben sind. Diese werden im Klassenverband geklärt.</li>
                 <li>Abschließend beantworten die Schüler:innen das Quiz auf ihren Geräten. Dabei dürfen sie einander helfen, bis alle das Quiz geschafft haben.</li>
-                <li>Die korrekte Beantwortung aller Fragen führt zur Freischaltung des nächsten Films und Quiz.</li>
+                <li>Das ‚Quiz' ist unter dem jeweiligen Film hinterlegt. Zu Intro und Outro gibt es kein Quiz.</li>
+                <li>Die korrekte Beantwortung führt zur Freischaltung der nächsten Lektion.</li>
               </ol>
 
-              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mt-6">
-                <p className="font-semibold text-blue-800">
-                  Auf das Intro und auf den Schlussfilm folgt kein Quiz.
-                </p>
-              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Wichtige Hinweise:</h3>
+              <ul className="list-disc pl-6 space-y-3">
+                <li>Es ist unerlässlich, die Schüler:innen den Film wiederholt anschauen zu lassen. Wenn die Schüler:innen nicht mit einem eigenen Endgerät und Kopfhörern ausgestattet sind, kann das zweite Anschauen auch im Klassenverband erfolgen.</li>
+                <li>Das Hintergrundwissen einer Lektion, auch zur Beantwortung der vertiefenden Fragen, wird durch die Informationen im Lehrer:innenmanual abgedeckt. Dort finden sich Zusammenfassungen der Lehrfilme, die vertiefenden Fragen und weiterführende Informationen.</li>
+                <li>Bei engem Zeitrahmen können die vertiefenden Fragen übersprungen werden (zur Freischaltung der nächsten Lektion genügt die Beantwortung des Quiz). Die Bearbeitung wird jedoch ausdrücklich empfohlen.</li>
+                <li>Das Quiz kann im Klassenverband absolviert werden, wenn eigene Endgeräte der Schüler:innen fehlen.</li>
+              </ul>
             </div>
           </div>
 
@@ -214,16 +211,16 @@ export default function Teachers() {
             
             <div className="prose max-w-none text-gray-700 leading-relaxed">
               <p className="text-lg mb-4">
-                Der Gruppenmodus beinhaltet Aufgaben ('Quests'), die durch die Schüler:innen in Gruppen erarbeitet werden. 
-                (Diese Gruppen sind unabhängig von den oben erwähnten Lerngruppen.) Hier geht es um die Vertiefung des 
-                Erlernten sowie die praktische Umsetzung des Wissens im Alltag.
+                Im Gruppenmodus bearbeiten die Schüler:innen eine mehrtägige Aufgabe (‚Quest') nach Art einer Projektarbeit 
+                in kleinen Projektgruppen. (Diese sind unabhängig von den oben erwähnten Lerngruppen des Lernmodus.) 
+                Hier geht es um die Vertiefung des Erlernten sowie die praktische Umsetzung im Alltag.
               </p>
 
               <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
                 <p className="font-semibold text-red-800 mb-2">Wichtig:</p>
                 <p className="text-red-700">
                   Wenn die Schüler:innen zur Gruppenarbeit übergehen, müssen sie oben rechts neben dem 
-                  'Hamburger-Menü' vom Lernmodus in den Gruppenmodus wechseln.
+                  Hamburger-Menü vom ‚Lernmodus' in den ‚Gruppenmodus' wechseln.
                 </p>
               </div>
 
@@ -264,6 +261,13 @@ export default function Teachers() {
                 Die Unterrichtseinheit umfasst insgesamt <span className="text-indigo-600">30 Schulstunden</span>.
               </p>
             </div>
+
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Die Unterrichtseinheit lässt verschiedene Umsetzungspläne zu. Sie kann am Stück im Rahmen einer Projektwoche 
+              oder über das Schuljahr verteilt implementiert werden. Wichtig ist nur, dass der Fortschritt im Gruppenmodus 
+              dem Fortschritt im Lernmodus nachfolgt und nicht umgekehrt (Tag 1 der Gruppenarbeit erst nach Intro und 
+              Kohlenhydrate-Lektion, Tag 2 nach Fette-Lektion usw.).
+            </p>
 
             {/* Daily Breakdown */}
             <div className="space-y-6">
