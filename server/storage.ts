@@ -74,7 +74,7 @@ export class MemStorage implements IStorage {
       {
         title: "Kohlenhydrate",
         description: "Erfahre, warum Kohlenhydrate ein wichtiger Bestandteil deiner Ernährung sind und wie sie dir am meisten nützen.",
-        videoUrl: "https://player.vimeo.com/video/1099335411",
+        videoUrl: "https://player.vimeo.com/video/1172528646",
         duration: 5,
         thumbnailUrl: "/assets/6_1751542243606_optimized.jpg",
         order: 2,
