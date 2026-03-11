@@ -18,7 +18,7 @@ import { useFullscreenSync } from "@/hooks/useFullscreenSync";
 import { level2Data } from "@/lib/level2Data";
 import { level2QuizData } from "@/lib/level2QuizData";
 import { getLevel2Progress, saveLevel2Progress, QuestProgress } from "@/lib/progressStorage";
-import logoImage from "@assets/ziesggmbh_59072_ultra_minimalist_line_art_logo_layered_horizo__1773223503584.png";
+import logoImage from "@assets/logo_opt.png";
 import bkkFirmusLogo from "@assets/Logo_BKK_firmus_high_quality.png";
 import ziesLogo from "@assets/zies_logo_transparent_1751546047870.png";
 

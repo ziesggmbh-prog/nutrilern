@@ -33,13 +33,12 @@ import LevelDropdown from "@/components/LevelDropdown";
 import FullscreenToggle from "@/components/FullscreenToggle";
 import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
-import { useImagePreloader } from "@/hooks/useImagePreloader";
 import type { Lesson, UserProgress } from "@shared/schema";
 import { quizData } from "@/lib/quizData";
 import { queryClient } from "@/lib/queryClient";
 import { getVertiefendeFragenForLesson } from "@/lib/vertiefendeFragen";
 import VertiefendeFragenModal from "@/components/VertiefendeFragenModal";
-import logoImage from "@assets/ziesggmbh_59072_ultra_minimalist_line_art_logo_layered_horizo__1773223503584.png";
+import logoImage from "@assets/logo_opt.png";
 import bkkFirmusLogo from "@assets/bkk_firmus_logo.svg";
 import ziesLogo from "@assets/zies_logo_official.svg";
 
@@ -147,10 +146,6 @@ export default function Home() {
   const { data: progress = [], refetch: refetchProgress } = useQuery<UserProgress[]>({
     queryKey: ["/api/progress"],
   });
-
-  // Preload thumbnail images for faster loading
-  const thumbnailUrls = lessons.map(lesson => lesson.thumbnailUrl).filter(Boolean);
-  const { isLoaded, loadedCount } = useImagePreloader(thumbnailUrls);
 
   // Show loading state while lessons are being fetched
   if (lessonsLoading) {
