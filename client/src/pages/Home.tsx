@@ -318,11 +318,11 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 relative z-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
-              <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center">
+              <div className="w-20 h-20 rounded-full overflow-hidden flex items-center justify-center">
                 <img 
                   src={logoImage} 
                   alt="Logo" 
-                  className="w-16 h-16 object-cover rounded-full"
+                  className="w-20 h-20 object-cover rounded-full"
                 />
               </div>
               <div>
