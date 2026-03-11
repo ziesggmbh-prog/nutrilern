@@ -118,7 +118,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Outro",
-        description: "Zusammenfassung und Abschluss des Lernprogramms.",
+        description: "Die Umsetzung des Ernährungswissens im Alltag.",
         videoUrl: "",
         duration: 3,
         thumbnailUrl: "/assets/4_1751549047993_optimized.jpg",
