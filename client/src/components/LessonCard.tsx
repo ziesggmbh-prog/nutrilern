@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { Play, Lock, CheckCircle, Circle } from "lucide-react";
 import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
-import { useState, useRef } from "react";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useState } from "react";
 
 interface LessonCardProps {
   lesson: Lesson;
@@ -28,12 +27,9 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
   const colorClass = colorVariants[(lesson.order - 1) % colorVariants.length];
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver(cardRef);
   
   return (
     <motion.div
-      ref={cardRef}
       className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 group ${
         isAvailable ? "hover:shadow-xl" : "opacity-60"
       }`}
@@ -72,7 +68,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
           )}
           
           {/* Image */}
-          {!imageError && isVisible && (
+          {!imageError && (
             <img
               src={lesson.thumbnailUrl}
               alt={lesson.title}
@@ -81,7 +77,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
               }`}
               onLoad={() => setImageLoaded(true)}
               onError={() => setImageError(true)}
-              loading={lesson.order <= 6 ? "eager" : "lazy"}
+              loading="eager"
             />
           )}
           
