@@ -112,7 +112,7 @@ export class MemStorage implements IStorage {
         description: "Welche Stoffe wirklich ungesund sind und wie du ihnen entkommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 5,
-        thumbnailUrl: "/assets/8_1751542243607_optimized.jpg",
+        thumbnailUrl: "/assets/unterwelt_thumbnail_1773234316303.png",
         order: 6,
         isActive: true
       },
