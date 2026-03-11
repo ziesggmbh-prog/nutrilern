@@ -67,7 +67,7 @@ export class MemStorage implements IStorage {
         description: "Eine kurze Einführung in die Bild- und Gedankenwelt der Videoreihe.",
         videoUrl: "https://player.vimeo.com/video/1172528318",
         duration: 2,
-        thumbnailUrl: "/assets/0_Intro_1773233463712.png",
+        thumbnailUrl: "/assets/0_Intro_1773233463712_opt.jpg",
         order: 1,
         isActive: true
       },
@@ -76,7 +76,7 @@ export class MemStorage implements IStorage {
         description: "Erfahre, warum Kohlenhydrate ein wichtiger Bestandteil deiner Ernährung sind und wie sie dir am meisten nützen.",
         videoUrl: "https://player.vimeo.com/video/1172528646",
         duration: 5,
-        thumbnailUrl: "/assets/kohlenhydrate_thumbnail_1773233685393.png",
+        thumbnailUrl: "/assets/kohlenhydrate_thumbnail_1773233685393_opt.jpg",
         order: 2,
         isActive: true
       },
@@ -85,7 +85,7 @@ export class MemStorage implements IStorage {
         description: "Wir klären, welche Rolle Fette in deinem Körper spielen und was es mit ‚guten' und ‚schlechten' Fetten auf sich hat.",
         videoUrl: "https://player.vimeo.com/video/1172530056",
         duration: 5,
-        thumbnailUrl: "/assets/fette_thumbnail_1773234114265.png",
+        thumbnailUrl: "/assets/fette_thumbnail_1773234114265_opt.jpg",
         order: 3,
         isActive: true
       },
@@ -103,7 +103,7 @@ export class MemStorage implements IStorage {
         description: "Ein Einblick in die faszinierende Welt der Mikronährstoffe und ihre Bedeutung für die Ernährung.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 5,
-        thumbnailUrl: "/assets/mikronaehrstoffe_thumbnail_1773234148860.png",
+        thumbnailUrl: "/assets/mikronaehrstoffe_thumbnail_1773234148860_opt.jpg",
         order: 5,
         isActive: true
       },
@@ -112,7 +112,7 @@ export class MemStorage implements IStorage {
         description: "Welche Stoffe wirklich ungesund sind und wie du ihnen entkommst.",
         videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         duration: 5,
-        thumbnailUrl: "/assets/unterwelt_thumbnail_1773234316303.png",
+        thumbnailUrl: "/assets/unterwelt_thumbnail_1773234316303_opt.jpg",
         order: 6,
         isActive: true
       },
@@ -121,7 +121,7 @@ export class MemStorage implements IStorage {
         description: "Die Umsetzung des Ernährungswissens im Alltag.",
         videoUrl: "",
         duration: 3,
-        thumbnailUrl: "/assets/outro_thumbnail_1773234406911.png",
+        thumbnailUrl: "/assets/outro_thumbnail_1773234406911_opt.jpg",
         order: 7,
         isActive: true
       }
