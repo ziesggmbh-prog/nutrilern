@@ -66,7 +66,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
       },
       {
         gruppe: 3,
-        fragen: "Wie lassen sich die Nachteile von pflanzlichem Protein ausgleichen, um seine Vorteile nutzen zu können? Welche Lebensmittel werden dazu benötigt?"
+        fragen: "Wie lassen sich die Nachteile von pflanzlichem Protein ausgleichen, um seine Vorteile nutzen zu können? – Welche Lebensmittel werden dafür benötigt?"
       },
       {
         gruppe: 4,

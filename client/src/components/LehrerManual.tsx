@@ -590,7 +590,7 @@ export default function LehrerManual() {
             </div>
             <div className="bg-orange-50 border-l-4 border-orange-400 p-4">
               <p className="font-semibold text-orange-800 mb-1">Gruppe 3:</p>
-              <p className="text-orange-700">Wie lassen sich die Nachteile von pflanzlichem Protein ausgleichen, um seine Vorteile nutzen zu können? Welche Lebensmittel werden dazu benötigt?</p>
+              <p className="text-orange-700">Wie lassen sich die Nachteile von pflanzlichem Protein ausgleichen, um seine Vorteile nutzen zu können? – Welche Lebensmittel werden dafür benötigt?</p>
             </div>
             <div className="bg-purple-50 border-l-4 border-purple-400 p-4">
               <p className="font-semibold text-purple-800 mb-1">Gruppe 4:</p>
