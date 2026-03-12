@@ -55,7 +55,8 @@ export default function Teachers() {
       customItems: [
         "Bearbeitung des Films \u201eUnterwelt\u201c nach dem Schema von Tag 1 (2 Schulstunden)",
         "Vorstellung der Gruppenarbeiten (3 Schulstunden)",
-        "Gemeinsames Anschauen des Outros (digitale Schultafel/Smartboard oder Beamer) und Abschlussdiskussion (1 Schulstunde)"
+        "Gemeinsames Anschauen des Outros (digitale Schultafel/Smartboard oder Beamer)",
+        "Abschlussdiskussion (1 Schulstunde)"
       ],
       individual: [],
       hours: "",
