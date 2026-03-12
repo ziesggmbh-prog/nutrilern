@@ -186,7 +186,7 @@ export default function Teachers() {
                 <li>Die Fragen sind unter dem jeweiligen Film hinterlegt (‚Vertiefende Fragen'). Zu Intro und Outro gibt es <span className="underline">keine</span> vertiefenden Fragen.</li>
                 <li>Nun kontrollieren die Schüler:innen, ob von den beim zweiten Anschauen des Films notierten Fragen noch welche offen geblieben sind. Diese werden im Klassenverband geklärt.</li>
                 <li>Abschließend beantworten die Schüler:innen das Quiz auf ihren Geräten. Dabei dürfen sie einander helfen, bis alle das Quiz geschafft haben.</li>
-                <li>Das ‚Quiz' ist unter dem jeweiligen Film hinterlegt. Zu Intro und Outro gibt es kein Quiz.</li>
+                <li>Das ‚Quiz' ist unter dem jeweiligen Film hinterlegt. Zu Intro und Outro gibt es <span className="underline">kein</span> Quiz.</li>
                 <li>Die korrekte Beantwortung führt zur Freischaltung der nächsten Lektion.</li>
               </ol>
 
