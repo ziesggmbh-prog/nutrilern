@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, Users, Clock, BookOpen, Target, ListOrdered, FileText } from "lucide-react";
+import { ArrowLeft, Users, Clock, BookOpen, Target, ListOrdered, FileText, GraduationCap } from "lucide-react";
 import FullscreenToggle from "@/components/FullscreenToggle";
 import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
@@ -164,7 +164,7 @@ export default function Teachers() {
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                <Users className="text-blue-600" size={20} />
+                <GraduationCap className="text-blue-600" size={20} />
               </div>
               <h2 className="text-2xl font-bold text-gray-800">Lernmodus</h2>
             </div>
