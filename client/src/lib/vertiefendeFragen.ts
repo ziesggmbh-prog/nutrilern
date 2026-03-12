@@ -14,7 +14,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
     gruppen: [
       {
         gruppe: 1,
-        fragen: "Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für das Gehirn?"
+        fragen: "Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für unser Gehirn?"
       },
       {
         gruppe: 2,

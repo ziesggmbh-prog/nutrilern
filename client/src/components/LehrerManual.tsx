@@ -377,7 +377,7 @@ export default function LehrerManual() {
           {fragenOpen && <div className="space-y-3 ml-4">
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
               <p className="font-semibold text-blue-800 mb-1">Gruppe 1:</p>
-              <p className="text-blue-700">Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für das Gehirn?</p>
+              <p className="text-blue-700">Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für unser Gehirn?</p>
             </div>
             <div className="bg-green-50 border-l-4 border-green-400 p-4">
               <p className="font-semibold text-green-800 mb-1">Gruppe 2:</p>
