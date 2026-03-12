@@ -110,7 +110,7 @@ export default function Teachers() {
                   <ListOrdered className="text-purple-600" size={32} />
                 </div>
                 <h2 className="text-xl font-bold text-gray-800 mb-3">Ablauf</h2>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Hier finden Sie Informationen zur Durchführung der Unterrichtseinheit.
                 </p>
               </div>
@@ -127,7 +127,7 @@ export default function Teachers() {
                   <FileText className="text-green-600" size={32} />
                 </div>
                 <h2 className="text-xl font-bold text-gray-800 mb-3">Lehrer:innen-Manual</h2>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Hier erhalten Sie Zusammenfassungen zu den Inhalten der Lehrfilme und vertiefende Informationen.
                 </p>
               </div>
@@ -292,7 +292,7 @@ export default function Teachers() {
                         <BookOpen size={16} />
                         Einzelarbeit ({dayInfo.hours})
                       </h4>
-                      <ul className="list-disc list-inside space-y-1 text-lg text-gray-600">
+                      <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
                         {dayInfo.individual.map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
@@ -305,7 +305,7 @@ export default function Teachers() {
                         Gruppenarbeit ({dayInfo.groupHours})
                       </h4>
                       {dayInfo.finalHour && (
-                        <p className="text-lg text-gray-600 mt-2">
+                        <p className="text-sm text-gray-600 mt-2">
                           <strong>Abschlussdiskussion:</strong> {dayInfo.finalHour}
                         </p>
                       )}
