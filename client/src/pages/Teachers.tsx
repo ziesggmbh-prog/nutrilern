@@ -174,7 +174,7 @@ export default function Teachers() {
                 Im Lernmodus erarbeiten sich die Schüler:innen das grundlegende Wissen zum Thema gesunde Ernährung. 
                 Sie sehen die Filme an, beantworten Fragen und absolvieren jeweils ein Quiz.
               </p>
-              <p className="text-base mb-6">
+              <p className="text-lg mb-6">
                 Die einzelnen ‚Lektionen', bestehend aus Lehrfilm, vertiefenden Fragen und Quiz, bauen aufeinander auf. 
                 Das Absolvieren des Quiz am Ende führt zur Freischaltung der nächsten Lektion.
               </p>
