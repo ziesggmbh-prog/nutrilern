@@ -182,11 +182,13 @@ export default function Teachers() {
               <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Ablauf einer Unterrichtseinheit:</h3>
               <ol className="list-decimal pl-6 space-y-3 mb-6">
                 <li>Die Schüler:innen schauen den jeweiligen Film einmal im Klassenverband auf der digitalen Tafel/dem Smartboard (oder Beamer) und einmal auf ihrem Endgerät mit Kopfhörern an. Beim zweiten Anschauen notieren sie Fragen zu unverstandenen Begriffen und/oder Zusammenhängen.</li>
-                <li>Danach werden in kleinen Lerngruppen vertiefende Fragen zu zentralen Zusammenhängen des Films bearbeitet und die Ergebnisse im Klassenverband vorgestellt. Jede Gruppe bearbeitet einen von vier Fragenkomplexen. Zur Beantwortung darf auf Internetrecherche zurückgegriffen werden (falls verfügbar).</li>
-                <li>Die Fragen sind unter dem jeweiligen Film hinterlegt (‚Vertiefende Fragen'). Zu Intro und Outro gibt es <span className="underline">keine</span> vertiefenden Fragen.</li>
+                <li>Danach werden in kleinen Lerngruppen vertiefende Fragen zu zentralen Zusammenhängen des Films bearbeitet und die Ergebnisse im Klassenverband vorgestellt. Jede Gruppe bearbeitet einen von vier Fragenkomplexen. Zur Beantwortung darf auf Internetrecherche zurückgegriffen werden (falls verfügbar).
+                  <p className="mt-1">Die Fragen sind unter dem jeweiligen Film hinterlegt (‚Vertiefende Fragen'). Zu Intro und Outro gibt es <span className="underline">keine</span> vertiefenden Fragen.</p>
+                </li>
                 <li>Nun kontrollieren die Schüler:innen, ob von den beim zweiten Anschauen des Films notierten Fragen noch welche offen geblieben sind. Diese werden im Klassenverband geklärt.</li>
-                <li>Abschließend beantworten die Schüler:innen das Quiz auf ihren Geräten. Dabei dürfen sie einander helfen, bis alle das Quiz geschafft haben.</li>
-                <li>Das ‚Quiz' ist unter dem jeweiligen Film hinterlegt. Zu Intro und Outro gibt es <span className="underline">kein</span> Quiz.</li>
+                <li>Abschließend beantworten die Schüler:innen das Quiz auf ihren Geräten. Dabei dürfen sie einander helfen, bis alle das Quiz geschafft haben.
+                  <p className="mt-1">Das ‚Quiz' ist unter dem jeweiligen Film hinterlegt. Zu Intro und Outro gibt es <span className="underline">kein</span> Quiz.</p>
+                </li>
                 <li>Die korrekte Beantwortung führt zur Freischaltung der nächsten Lektion.</li>
               </ol>
 
