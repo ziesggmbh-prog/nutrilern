@@ -20,9 +20,8 @@ interface VideoPlayerProps {
 export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayerProps) {
   console.log('VideoPlayer loaded for lesson:', lesson.title);
   
-  // Check if this lesson has a quiz or should show dual buttons (lessons 2 and 3)
+  // Check if this lesson has a quiz
   const hasQuiz = quizData.some(quiz => quiz.lessonId === lesson.id);
-  const showDualButtons = lesson.id === 2 || lesson.id === 3 || lesson.id === 4;
   
   // State for replay functionality
   const [videoEnded, setVideoEnded] = useState(false);
@@ -274,24 +273,13 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         </div>
         
         <div className="text-center">
-          <div className="flex justify-between items-center">
-            {showDualButtons && (
-              <button
-                onClick={onClose}
-                className="px-8 py-3 text-lg bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
-              >
-                Schließen
-              </button>
-            )}
-            
-            <button
-              onClick={onComplete}
-              className={`px-8 py-3 text-lg bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 ${!showDualButtons ? 'mx-auto' : ''}`}
-            >
-              <CheckCircle size={24} />
-              {showDualButtons ? "Quiz starten" : (lesson.id === 1 ? "Intro abschließen" : "Video abschließen")}
-            </button>
-          </div>
+          <button
+            onClick={onComplete}
+            className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 mx-auto"
+          >
+            <CheckCircle size={24} />
+            {lesson.id === 1 ? "Intro abschließen" : "Film abschließen"}
+          </button>
         </div>
       </div>
     </div>
