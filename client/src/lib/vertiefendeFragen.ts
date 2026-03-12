@@ -106,7 +106,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
       },
       {
         gruppe: 2,
-        fragen: "Worum handelt es sich bei Transfetten chemisch gesehen? Wie entstehen sie, in der Natur und in der Lebensmittelindustrie? Worin befinden sich Transfette und wie erkennt man entsprechende Produkte im Supermarkt?"
+        fragen: "Worum handelt es sich bei Transfetten chemisch gesehen? Wie entstehen sie – in der Natur und in der Lebensmittelindustrie? Worin befinden sich Transfette und wie erkennt man entsprechende Produkte im Supermarkt?"
       },
       {
         gruppe: 3,

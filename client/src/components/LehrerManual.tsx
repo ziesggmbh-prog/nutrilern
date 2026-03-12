@@ -794,7 +794,7 @@ export default function LehrerManual() {
             </div>
             <div className="bg-green-50 border-l-4 border-green-400 p-4">
               <p className="font-semibold text-green-800 mb-1">Gruppe 2:</p>
-              <p className="text-green-700">Worum handelt es sich bei Transfetten chemisch gesehen? Wie entstehen sie, in der Natur und in der Lebensmittelindustrie? Worin befinden sich Transfette und wie erkennt man entsprechende Produkte im Supermarkt?</p>
+              <p className="text-green-700">Worum handelt es sich bei Transfetten chemisch gesehen? Wie entstehen sie – in der Natur und in der Lebensmittelindustrie? Worin befinden sich Transfette und wie erkennt man entsprechende Produkte im Supermarkt?</p>
             </div>
             <div className="bg-orange-50 border-l-4 border-orange-400 p-4">
               <p className="font-semibold text-orange-800 mb-1">Gruppe 3:</p>
