@@ -292,7 +292,7 @@ export default function Teachers() {
                         <BookOpen size={16} />
                         Einzelarbeit ({dayInfo.hours})
                       </h4>
-                      <ul className="list-disc list-inside space-y-1 text-sm text-gray-600">
+                      <ul className="list-disc list-outside space-y-1 text-sm text-gray-600 pl-4">
                         {dayInfo.individual.map((item: string, index: number) => (
                           <li key={index}>{item}</li>
                         ))}
