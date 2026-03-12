@@ -182,7 +182,7 @@ export default function Teachers() {
               <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Ablauf einer Unterrichtseinheit:</h3>
               <ol className="list-decimal pl-6 space-y-3 mb-6">
                 <li>Die Schüler:innen schauen den jeweiligen Film einmal im Klassenverband auf der digitalen Tafel/dem Smartboard (oder Beamer) und einmal auf ihrem Endgerät mit Kopfhörern an. Beim zweiten Anschauen notieren sie Fragen zu unverstandenen Begriffen und/oder Zusammenhängen.</li>
-                <li>Danach werden in kleinen Lerngruppen vertiefende Fragen zu zentralen Zusammenhängen des Films bearbeitet und die Ergebnisse im Klassenverband vorgestellt. Jede Gruppe bearbeitet einen von vier Fragenkomplexen. Zur Beantwortung darf auf Internetrecherche zurückgegriffen werden (falls verfügbar).
+                <li>Danach werden in kleinen Lerngruppen vertiefende Fragen zu zentralen Zusammenhängen des Films bearbeitet und die Ergebnisse im Klassenverband vorgestellt. Jede Gruppe bearbeitet einen von vier Fragenkomplexen. Zur Beantwortung darf auf Internetrecherche zurückgegriffen werden.
                   <p className="mt-1">Die Fragen sind unter dem jeweiligen Film hinterlegt (‚Vertiefende Fragen'). Zu Intro und Outro gibt es <span className="underline">keine</span> vertiefenden Fragen.</p>
                 </li>
                 <li>Nun kontrollieren die Schüler:innen, ob von den beim zweiten Anschauen des Films notierten Fragen noch welche offen geblieben sind. Diese werden im Klassenverband geklärt.</li>
