@@ -286,7 +286,7 @@ export default function Teachers() {
                   className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm"
                 >
                   <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                    <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap">
                       Tag {dayInfo.day}
                     </span>
                     {dayInfo.title}
