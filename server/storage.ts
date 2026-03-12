@@ -179,10 +179,10 @@ export class MemStorage implements IStorage {
             options: [
               "Weil er zu teuer ist",
               "Weil er zu lange braucht, um Energie zu liefern",
-              "Weil er den Blutzuckerspiegel langfristig stabilisiert",
-              "Weil er nur kurzzeitig Energie liefert und danach müde macht"
+              "Weil er nur kurzzeitig Energie liefert",
+              "Weil er den Blutzuckerspiegel langfristig stabilisiert"
             ],
-            correctAnswer: 3,
+            correctAnswer: 2,
             explanation: "Traubenzucker führt zu einem schnellen Anstieg des Blutzuckers, gefolgt von einem starken Abfall, was Müdigkeit und Konzentrationsprobleme verursacht."
           }
         ]
