@@ -303,7 +303,7 @@ export default function Teachers() {
                       <div>
                         <h4 className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
                           <Presentation size={16} />
-                          Klassenarbeit ({dayInfo.hours})
+                          Lernarbeit ({dayInfo.hours})
                         </h4>
                         <ul className="list-disc list-outside space-y-1 text-sm text-gray-600 pl-4">
                           {dayInfo.individual.map((item: string, index: number) => (
