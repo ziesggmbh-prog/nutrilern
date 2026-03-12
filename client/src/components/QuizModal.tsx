@@ -174,7 +174,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
               <HelpCircle className="text-white" size={32} />
             </div>
             <h2 className="text-2xl font-bold mb-2">Quiz: {lesson.title}</h2>
-            <p className="text-gray-400">Teste dein Wissen über {lesson.title}</p>
+            <p className="text-gray-400">Teste dein Wissen über {lesson.title === "Unterwelt" ? "ungesunde Stoffe" : lesson.title}</p>
           </div>
           
           <div className="mb-8">
