@@ -114,7 +114,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
       },
       {
         gruppe: 4,
-        fragen: "Diskutiert: Ist es möglich, auf die Produkte aus der \u2018Unterwelt\u2019 der Ernährung ganz zu verzichten? Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker reguliert werden?"
+        fragen: "Diskutiert: – Ist es möglich, auf die Produkte aus der \u2018Unterwelt\u2019 der Ernährung ganz zu verzichten? – Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker reguliert werden?"
       }
     ]
   }

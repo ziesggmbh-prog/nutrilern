@@ -802,7 +802,7 @@ export default function LehrerManual() {
             </div>
             <div className="bg-purple-50 border-l-4 border-purple-400 p-4">
               <p className="font-semibold text-purple-800 mb-1">Gruppe 4:</p>
-              <p className="text-purple-700">Diskutiert: Ist es möglich, auf die Produkte aus der ‚Unterwelt' der Ernährung ganz zu verzichten? Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker reguliert werden?</p>
+              <p className="text-purple-700">Diskutiert: – Ist es möglich, auf die Produkte aus der ‚Unterwelt' der Ernährung ganz zu verzichten? – Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker reguliert werden?</p>
             </div>
           </div>
         </div>
