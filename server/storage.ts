@@ -206,8 +206,8 @@ export class MemStorage implements IStorage {
             id: "f4",
             question: "Worin kommen vor allem 'schlechte' Fette (gesättigte Fettsäuren) vor?",
             options: [
-              "In Nüssen und Samen",
               "In pflanzlichen Ölen wie Olivenöl",
+              "In Nüssen und Samen",
               "In Milchprodukten, Fleisch und Palmöl",
               "In fettem Seefisch"
             ],
@@ -231,11 +231,11 @@ export class MemStorage implements IStorage {
             question: "Welcher Anteil der täglichen Ernährung sollte maximal aus Fetten bestehen?",
             options: [
               "50 %",
-              "10 %",
               "Ein Drittel",
+              "10 %",
               "Zwei Drittel"
             ],
-            correctAnswer: 2,
+            correctAnswer: 1,
             explanation: "Ein Drittel der täglichen Energiezufuhr sollte maximal aus Fetten bestehen, um eine ausgewogene Ernährung zu gewährleisten."
           }
         ]
