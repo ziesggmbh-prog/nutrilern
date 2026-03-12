@@ -19,7 +19,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [quizResults, setQuizResults] = useState<any>(null);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const [selectedPerQuestion, setSelectedPerQuestion] = useState<(number | null)[]>([]);
   const { toast } = useToast();
 
   const { data: quiz, isLoading } = useQuery<Quiz>({
@@ -61,11 +61,16 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
 
   const questions = quiz.questions as QuizQuestion[];
 
+  const selectedAnswer = selectedPerQuestion[currentQuestion] ?? null;
+
   const handleAnswerSelect = (answerIndex: number) => {
     const question = questions[currentQuestion];
     const isCorrect = answerIndex === question.correctAnswer;
-    
-    setSelectedAnswer(answerIndex);
+
+    const newSelected = [...selectedPerQuestion];
+    newSelected[currentQuestion] = answerIndex;
+    setSelectedPerQuestion(newSelected);
+
     const newAnswers = [...answers];
     if (isCorrect) {
       newAnswers[currentQuestion] = answerIndex;
@@ -78,7 +83,6 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
   const handleNext = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
-      setSelectedAnswer(null);
     } else {
       submitQuizMutation.mutate(answers);
     }
