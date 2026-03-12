@@ -225,7 +225,7 @@ export default function Teachers() {
               </div>
 
               <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Organisation der Gruppenarbeit:</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
+              <ul className="list-disc list-outside space-y-2 pl-6">
                 <li>Die Schüler:innen entscheiden sich anhand der Vorschau-Texte zu Beginn für eine Gruppe.</li>
                 <li>Die Gruppengrößen sollten möglichst ausgewogen sein.</li>
                 <li>Für große Klassengrößen (über 25 Personen) gibt es eine Kreativaufgabe, bei der Schüler:innen selbst eine Gruppenaufgabe entwickeln und durchführen.</li>
