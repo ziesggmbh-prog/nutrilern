@@ -51,7 +51,7 @@ export default function VertiefendeFragenModal({ data, onClose }: VertiefendeFra
                     const questions = rest.split("?").filter(f => f.trim());
                     return (
                       <>
-                        <li className="list-none text-white font-semibold mb-1">Diskutiert:</li>
+                        <li className="list-none mb-1">Diskutiert:</li>
                         {questions.map((frage, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <span className="mt-0.5">–</span>
