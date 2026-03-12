@@ -363,7 +363,7 @@ export class MemStorage implements IStorage {
           },
           {
             id: "u2",
-            question: "Wie entstehen Transfettsäuren häufig industriell?",
+            question: "Wie entstehen Transfette (Transfettsäuren) häufig industriell?",
             options: [
               "Durch Gefrieren von Zucker",
               "Durch Erhitzen pflanzlicher Proteine",
