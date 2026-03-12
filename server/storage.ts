@@ -154,11 +154,11 @@ export class MemStorage implements IStorage {
             question: "Warum sind komplexe Kohlenhydrate gesünder als einfache?",
             options: [
               "Sie schmecken besser",
+              "Sie enthalten mehr Wasser",
               "Sie sind schneller verdaut",
-              "Sie liefern gleichmäßig Energie über längere Zeit",
-              "Sie enthalten mehr Wasser"
+              "Sie liefern gleichmäßig Energie über längere Zeit"
             ],
-            correctAnswer: 2,
+            correctAnswer: 3,
             explanation: "Komplexe Kohlenhydrate werden langsamer abgebaut und sorgen für einen gleichmäßigeren Blutzuckerspiegel ohne starke Schwankungen."
           },
           {
