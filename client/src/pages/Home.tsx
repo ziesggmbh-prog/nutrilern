@@ -310,7 +310,7 @@ export default function Home() {
               <div className="w-20 h-20 rounded-full overflow-hidden flex items-center justify-center">
                 <img 
                   src={logoImage} 
-                  alt="Logo" 
+                  alt=""
                   className="w-20 h-20 object-cover rounded-full"
                 />
               </div>
