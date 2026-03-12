@@ -16,10 +16,14 @@ export default function Teachers() {
       title: "Einführung und Kohlenhydrate",
       individual: [
         "Einführung in die Unterrichtseinheit durch die Lehrkraft",
-        "Erstes Anschauen des Films 'Kohlenhydrate' (digitale Schultafel/Smartboard oder Beamer)",
+        "Gemeinsames Anschauen des Intros (digitale Schultafel/Smartboard oder Beamer)",
+        "Kurzer Gedankenaustausch zum Gesehenen",
+        "Erstes Anschauen des Films \u2018Kohlenhydrate\u2019",
         "Zweites Anschauen des Films und Notieren von Fragen",
         "Bearbeitung der vertiefenden Fragen in Gruppen",
-        "Vorstellung der Ergebnisse im Klassenverband"
+        "Vorstellung der Ergebnisse im Klassenverband",
+        "Klärung offener Fragen",
+        "Quiz"
       ],
       hours: "3 Schulstunden",
       groupHours: "3 Schulstunden"
