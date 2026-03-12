@@ -63,7 +63,7 @@ export const level2Data = [
   },
   {
     id: 15,
-    title: "Freie Gruppenwahl",
+    title: "Freie Themenwahl",
     description: "Ihr entwickelt ein eigenes Ernährungsprojekt zu einem Thema eurer Wahl und setzt es um.",
     fullDescription: "**Tag 1**\n\nBrainstorming: Sammelt eigene Ideen für ein Ernährungsprojekt. Was interessiert euch besonders? Welche Aspekte möchtet ihr vertiefen?\n\nErstellt einen Arbeitsplan und teilt Aufgaben in der Gruppe auf.\n\n**Tag 2**\n\nArbeitet aktiv an eurem Projekt. Recherchiert, sammelt Daten oder erstellt Inhalte je nach gewähltem Thema.\n\n**Tag 3**\n\nEntwickelt euer gewähltes Projekt weiter.\n\n**Tag 4**\n\nFinalisiert euer Projekt. Bereitet alle Materialien vor und erstellt eine zusammenfassende Dokumentation.\n\n**Tag 5**\n\nPräsentiert euer selbst gewähltes Ernährungsprojekt der Klasse und erklärt, warum ihr dieses Thema gewählt habt.",
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
