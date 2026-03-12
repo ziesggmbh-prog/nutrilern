@@ -45,12 +45,29 @@ export default function VertiefendeFragenModal({ data, onClose }: VertiefendeFra
                 </div>
               </div>
               <ul className="text-gray-300 leading-relaxed space-y-2">
-                {g.fragen.split("?").filter(f => f.trim()).map((frage, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="mt-0.5">–</span>
-                    <span>{frage.trim()}?</span>
-                  </li>
-                ))}
+                {(() => {
+                  if (g.fragen.startsWith("Diskutiert:")) {
+                    const rest = g.fragen.replace(/^Diskutiert:\s*/, "");
+                    const questions = rest.split("?").filter(f => f.trim());
+                    return (
+                      <>
+                        <li className="list-none text-white font-semibold mb-1">Diskutiert:</li>
+                        {questions.map((frage, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="mt-0.5">–</span>
+                            <span>{frage.trim()}?</span>
+                          </li>
+                        ))}
+                      </>
+                    );
+                  }
+                  return g.fragen.split("?").filter(f => f.trim()).map((frage, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="mt-0.5">–</span>
+                      <span>{frage.trim()}?</span>
+                    </li>
+                  ));
+                })()}
               </ul>
             </div>
           ))}

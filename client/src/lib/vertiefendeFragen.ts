@@ -66,7 +66,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
       },
       {
         gruppe: 3,
-        fragen: "Wie lassen sich die Nachteile von pflanzlichem Protein ausgleichen, um seine Vorteile nutzen zu können? – Welche Lebensmittel werden dafür benötigt?"
+        fragen: "Wie lassen sich die Nachteile von pflanzlichem Protein ausgleichen, um seine Vorteile nutzen zu können? Welche Lebensmittel werden dafür benötigt?"
       },
       {
         gruppe: 4,
@@ -114,7 +114,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
       },
       {
         gruppe: 4,
-        fragen: "Diskutiert: – Ist es möglich, auf die Produkte aus der \u2018Unterwelt\u2019 der Ernährung ganz zu verzichten? – Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker reguliert werden?"
+        fragen: "Diskutiert: Ist es möglich, auf die Produkte aus der \u2018Unterwelt\u2019 der Ernährung ganz zu verzichten? Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker reguliert werden?"
       }
     ]
   }
