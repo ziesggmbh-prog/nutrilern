@@ -52,15 +52,14 @@ export default function Teachers() {
     {
       day: 5,
       title: "Unterwelt und Abschluss",
-      individual: [
-        "Bearbeitung des Films 'Unterwelt' nach dem Schema von Tag 1",
-        "Vorstellung der Gruppenarbeiten",
-        "Gemeinsames Anschauen des Outros (digitale Schultafel/Smartboard oder Beamer)",
-        "Abschlussdiskussion"
+      customItems: [
+        "Bearbeitung des Films \u201eUnterwelt\u201c nach dem Schema von Tag 1 (2 Schulstunden)",
+        "Vorstellung der Gruppenarbeiten (3 Schulstunden)",
+        "Gemeinsames Anschauen des Outros (digitale Schultafel/Smartboard oder Beamer) und Abschlussdiskussion (1 Schulstunde)"
       ],
-      hours: "2 Schulstunden",
-      groupHours: "3 Schulstunden",
-      finalHour: "1 Schulstunde"
+      individual: [],
+      hours: "",
+      groupHours: ""
     }
   ];
 
@@ -292,31 +291,39 @@ export default function Teachers() {
                     {dayInfo.title}
                   </h3>
                   
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                        <BookOpen size={16} />
-                        Einzelarbeit ({dayInfo.hours})
-                      </h4>
-                      <ul className="list-disc list-outside space-y-1 text-sm text-gray-600 pl-4">
-                        {dayInfo.individual.map((item: string, index: number) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
+                  {dayInfo.customItems ? (
+                    <ul className="list-disc list-outside space-y-2 text-sm text-gray-600 pl-4">
+                      {dayInfo.customItems.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                          <BookOpen size={16} />
+                          Einzelarbeit ({dayInfo.hours})
+                        </h4>
+                        <ul className="list-disc list-outside space-y-1 text-sm text-gray-600 pl-4">
+                          {dayInfo.individual.map((item: string, index: number) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                          <Users size={16} />
+                          Gruppenarbeit ({dayInfo.groupHours})
+                        </h4>
+                        {dayInfo.finalHour && (
+                          <p className="text-sm text-gray-600 mt-2">
+                            <strong>Abschlussdiskussion:</strong> {dayInfo.finalHour}
+                          </p>
+                        )}
+                      </div>
                     </div>
-                    
-                    <div>
-                      <h4 className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                        <Users size={16} />
-                        Gruppenarbeit ({dayInfo.groupHours})
-                      </h4>
-                      {dayInfo.finalHour && (
-                        <p className="text-sm text-gray-600 mt-2">
-                          <strong>Abschlussdiskussion:</strong> {dayInfo.finalHour}
-                        </p>
-                      )}
-                    </div>
-                  </div>
+                  )}
                 </motion.div>
               ))}
             </div>
