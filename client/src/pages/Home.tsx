@@ -175,33 +175,22 @@ export default function Home() {
   const handleVideoComplete = async () => {
     setShowVideo(false);
     if (selectedLesson) {
-      // Check if this lesson has a quiz
-      const hasQuiz = quizData.some(quiz => quiz.lessonId === selectedLesson.id);
-      
-      if (hasQuiz) {
-        // Show quiz modal
-        setCurrentQuizLesson(selectedLesson);
-        setShowQuiz(true);
-      } else {
-        // No quiz - directly mark lesson as completed (for Intro)
-        try {
-          const response = await fetch(`/api/lessons/${selectedLesson.id}/complete`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' }
-          });
-          
-          if (!response.ok) {
-            throw new Error('Failed to complete lesson');
-          }
-          
-          // Reset states and refresh progress
-          setSelectedLesson(null);
-          refetchProgress();
-        } catch (error) {
-          console.error('Error completing lesson:', error);
-          // Fallback - just reset states
-          setSelectedLesson(null);
+      // Always directly mark lesson as completed and return to normal view
+      try {
+        const response = await fetch(`/api/lessons/${selectedLesson.id}/complete`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        
+        if (!response.ok) {
+          throw new Error('Failed to complete lesson');
         }
+        
+        setSelectedLesson(null);
+        refetchProgress();
+      } catch (error) {
+        console.error('Error completing lesson:', error);
+        setSelectedLesson(null);
       }
     }
   };
