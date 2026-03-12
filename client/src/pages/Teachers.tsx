@@ -204,7 +204,7 @@ export default function Teachers() {
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                <Target className="text-green-600" size={20} />
+                <Users className="text-green-600" size={20} />
               </div>
               <h2 className="text-2xl font-bold text-gray-800">Gruppenmodus</h2>
             </div>
