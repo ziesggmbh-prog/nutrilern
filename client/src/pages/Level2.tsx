@@ -113,7 +113,7 @@ export default function Level2() {
   };
 
   return (
-    <div className="min-h-screen bg-structured text-white">
+    <div className="min-h-screen bg-structured text-white overflow-x-hidden">
       {/* Fullscreen Restore Notification */}
       <FullscreenRestoreNotification />
       
@@ -167,7 +167,7 @@ export default function Level2() {
         {/* Progress Overview removed */}
 
         {/* Lessons Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 auto-rows-fr">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {lessons.map((lesson, index) => {
             const isCompleted = completedLessonIds.includes(lesson.id);
             const isAvailable = true; // All quests are available in Level 2

@@ -217,7 +217,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-structured text-white">
+    <div className="min-h-screen bg-structured text-white overflow-x-hidden">
       {/* Intro Video Overlay */}
       <AnimatePresence>
         {showIntroOverlay && (
