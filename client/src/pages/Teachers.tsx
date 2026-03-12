@@ -193,7 +193,7 @@ export default function Teachers() {
               <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Wichtige Hinweise:</h3>
               <ul className="list-disc pl-6 space-y-3">
                 <li>Es ist unerlässlich, die Schüler:innen den Film wiederholt anschauen zu lassen. Wenn die Schüler:innen nicht mit einem eigenen Endgerät und Kopfhörern ausgestattet sind, kann das zweite Anschauen auch im Klassenverband erfolgen.</li>
-                <li>Das Hintergrundwissen einer Lektion, auch zur Beantwortung der vertiefenden Fragen, wird durch die Informationen im Lehrer:innenmanual abgedeckt. Dort finden sich Zusammenfassungen der Lehrfilme, die vertiefenden Fragen und weiterführende Informationen.</li>
+                <li>Das Hintergrundwissen einer Lektion, auch zur Beantwortung der vertiefenden Fragen, wird durch die Informationen im <Link href="/manual" className="underline text-blue-600 hover:text-blue-800">Lehrer:innenmanual</Link> abgedeckt. Dort finden sich Zusammenfassungen der Lehrfilme, die vertiefenden Fragen und weiterführende Informationen.</li>
                 <li>Bei engem Zeitrahmen können die vertiefenden Fragen übersprungen werden (zur Freischaltung der nächsten Lektion genügt die Beantwortung des Quiz). Die Bearbeitung wird jedoch ausdrücklich empfohlen.</li>
                 <li>Das Quiz kann im Klassenverband absolviert werden, wenn eigene Endgeräte der Schüler:innen fehlen.</li>
               </ul>
