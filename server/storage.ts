@@ -66,7 +66,7 @@ export class MemStorage implements IStorage {
         title: "Intro",
         description: "Eine kurze Einführung in die Bild- und Gedankenwelt der Videoreihe.",
         videoUrl: "https://player.vimeo.com/video/1172528318",
-        duration: 2,
+        duration: 1,
         thumbnailUrl: "/assets/0_Intro_1773233463712_opt.jpg",
         order: 1,
         isActive: true
