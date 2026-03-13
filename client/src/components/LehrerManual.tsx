@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { ChevronDown, ChevronUp, BookOpen, Users, Lightbulb } from "lucide-react";
+import { ChevronDown, ChevronUp, BookOpen, Users, Lightbulb, Download } from "lucide-react";
 
 function B({ children }: { children: ReactNode }) {
   return <strong>{children}</strong>;
@@ -122,9 +122,19 @@ export default function LehrerManual() {
 
   return (
     <div>
-      <div className="mb-8 text-center">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">NutriLern – Manual für Lehrkräfte</h2>
-        <P className="text-gray-600">Zentrale Inhalte der Lerneinheit,<br />vertiefende Fragen<br />und weiterführende Informationen</P>
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">NutriLern – Manual für Lehrkräfte</h2>
+          <P className="text-gray-600 first:mt-0">Zentrale Inhalte der Lerneinheit,<br />vertiefende Fragen<br />und weiterführende Informationen</P>
+        </div>
+        <a
+          href="/lehrer-manual.pdf"
+          download="Lehrer-Manual.pdf"
+          className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-semibold rounded-xl shadow-md transition-colors text-sm whitespace-nowrap"
+        >
+          <Download size={18} />
+          Manual als PDF herunterladen
+        </a>
       </div>
 
       <div className="space-y-4">
