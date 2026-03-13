@@ -1,20 +1,47 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { ChevronDown, ChevronUp, BookOpen, Users, Lightbulb } from "lucide-react";
 
-function B({ children }: { children: React.ReactNode }) {
+function B({ children }: { children: ReactNode }) {
   return <strong>{children}</strong>;
 }
 
-function Li({ children, sub }: { children: React.ReactNode; sub?: boolean }) {
+function Li({ children }: { children: ReactNode }) {
   return (
-    <div className={`flex gap-2 mb-0.5 ${sub ? "pl-5" : ""}`}>
+    <div className="flex gap-2 mb-0.5">
       <span className="flex-shrink-0 select-none">–</span>
       <span>{children}</span>
     </div>
   );
 }
 
-function Num({ n, children }: { n: number; children: React.ReactNode }) {
+function OLi({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex gap-2 mb-0.5 pl-5">
+      <span className="flex-shrink-0 select-none">○</span>
+      <span>{children}</span>
+    </div>
+  );
+}
+
+function SqLi({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex gap-2 mb-0.5 pl-10">
+      <span className="flex-shrink-0 select-none">▪</span>
+      <span>{children}</span>
+    </div>
+  );
+}
+
+function Arr({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex gap-2 mb-0.5">
+      <span className="flex-shrink-0 select-none">→</span>
+      <span>{children}</span>
+    </div>
+  );
+}
+
+function Num({ n, children }: { n: number; children: ReactNode }) {
   return (
     <div className="flex gap-1.5 mb-1.5">
       <span className="flex-shrink-0 select-none font-normal">{n}.</span>
@@ -40,7 +67,7 @@ interface AccordionSectionProps {
   textColor: string;
   isOpen: boolean;
   onToggle: () => void;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 function AccordionSection({ number, title, color, bgColor, textColor, isOpen, onToggle, children }: AccordionSectionProps) {
@@ -59,9 +86,9 @@ function AccordionSection({ number, title, color, bgColor, textColor, isOpen, on
 }
 
 interface SubSectionProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
   defaultOpen?: boolean;
 }
 
@@ -111,9 +138,9 @@ export default function LehrerManual() {
             <p>Die <B>Komplexität der Kohlenhydrate</B> hat einen Einfluss darauf, <B>wie schnell</B> sie vom Körper <B>zu Glucose verstoffwechselt</B> werden können.</p>
             <Li><B>Je komplexer</B> die Kohlenhydrate, <B>desto langsamer</B> werden sie zu Glucose verarbeitet.</Li>
             <Li><B>Komplexe Kohlenhydrate</B> bestehen aus langen Ketten aus vielen Einfachzuckern.</Li>
-            <Li>Hier dauert der Gewinn von Glucose lange.</Li>
+            <Arr>Hier dauert der Gewinn von Glucose lange.</Arr>
             <Li><B>Weniger komplexe Kohlenhydrate</B> bestehen aus kurzen Bausteinen aus bloß ein oder zwei Einfachzuckern.</Li>
-            <Li>Hier ist die Glucose sehr schnell verfügbar.</Li>
+            <Arr>Hier ist die Glucose sehr schnell verfügbar.</Arr>
             <p>Bei Nahrungsmitteln mit <B>Einfachzuckern</B> gelangt die enthaltene Glucose sehr schnell ins Blut.</p>
             <Li>Die Folge: ein <B>schneller Energieschub</B></Li>
             <Li>Aber: Die Energie ist <B>schnell wieder verbraucht</B>.</Li>
@@ -133,7 +160,7 @@ export default function LehrerManual() {
             <Li>enthält Glucose in schnell und weniger schnell verfügbarer Form (<B>komplexe Kohlenhydrate</B>)</Li>
             <Li>enthält viele <B>Ballaststoffe</B></Li>
             <Li>versorgt den Körper sowohl schnell als auch länger anhaltend mit Energie</Li>
-            <Li>Bananen sind gut geeignet als Snack zur Konzentrationssteigerung (etwa vor einer Prüfung).</Li>
+            <Arr>Bananen sind gut geeignet als Snack zur Konzentrationssteigerung (etwa vor einer Prüfung).</Arr>
             <Li>Vergleich mit Schokolade: Schokolade enthält ausschließlich Einfachzucker, keine Kohlenhydrate und keine Ballaststoffe.</Li>
           </SubSection>
 
@@ -197,36 +224,36 @@ export default function LehrerManual() {
             <Li>Fette sind <B>Bestandteil der Zellmembran</B>, d.i. die Hülle, die die Körperzellen umschließt.</Li>
             <p>Fette sind der Nährstoff mit der mit Abstand <B>höchsten Energiedichte</B>.</p>
             <Li>Ein Gramm Fett liefert mehr als doppelt so viel Energie wie ein Gramm Kohlenhydrate oder Proteine.</Li>
-            <Li>Fette sollten bewusst konsumiert werden.</Li>
+            <Arr>Fette sollten bewusst konsumiert werden.</Arr>
             <p>Fette setzen sich aus <B>Fettsäuren</B> zusammen, von diesen Fettsäuren gibt es <B>unterschiedliche Arten</B>. Die unterschiedlichen Arten von Fettsäuren haben <B>unterschiedliche Funktionen und Effekte</B>.</p>
             <p>Es gibt <B>gesättigte und ungesättigte Fettsäuren</B>.</p>
             <p><B>Gesättigte Fettsäuren</B></p>
             <Li>kommen vor allem in tierischen Lebensmitteln vor</Li>
-            <Li>z.B. in Fleisch, Milchprodukten und Eigelb</Li>
+            <OLi>z.B. in Fleisch, Milchprodukten und Eigelb</OLi>
             <Li>pflanzliche Fette, die gesättigte Fettsäuren enthalten:</Li>
-            <Li sub>Kokosfett und Palmöl</Li>
+            <OLi>Kokosfett und Palmöl</OLi>
             <Li>Gesättigte Fettsäuren <B>kann der Körper selbst herstellen</B>.</Li>
             <p>Gesättigte Fettsäuren stehen im Verdacht, die Menge an schädlichem Cholesterin im Blut zu erhöhen – das kann <B>negative Effekte für die Gesundheit</B> haben.</p>
-            <Li>Gesättigte Fettsäuren sollten <B>nicht unbegrenzt konsumiert</B> werden.</Li>
+            <Arr>Gesättigte Fettsäuren sollten <B>nicht unbegrenzt konsumiert</B> werden.</Arr>
             <p><B>Ungesättigte Fettsäuren</B> gibt es wiederum in <B>verschiedenen Formen</B>.</p>
             <p><B>Einfach ungesättigte Fettsäuren</B></p>
             <Li>Lebensmittel, die einfach ungesättigte Fettsäuren enthalten:</Li>
-            <Li sub>pflanzliche Öle (z.B. Olivenöl und Rapsöl)</Li>
-            <Li sub>Nüsse und Samen</Li>
-            <Li sub>Avocados</Li>
+            <OLi>pflanzliche Öle (z.B. Olivenöl und Rapsöl)</OLi>
+            <OLi>Nüsse und Samen</OLi>
+            <OLi>Avocados</OLi>
             <Li>Einfach ungesättigte Fettsäuren kann der Körper ebenfalls selbst herstellen.</Li>
-            <Li>Einfach ungesättigte Fettsäuren gelten <B>auch in größeren Mengen als gesund</B>.</Li>
+            <Arr>Einfach ungesättigte Fettsäuren gelten <B>auch in größeren Mengen als gesund</B>.</Arr>
             <p><B>Mehrfach ungesättigte Fettsäuren</B></p>
             <Li>Lebensmittel, die mehrfach ungesättigte Fettsäuren enthalten:</Li>
-            <Li sub>bestimmte pflanzliche Öle</Li>
-            <Li sub>Nüsse und Samen</Li>
-            <Li sub>fetter Seefisch (z.B. Lachs, Hering, Tunfisch)</Li>
-            <Li sub>Auch die sog. Omega-3- und Omega-6-Fettsäuren sind mehrfach ungesättigte Fettsäuren.</Li>
-            <Li sub>für den Körper besonders wertvoll</Li>
+            <OLi>bestimmte pflanzliche Öle</OLi>
+            <OLi>Nüsse und Samen</OLi>
+            <OLi>fetter Seefisch (z.B. Lachs, Hering, Tunfisch)</OLi>
+            <OLi>Auch die sog. Omega-3- und Omega-6-Fettsäuren sind mehrfach ungesättigte Fettsäuren.</OLi>
+            <Li>für den Körper besonders wertvoll</Li>
             <p>Besonderheit: Der Körper kann mehrfach ungesättigte Fettsäuren <B>nicht selbst herstellen</B>.</p>
             <Li>Mehrfach ungesättigte Fettsäuren heißen darum auch <B>essentielle Fettsäuren</B>.</Li>
             <Li>Wir müssen sie <B>über die Nahrung aufnehmen</B>.</Li>
-            <Li>Man sollte <B>möglichst reichlich</B> mehrfach ungesättigte Fettsäuren zu sich nehmen.</Li>
+            <Arr>Man sollte <B>möglichst reichlich</B> mehrfach ungesättigte Fettsäuren zu sich nehmen.</Arr>
             <p><B>Die ‚Fett-Faustregeln'</B>:</p>
             <Num n={1}>Fette sollten bei der Ernährung <B>maximal ein Drittel</B> ausmachen.</Num>
             <Num n={2}><B>Nicht mehr als 10 Prozent</B> sollte aus <B>gesättigten Fettsäuren</B> bestehen.</Num>
@@ -301,9 +328,9 @@ export default function LehrerManual() {
             <p>Außerdem erfüllen sie weitere wichtige Funktionen:</p>
             <Li>wichtig beim <B>Aufbau von Muskeln und Gewebe</B></Li>
             <Li>übernehmen die Rolle von</Li>
-            <Li sub><B>Enzymen</B></Li>
-            <Li sub><B>Hormonen</B></Li>
-            <Li sub><B>Antikörpern</B></Li>
+            <OLi><B>Enzymen</B></OLi>
+            <OLi><B>Hormonen</B></OLi>
+            <OLi><B>Antikörpern</B></OLi>
             <Li>ermöglichen die <B>Kommunikation zwischen den Körperzellen</B></Li>
             <Li><B>transportieren wichtige Stoffe</B></Li>
             <p>Proteine bestehen aus sog. <B>Aminosäuren</B>.</p>
@@ -312,12 +339,12 @@ export default function LehrerManual() {
             <Li>Anschließend baut er daraus jene Proteine neu zusammen, die er braucht.</Li>
             <p>Es gibt <B>essentielle Aminosäuren</B></p>
             <Li>können vom Körper nicht selbst hergestellt werden</Li>
-            <Li>Essentielle Aminosäuren <B>müssen über die Nahrung zugeführt werden</B>.</Li>
+            <Arr>Essentielle Aminosäuren <B>müssen über die Nahrung zugeführt werden</B>.</Arr>
             <p>In unserer Nahrung kommen <B>Proteine aus tierischen</B> und <B>pflanzlichen Quellen</B> vor.</p>
             <p><B>Tierisches Protein</B></p>
             <Li>ist dem Protein in unserem Körper <B>strukturell ähnlich</B></Li>
             <Li>enthält in der Regel <B>alle essentiellen Aminosäuren</B></Li>
-            <Li>Tierisches Protein kann sehr gut verwertet werden.</Li>
+            <Arr>Tierisches Protein kann sehr gut verwertet werden.</Arr>
             <p><B>Quellen für tierisches Protein</B>:</p>
             <Li>Fleisch</Li>
             <Li>Eier</Li>
@@ -325,12 +352,12 @@ export default function LehrerManual() {
             <p>Besonderheit von <B>Lebensmitteln mit tierischem Protein</B>:</p>
             <Li>Tierisches Protein kommt <B>häufig in Lebensmitteln</B> vor, die <B>auch gesättigte Fettsäuren</B> enthalten.</Li>
             <Li><B>Ausnahme</B>: Fettreicher Seefisch</Li>
-            <Li sub>reich an tierischem Protein und essentiellen Fettsäuren</Li>
-            <Li sub>enthält kaum gesättigte Fettsäuren</Li>
+            <OLi>reich an tierischem Protein und essentiellen Fettsäuren</OLi>
+            <OLi>enthält kaum gesättigte Fettsäuren</OLi>
             <p><B>Pflanzliches Protein</B></p>
             <Li>ist dem körpereigenen Protein <B>weniger ähnlich</B></Li>
             <Li>enthält in der Regel <B>nicht alle essentiellen Aminosäuren</B></Li>
-            <Li>Tierisches Protein kann weniger gut verwertet werden.</Li>
+            <Arr>Tierisches Protein kann weniger gut verwertet werden.</Arr>
             <p><B>Aber: Pflanzliches Protein</B> ist <B>nicht weniger wertvoll</B> für unsere gesunde Ernährung als tierisches Protein.</p>
             <Li>Unterschiedliche pflanzliche Nahrungsmittel haben unterschiedliche Aminosäuren-Zusammensetzungen.</Li>
             <Li>Wenn man unterschiedliche pflanzliche Nahrungsmittel <B>richtig kombiniert</B>, erhält der Körper alle essentiellen Aminosäuren in ausreichender Menge.</Li>
@@ -343,7 +370,7 @@ export default function LehrerManual() {
             <p>Besonderheit von <B>Lebensmitteln mit pflanzlichem Protein</B>:</p>
             <Li>Pflanzliches Protein kommt <B>häufig in Lebensmitteln</B> vor, die <B>keine gesättigten Fettsäuren</B> enthalten.</Li>
             <Li>Pflanzliches Protein kommt <B>häufig in Lebensmitteln</B> vor, die <B>wertvolle Ballaststoffe</B> und <B>Vitamine</B> oder auch <B>ungesättigte Fettsäuren</B> enthalten.</Li>
-            <Li>Tierisches Protein wird oft von ungesunden Stoffen begleitet, pflanzliches Protein meist von gesunden Stoffen.</Li>
+            <Arr>Tierisches Protein wird oft von ungesunden Stoffen begleitet, pflanzliches Protein meist von gesunden Stoffen.</Arr>
           </SubSection>
 
           <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><Users className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
@@ -410,30 +437,30 @@ export default function LehrerManual() {
             <p>Es gibt <B>zwei Gruppen</B> von Mikronährstoffen: <B>Vitamine</B> und <B>Mineralstoffe</B>.</p>
             <p><B>Vitamine</B>:</p>
             <Li>wichtig für die <B>Verwertung der Makronährstoffe</B></Li>
-            <Li>Vitamine ermöglichen die <B>Energiegewinnung</B> des Körpers aus Kohlenhydraten, Fetten und Proteinen.</Li>
-            <Li>unerlässlich hierfür: die <B>B-Vitamine</B>. Alle acht B-Vitamine spielen eine Rolle bei der Energiegewinnung des Körpers aus Makronährstoffen.</Li>
+            <OLi>Vitamine ermöglichen die <B>Energiegewinnung</B> des Körpers aus Kohlenhydraten, Fetten und Proteinen.</OLi>
+            <OLi>unerlässlich hierfür: die <B>B-Vitamine</B>. Alle acht B-Vitamine spielen eine Rolle bei der Energiegewinnung des Körpers aus Makronährstoffen.</OLi>
             <Li><B>unterstützen das Immunsystem</B></Li>
-            <Li>Unterschiedliche Vitamine haben hierbei unterschiedliche Funktionen. Beispiele:</Li>
-            <Li sub>Vitamin A: Stärkung der Schleimhäute gegen Krankheitserreger</Li>
-            <Li sub>Vitamin C: fördert die Bildung von Immunzellen</Li>
-            <Li sub>Vitamin D: steuert die gesamte Immunreaktion</Li>
+            <OLi>Unterschiedliche Vitamine haben hierbei unterschiedliche Funktionen. Beispiele:</OLi>
+            <SqLi>Vitamin A: Stärkung der Schleimhäute gegen Krankheitserreger</SqLi>
+            <SqLi>Vitamin C: fördert die Bildung von Immunzellen</SqLi>
+            <SqLi>Vitamin D: steuert die gesamte Immunreaktion</SqLi>
             <p><B>Mineralstoffe</B>:</p>
             <Li>wie die Vitamine beteiligt an</Li>
-            <Li sub><B>Verwertung der Makronährstoffe</B></Li>
-            <Li sub><B>Unterstützung des Immunsystems</B></Li>
+            <OLi><B>Verwertung der Makronährstoffe</B></OLi>
+            <OLi><B>Unterstützung des Immunsystems</B></OLi>
             <Li>außerdem wichtig für unser <B>Nervensystem</B>: Mineralstoffe regulieren das Nervensystem und stabilisieren seine Funktionen.</Li>
-            <Li>Beispiele: Magnesium, Kalzium, Kalium, Zink, Eisen</Li>
+            <OLi>Beispiele: Magnesium, Kalzium, Kalium, Zink, Eisen</OLi>
             <Li>wirken sich auch auf die <B>psychische Gesundheit</B> aus</Li>
             <Li>beeinflussen <B>Aufmerksamkeit und Denkleistung</B></Li>
             <p>Die <B>Versorgung</B> des Körpers mit Mikronährstoffen:</p>
             <p>Der Körper benötigt <B>Mikro</B>nährstoffe – verglichen mit den <B>Makro</B>nährstoffen – in <B>kleineren Mengen</B>.</p>
             <Li><B>Eine ausgewogene Ernährung</B> reicht aus, um den Bedarf an Vitaminen und Mineralstoffen zu decken.</Li>
             <Li>Eine ausgewogene Ernährung ist aber unerlässlich für eine gute Versorgung, weil die <B>meisten Mikronährstoffe essentiell</B> sind: Der Körper kann sie nicht selbst herstellen.</Li>
-            <Li><B>Vermutete Unterversorgungen</B> mit bestimmten Mikronährstoffen sollten nicht eigenständig mit Nahrungsergänzungsmitteln behandelt, sondern ärztlich diagnostiziert werden.</Li>
+            <Arr><B>Vermutete Unterversorgungen</B> mit bestimmten Mikronährstoffen sollten nicht eigenständig mit Nahrungsergänzungsmitteln behandelt, sondern ärztlich diagnostiziert werden.</Arr>
             <p><B>Salz</B>:</p>
             <Li>versorgt den Körper mit den Nährstoffen <B>Natrium</B> und <B>Chlorid</B></Li>
             <Li><B>Gefahr einer Überversorgung</B>:</Li>
-            <Li sub>Bei zu viel Salzkonsum gelangt zu viel Natrium ins Blut. Natrium bindet Wasser im Blut, dies führt zu Wassereinlagerungen im umliegenden Gewebe. <B>Krankheiten wie Herzinfarkt und Schlaganfall</B> werden so begünstigt.</Li>
+            <OLi>Bei zu viel Salzkonsum gelangt zu viel Natrium ins Blut. Natrium bindet Wasser im Blut, dies führt zu Wassereinlagerungen im umliegenden Gewebe. <B>Krankheiten wie Herzinfarkt und Schlaganfall</B> werden so begünstigt.</OLi>
             <p><B>Salz-Empfehlung</B> der Weltgesundheitsorganisation (WHO: World Health Organization):</p>
             <p><B>Höchstens 5 Gramm Salz pro Tag</B></p>
             <Li>Dies ist eine sehr kleine Menge (entspricht einem nicht zu vollen Teelöffel).</Li>
@@ -500,11 +527,11 @@ export default function LehrerManual() {
             <p><B>Warum Süßstoffe?</B></p>
             <Li><B>Die Idee</B>: Durch den Konsum von Süßstoffen sollen die Gefahren eines zu hohen Zuckerkonsums vermieden werden.</Li>
             <Li><B>Das Risiko</B>: Der Konsum von mit Süßstoffen gesüßten Lebensmitteln kann <B>unser Verlangen nach Süßem</B> deutlich <B>steigern</B>.</Li>
-            <Li>Der Konsum von Süßstoffen <B>verändert</B> auf Dauer unser <B>Süße-Empfinden</B>.</Li>
+            <Arr>Der Konsum von Süßstoffen <B>verändert</B> auf Dauer unser <B>Süße-Empfinden</B>.</Arr>
             <p><B>Süßstoffe</B> sind häufig <B>deutlich süßer</B> als Zucker.</p>
             <Li><B>Typisches Beispiel</B>: Zuckerfreie, mit Süßstoffen gesüßte Getränke (Energy-Drinks, Coke Zero etc.)</Li>
             <Li>Der Konsum von Süßstoffen führt vermutlich zu einer <B>Herabsetzung der Schwelle</B>, ab der wir <B>Süße wahrnehmen</B>.</Li>
-            <Li><B>Die Folge</B>: Bei häufigem Konsum verlangt der Körper nach immer süßeren Lebensmitteln, wie konsumieren letztlich immer mehr Süßes.</Li>
+            <Li><B>Die Folge</B>: Bei häufigem Konsum verlangt der Körper nach immer süßeren Lebensmitteln, wir konsumieren letztlich immer mehr Süßes.</Li>
             <p><B>Tipp zum Umgang mit Süßem</B>: Lebensmittel, die von Natur aus süß sind (z.B. <B>Obst</B>) enthalten Zucker in einer Form, die vom Körper gesund verstoffwechselt werden kann. Solche Lebensmittel sind Lebensmitteln mit künstlichen Süßstoffen vorzuziehen.</p>
             <Num n={2}><B>Transfette</B></Num>
             <p><B>Was sind Transfettsäuren?</B></p>
@@ -528,7 +555,7 @@ export default function LehrerManual() {
             <p>Die <B>unnatürliche Zusammensetzung</B> künstlicher Protein-Produkte:</p>
             <Li>Künstliche Protein-Produkte enthalten oft viele <B>Zusatzstoffe</B>. Bei vielen dieser Stoffe wissen wir nichts über die Effekte auf unseren Körper.</Li>
             <Li>In <B>natürlichen Lebensmitteln</B> kommt Protein immer <B>gepaart mit anderen Nährstoffen</B> vor, die der Körper ebenfalls benötigt.</Li>
-            <Li>Nahrungsergänzungsmittel sollten <B>nie reguläre Mahlzeiten ersetzen</B>.</Li>
+            <Arr>Nahrungsergänzungsmittel sollten <B>nie reguläre Mahlzeiten ersetzen</B>.</Arr>
             <p>Für <B>Sportler:innen</B>: Proteine für den <B>Muskelaufbau</B></p>
             <Li>Proteine spielen beim Muskelaufbau eine <B>wichtige Rolle</B>.</Li>
             <Li>Auch für Sportler:innen gilt: Der Körper kann seinen Bedarf, auch für den Muskelaufbau, über das <B>in natürlichen Lebensmitteln vorkommende Protein</B> decken.</Li>
@@ -556,7 +583,7 @@ export default function LehrerManual() {
             <p>Was bisher als gesichert gilt: Künstliche Süßstoffe wie Aspartam, Saccharin und Sucralose beeinflussen das Darmmikrobiom (d.h. die im Darm vorkommenden Mikroorganismen) negativ, so zeigt eine Studie (vgl. Suez et al.). Untersuchungen zeigen, dass bereits moderate Mengen der Süßstoffe die Zusammensetzung und Funktion der Darmbakterien verändern können. Dadurch verschlechtert sich die Glukosetoleranz, das Risiko für Erkrankungen wie Typ-2-Diabetes steigt. Außerdem fördern sie das Wachstum unerwünschter Bakterien, können die Darmbarriere schädigen („leaky gut") und Entzündungen begünstigen. Überdies konnte eine weitere Studie zeigen, dass regelmäßiger Konsum künstlicher Süßstoffe wie Aspartam, Sucralose oder Saccharin mit einem beschleunigten kognitiven Abbau und Herz-Kreislauf-Erkrankungen verbunden sein kann (vgl. Gonçalves et al.).</p>
             <p>Weiterhin wird das Verlangen nach Süßem durch den Konsum von Süßstoffen nicht gestillt, sondern – im Gegenteil – verstärkt. Eine aktuelle Studie belegt z.B., dass der Zuckerersatzstoff Sucralose den Hypothalamus aktiviert, eine wichtige Schaltzentrale für Hunger und Sättigung (vgl. Chakravartti et al.). Daraufhin steigert sich das Hungergefühl, und zwar besonders bei Menschen mit Übergewicht (Adipositas). Wenn künstliche Süßstoffe dem Gehirn Zuckersignale senden, aber die vom Körper erwarteten Kalorien ausbleiben, führt genau dies zu einem größeren Hungergefühl.</p>
             <p>Die Weltgesundheitsorganisation (WHO: World Health Organization) gibt in ihren Richtlinien zum Gebrauch von Zucker-Ersatzstoffen einen Rat, den man einfach umsetzen kann: Statt zu diesen Mitteln sollte man bei Lust auf Süßes lieber Obst essen, denn dieses liefert wertvolle Ballaststoffe, Vitamine, Mineralien und Spurenelemente.</p>
-            <p className="text-sm text-gray-600"><B>Quellen „Süßstoffe":</B></p>
+            <p className="text-sm text-gray-600 mt-3"><B>Quellen „Süßstoffe":</B></p>
             <p className="text-sm text-gray-600">Chakravartti SP, Jann K, Veit R, Liu H, Yunker AG, Angelo B, Monterosso JR, Xiang AH, Kullmann S, Page KA. Non-caloric sweetener effects on brain appetite regulation in individuals across varying body weights. Nat Metab. 2025 Mar;7(3):574-585. doi: 10.1038/s42255-025-01227-8. Epub 2025 Mar 26. PMID: 40140714.</p>
             <p className="text-sm text-gray-600">Gonçalves NG, Martinez-Steele E, Lotufo PA, Bensenor I, Goulart AC, Barreto SM, Giatti L, de Faria CP, Molina MDCB, Caramelli P, Marchioni DM, Suemoto CK. Association Between Consumption of Low- and No-Calorie Artificial Sweeteners and Cognitive Decline: An 8-Year Prospective Study. Neurology. 2025 Oct 7;105(7):e214023. doi: 10.1212/WNL.0000000000214023. Epub 2025 Sep 3. PMID: 40902134.</p>
             <p className="text-sm text-gray-600">Suez J, Korem T, Zeevi D, Zilberman-Schapira G, Thaiss CA, Maza O, Israeli D, Zmora N, Gilad S, Weinberger A, Kuperman Y, Harmelin A, Kolodkin-Gal I, Shapiro H, Halpern Z, Segal E, Elinav E. Artificial sweeteners induce glucose intolerance by altering the gut microbiota. Nature. 2014 Oct 9;514(7521):181-6. doi: 10.1038/nature13793. Epub 2014 Sep 17. PMID: 25231862.</p>
@@ -566,7 +593,7 @@ export default function LehrerManual() {
             <p>Transfettsäuren entstehen vor allem durch lebensmitteltechnologische Prozesse wie die sog. Fetthärtung. Dies ist ein Verfahren, bei dem fette Öle in feste oder streichfähige Fette umgewandelt werden. Aus ursprünglich gesunden Pflanzenölen werden Produkte gewonnen, die bessere technische Eigenschaften als natürliche (feste) Fette wie Butter oder Schmalz aufweisen und sich gut lagern lassen. Solche industriell gehärteten Fette werden aufgrund ihres z.T. hohen Gehaltes an Transfettsäuren auch als Transfette bezeichnet.</p>
             <p><B>Was sind Transfettsäuren?</B></p>
             <p>Ungesättigte Fettsäuren liegen in der Natur hauptsächlich in sogenannter cis-Konfiguration vor. Durch die Härtung kann es zu einer Veränderung der Konfiguration der Doppelbindungen kommen: Es entstehen Transfettsäuren, in denen sich die Wasserstoffatome an den durch Doppelbindungen verknüpften Kohlenstoffatomen auf entgegengesetzten Seiten befinden.</p>
-            <p className="text-gray-500 italic text-sm">Ölsäure (C18:1 cis 9) / Elaidinsäure (C18:1 trans 9) / Trans-Vaccensäure (C18:1 trans 11) – Chemische Struktur der Ölsäure im Vergleich mit den beiden trans-C18:1-Fettsäuren (Diagramm im Originaldokument als EMF-Datei, nicht darstellbar im Browser)</p>
+            <p className="text-gray-500 italic text-sm">Chemische Struktur der Ölsäure im Vergleich mit den beiden trans-C18:1-Fettsäuren (Diagramm im Originaldokument als EMF-Datei, nicht darstellbar im Browser)</p>
             <p><B>Die Wirkung von Transfettsäuren</B></p>
             <p>Transfettsäuren besitzen keine bekannte positive Funktion im Organismus, aber negative Auswirkungen auf den Stoffwechsel sind eindeutig belegt. Eine hohe Zufuhr von Transfettsäuren birgt das Risiko für eine Fettstoffwechselstörung, die zu einer Erhöhung des Triglycerid-Spiegels führt. Auch wird das Verhältnis zwischen LDL-Cholesterol und HDL-Cholesterol im Blut nachteilig verändert. Die Auswirkungen auf die Gesundheit können erheblich sein und sowohl die Entstehung von Arteriosklerose als auch einer koronaren Herzkrankheit begünstigen sowie das Herzinfarktrisiko erhöhen.</p>
             <p><B>Protein-Produkte: Shakes, Riegel etc.</B></p>
