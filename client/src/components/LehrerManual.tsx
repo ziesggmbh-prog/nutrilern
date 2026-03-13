@@ -15,7 +15,7 @@ function TP({ children, className }: { children: ReactNode; className?: string }
 
 function Li({ children }: { children: ReactNode }) {
   return (
-    <div className="flex gap-2 mb-0 pl-12">
+    <div className="flex gap-2 mb-0 pl-6 sm:pl-12">
       <span className="flex-shrink-0 select-none">–</span>
       <span>{children}</span>
     </div>
@@ -24,7 +24,7 @@ function Li({ children }: { children: ReactNode }) {
 
 function OLi({ children }: { children: ReactNode }) {
   return (
-    <div className="flex gap-2 mb-0 pl-24">
+    <div className="flex gap-2 mb-0 pl-12 sm:pl-24">
       <span className="flex-shrink-0 select-none text-[9px] leading-5">○</span>
       <span>{children}</span>
     </div>
@@ -33,7 +33,7 @@ function OLi({ children }: { children: ReactNode }) {
 
 function SqLi({ children }: { children: ReactNode }) {
   return (
-    <div className="flex gap-2 mb-0 pl-36">
+    <div className="flex gap-2 mb-0 pl-20 sm:pl-36">
       <span className="flex-shrink-0 select-none">▪</span>
       <span>{children}</span>
     </div>
@@ -42,7 +42,7 @@ function SqLi({ children }: { children: ReactNode }) {
 
 function Arr({ children }: { children: ReactNode }) {
   return (
-    <div className="flex gap-2 mb-0 pl-24">
+    <div className="flex gap-2 mb-0 pl-12 sm:pl-24">
       <span className="flex-shrink-0 select-none text-lg leading-5 font-bold">→</span>
       <span>{children}</span>
     </div>
@@ -51,7 +51,7 @@ function Arr({ children }: { children: ReactNode }) {
 
 function Num({ n, children }: { n: number; children: ReactNode }) {
   return (
-    <div className="flex gap-1.5 mb-0 pl-12">
+    <div className="flex gap-1.5 mb-0 pl-6 sm:pl-12">
       <span className="flex-shrink-0 select-none font-bold">{n}.</span>
       <span>{children}</span>
     </div>
