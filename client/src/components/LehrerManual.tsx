@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, BookOpen, Users, Lightbulb } from "lucide-react";
 
-function DocImage({ src, caption }: { src: string; caption: string }) {
+function DocImage({ src, caption, maxHeight = 170 }: { src: string; caption: string; maxHeight?: number }) {
   return (
     <figure className="my-4 flex flex-col items-center">
       <img
         src={src}
         alt={caption}
         className="max-w-full rounded-md border border-gray-200 bg-white"
-        style={{ maxHeight: "170px", objectFit: "contain" }}
+        style={{ maxHeight: `${maxHeight}px`, objectFit: "contain" }}
       />
       <figcaption className="mt-2 text-center text-sm text-gray-500 italic">{caption}</figcaption>
     </figure>
@@ -172,9 +172,9 @@ export default function LehrerManual() {
             <p className="font-semibold mb-1">Aufbau der Stärke</p>
             <p className="mb-3">Im Gegensatz zu den Einfach- und Zweifachzuckern ist Stärke ein sog. komplexes Kohlenhydrat. In der Stärke sind die Einfachzucker zu linearen oder verzweigten Ketten verbunden.</p>
             <p className="mb-3">Stärke besteht zu etwa 20–30 % aus Amylose (lineare Ketten mit einer schraubenartigen Struktur).</p>
-            <DocImage src="/manual-images/image4.png" caption="Struktur der Amylose" />
+            <DocImage src="/manual-images/image4.png" caption="Struktur der Amylose" maxHeight={136} />
             <p className="mb-3">Die weiteren 70–80 % der Stärke bestehen aus Amylopektin (vielfach verzweigte, netzartige Strukturen), das sehr große Moleküle bildet.</p>
-            <DocImage src="/manual-images/image5.png" caption="Ausschnitt aus einem Amylopektin-Molekül" />
+            <DocImage src="/manual-images/image5.png" caption="Ausschnitt aus einem Amylopektin-Molekül" maxHeight={136} />
             <p className="mb-1">Die wichtigsten stärkehaltigen Nahrungsquellen:</p>
             <ul className="list-disc pl-5 mb-3 space-y-1">
               <li>Getreide: Weizen, Roggen, Gerste, Dinkel, Mais, Reis, Hafer</li>
