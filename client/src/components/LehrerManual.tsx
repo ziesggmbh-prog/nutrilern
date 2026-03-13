@@ -498,7 +498,7 @@ export default function LehrerManual() {
             <P><B>Vitamine: Allgemeines</B></P>
             <P>Zu den Vitaminen zählt man eine Reihe lebenswichtiger Stoffe. Wir müssen sie in kleinen Mengen regelmäßig über die Nahrung aufnehmen. Die meisten Vitamine sind essentiell. Sie sind an lebenswichtigen Reaktionen beteiligt und spielen in vielen Stoffwechselprozessen eine unverzichtbare Rolle.</P>
             <P>Die Vitamine lassen sich in wasserlösliche und fettlösliche einteilen. Zu den wasserlöslichen Vitaminen gehören die Gruppe der B-Vitamine und das Vitamin C. Zu den fettlöslichen Vitaminen zählen wir die Vitamine A, D, E und K.</P>
-            <DocImage src="/manual-images/image18.jpeg" caption="Vitamine: Ein Überblick" maxHeight="221px" />
+            <DocImage src="/manual-images/image18.jpeg" caption="Vitamine: Ein Überblick" maxHeight="243px" />
             <P><B>Warum gibt es mehrere ‚Nummern' vom gleichen Vitamin: Was bedeutet das?</B></P>
             <P>Die Benennung der Vitamine wirkt auf den ersten Blick lückenhaft und unordentlich. Das ist historisch bedingt. Die Lücken in der Namensgebung entstanden unter anderem deshalb, weil viele der ursprünglich als Vitamine entdeckten und listenartig benannten Stoffe sich später als keineswegs einheitliche Substanzen herausstellten. In der Folge wurden einige Bezeichnungen aus der Benennungsliste entfernt, die übrigen aber beibehalten.</P>
             <P>Die Entdeckung der Vitamine begann Anfang des 20. Jahrhunderts. Damals war deren chemische Struktur noch nicht bekannt, so dass man sie zunächst nicht exakt wissenschaftlich bezeichnen konnte. Daher wurde den Vitaminen je ein großer Buchstabe des Alphabets zugeordnet.</P>
