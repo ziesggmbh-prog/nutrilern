@@ -5,6 +5,7 @@ import { ArrowLeft, Users, Clock, ListOrdered, Presentation, FileText } from "lu
 import FullscreenToggle from "@/components/FullscreenToggle";
 import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
+import LehrerManual from "@/components/LehrerManual";
 
 export default function Teachers() {
   useFullscreenSync();
@@ -340,13 +341,7 @@ export default function Teachers() {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl shadow-lg p-8 mb-8"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                <FileText className="text-green-600" size={20} />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-800">Manual für Lehrkräfte</h2>
-            </div>
-            <p className="text-gray-500 italic">Inhalt folgt.</p>
+            <LehrerManual />
           </motion.div>
         )}
 
