@@ -173,12 +173,7 @@ export default function Level2() {
             const isAvailable = true; // All quests are available in Level 2
             
             return (
-              <motion.div
-                key={lesson.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
+              <div key={lesson.id}>
                 <QuestCard
                   lesson={lesson}
                   isCompleted={isCompleted}
@@ -186,7 +181,7 @@ export default function Level2() {
                   onQuizClick={() => handleLessonClick(lesson)}
                   isGroupMode={true}
                 />
-              </motion.div>
+              </div>
             );
           })}
         </div>

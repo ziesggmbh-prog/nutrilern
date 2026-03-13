@@ -22,8 +22,7 @@ function WideOpenLock({ size = 16, className = "" }: { size?: number; className?
 }
 import type { Lesson } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
-import { useState, useRef } from "react";
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useState } from "react";
 
 interface QuestCardProps {
   lesson: Lesson;
@@ -101,12 +100,9 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
   // Full version for group mode with images
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver(cardRef);
   
   return (
     <motion.div
-      ref={cardRef}
       className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-shadow duration-300 group ${
         isGroupMode
           ? (isAvailable ? "hover:shadow-xl" : "opacity-60")
@@ -173,8 +169,8 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
               </div>
             )}
 
-            {/* Image – rendered as soon as card is first visible; stays in DOM (sticky observer) */}
-            {!imageError && isVisible && (
+            {/* Image – always in DOM, fades in once loaded */}
+            {!imageError && (
               <img
                 src={lesson.thumbnailUrl}
                 alt={lesson.title}
