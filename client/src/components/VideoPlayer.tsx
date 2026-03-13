@@ -29,6 +29,31 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   
   const hasEndedRef = useRef(false);
   
+  // Ref for the outer container – used to request fullscreen on open
+  const outerRef = useRef<HTMLDivElement>(null);
+
+  // Enter fullscreen when the modal opens, exit when it closes
+  useEffect(() => {
+    const el = outerRef.current;
+    if (!el) return;
+    const tryFs = async () => {
+      try {
+        if (el.requestFullscreen) {
+          await el.requestFullscreen();
+        } else if ((el as any).webkitRequestFullscreen) {
+          (el as any).webkitRequestFullscreen();
+        }
+      } catch (_) { /* fullscreen blocked – continue in windowed mode */ }
+    };
+    tryFs();
+    return () => {
+      try {
+        if (document.fullscreenElement) document.exitFullscreen();
+        else if ((document as any).webkitFullscreenElement) (document as any).webkitExitFullscreen();
+      } catch (_) {}
+    };
+  }, []);
+
   // Refs for Vimeo iframes and HTML5 video
   const vimeoRef1 = useRef<HTMLIFrameElement>(null);
   const vimeoRef2 = useRef<HTMLIFrameElement>(null);
@@ -155,7 +180,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // No auto-completion for Vimeo videos - only manual completion via button
   
   return (
-    <div className="fixed inset-0 bg-black z-50 flex flex-col sm:bg-opacity-80 sm:items-center sm:justify-center">
+    <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col sm:bg-opacity-80 sm:items-center sm:justify-center">
       {/* Desktop only: tappable backdrop */}
       <div className="absolute inset-0 hidden sm:block" onClick={onClose} />
 
