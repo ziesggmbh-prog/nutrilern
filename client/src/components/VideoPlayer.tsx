@@ -32,20 +32,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // Ref for the outer container – used to request fullscreen on open
   const outerRef = useRef<HTMLDivElement>(null);
 
-  // Enter fullscreen when the modal opens, exit when it closes
+  // Exit fullscreen when the modal closes
   useEffect(() => {
-    const el = outerRef.current;
-    if (!el) return;
-    const tryFs = async () => {
-      try {
-        if (el.requestFullscreen) {
-          await el.requestFullscreen();
-        } else if ((el as any).webkitRequestFullscreen) {
-          (el as any).webkitRequestFullscreen();
-        }
-      } catch (_) { /* fullscreen blocked – continue in windowed mode */ }
-    };
-    tryFs();
     return () => {
       try {
         if (document.fullscreenElement) document.exitFullscreen();
