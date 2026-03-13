@@ -186,7 +186,17 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
 
         {/* Scrollable body */}
         <div className="overflow-y-auto px-6 pb-6">
-        <div className="relative rounded-xl overflow-hidden mb-6">
+        {/* Video wrapper: overflow-hidden only on inner box so the X-button isn't clipped */}
+        <div className="relative mb-6">
+          {/* X-Button direkt auf dem Video, oben rechts */}
+          <button
+            onClick={onClose}
+            className="absolute top-2 right-2 z-20 bg-gray-900 bg-opacity-80 hover:bg-opacity-100 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-xl"
+            aria-label="Schließen"
+          >
+            <X size={18} />
+          </button>
+          <div className="rounded-xl overflow-hidden">
           <div className="bg-gray-800 aspect-video relative">
             {/* Vimeo Embed for Videos 1, 2 & 3 with Player API */}
             {lesson.id === 1 ? (
@@ -281,7 +291,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               </div>
             )}
           </div>
-        </div>
+          </div>{/* end rounded-xl overflow-hidden */}
+        </div>{/* end relative mb-6 */}
         
         <div className="text-center">
           <button
