@@ -160,17 +160,29 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-      <div className="bg-navy-light rounded-xl p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold text-white">{lesson.title}</h2>
+      {/* Fixed close button – always reachable on mobile even when iframe captures touch */}
+      <button
+        onClick={onClose}
+        className="fixed top-3 right-3 z-[60] bg-gray-800 bg-opacity-90 hover:bg-gray-700 text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg sm:hidden"
+        aria-label="Schließen"
+      >
+        <X size={20} />
+      </button>
+
+      <div className="bg-navy-light rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] flex flex-col">
+        {/* Header – outside scroll area, always visible */}
+        <div className="flex justify-between items-center px-6 pt-5 pb-4 flex-shrink-0">
+          <h2 className="text-xl sm:text-2xl font-bold text-white">{lesson.title}</h2>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-white p-2"
+            className="text-gray-400 hover:text-white p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
           >
             <X size={24} />
           </button>
         </div>
-        
+
+        {/* Scrollable body */}
+        <div className="overflow-y-auto px-6 pb-6">
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
             {/* Vimeo Embed for Videos 1, 2 & 3 with Player API */}
