@@ -12,7 +12,11 @@ export function useIntersectionObserver(
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsIntersecting(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          // Sticky: once visible, stay visible and stop observing
+          setIsIntersecting(true);
+          observer.disconnect();
+        }
       },
       {
         threshold: 0.1,
@@ -26,7 +30,7 @@ export function useIntersectionObserver(
     return () => {
       observer.disconnect();
     };
-  }, [ref, options]);
+  }, [ref]);
 
   return isIntersecting;
 }

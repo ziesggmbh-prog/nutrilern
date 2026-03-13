@@ -1,0 +1,96 @@
+Bitte untersuche meine Website auf Ursachen für gelegentliches Flackern von Bildern und behebe das möglichst direkt im Code.
+
+Ziel:
+Das Bild-Flackern soll verschwinden oder deutlich reduziert werden, ohne das Design sichtbar zu verschlechtern.
+
+Arbeite dabei systematisch und setze die folgenden Punkte um:
+
+1. Analysiere alle Stellen mit Bildern
+- Prüfe normale <img>-Elemente, Background-Images, Slider/Carousel-Komponenten, Hero-Bilder, Galerien und ggf. Bilder in Cards.
+- Finde Stellen, an denen Bilder beim Scrollen, Hovern, Laden oder bei State-Updates neu gerendert oder neu geladen werden.
+
+2. Verhindere Layout-Sprünge und instabiles Nachladen
+- Setze bei allen relevanten Bildern feste width/height-Attribute oder eine stabile aspect-ratio.
+- Sorge dafür, dass der Platz für Bilder schon vor dem Laden reserviert ist.
+- Ergänze sinnvolle Styles wie:
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+- Prüfe object-fit/object-position, damit keine unsteten Größenänderungen auftreten.
+
+3. Entferne problematische Animationen/Transitions
+- Suche nach CSS-Transitions oder Animationen auf Bildern, deren Containern oder Overlays.
+- Entferne oder entschärfe Effekte, die Flackern auslösen können, besonders bei:
+  - opacity
+  - filter
+  - backdrop-filter
+  - transform
+  - scale
+  - translate3d
+  - hover transitions
+  - fade-in beim Mount
+- Wenn Animationen nötig sind, nutze möglichst nur transform/opacity, aber vermeide unnötige dauerhafte Repaints.
+- Deaktiviere testweise alle Bild-Animationen und füge nur stabile Effekte wieder ein.
+
+4. Prüfe GPU-/Rendering-Probleme
+- Suche nach problematischen Kombinationen wie:
+  - transform + overflow hidden
+  - filter + scale
+  - translateZ(0)
+  - will-change auf zu vielen Elementen
+  - animierte Shadows oder Blur-Effekte
+- Entferne unnötige will-change-, preserve-3d- oder backface-visibility-Hacks, wenn sie das Flackern verschlimmern.
+- Falls sinnvoll, teste gezielt stabile Varianten für betroffene Elemente, z. B.:
+  backface-visibility: hidden;
+  transform: translateZ(0);
+aber nur dort, wo es nachweislich hilft.
+
+5. Prüfe Framework-spezifische Re-Renders
+- Falls React/Vue/etc. verwendet wird:
+  - prüfe, ob Bild-Komponenten unnötig remountet werden
+  - prüfe wechselnde key-Props
+  - prüfe State-Updates, die ganze Listen/Galerien neu rendern
+  - memoisiere Komponenten, wenn nötig
+  - vermeide, dass Bild-URLs bei jedem Render neu erzeugt werden
+- Stelle sicher, dass Bilder nicht bei kleinen UI-Änderungen neu geladen werden.
+
+6. Prüfe Lazy Loading und Bildquellen
+- Prüfe loading="lazy", decoding="async", srcset, sizes und Preloading.
+- Für Bilder im sofort sichtbaren Bereich:
+  - nicht unnötig lazy laden
+  - ggf. priority/preload setzen
+- Stelle sicher, dass keine Bild-URL mehrfach wechselt oder zwischen Placeholder und finalem Bild sichtbar springt.
+
+7. Prüfe Slider/Carousel- oder Auto-Rotation-Komponenten besonders gründlich
+- Falls es Slider, Carousels oder Auto-Scroll-Galerien gibt:
+  - untersuche Transitions zwischen Slides
+  - prüfe absolute Positionierung, opacity-Wechsel und z-index-Wechsel
+  - verhindere doppeltes Rendern derselben Bilder
+  - reduziere oder entferne fade/crossfade-Effekte testweise
+- Bevorzuge stabile Übergänge statt aggressiver Fade-Layer.
+
+8. Accessibility / Motion
+- Ergänze Unterstützung für reduced motion:
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+9. Liefere konkrete Änderungen
+- Nimm die Änderungen direkt im Projekt vor.
+- Zeige mir anschließend:
+  a) welche Dateien du geändert hast
+  b) welche konkrete Ursache du gefunden hast
+  c) welche Maßnahmen du umgesetzt hast
+  d) welche potenziellen Restursachen noch offen sind, falls das Flackern nicht komplett reproduzierbar war
+
+10. Wichtig
+- Keine kosmetischen Großumbauten.
+- Fokus auf minimal-invasive, stabile Fixes.
+- Wenn du keine einzelne eindeutige Ursache findest, implementiere die wahrscheinlichsten technischen Gegenmaßnahmen trotzdem direkt.
+- Kommentiere kritische Änderungen im Code kurz.

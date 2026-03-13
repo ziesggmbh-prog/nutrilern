@@ -30,7 +30,7 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
   
   return (
     <motion.div
-      className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-all duration-300 group ${
+      className={`bg-navy-light rounded-2xl p-6 cursor-pointer relative overflow-hidden transition-shadow duration-300 group ${
         isAvailable ? "hover:shadow-xl" : "opacity-60"
       }`}
       onClick={isAvailable ? onClick : undefined}
@@ -60,34 +60,40 @@ export default function LessonCard({ lesson, isCompleted, isAvailable, onClick }
         </div>
         
         <div className="relative">
-          {/* Loading skeleton */}
-          {!imageLoaded && !imageError && (
-            <div className="rounded-xl mb-4 w-full h-48 bg-gray-700 animate-pulse flex items-center justify-center">
-              <div className="w-8 h-8 bg-gray-600 rounded-full"></div>
-            </div>
-          )}
-          
-          {/* Image */}
-          {!imageError && (
-            <img
-              src={lesson.thumbnailUrl}
-              alt={lesson.title}
-              className={`rounded-xl mb-4 w-full h-48 object-cover transition-all duration-300 ${
-                imageLoaded ? 'opacity-100' : 'opacity-0'
-              }`}
-              onLoad={() => setImageLoaded(true)}
-              onError={() => setImageError(true)}
-              loading="eager"
-            />
-          )}
-          
-          {/* Fallback gradient for failed images */}
-          {imageError && (
-            <div className={`rounded-xl mb-4 w-full h-48 ${colorClass} opacity-20 flex items-center justify-center`}>
-              <div className="text-white opacity-60 text-sm">Bild nicht verfügbar</div>
-            </div>
-          )}
-          
+          {/* Space is always reserved to prevent layout shifts */}
+          <div className="rounded-xl mb-4 w-full h-48 relative overflow-hidden bg-gray-800">
+            {/* Loading skeleton – shown until image loaded or error */}
+            {!imageLoaded && !imageError && (
+              <div className="absolute inset-0 bg-gray-700 animate-pulse flex items-center justify-center">
+                <div className="w-8 h-8 bg-gray-600 rounded-full"></div>
+              </div>
+            )}
+
+            {/* Image – always in DOM, fades in once loaded */}
+            {!imageError && (
+              <img
+                src={lesson.thumbnailUrl}
+                alt={lesson.title}
+                width={320}
+                height={192}
+                decoding="async"
+                className={`absolute inset-0 w-full h-full object-cover object-center rounded-xl transition-opacity duration-300 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => setImageLoaded(true)}
+                onError={() => setImageError(true)}
+                loading="eager"
+              />
+            )}
+
+            {/* Fallback gradient for failed images */}
+            {imageError && (
+              <div className={`absolute inset-0 ${colorClass} opacity-20 flex items-center justify-center`}>
+                <div className="text-white opacity-60 text-sm">Bild nicht verfügbar</div>
+              </div>
+            )}
+          </div>
+
           {!isAvailable && (
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 rounded-xl transition-opacity duration-300">
               <Lock className="text-white opacity-40" size={32} />
