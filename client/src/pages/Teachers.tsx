@@ -132,7 +132,7 @@ export default function Teachers() {
                 </div>
                 <h2 className="text-xl font-bold text-gray-800 mb-3">Manual für Lehrkräfte</h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Hier erhalten Sie Zusammenfassungen zu den Inhalten der Lehrfilme und vertiefende Informationen.
+                  Hier finden Sie die zentralen Inhalte der Lerneinheit und weiterführende Informationen.
                 </p>
               </div>
             </motion.div>
