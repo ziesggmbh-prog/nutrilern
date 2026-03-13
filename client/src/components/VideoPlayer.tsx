@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, CheckCircle, RotateCcw, Maximize } from 'lucide-react';
+import { X, CheckCircle, RotateCcw } from 'lucide-react';
 import { quizData } from '@/lib/quizData';
 
 // Declare Vimeo Player for TypeScript
@@ -29,15 +29,6 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   
   const hasEndedRef = useRef(false);
   const outerRef = useRef<HTMLDivElement>(null);
-
-  const enterFullscreen = () => {
-    const el = outerRef.current;
-    if (!el) return;
-    try {
-      if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
-      else if ((el as any).webkitRequestFullscreen) (el as any).webkitRequestFullscreen();
-    } catch (_) {}
-  };
 
   const exitFs = () => {
     try {
@@ -140,141 +131,76 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // No auto-completion for Vimeo videos - only manual completion via button
   
   return (
-    <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col sm:bg-opacity-80 sm:items-center sm:justify-center">
-      {/* Desktop only: tappable backdrop */}
-      <div className="absolute inset-0 hidden sm:block" onClick={onClose} />
+    <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center">
 
-      {/* Modal card: full-screen on mobile, centered card on desktop */}
-      <div className="relative z-10 w-full h-full flex flex-col bg-navy-light sm:h-auto sm:max-h-[90vh] sm:max-w-4xl sm:mx-4 sm:rounded-xl">
-        {/* Header – always visible, never scrolls away */}
-        <div className="flex justify-between items-center px-4 py-3 sm:px-6 sm:pt-5 sm:pb-4 flex-shrink-0 border-b border-white border-opacity-10 sm:border-0">
-          <h2 className="text-lg sm:text-2xl font-bold text-white truncate pr-2">{lesson.title}</h2>
-          <div className="flex items-center gap-2 flex-shrink-0">
-            {/* Vollbild-Button: taps requestFullscreen on our container → X stays visible */}
-            <button
-              onClick={enterFullscreen}
-              className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-11 h-11 flex items-center justify-center"
-              aria-label="Vollbild"
-            >
-              <Maximize size={20} />
-            </button>
-            <button
-              onClick={() => { exitFs(); onClose(); }}
-              className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-11 h-11 flex items-center justify-center"
-              aria-label="Schließen"
-            >
-              <X size={22} />
-            </button>
-          </div>
-        </div>
+      {/* ✕ – always visible, floating top-right */}
+      <button
+        onClick={() => { exitFs(); onClose(); }}
+        className="absolute top-4 right-4 z-30 bg-black bg-opacity-70 border-2 border-white border-opacity-50 text-white rounded-full w-12 h-12 flex items-center justify-center"
+        aria-label="Schließen"
+      >
+        <X size={26} />
+      </button>
 
-        {/* Scrollable body */}
-        <div className="overflow-y-auto px-4 pb-4 sm:px-6 sm:pb-6">
-        <div className="relative rounded-xl overflow-hidden mb-6">
-          <div className="bg-gray-800 aspect-video relative">
-            {/* Vimeo Embed for Videos 1, 2 & 3 with Player API */}
-            {lesson.id === 1 ? (
-              <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
-                <iframe 
-                  ref={vimeoRef1}
-                  src="https://player.vimeo.com/video/1172528318?badge=0&autopause=0&autoplay=1"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                  title="Intro"
-                  onLoad={() => {
-                    console.log('✅ Vimeo video 1 loaded successfully');
-                  }}
-                />
-              </div>
-            ) : lesson.id === 2 ? (
-              <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
-                <iframe 
-                  ref={vimeoRef2}
-                  src="https://player.vimeo.com/video/1172528646?badge=0&autopause=0&autoplay=1"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                  title="Kohlenhydrate"
-                  onLoad={() => {
-                    console.log('✅ Vimeo video 2 loaded successfully');
-                  }}
-                />
-              </div>
-            ) : lesson.id === 3 ? (
-              <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
-                <iframe 
-                  ref={vimeoRef3}
-                  src="https://player.vimeo.com/video/1172530056?badge=0&autopause=0&autoplay=1"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                  title="Fette"
-                  onLoad={() => {
-                    console.log('✅ Vimeo video 3 loaded successfully');
-                  }}
-                />
-              </div>
-            ) : lesson.id === 4 ? (
-              <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
-                <iframe 
-                  ref={vimeoRef4}
-                  src="https://player.vimeo.com/video/1148007412?badge=0&autopause=0&autoplay=1"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                  title="Proteine"
-                  onLoad={() => {
-                    console.log('✅ Vimeo video 4 loaded successfully');
-                  }}
-                />
-              </div>
-            ) : (
-              /* Local video fallback for other lessons */
-              <video
-                controls
-                className="w-full h-full object-cover"
-                preload="auto"
-                playsInline
-                autoPlay
-                muted={false}
-                onEnded={() => {
-                  console.log('🎬 HTML5 video ended - showing replay button');
-                  setVideoEnded(true);
-                }}
-                ref={htmlVideoRef}
-              >
-                <source src={lesson.videoUrl} type="video/mp4" />
-                Ihr Browser unterstützt das Video-Element nicht.
-              </video>
-            )}
-            
-            {/* Replay Button Overlay */}
-            {videoEnded && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
-                <button
-                  onClick={handleReplay}
-                  className="bg-gray-800 hover:bg-gray-700 text-white rounded-lg px-6 py-3 transition-colors shadow-lg"
-                  data-testid="button-replay"
-                >
-                  <span className="font-medium">Video wiederholen</span>
-                </button>
-              </div>
-            )}
-          </div>
+      {/* Video – fills width, centered */}
+      <div className="w-full relative">
+        <div className="aspect-video w-full relative bg-black">
+          {lesson.id === 1 ? (
+            <iframe ref={vimeoRef1}
+              src="https://player.vimeo.com/video/1172528318?badge=0&autopause=0&autoplay=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}
+              title="Intro" />
+          ) : lesson.id === 2 ? (
+            <iframe ref={vimeoRef2}
+              src="https://player.vimeo.com/video/1172528646?badge=0&autopause=0&autoplay=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}
+              title="Kohlenhydrate" />
+          ) : lesson.id === 3 ? (
+            <iframe ref={vimeoRef3}
+              src="https://player.vimeo.com/video/1172530056?badge=0&autopause=0&autoplay=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}
+              title="Fette" />
+          ) : lesson.id === 4 ? (
+            <iframe ref={vimeoRef4}
+              src="https://player.vimeo.com/video/1148007412?badge=0&autopause=0&autoplay=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}}
+              title="Proteine" />
+          ) : (
+            <video controls className="absolute inset-0 w-full h-full" preload="auto" autoPlay
+              onEnded={() => setVideoEnded(true)} ref={htmlVideoRef}>
+              <source src={lesson.videoUrl} type="video/mp4" />
+            </video>
+          )}
+
+          {/* Replay overlay */}
+          {videoEnded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
+              <button onClick={handleReplay}
+                className="bg-white bg-opacity-20 border border-white border-opacity-40 text-white rounded-lg px-6 py-3">
+                <RotateCcw size={20} className="inline mr-2" />
+                <span>Video wiederholen</span>
+              </button>
+            </div>
+          )}
         </div>
-        
-        <div className="text-center">
-          <button
-            onClick={onComplete}
-            className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 mx-auto"
-          >
-            <CheckCircle size={24} />
-            {lesson.id === 1 ? "Intro abschließen" : "Film abschließen"}
-          </button>
-        </div>
-        </div>{/* end scrollable body */}
-      </div>{/* end modal */}
+      </div>
+
+      {/* Film abschließen */}
+      <div className="mt-6 px-4">
+        <button onClick={onComplete}
+          className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg flex items-center gap-2">
+          <CheckCircle size={24} />
+          {lesson.id === 1 ? "Intro abschließen" : "Film abschließen"}
+        </button>
+      </div>
     </div>
   );
 }
