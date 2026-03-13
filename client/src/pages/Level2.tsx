@@ -120,8 +120,9 @@ export default function Level2() {
       {/* Header */}
       <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         <div className="container mx-auto px-4 py-6 relative z-10">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-            <div className="flex items-center space-x-3 sm:space-x-6 min-w-0">
+          {/* Zeile 1: Logo + Fullscreen + Hamburger */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3 sm:space-x-6">
               <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
                 <img 
                   src={logoImage} 
@@ -134,11 +135,15 @@ export default function Level2() {
                 <p className="hidden sm:block text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Ernährung</p>
               </div>
             </div>
-            <div className="flex items-center justify-end space-x-2 sm:space-x-4">
-              <LevelDropdown />
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              <div className="hidden sm:block"><LevelDropdown /></div>
               <FullscreenToggle />
               <HamburgerMenu />
             </div>
+          </div>
+          {/* Zeile 2 (nur Mobile): Level-Switch darunter, rechtsbündig */}
+          <div className="flex sm:hidden justify-end mt-2">
+            <LevelDropdown />
           </div>
         </div>
 
