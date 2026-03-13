@@ -108,10 +108,6 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               }
             });
             
-            player.ready().then(() => {
-              player.requestFullscreen().catch(() => {});
-            });
-            
             // Store player reference for replay functionality
             setVimeoPlayer(player);
             
