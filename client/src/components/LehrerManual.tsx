@@ -567,7 +567,7 @@ export default function LehrerManual() {
             <Li>Fast Food und Frittiertes (z.B. Hamburger, Pommes)</Li>
             <P><B>Wie erkenne ich Transfettsäuren?</B></P>
             <Li>Lebensmittel, auf deren Verpackung „<B>teilweise gehärtete Fette</B>" angegeben sind, enthalten Transfettsäuren.</Li>
-            <Num n={3}><B>Protein-Produkte: Shakes, Riegel etc.</B></Num>
+            <div className="mt-8"><Num n={3}><B>Protein-Produkte: Shakes, Riegel etc.</B></Num></div>
             <P>Müssen wir unserem Körper <B>zusätzliches Protein</B> zuführen?</P>
             <Li>Über eine <B>ausgewogene Ernährung</B> kann der Körper <B>ausreichend mit Protein</B> versorgt werden. Eine <B>Ergänzung</B> durch künstliche Protein-Produkte ist <B>nicht notwendig</B>.</Li>
             <P>Die <B>unnatürliche Zusammensetzung</B> künstlicher Protein-Produkte:</P>
