@@ -1,5 +1,5 @@
 import gruppe1 from "@assets/Gruppe_1_opt.jpg";
-import gruppe2 from "@assets/Gruppe_2_opt.jpg";
+import gruppe2 from "@assets/ziesggmbh_59072_add_realistic_olive_oil_bottle_--ar_9151_--pr__1773414504520.png";
 import gruppe3 from "@assets/Gruppe_3_opt.jpg";
 import gruppe4 from "@assets/Gruppe_4_opt.jpg";
 import gruppe5 from "@assets/Gruppe_5_opt.jpg";
