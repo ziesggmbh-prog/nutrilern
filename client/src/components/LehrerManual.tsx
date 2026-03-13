@@ -309,7 +309,7 @@ export default function LehrerManual() {
             <P>Jedes C-Atom in der Kohlenwasserstoffkette ist hier mit der maximal möglichen Anzahl von Wasserstoffatomen verbunden. Alle C-Atome sind durch Einfachbindungen verknüpft. Die Kohlenstoffatome in der Kette besitzen ausschließlich Einfachbindungen.</P>
             <P>Beispiele für gesättigte Fettsäuren:</P>
             <P>Palmitinsäure</P>
-            <DocImage src="/manual-images/image8.png" caption="Palmitinsäure (C16H32O2)" maxHeight="102px" />
+            <DocImage src="/manual-images/image8.png" caption="Palmitinsäure (C16H32O2)" maxHeight="71px" />
             <P>Stearinsäure</P>
             <DocImage src="/manual-images/image9.png" caption="Stearinsäure (C18H36O2)" />
             <P>Gesättigte Fette besitzen nur gesättigte Fettsäuren. Große Mengen an gesättigten Fettsäuren findet man vor allem in Nahrungsmitteln tierischer Herkunft. Nur wenige pflanzliche Nahrungsmittel enthalten größere Anteile an gesättigte Fettsäuren.</P>
