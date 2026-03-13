@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { X, CheckCircle, RotateCcw } from 'lucide-react';
+import { X, CheckCircle, RotateCcw, Maximize } from 'lucide-react';
 import { quizData } from '@/lib/quizData';
 
 // Declare Vimeo Player for TypeScript
@@ -28,6 +28,26 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const [vimeoPlayer, setVimeoPlayer] = useState<any>(null);
   
   const hasEndedRef = useRef(false);
+  const outerRef = useRef<HTMLDivElement>(null);
+
+  const enterFullscreen = () => {
+    const el = outerRef.current;
+    if (!el) return;
+    try {
+      if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
+      else if ((el as any).webkitRequestFullscreen) (el as any).webkitRequestFullscreen();
+    } catch (_) {}
+  };
+
+  const exitFs = () => {
+    try {
+      if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+      else if ((document as any).webkitFullscreenElement) (document as any).webkitExitFullscreen();
+    } catch (_) {}
+  };
+
+  // Exit fullscreen when modal closes
+  useEffect(() => () => exitFs(), []);
 
   // Refs for Vimeo iframes and HTML5 video
   const vimeoRef1 = useRef<HTMLIFrameElement>(null);
@@ -120,7 +140,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // No auto-completion for Vimeo videos - only manual completion via button
   
   return (
-    <div className="fixed inset-0 bg-black z-50 flex flex-col sm:bg-opacity-80 sm:items-center sm:justify-center">
+    <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col sm:bg-opacity-80 sm:items-center sm:justify-center">
       {/* Desktop only: tappable backdrop */}
       <div className="absolute inset-0 hidden sm:block" onClick={onClose} />
 
@@ -128,14 +148,24 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
       <div className="relative z-10 w-full h-full flex flex-col bg-navy-light sm:h-auto sm:max-h-[90vh] sm:max-w-4xl sm:mx-4 sm:rounded-xl">
         {/* Header – always visible, never scrolls away */}
         <div className="flex justify-between items-center px-4 py-3 sm:px-6 sm:pt-5 sm:pb-4 flex-shrink-0 border-b border-white border-opacity-10 sm:border-0">
-          <h2 className="text-lg sm:text-2xl font-bold text-white truncate pr-4">{lesson.title}</h2>
-          <button
-            onClick={onClose}
-            className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-11 h-11 flex items-center justify-center flex-shrink-0"
-            aria-label="Schließen"
-          >
-            <X size={22} />
-          </button>
+          <h2 className="text-lg sm:text-2xl font-bold text-white truncate pr-2">{lesson.title}</h2>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {/* Vollbild-Button: taps requestFullscreen on our container → X stays visible */}
+            <button
+              onClick={enterFullscreen}
+              className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-11 h-11 flex items-center justify-center"
+              aria-label="Vollbild"
+            >
+              <Maximize size={20} />
+            </button>
+            <button
+              onClick={() => { exitFs(); onClose(); }}
+              className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-11 h-11 flex items-center justify-center"
+              aria-label="Schließen"
+            >
+              <X size={22} />
+            </button>
+          </div>
         </div>
 
         {/* Scrollable body */}
