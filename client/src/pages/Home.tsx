@@ -160,11 +160,6 @@ export default function Home() {
     const isAvailable = lesson.id === nextAvailableLesson?.id || isCompleted;
     
     if (isAvailable) {
-      try {
-        const el = document.documentElement as any;
-        if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
-        else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-      } catch (_) {}
       setSelectedLesson(lesson);
       setShowVideo(true);
     }
