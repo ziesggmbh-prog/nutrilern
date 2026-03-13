@@ -155,18 +155,18 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // No auto-completion for Vimeo videos - only manual completion via button
   
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-      {/* Tappable backdrop – closes modal when tapping outside the video box */}
-      <div className="absolute inset-0" onClick={onClose} />
+    <div className="fixed inset-0 bg-black z-50 flex flex-col sm:bg-opacity-80 sm:items-center sm:justify-center">
+      {/* Desktop only: tappable backdrop */}
+      <div className="absolute inset-0 hidden sm:block" onClick={onClose} />
 
-      <div className="bg-navy-light rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] flex flex-col relative z-10">
-        {/* Header – outside scroll area, always visible */}
-        <div className="flex justify-between items-center px-6 pt-5 pb-4 flex-shrink-0">
-          <h2 className="text-xl sm:text-2xl font-bold text-white">{lesson.title}</h2>
-          {/* X-Button oben rechts in der Ecke – groß und gut sichtbar */}
+      {/* Modal card: full-screen on mobile, centered card on desktop */}
+      <div className="relative z-10 w-full h-full flex flex-col bg-navy-light sm:h-auto sm:max-h-[90vh] sm:max-w-4xl sm:mx-4 sm:rounded-xl">
+        {/* Header – always visible, never scrolls away */}
+        <div className="flex justify-between items-center px-4 py-3 sm:px-6 sm:pt-5 sm:pb-4 flex-shrink-0 border-b border-white border-opacity-10 sm:border-0">
+          <h2 className="text-lg sm:text-2xl font-bold text-white truncate pr-4">{lesson.title}</h2>
           <button
             onClick={onClose}
-            className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0"
+            className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-11 h-11 flex items-center justify-center flex-shrink-0"
             aria-label="Schließen"
           >
             <X size={22} />
@@ -174,7 +174,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         </div>
 
         {/* Scrollable body */}
-        <div className="overflow-y-auto px-6 pb-6">
+        <div className="overflow-y-auto px-4 pb-4 sm:px-6 sm:pb-6">
         <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
             {/* Vimeo Embed for Videos 1, 2 & 3 with Player API */}
