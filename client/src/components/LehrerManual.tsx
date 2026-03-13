@@ -129,7 +129,7 @@ export default function LehrerManual() {
         </div>
         <a
           href="/lehrer-manual.pdf"
-          download="Lehrer-Manual.pdf"
+          download="Manual für Lehrkräfte.pdf"
           className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-semibold rounded-xl shadow-md transition-colors text-sm whitespace-nowrap"
         >
           <Download size={18} />
