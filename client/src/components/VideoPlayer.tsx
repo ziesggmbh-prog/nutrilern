@@ -163,40 +163,23 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
       {/* Tappable backdrop – closes modal when tapping outside the video box */}
       <div className="absolute inset-0" onClick={onClose} />
 
-      {/* Fixed close button – always visible on all sizes, above the iframe */}
-      <button
-        onClick={onClose}
-        className="fixed top-3 right-3 z-[60] bg-gray-800 bg-opacity-90 hover:bg-gray-700 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
-        aria-label="Schließen"
-      >
-        <X size={22} />
-      </button>
-
       <div className="bg-navy-light rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] flex flex-col relative z-10">
         {/* Header – outside scroll area, always visible */}
         <div className="flex justify-between items-center px-6 pt-5 pb-4 flex-shrink-0">
           <h2 className="text-xl sm:text-2xl font-bold text-white">{lesson.title}</h2>
+          {/* X-Button oben rechts in der Ecke – groß und gut sichtbar */}
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-white p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0"
+            aria-label="Schließen"
           >
-            <X size={24} />
+            <X size={22} />
           </button>
         </div>
 
         {/* Scrollable body */}
         <div className="overflow-y-auto px-6 pb-6">
-        {/* Video wrapper: overflow-hidden only on inner box so the X-button isn't clipped */}
-        <div className="relative mb-6">
-          {/* X-Button direkt auf dem Video, oben rechts */}
-          <button
-            onClick={onClose}
-            className="absolute top-2 right-2 z-20 bg-gray-900 bg-opacity-80 hover:bg-opacity-100 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-xl"
-            aria-label="Schließen"
-          >
-            <X size={18} />
-          </button>
-          <div className="rounded-xl overflow-hidden">
+        <div className="relative rounded-xl overflow-hidden mb-6">
           <div className="bg-gray-800 aspect-video relative">
             {/* Vimeo Embed for Videos 1, 2 & 3 with Player API */}
             {lesson.id === 1 ? (
@@ -291,8 +274,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               </div>
             )}
           </div>
-          </div>{/* end rounded-xl overflow-hidden */}
-        </div>{/* end relative mb-6 */}
+        </div>
         
         <div className="text-center">
           <button
