@@ -28,19 +28,6 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const [vimeoPlayer, setVimeoPlayer] = useState<any>(null);
   
   const hasEndedRef = useRef(false);
-  
-  // Ref for the outer container – used to request fullscreen on open
-  const outerRef = useRef<HTMLDivElement>(null);
-
-  // Exit fullscreen when the modal closes
-  useEffect(() => {
-    return () => {
-      try {
-        if (document.fullscreenElement) document.exitFullscreen();
-        else if ((document as any).webkitFullscreenElement) (document as any).webkitExitFullscreen();
-      } catch (_) {}
-    };
-  }, []);
 
   // Refs for Vimeo iframes and HTML5 video
   const vimeoRef1 = useRef<HTMLIFrameElement>(null);
@@ -48,32 +35,6 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const vimeoRef3 = useRef<HTMLIFrameElement>(null);
   const vimeoRef4 = useRef<HTMLIFrameElement>(null);
   const htmlVideoRef = useRef<HTMLVideoElement>(null);
-  
-  // Fallback function to exit fullscreen mode
-  const fallbackExitFullscreen = async () => {
-    console.log('🔄 Fallback: Attempting to exit fullscreen mode...');
-    
-    const isFullscreen = document.fullscreenElement || 
-                        (document as any).webkitFullscreenElement || 
-                        (document as any).mozFullScreenElement || 
-                        (document as any).msFullscreenElement;
-    
-    if (isFullscreen) {
-      try {
-        if (document.exitFullscreen) {
-          await document.exitFullscreen();
-          console.log('✅ Fallback: Successfully exited fullscreen');
-        } else if ((document as any).webkitExitFullscreen) {
-          (document as any).webkitExitFullscreen();
-          console.log('✅ Fallback: Used webkit exitFullscreen');
-        }
-      } catch (err) {
-        console.log('❌ Fallback: Failed to exit fullscreen:', err);
-      }
-    } else {
-      console.log('ℹ️ Fallback: No fullscreen mode detected');
-    }
-  };
   
   // Setup Vimeo Player API when component mounts
   useEffect(() => {
@@ -93,20 +54,11 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
           try {
             const player = new window.Vimeo.Player(ref.current);
             
-            const handleVideoEnd = async () => {
+            const handleVideoEnd = () => {
               if (hasEndedRef.current) return;
               hasEndedRef.current = true;
-              console.log(`🎬 Vimeo video ${lessonId} ended - exiting fullscreen in 1.5s`);
-              setTimeout(async () => {
-                try {
-                  await player.exitFullscreen();
-                  console.log('✅ Successfully exited fullscreen via Player API');
-                } catch (err) {
-                  console.log('⚠️ Player.exitFullscreen failed, trying fallback:', err);
-                  await fallbackExitFullscreen();
-                }
-                setVideoEnded(true);
-              }, 1500);
+              console.log(`🎬 Vimeo video ${lessonId} ended`);
+              setVideoEnded(true);
             };
             
             player.on('ended', handleVideoEnd);
@@ -168,7 +120,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // No auto-completion for Vimeo videos - only manual completion via button
   
   return (
-    <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col sm:bg-opacity-80 sm:items-center sm:justify-center">
+    <div className="fixed inset-0 bg-black z-50 flex flex-col sm:bg-opacity-80 sm:items-center sm:justify-center">
       {/* Desktop only: tappable backdrop */}
       <div className="absolute inset-0 hidden sm:block" onClick={onClose} />
 
@@ -195,7 +147,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef1}
-                  src="https://player.vimeo.com/video/1172528318?badge=0&autopause=0&autoplay=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1172528318?badge=0&autopause=0&autoplay=1"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -209,7 +161,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef2}
-                  src="https://player.vimeo.com/video/1172528646?badge=0&autopause=0&autoplay=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1172528646?badge=0&autopause=0&autoplay=1"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -223,7 +175,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef3}
-                  src="https://player.vimeo.com/video/1172530056?badge=0&autopause=0&autoplay=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1172530056?badge=0&autopause=0&autoplay=1"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -237,7 +189,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef4}
-                  src="https://player.vimeo.com/video/1148007412?badge=0&autopause=0&autoplay=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1148007412?badge=0&autopause=0&autoplay=1"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -259,9 +211,6 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 onEnded={() => {
                   console.log('🎬 HTML5 video ended - showing replay button');
                   setVideoEnded(true);
-                  // Add 2.5 second delay to ensure video has fully ended
-                  setTimeout(fallbackExitFullscreen, 2500);
-                  // No automatic completion - user must manually click the button
                 }}
                 ref={htmlVideoRef}
               >
