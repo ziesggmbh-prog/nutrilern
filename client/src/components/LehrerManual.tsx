@@ -212,7 +212,7 @@ export default function LehrerManual() {
             <P>Stärke besteht zu etwa 20–30 % aus Amylose (lineare Ketten mit einer schraubenartigen Struktur).</P>
             <DocImage src="/manual-images/image4.png" caption="Struktur der Amylose" maxHeight="85px" />
             <P>Die weiteren 70–80 % der Stärke bestehen aus Amylopektin (vielfach verzweigte, netzartige Strukturen), das sehr große Moleküle bildet.</P>
-            <DocImage src="/manual-images/image5.png" caption="Ausschnitt aus einem Amylopektin-Molekül" />
+            <DocImage src="/manual-images/image5.png" caption="Ausschnitt aus einem Amylopektin-Molekül" maxHeight="85px" />
             <P><B>Die wichtigsten stärkehaltigen Nahrungsquellen:</B></P>
             <Li>Getreide: Weizen, Roggen, Gerste, Dinkel, Mais, Reis, Hafer</Li>
             <Li>Kartoffeln</Li>
