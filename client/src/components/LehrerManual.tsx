@@ -559,6 +559,85 @@ export default function LehrerManual() {
             </div>
           </div>
         </div>
+
+        {/* Weiterführende Informationen */}
+        <div className="mt-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
+              <Lightbulb className="text-indigo-600" size={16} />
+            </div>
+            <h4 className="text-lg font-bold text-gray-800">Weiterführende Informationen für Lehrkräfte</h4>
+          </div>
+          <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
+            <p className="mb-3">Chemisch sind Fette Verbindungen von Glycerin mit sog. Fettsäuren. Sie werden auch Triglyceride genannt.</p>
+            <p className="mb-3">In einem Fettmolekül sind drei Fettsäuren mit dem Glycerin verbunden: → Triglyceride</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Bildung von Fetten im Körper</h5>
+            <p className="mb-3">Die Herstellung von Fetten kann in mehreren Organen stattfinden: Leber, Niere, Fettgewebe, Darmwand oder Muskulatur. In mehreren Reaktionsschritten verbinden Enzyme das Molekül Glycerin mit Fettsäuren. Zu den wichtigsten Produzenten von Triglyceriden in unserem Körper gehören die Zellen des weißen Fettgewebes, die Adipozyten (Fettzellen). An der Regulierung dieser Vorgänge sind Hormone wie etwa Insulin oder Adrenalin beteiligt.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Abbau der Fette</h5>
+            <p className="mb-3">Am Abbau der Triglyceride sind spezielle Enzyme beteiligt, die sog. Lipasen aus der Bauchspeicheldrüse. In drei Schritten findet die Abspaltung der Fettsäuren vom Glycerinmolekül statt. Ergebnisse der Reaktion sind Glycerin und Fettsäuren.</p>
+            <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 mb-4">
+              <p className="font-semibold text-indigo-800 mb-1">Der biologische Fettabbau (durch das Enzym Lipase)</p>
+              <p className="text-indigo-700">Fett + Lipase → Glycerin + 3 Fettsäuremoleküle</p>
+            </div>
+            <p className="mb-3">Das Glycerin wird für Biosynthesen weiterverwendet. Die Fettsäuren können von den Körperzellen aufgenommen, in den Vorgang der Zellatmung (sog. Fettverbrennung zur Energiegewinnung) eingeschleust oder ebenfalls für Biosynthesen eingesetzt werden. Dazu erfolgt zunächst die Spaltung in kleinere Einheiten mit je zwei Kohlenstoffatomen (C2-Einheiten).</p>
+            <div className="bg-gray-50 border border-gray-200 p-4 mb-4 rounded">
+              <p className="text-gray-700 mb-1">Fettsäure → Abbau zu C2-Einheiten und Verwendung für</p>
+              <ul className="list-disc pl-5 text-gray-700">
+                <li>Bau-Stoffwechsel und Biosynthese</li>
+                <li>Zellatmung und Energiegewinnung</li>
+              </ul>
+            </div>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Wichtig für unsere Ernährung: die Fettsäuren</h5>
+            <p className="mb-3">Das beim Fettabbau entstehende Molekül Glycerin ist immer gleich. Unterschiedlich sind hingegen die Fettsäuren, die bei der Fettverdauung freigesetzt werden. Man unterscheidet sie anhand ihres Aufbaus in</p>
+            <ul className="list-disc pl-5 space-y-1 mb-4">
+              <li>gesättigte Fettsäuren und</li>
+              <li>ungesättigte Fettsäuren.</li>
+            </ul>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Was sind Fettsäuren und wie werden sie unterschieden?</h5>
+            <p className="mb-3">Fettsäuren sind organische Verbindungen aus den Elementen Kohlenstoff (C), Wasserstoff (H) und Sauerstoff (O), sog. Monocarbonsäuren. Ein Fettsäure-Molekül besteht aus einer langen Kohlenwasserstoffkette, die an einem Ende eine COOH-Gruppe (Carboxylgruppe) trägt und namengebend zur Bezeichnung ‚-säure' beiträgt. Die Zahl der C-Atome ist immer gerade und liegt zwischen 8 und 24. Man unterscheidet gesättigte und ungesättigte Fettsäuren.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Gesättigte Fettsäuren</h5>
+            <p className="mb-3">Jedes C-Atom in der Kohlenwasserstoffkette ist hier mit der maximal möglichen Anzahl von Wasserstoffatomen verbunden. Alle C-Atome sind durch Einfachbindungen verknüpft. Die Kohlenstoffatome in der Kette besitzen ausschließlich Einfachbindungen.</p>
+            <p className="mb-2">Beispiele für gesättigte Fettsäuren:</p>
+            <div className="bg-gray-50 border border-gray-200 p-4 mb-4 rounded space-y-2">
+              <p className="text-gray-700">Palmitinsäure<br /><span className="font-mono">C16H32O2</span></p>
+              <p className="text-gray-700">Stearinsäure<br /><span className="font-mono">C18H36O2</span></p>
+            </div>
+            <p className="mb-3">Gesättigte Fette besitzen nur gesättigte Fettsäuren. Große Mengen an gesättigten Fettsäuren findet man vor allem in Nahrungsmitteln tierischer Herkunft. Nur wenige pflanzliche Nahrungsmittel enthalten größere Anteile an gesättigte Fettsäuren.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Ungesättigte Fettsäuren</h5>
+            <p className="mb-3">Hier besitzen nicht alle C-Atome in der Kohlenwasserstoffkette die maximale Anzahl an Wasserstoffatomen. Manche C-Atome sind durch eine Doppelbindung verknüpft. Man unterscheidet zwischen einfach und mehrfach ungesättigte Fettsäuren.</p>
+            <p className="mb-2">Beispiele für ungesättigte Fettsäuren:</p>
+            <div className="bg-gray-50 border border-gray-200 p-4 mb-4 rounded space-y-2">
+              <p className="text-gray-700">Ölsäure (einfach ungesättigt)<br /><span className="font-mono">C18H34O2</span></p>
+              <p className="text-gray-700">Linolsäure (zweifach ungesättigt)<br /><span className="font-mono">C18H32O2</span></p>
+            </div>
+            <p className="mb-3">Ungesättigte Fette besitzen einen hohen Anteil an ungesättigten Fettsäuren. Diese sind überwiegend in pflanzlichen Nahrungsmitteln und in fettem Fisch enthalten.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Was versteht man unter „Omega-Fettsäuren"?</h5>
+            <p className="font-semibold text-gray-800 mb-2">Omega-3-Fettsäuren</p>
+            <p className="mb-3">Die Omega-3-Fettsäuren bilden eine Untergruppe der ungesättigten Fettsäuren. Omega-3 bedeutet: Die letzte Doppelbindung in der ungesättigten Kohlenstoffkette befindet sich bei der vom COOH-Ende aus gesehen drittletzten C-C-Bindung. Omega (ω) ist der letzte Buchstabe des griechischen Alphabets und bezeichnet das von der Carboxylgruppe entfernteste C-Atom in der Kette.</p>
+            <div className="bg-gray-50 border border-gray-200 p-4 mb-4 rounded">
+              <p className="text-gray-700">Beispiel:<br />α-Linolensäure (C18H30O2)<br />↑ Omega-3</p>
+            </div>
+            <p className="font-semibold text-gray-800 mb-2">Omega-6-Fettsäuren</p>
+            <p className="mb-3">Die Omega-6-Fettsäuren weisen – vom Omega-Ende (ω-Ende) her betrachtet – an der sechsten Position die erste Doppelbindung auf.</p>
+            <div className="bg-gray-50 border border-gray-200 p-4 mb-4 rounded">
+              <p className="text-gray-700">Beispiel: ↓ Omega-6<br />Linolsäure (C18H32O2)</p>
+            </div>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Was sind ‚essentielle' Fettsäuren?</h5>
+            <p className="mb-3">Essentielle Fettsäuren sind Fettsäuren, die vom Körper nicht selbst hergestellt werden können. Sie müssen über die Nahrung zugeführt werden. Für den Menschen essentiell sind die oben dargestellte Omega-3-Fettsäure α-Linolensäure und die Omega-6-Fettsäure Linolsäure.</p>
+            <p className="mb-3">Essentielle Fettsäuren erfüllen lebenswichtige Funktionen: Sie sind u.a. Bausteine unserer Zellmembranen. Zudem spielen sie eine Rolle bei der Steuerung von Entzündungsprozessen, sind wichtig für die Regulierung des Blutdrucks und stärken das Immunsystem. Auch unterstützen sie die Regeneration der Muskulatur und wirken bei der Hormon-Produktion mit.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Fettsäuren und Cholesterin</h5>
+            <p className="mb-3">Gesättigte Fettsäuren können den Cholesterinspiegel erhöhen. Cholesterin ist eine natürliche Verbindung aus der Gruppe der sog. Steroide und Baustein vieler Hormone. Einen Großteil des benötigten Cholesterins stellt der Körper selbst her. Der Rest wird mit der Nahrung aufgenommen. Ein hoher Cholesterinspiegel im Blut gilt als Risikofaktor für Arterienverkalkung (Arteriosklerose), denn überschüssiges Cholesterin kann sich in den Gefäßen ablagern. Dies stellt eine Gesundheitsgefahr dar und kann langfristig zu Herzinfarkten, Schlaganfällen oder Gefäßverschlüssen führen.</p>
+          </div>
+        </div>
       </AccordionSection>
 
       {/* Section 3: Proteine */}
@@ -667,6 +746,70 @@ export default function LehrerManual() {
             </div>
           </div>
         </div>
+
+        {/* Weiterführende Informationen */}
+        <div className="mt-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
+              <Lightbulb className="text-indigo-600" size={16} />
+            </div>
+            <h4 className="text-lg font-bold text-gray-800">Weiterführende Informationen für Lehrkräfte</h4>
+          </div>
+          <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
+            <p className="mb-3">Proteine (abgeleitet vom griechischen Wort prōteios für „grundlegend" und „vorrangig") werden auch als Eiweiße bezeichnet. Die Bezeichnung Eiweiß ist historisch bedingt und geht auf die ursprüngliche Isolierung dieser Stoffe aus dem Hühnereiweiß (Hühnerei) zurück. Heute wird allgemein die Bezeichnung Protein dem älteren Begriff Eiweiß vorgezogen.</p>
+
+            <p className="mb-2">Proteine erfüllen im Organismus zahlreiche lebenswichtige Aufgaben, etwa</p>
+            <ul className="list-disc pl-5 space-y-1 mb-4">
+              <li>als Bausteine für Muskeln (z.B. Aktin und Myosin)</li>
+              <li>als Gerüste und Stabilisatoren (Kollagen, Keratin)</li>
+              <li>als Transporter und Kanäle in und zwischen Zellen (Hämoglobin, Natriumkanäle)</li>
+              <li>als Regulatoren (z.B. Hormone: Insulin)</li>
+              <li>als Beschleuniger chemischer Reaktionen (Enzyme)</li>
+              <li>als Abwehrstoffe im Immunsystem (Antikörper)</li>
+              <li>bei der Blutgerinnung (Fibrin)</li>
+            </ul>
+            <p className="mb-3">So vielfältig wie ihre Aufgaben sind auch die Strukturen und Formen der Proteine. Enthält ein Bakterium geschätzte 3.000 unterschiedliche Proteine, so sind es beim Menschen über 100.000.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Woraus bestehen und wie entstehen Proteine?</h5>
+            <p className="mb-3">Proteine bildet der Stoffwechsel aus 20 verschiedenen Aminosäuren (AS). Zur Bildung von Proteinen werden die AS zu ursprünglich linear aufgebauten Molekülen verbunden. Besteht eine Kette aus mehr als 100 AS, spricht man von einem Protein. Aufgrund von Wechselwirkungen innerhalb des großen Moleküls bilden sich spezifische, an die jeweiligen Funktionen angepasste räumliche Strukturen aus. Man nennt das Proteinfaltung.</p>
+            <p className="mb-3">Falsch geformte Proteine können ihre biologischen Aufgaben nicht mehr erfüllen und klumpen oft zu unlöslichen Aggregaten zusammen, die sich in der Zelle oder ihrer unmittelbaren Umgebung ansammeln. Derartige Abfallprodukte schädigen die Zellen. Nach neuen Erkenntnissen spielt das vermutlich so verursachte Absterben von Nervenzellen eine entscheidende Rolle bei vielen altersbedingten Krankheiten des Nervensystems, etwa bei der Alzheimerdemenz. Falsch geformte Proteine stellen außerdem eine energetisch teure ‚Fehlinvestition' des Stoffwechsels dar.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Die Rolle der Aminosäuren</h5>
+            <p className="mb-3">Der Körper benötigt zur Proteinbildung 20 verschiedene Aminosäuren. Die Baupläne für die Proteine sind im Erbgut einer jeden Zelle gespeichert.</p>
+            <p className="mb-2">Chemische Grundstruktur einer Aminosäure:</p>
+            <p className="mb-2">Jede Aminosäure hat:</p>
+            <ul className="list-disc pl-5 space-y-1 mb-4">
+              <li>eine Aminogruppe (NH2)</li>
+              <li>eine Carboxylgruppe (COOH)</li>
+              <li>eine variable Seitenkette/Restgruppe (R)</li>
+              <li>ein Wasserstoffatom (H)</li>
+            </ul>
+            <p className="mb-3">Die Aminosäuren werden bei der Herstellung von Proteinen miteinander zu Ketten verknüpft.</p>
+            <p className="mb-3">Um ihre spätere Gestalt anzunehmen, durchlaufen Proteine den o.g. Prozess der Proteinfaltung. Dabei entsteht zunächst die Sekundärstruktur. Anschließend nimmt das Molekül seine Tertiärstruktur an, die räumliche Anordnung der gefalteten Kette. Sie bestimmt die vollständige dreidimensionale Gestalt. Viele funktionelle Proteine (z.B. Enzyme) müssen sich noch zu einem großen Komplex aus mehreren Untereinheiten zusammenlagern. Dieser heißt Quartärstruktur.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Proteinbedarf und essentielle (unentbehrliche) Aminosäuren</h5>
+            <p className="mb-3">Die benötigte Proteinzufuhr kann über den Verzehr proteinreicher Lebensmittel erreicht werden.</p>
+            <p className="mb-3">Von den 20 verschiedenen Aminosäuren, die zum Aufbau von Proteinen benötigt werden, kann unser Organismus neun nicht selbst herstellen. Sie werden als essentiell bezeichnet: Isoleucin, Leucin, Lysin, Methionin, Phenyl­alanin, Threonin, Tryptophan, Valin sowie für Säuglinge Histidin. Ohne eine regelmäßige Zufuhr dieser essentiellen Aminosäuren können Mangelerscheinungen auftreten.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Die Komplexität der Proteinfaltung</h5>
+            <p className="mb-3">Proteine bestehen meist aus 100 bis 500 Aminosäuren. Funktionsfähig wird ein Protein aber erst, wenn es sich zu einer hoch komplexen dreidimensionalen Gestalt gefaltet hat (s.o.).</p>
+            <p className="mb-3">Die meisten Proteine nehmen schnell die richtige Gestalt an. Das liegt an den Eigenschaften der verschiedenen Aminosäuren eines Proteins: Einige von ihnen lagern sich gern an Wassermoleküle an, andere stoßen diese eher ab. Die beiden Grundtypen kommen in den einzelnen Abschnitten der Aminosäurekette unterschiedlich häufig vor. Sie bilden den Antrieb für den Faltungsprozess.</p>
+            <p className="mb-3">Bei größeren Proteinen falten sich unterschiedliche Teile erst getrennt voneinander zu Untereinheiten, die sich dann ihrerseits aneinanderlagern. Für diese komplexe Aufgabe hat die Zelle ein eigenes System zur Qualitätskontrolle entwickelt. Der Proteinfaltung liegt ein biochemisches Grundprinzip zugrunde, demzufolge alle Proteine eine Energieminimierung anstreben, also eine für sie energetisch besonders günstige Faltung.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Die Rolle von Proteinen für Muskel- und Gewebeaufbau</h5>
+            <p className="mb-3">Körpereigene Proteine sind einem permanenten Auf- und Abbau unterworfen. Muskelproteine beispielsweise werden im Verlauf von vier Monaten einmal komplett erneuert. Für den Aufbau und Erhalt der Muskulatur ist die regelmäßige Zufuhr von Proteinen mit der Nahrung wichtig.</p>
+            <p className="mb-3">Wie hat man sich die Strukturähnlichkeit bzw. -differenz von tierischem resp. pflanzlichem Protein genauer vorzustellen?</p>
+            <p className="mb-3">Neben der Proteinmenge ist auch die Proteinqualität wichtig. Lebensmittel sollten so kombiniert werden, dass ein hoher Anteil an essentiellen Aminosäuren erreicht wird.</p>
+            <p className="mb-3">Pflanzliche und tierische Proteine unterscheiden sich in der Zusammensetzung und in der Bioverfügbarkeit der Aminosäuren. Proteine aus Lebensmitteln tierischen Ursprungs enthalten i.d.R. alle essentiellen Aminosäuren in ausreichender Menge. Pflanzliche Lebensmittel weisen oft nicht alle essentiellen Aminosäuren auf. So ist beispielsweise Getreide arm an Lysin, Threonin und Tryptophan, aber reich an Methionin. Hülsenfrüchte sind arm an Methionin, aber reich an Threonin und Tryptophan. Durch die gezielte Kombination von Getreide mit Hülsenfrüchten kann man für einen Ausgleich sorgen.</p>
+            <p className="mb-3">Man sollte immer auch die Gesamtzusammensetzung des ganzen Lebensmittels im Blick haben. So bringen Lebensmittel mit pflanzlichem Protein meist deutlich mehr Ballaststoffe, komplexe Kohlenhydrate und Vitamine, aber gleichzeitig weniger gesättigte Fettsäuren mit als Lebensmittel, die tierisches Protein enthalten.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Die biologische Wertigkeit</h5>
+            <p className="mb-3">In der Ernährungswissenschaft gibt es den Begriff der biologischen Wertigkeit, wenn es um den Vergleich der Qualität von Nahrungsproteinen geht. Diese Methode benutzt als Maßstab das Protein des Hühnereis. In diesem kommen alle essentiellen Aminosäuren in einem sehr günstigen Verhältnis vor und sie können fast vollständig in körpereigenes Protein umgesetzt werden. Daher hat das Hühnerei eine biologische Wertigkeit von 100.</p>
+            <p className="mb-3">Alle Nahrungsproteine können mit diesem Referenzwert eingeordnet werden. Einige Beispiele:</p>
+            <p className="mb-3">Milch und Milchprodukte haben eine hohe biologische Wertigkeit im 90er-Bereich. Milchprotein ist sehr gut für unsere Versorgung geeignet. Fleisch liegt im hohen 80er-Bereich, denn das Muskelprotein ist unserem körpereigenen sehr ähnlich. Dasselbe gilt für Fisch (&gt;80).</p>
+            <p className="mb-3">Unter pflanzlichen Nahrungsmitteln hat Reis mit &gt;80 eine hohe biologische Wertigkeit. Auch Sojaprotein (85) gilt als hochwertig und als gute Alternative zu tierischen Proteinquellen. Die Kartoffel folgt mit 70. Hülsenfrüchten mangelt es zwar an der essentiellen Aminosäure Methionin, sie liegen aber noch bei &gt; 50 und liefern große Mengen an wertvollen Ballaststoffen.</p>
+          </div>
+        </div>
       </AccordionSection>
 
       {/* Section 4: Mikronährstoffe */}
@@ -765,6 +908,66 @@ export default function LehrerManual() {
               <li>auf Salzgehalt von Lebensmitteln achten: Fertigprodukte enthalten oft viel Salz.</li>
               <li>beim Kochen wenig salzen, nicht voreilig nachsalzen.</li>
             </ul>
+          </div>
+        </div>
+
+        {/* Weiterführende Informationen */}
+        <div className="mt-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
+              <Lightbulb className="text-indigo-600" size={16} />
+            </div>
+            <h4 className="text-lg font-bold text-gray-800">Weiterführende Informationen für Lehrkräfte</h4>
+          </div>
+          <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
+            <h5 className="text-base font-semibold text-gray-800 mt-4 mb-2">Vitamine: Allgemeines</h5>
+            <p className="mb-3">Zu den Vitaminen zählt man eine Reihe lebenswichtiger Stoffe. Wir müssen sie in kleinen Mengen regelmäßig über die Nahrung aufnehmen. Die meisten Vitamine sind essentiell. Sie sind an lebenswichtigen Reaktionen beteiligt und spielen in vielen Stoffwechselprozessen eine unverzichtbare Rolle.</p>
+            <p className="mb-3">Die Vitamine lassen sich in wasserlösliche und fettlösliche einteilen. Zu den wasserlöslichen Vitaminen gehören die Gruppe der B-Vitamine und das Vitamin C. Zu den fettlöslichen Vitaminen zählen wir die Vitamine A, D, E und K.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Vitamine: Ein Überblick</h5>
+            <p className="font-semibold text-gray-800 mb-2">Warum gibt es mehrere ‚Nummern' vom gleichen Vitamin: Was bedeutet das?</p>
+            <p className="mb-3">Die Benennung der Vitamine wirkt auf den ersten Blick lückenhaft und unordentlich. Das ist historisch bedingt. Die Lücken in der Namensgebung entstanden unter anderem deshalb, weil viele der ursprünglich als Vitamine entdeckten und listenartig benannten Stoffe sich später als keineswegs einheitliche Substanzen herausstellten. In der Folge wurden einige Bezeichnungen aus der Benennungsliste entfernt, die übrigen aber beibehalten.</p>
+            <p className="mb-3">Die Entdeckung der Vitamine begann Anfang des 20. Jahrhunderts. Damals war deren chemische Struktur noch nicht bekannt, so dass man sie zunächst nicht exakt wissenschaftlich bezeichnen konnte. Daher wurde den Vitaminen je ein großer Buchstabe des Alphabets zugeordnet.</p>
+            <p className="font-semibold text-gray-800 mb-2">Die heutige Benennung der Vitamine</p>
+            <p className="mb-3">Heute richtet sich der chemische Name eines Vitamins nach seiner chemischen Struktur. Bei den Trivialnamen werden immer noch die altbekannten Buchstaben verwendet, teilweise mit einer Nummer ergänzt. Teilweise gab es mehrere Trivialnamen, in der Regel hat sich aber jeweils nur ein Trivialname durchgesetzt.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Wasserlösliche Vitamine anhand von Beispielen</h5>
+            <p className="font-semibold text-gray-800 mb-2">Makronährstoff-Verwertung und B-Vitamine</p>
+            <p className="mb-3">Die B-Vitamine Panthotensäure, Folsäure, Biotin, Niacin und Cobalamin werden vor allem im Stoffwechsel gebraucht. Sie ermöglichen den Abbau von Kohlenhydraten und Fetten zu Energie oder den Aufbau von neuen Eiweißen aus Aminosäuren. Sie sind aber auch für die normale Funktion und Entwicklung jeder Zelle wichtig. Cobalamin ist außerdem ein gutes Beispiel für die Bedeutung von Spuren-Metallen im Stoffwechsel. Es enthält als wichtiges funktionsnotwendiges Zentralatom ein Kobalt-Atom. Kobalt ist in größeren Mengen ein gefährliches Schwermetall, in Form einzelner Atome jedoch ein Spurenelement und lebenswichtig als Bestandteil dieses Vitamins.</p>
+
+            <p className="font-semibold text-gray-800 mb-2">Funktionen von B-Vitaminen (Beispiele)</p>
+            <p className="mb-3">Vitamin B1 (Thiamin) spielt eine zentrale Rolle im Stoffwechsel der Kohlenhydrate. Bei der Umsetzung dieser Gruppe von Makronährstoffen in Energie wird Vitamin B1 benötigt. Da es sich bei den Reaktionen verbraucht, muss es mit der Nahrung nachgeliefert werden.</p>
+            <p className="mb-3">Vitamin B2 (Riboflavin) dient als chemische Vorstufe für die sog. Flavin-Koenzyme (FAD, FMN). Diese besitzen eine zentrale Funktion bei der Energiegewinnung aus allen drei Makronährstoffen: Kohlenhydrate, Fette, Proteine.</p>
+            <p className="mb-3">Vitamin B12 (Cobalamin) nimmt eine Sonderstellung ein. Es kann nur von Bakterien gebildet werden, von Tieren oder Pflanzen hingegen nicht oder nur in geringer Menge. Im menschlichen Darm bilden Mikroben zwar etwas B12, dies reicht aber nicht für die eigene Versorgung aus. Daher muss es mit der Nahrung aufgenommen werden. Cobalamin benötigen wir für Zellteilung, Blutbildung sowie die Funktion des Nervensystems. Der Hauptlieferant ist Fleisch. Ein Mangel kann durch unzureichende oder einseitige Ernährung entstehen (z.B. bei veganen Ernährungsformen). Menschen, die sich vegetarisch oder vegan ernähren, sollten ihren B12-Wert im Auge behalten. Meist ist dann eine kontrollierte Substitution dieses Vitamins notwendig.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Fettlösliche Vitamine anhand von Beispielen</h5>
+            <p className="mb-3">Vitamin A (Retinol) benötigen wir für Zellwachstum und -entwicklung. Auch für die Funktion von Schleimhäuten (Lunge, Darm) wird es gebraucht. Zudem spielt es beim Sehvorgang eine Rolle und bei der Arbeit des Immunsystems. Wir nehmen Vitamin A mit tierischen Lebensmitteln direkt auf oder bilden es aus pflanzlichen Vorstufen (z.B. aus Carotinoiden) selbst.</p>
+            <p className="mb-3">Vitamin D (Calciferol) ist unverzichtbar bei Aufbau und Stoffwechsel der Knochen. Einem Mangel an Vitamin D kann man nur zum Teil mit entsprechender Ernährung entgegenwirken (vor allem Seefisch ist reich an Vitamin D), für die Bildung von Vitamin D ist unser Körper vor allem von Sonneneinstrahlung auf unsere Haut angewiesen. Ein dauerhafter Mangel an diesem Vitamin führt zu einem Verlust von Knochenmasse (Osteoporose). Eine kontrollierte Substitution kann auch hier sinnvoll sein.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Mineralstoffe: Allgemeines</h5>
+            <p className="mb-3">Unter Mineralstoffen versteht man mehr als 20 chemische Elemente, die im Organismus viele Aufgaben erfüllen. Sie werden zum Beispiel für den Aufbau von Zähnen und Knochen benötigt oder auch für die Funktion von Enzymen. Zudem spielen sie im Wasserhaushalt eine Rolle und im Hormon- sowie im Immunsystem. Sie werden entsprechend unserem Bedarf in Mengenelemente und Spurenelemente eingeteilt.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Mineralstoffe: Ein Überblick</h5>
+            <p className="mb-2">Die Funktionen der Mineralstoffe in Kürze:</p>
+            <ul className="list-disc pl-5 space-y-2 mb-4">
+              <li>Natrium/Kalium: Regulation des Wasserhaushalts; Kalium: Funktion von Membranen</li>
+              <li>Magnesium: aktiviert Enzyme; unterstützt die Reizübertragung von Muskeln und Nerven</li>
+              <li>Calcium: Baustoff für Knochen und Zähne</li>
+              <li>Eisen: Blutbildung und Sauerstofftransport (Zentralatom im Hämoglobin)</li>
+              <li>Zink: unterstützt Zellbildung, Hormonwirkung und Immunsystem; neutralisiert schädliche Moleküle („Radikale")</li>
+              <li>Selen: fördert antioxidative Prozesse/Entgiftung; unterstützt Funktion der Bauchspeicheldrüse</li>
+              <li>Jod: Bestandteil der Schilddrüsenhormone</li>
+              <li>Fluorid/Fluor: kein ‚echtes' Spurenelement; hilft aber bei der Aushärtung von Knochen, Zahnschmelz und Dentin der Zähne und erhöht die Widerstandsfähigkeit gegen Karies</li>
+            </ul>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Warum bringt ein Zuviel an Nährstoffen (etwa durch Einnahme von Nahrungsergänzungsmitteln) nichts? Warum gilt bei Mikronährstoffen nicht: ‚Mehr ist besser'?</h5>
+            <p className="mb-3">Normalerweise können wir unseren Bedarf an Mikronährstoffen mit ausgewogener Ernährung mühelos decken. Motto: Je bunter es auf dem Teller ist, desto eher sind wir auf der sicheren Seite. Allerdings gibt es Bedingungen, unter denen es für einige Stoffe knapp werden kann. Dazu zählt die Versorgung mit Vitamin D in der dunklen Jahreszeit oder – bei veganer Ernährungsweise – mit Vitaminen der B-Gruppe. Bei Mangelzuständen können sie unter ärztlicher Kontrolle von außen zugefügt (substituiert) werden.</p>
+            <p className="mb-3">Ein Zuviel an einzelnen Nährstoffen kann die Aufnahme anderer Nährstoffe behindern, etwa Zink und Eisen. Fettlösliche Vitamine können sich bei übermäßiger Aufnahme im Körper anreichern, weil wir sie nicht wie die wasserlöslichen über die Niere ausscheiden können. Daher besteht hier eine Gefahr der Überdosierung bzw. Akkumulation, was zu unerwünschten Nebenwirkungen führt.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Was passiert im Körper genau nach Salzkonsum? Warum kann zu viel Salz auf Dauer bestimmte Erkrankungen auslösen?</h5>
+            <p className="mb-3">Natrium als Bestandteil von Kochsalz ist das wichtigste Ion im Körper. Ein Ion ist ein elektrisch geladenes Atom. Ionen können sich bilden, wenn Atome miteinander reagieren und beispielsweise zu Salzen werden (z.B. Kochsalz, NaCl: gelöst als Na+ und Cl-). Sind die Salze in Wasser gelöst, liegen die Ionen in der Lösung mit einer wässrigen Hydrathülle vor.</p>
+            <p className="mb-3">Natrium ist unverzichtbar für den Wasserhaushalt im Zusammenspiel mit Kalium. Außerdem benötigen wir Natrium für die Knochen und die Funktion von Membranen. Natrium reguliert den osmotischen Druck (Konzentrationsdruck gelöster Teilchen) der Zellen und des Flüssigkeitsraums außerhalb der Zellen. Dadurch beeinflusst es auch maßgeblich die Blutmenge in den Gefäßen und damit den Blutdruck, weil es das Wasser in den Blutgefäßen ‚festhält' und sich der Druck innerhalb dieses begrenzten Raumes daraufhin erhöht.</p>
+            <p className="mb-3">Wird zu viel Speisesalz verzehrt, hat das eine Erhöhung des Blutdrucks zur Folge. Das Risiko für Bluthochdruck (Hypertonie) steigt. Bluthochdruck wiederum gehört zu den wichtigsten Risikofaktoren für das Auftreten von Herz-Kreislauf-Krankheiten.</p>
           </div>
         </div>
       </AccordionSection>
@@ -868,6 +1071,68 @@ export default function LehrerManual() {
               <p className="font-semibold text-green-800 mb-1">Für Sportler:innen:</p>
               <p className="text-green-700">Proteine spielen beim Muskelaufbau eine wichtige Rolle. Auch für Sportler:innen gilt: Der Körper kann seinen Bedarf, auch für den Muskelaufbau, über das in natürlichen Lebensmitteln vorkommende Protein decken.</p>
             </div>
+          </div>
+        </div>
+
+        {/* Weiterführende Informationen */}
+        <div className="mt-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
+              <Lightbulb className="text-indigo-600" size={16} />
+            </div>
+            <h4 className="text-lg font-bold text-gray-800">Weiterführende Informationen für Lehrkräfte</h4>
+          </div>
+          <div className="prose max-w-none text-gray-700 leading-relaxed ml-4">
+            <h5 className="text-base font-semibold text-gray-800 mt-4 mb-2">Süßstoffe</h5>
+            <p className="font-semibold text-gray-800 mb-2">Wie kommt es, dass wir uns an Süßes gewöhnen können?</p>
+            <p className="mb-3">Zentral ist hier unser körpereigenes Belohnungssystem. Eine Studie des Max-Planck-Instituts für Stoffwechselforschung hat gezeigt, dass unmittelbar nach dem Verzehr von zuckerreichen Lebensmitteln Dopamin (Begriffserklärung s.u.) ausgeschüttet wird, noch bevor die Nahrung den Magen erreicht (vgl. Thanarajah et al.). Je nach individuellem Verlangen wird sogar zu unterschiedlichen Zeitpunkten unterschiedlich viel Dopamin ausgeschüttet. Die Gehirne von Versuchsteilnehmer:innen mit einem starken Verlangen nach zuckerreicher Nahrung schütteten direkt nach dem Verzehr eine große Menge an Dopamin aus.</p>
+
+            <p className="font-semibold text-gray-800 mb-2">Zucker (und Fett) programmieren unsere Synapsen um</p>
+            <p className="mb-3">Forschende maßen die Aktivität bestimmter Hirnregionen und stellten fest, dass das Dopamin-ausschüttende System besonders stark bei Teilnehmer:innen aktiviert wurde, die ein sehr fett- und zuckerreiches Gericht aßen. Der erhöhte Zuckerkonsum veränderte die neuronalen Schaltkreise so, dass zuckerreiche Nahrung bei den Proband:innen eine stärkere belohnende Wirkung hatte und sie nach dem Experiment zucker- und fettreiche Lebensmittel positiver bewerteten.</p>
+
+            <p className="font-semibold text-gray-800 mb-2">Dopamin</p>
+            <p className="mb-3">Dopamin ist ein Botenstoff (sog. Neurotransmitter), der hauptsächlich im Gehirn vorkommt. Es wird umgangssprachlich auch als Wohlfühl- oder Glücks-Botenstoff bezeichnet.</p>
+            <p className="mb-3">Neueren Befunden zufolge spielt Dopamin eine wichtige Rolle im Belohnungs- und Motivationssystem des Gehirns (sog. mesolimbisches System). Dopamin vermittelt vor allem die Zuweisung von Begehren (wanting). Interessant: Das wanting, das beim Belohnungslernen eine zentrale Funktion ausübt, wird in der Psychologie als bedeutsam bei der Entstehung von Suchterkrankungen angesehen.</p>
+
+            <p className="font-semibold text-gray-800 mb-2">Die Wirkung von Süßstoffen</p>
+            <p className="mb-3">Zucker-Ersatzstoffe sollen eine Aktivierung des Belohnungssystems ohne die ‚Nebenwirkungen' von Zucker wie Übergewicht, Typ-2-Diabetes etc. ermöglichen. Zu beachten ist aber, dass viele langfristige Effekte von Zucker-Ersatzstoffen auf den Organismus bisher nicht eingeschätzt werden können.</p>
+            <p className="mb-3">Was bisher als gesichert gilt: Künstliche Süßstoffe wie Aspartam, Saccharin und Sucralose beeinflussen das Darmmikrobiom (d.h. die im Darm vorkommenden Mikroorganismen) negativ, so zeigt eine Studie (vgl. Suez et al.). Untersuchungen zeigen, dass bereits moderate Mengen der Süßstoffe die Zusammensetzung und Funktion der Darmbakterien verändern können. Dadurch verschlechtert sich die Glukosetoleranz, das Risiko für Erkrankungen wie Typ-2-Diabetes steigt. Außerdem fördern sie das Wachstum unerwünschter Bakterien, können die Darmbarriere schädigen („leaky gut") und Entzündungen begünstigen. Überdies konnte eine weitere Studie zeigen, dass regelmäßiger Konsum künstlicher Süßstoffe wie Aspartam, Sucralose oder Saccharin mit einem beschleunigten kognitiven Abbau und Herz-Kreislauf-Erkrankungen verbunden sein kann (vgl. Gonçalves et al.).</p>
+            <p className="mb-3">Weiterhin wird das Verlangen nach Süßem durch den Konsum von Süßstoffen nicht gestillt, sondern – im Gegenteil – verstärkt. Eine aktuelle Studie belegt z.B., dass der Zuckerersatzstoff Sucralose den Hypothalamus aktiviert, eine wichtige Schaltzentrale für Hunger und Sättigung (vgl. Chakravartti et al.). Daraufhin steigert sich das Hungergefühl, und zwar besonders bei Menschen mit Übergewicht (Adipositas). Wenn künstliche Süßstoffe dem Gehirn Zuckersignale senden, aber die vom Körper erwarteten Kalorien ausbleiben, führt genau dies zu einem größeren Hungergefühl.</p>
+            <p className="mb-3">Die Weltgesundheitsorganisation (WHO: World Health Organization) gibt in ihren Richtlinien zum Gebrauch von Zucker-Ersatzstoffen einen Rat, den man einfach umsetzen kann: Statt zu diesen Mitteln sollte man bei Lust auf Süßes lieber Obst essen, denn dieses liefert wertvolle Ballaststoffe, Vitamine, Mineralien und Spurenelemente.</p>
+
+            <div className="bg-gray-50 border border-gray-200 p-4 mb-4 rounded">
+              <p className="font-semibold text-gray-800 mb-2">Quellen „Süßstoffe":</p>
+              <ul className="list-disc pl-5 space-y-2 text-gray-600 text-sm">
+                <li>Chakravartti SP, Jann K, Veit R, Liu H, Yunker AG, Angelo B, Monterosso JR, Xiang AH, Kullmann S, Page KA. Non-caloric sweetener effects on brain appetite regulation in individuals across varying body weights. Nat Metab. 2025 Mar;7(3):574-585. doi: 10.1038/s42255-025-01227-8. Epub 2025 Mar 26. PMID: 40140714.</li>
+                <li>Gonçalves NG, Martinez-Steele E, Lotufo PA, Bensenor I, Goulart AC, Barreto SM, Giatti L, de Faria CP, Molina MDCB, Caramelli P, Marchioni DM, Suemoto CK. Association Between Consumption of Low- and No-Calorie Artificial Sweeteners and Cognitive Decline: An 8-Year Prospective Study. Neurology. 2025 Oct 7;105(7):e214023. doi: 10.1212/WNL.0000000000214023. Epub 2025 Sep 3. Erratum in: Neurology. 2025 Dec 9;105(11):e214393. doi: 10.1212/WNL.0000000000214393. PMID: 40902134.</li>
+                <li>Suez J, Korem T, Zeevi D, Zilberman-Schapira G, Thaiss CA, Maza O, Israeli D, Zmora N, Gilad S, Weinberger A, Kuperman Y, Harmelin A, Kolodkin-Gal I, Shapiro H, Halpern Z, Segal E, Elinav E. Artificial sweeteners induce glucose intolerance by altering the gut microbiota. Nature. 2014 Oct 9;514(7521):181-6. doi: 10.1038/nature13793. Epub 2014 Sep 17. PMID: 25231862.</li>
+                <li>Thanarajah SE, Backes H, DiFeliceantonio AG, Albus K, Cremer AL, Hanssen R, Lippert RN, Cornely OA, Small DM, Brüning JC, Tittgemeyer M. Food Intake Recruits Orosensory and Post-ingestive Dopaminergic Circuits to Affect Eating Desire in Humans. Cell Metab. 2019 Mar 5;29(3):695-706.e4. doi: 10.1016/j.cmet.2018.12.006. Epub 2018 Dec 27. PMID: 30595479.</li>
+              </ul>
+            </div>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Transfette</h5>
+            <p className="font-semibold text-gray-800 mb-2">Wie entstehen Transfettsäuren?</p>
+            <p className="mb-3">Transfettsäuren entstehen vor allem durch lebensmitteltechnologische Prozesse wie die sog. Fetthärtung. Dies ist ein Verfahren, bei dem fette Öle in feste oder streichfähige Fette umgewandelt werden. Aus ursprünglich gesunden Pflanzenölen werden Produkte gewonnen, die bessere technische Eigenschaften als natürliche (feste) Fette wie Butter oder Schmalz aufweisen und sich gut lagern lassen. Solche industriell gehärteten Fette werden aufgrund ihres z.T. hohen Gehaltes an Transfettsäuren auch als Transfette bezeichnet.</p>
+
+            <p className="font-semibold text-gray-800 mb-2">Was sind Transfettsäuren?</p>
+            <p className="mb-3">Ungesättigte Fettsäuren liegen in der Natur hauptsächlich in sogenannter cis-Konfiguration vor. Durch die Härtung kann es zu einer Veränderung der Konfiguration der Doppelbindungen kommen: Es entstehen Transfettsäuren, in denen sich die Wasserstoffatome an den durch Doppelbindungen verknüpften Kohlenstoffatomen auf entgegengesetzten Seiten befinden.</p>
+            <div className="bg-gray-50 border border-gray-200 p-4 mb-4 rounded">
+              <p className="text-gray-700 mb-1">Ölsäure (C18:1 cis 9)</p>
+              <p className="text-gray-700 mb-1">Elaidinsäure (C18:1 trans 9)</p>
+              <p className="text-gray-700">Trans-Vaccensäure (C18:1 trans 11)</p>
+              <p className="text-gray-500 text-sm mt-2">Chemische Struktur der Ölsäure im Vergleich mit den beiden trans-C18:1-Fettsäuren</p>
+            </div>
+
+            <p className="font-semibold text-gray-800 mb-2">Die Wirkung von Transfettsäuren</p>
+            <p className="mb-3">Transfettsäuren besitzen keine bekannte positive Funktion im Organismus, aber negative Auswirkungen auf den Stoffwechsel sind eindeutig belegt. Eine hohe Zufuhr von Transfettsäuren birgt das Risiko für eine Fettstoffwechselstörung, die zu einer Erhöhung des Triglycerid-Spiegels führt. Auch wird das Verhältnis zwischen LDL-Cholesterol und HDL-Cholesterol im Blut nachteilig verändert. Die Auswirkungen auf die Gesundheit können erheblich sein und sowohl die Entstehung von Arteriosklerose als auch einer koronaren Herzkrankheit begünstigen sowie das Herzinfarktrisiko erhöhen.</p>
+
+            <h5 className="text-base font-semibold text-gray-800 mt-6 mb-2">Protein-Produkte: Shakes, Riegel etc.</h5>
+            <p className="font-semibold text-gray-800 mb-2">Braucht unser Körper Protein-Produkte?</p>
+            <p className="mb-3">Die benötigte Proteinzufuhr kann für einen Menschen in der Regel über den Verzehr proteinreicher Lebensmittel mühelos sichergestellt werden.</p>
+            <p className="mb-3">Gerade bei jüngeren Menschen, die viel Sport treiben, hat sich die Meinung verbreitet, man müsse den Körper durch eine hohe Proteinaufnahme bei Erhalt und Aufbau der Muskulatur unterstützen. Das ist in einem gewissen Rahmen sinnvoll, kann aber schon durch Anpassungen im persönlichen Speiseplan erreicht werden.</p>
+
+            <p className="font-semibold text-gray-800 mb-2">Kann man zu viel Protein zu sich nehmen?</p>
+            <p className="mb-3">In der Wissenschaft wird überdies diskutiert, ob ein Zuviel an Protein schädlich sein könnte. Die Befunde sind bislang nicht eindeutig, aber es gibt Hinweise darauf, dass ein Übermaß an Protein die Niere belastet. Zudem ist eine mögliche Erhöhung des Risikos für Typ 2-Diabetes durch übermäßig hohen Proteinkonsum in der wissenschaftlichen Diskussion. Teure ‚High Protein'-Produkte oder zusätzliche Eiweißshakes sind für gesunde Menschen nicht notwendig. Der vermutete Nutzen wird in der Regel überschätzt, während potenzielle Risiken nicht ausgeschlossen werden können.</p>
           </div>
         </div>
       </AccordionSection>
