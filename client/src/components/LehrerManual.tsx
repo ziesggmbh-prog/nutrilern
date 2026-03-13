@@ -507,7 +507,7 @@ export default function LehrerManual() {
             <P><B>Wasserlösliche Vitamine anhand von Beispielen</B></P>
             <P><B>Makronährstoff-Verwertung und B-Vitamine</B></P>
             <P>Die B-Vitamine Panthotensäure, Folsäure, Biotin, Niacin und Cobalamin werden vor allem im Stoffwechsel gebraucht. Sie ermöglichen den Abbau von Kohlenhydraten und Fetten zu Energie oder den Aufbau von neuen Eiweißen aus Aminosäuren. Sie sind aber auch für die normale Funktion und Entwicklung jeder Zelle wichtig. Cobalamin ist außerdem ein gutes Beispiel für die Bedeutung von Spuren-Metallen im Stoffwechsel. Es enthält als wichtiges funktionsnotwendiges Zentralatom ein Kobalt-Atom. Kobalt ist in größeren Mengen ein gefährliches Schwermetall, in Form einzelner Atome jedoch ein Spurenelement und lebenswichtig als Bestandteil dieses Vitamins:</P>
-            <DocImage src="/manual-images/image19.jpeg" caption="Cobalamin (Vitamin B12)" maxHeight="187px" />
+            <DocImage src="/manual-images/image19.jpeg" caption="Cobalamin (Vitamin B12)" maxHeight="206px" />
             <P><B>Funktionen von B-Vitaminen (Beispiele)</B></P>
             <P>Vitamin B1 (Thiamin) spielt eine zentrale Rolle im Stoffwechsel der Kohlenhydrate. Bei der Umsetzung dieser Gruppe von Makronährstoffen in Energie wird Vitamin B1 benötigt. Da es sich bei den Reaktionen verbraucht, muss es mit der Nahrung nachgeliefert werden.</P>
             <P>Vitamin B2 (Riboflavin) dient als chemische Vorstufe für die sog. Flavin-Koenzyme (FAD, FMN). Diese besitzen eine zentrale Funktion bei der Energiegewinnung aus allen drei Makronährstoffen: Kohlenhydrate, Fette, Proteine.</P>
