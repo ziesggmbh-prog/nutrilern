@@ -319,7 +319,7 @@ export default function LehrerManual() {
             <P>Ölsäure (einfach ungesättigt)</P>
             <DocImage src="/manual-images/image10.png" caption="Ölsäure (C18H34O2, einfach ungesättigt)" maxWidth="175px" />
             <P>Linolsäure (zweifach ungesättigt)</P>
-            <DocImage src="/manual-images/image11.png" caption="Linolsäure (C18H32O2, zweifach ungesättigt)" />
+            <DocImage src="/manual-images/image11.png" caption="Linolsäure (C18H32O2, zweifach ungesättigt)" maxWidth="231px" />
             <P>Ungesättigte Fette besitzen einen hohen Anteil an ungesättigten Fettsäuren. Diese sind überwiegend in pflanzlichen Nahrungsmitteln und in fettem Fisch enthalten.</P>
             <P><B>Was versteht man unter „Omega-Fettsäuren"?</B></P>
             <P><B>Omega-3-Fettsäuren</B></P>
