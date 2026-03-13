@@ -58,10 +58,10 @@ function Num({ n, children }: { n: number; children: ReactNode }) {
   );
 }
 
-function DocImage({ src, caption }: { src: string; caption: string }) {
+function DocImage({ src, caption, maxHeight = "170px" }: { src: string; caption: string; maxHeight?: string }) {
   return (
     <figure className="my-3 flex flex-col items-center">
-      <img src={src} alt={caption} className="max-w-full rounded-md border border-gray-200 bg-white" style={{ maxHeight: "170px", objectFit: "contain" }} />
+      <img src={src} alt={caption} className="max-w-full rounded-md border border-gray-200 bg-white" style={{ maxHeight, objectFit: "contain" }} />
       <figcaption className="mt-1 text-center text-sm text-gray-500 italic">{caption}</figcaption>
     </figure>
   );
@@ -210,7 +210,7 @@ export default function LehrerManual() {
             <P><B>Aufbau der Stärke</B></P>
             <P>Im Gegensatz zu den Einfach- und Zweifachzuckern ist Stärke ein sog. komplexes Kohlenhydrat. In der Stärke sind die Einfachzucker zu linearen oder verzweigten Ketten verbunden.</P>
             <P>Stärke besteht zu etwa 20–30 % aus Amylose (lineare Ketten mit einer schraubenartigen Struktur).</P>
-            <DocImage src="/manual-images/image4.png" caption="Struktur der Amylose" />
+            <DocImage src="/manual-images/image4.png" caption="Struktur der Amylose" maxHeight="85px" />
             <P>Die weiteren 70–80 % der Stärke bestehen aus Amylopektin (vielfach verzweigte, netzartige Strukturen), das sehr große Moleküle bildet.</P>
             <DocImage src="/manual-images/image5.png" caption="Ausschnitt aus einem Amylopektin-Molekül" />
             <P><B>Die wichtigsten stärkehaltigen Nahrungsquellen:</B></P>
