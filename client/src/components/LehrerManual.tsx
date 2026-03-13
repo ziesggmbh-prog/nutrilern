@@ -52,7 +52,7 @@ function Arr({ children }: { children: ReactNode }) {
 function Num({ n, children }: { n: number; children: ReactNode }) {
   return (
     <div className="flex gap-1.5 mb-0 pl-12">
-      <span className="flex-shrink-0 select-none font-normal">{n}.</span>
+      <span className="flex-shrink-0 select-none font-bold">{n}.</span>
       <span>{children}</span>
     </div>
   );
