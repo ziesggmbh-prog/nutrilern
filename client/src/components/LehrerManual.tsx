@@ -80,8 +80,8 @@ interface AccordionSectionProps {
 
 function AccordionSection({ number, title, color, bgColor, textColor, isOpen, onToggle, children }: AccordionSectionProps) {
   return (
-    <div className="mb-4 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-      <button onClick={onToggle} className={`w-full flex items-center justify-between p-5 ${bgColor} hover:opacity-90 transition-opacity text-left`}>
+    <div className="mb-4 border border-gray-200 rounded-xl shadow-sm">
+      <button onClick={onToggle} className={`w-full flex items-center justify-between p-5 ${bgColor} hover:opacity-90 transition-opacity text-left rounded-t-xl`}>
         <div className="flex items-center gap-3">
           <span className={`w-8 h-8 rounded-full ${color} text-white flex items-center justify-center font-bold text-sm flex-shrink-0`}>{number}</span>
           <h3 className={`text-lg font-bold ${textColor}`}>{title}</h3>
@@ -103,8 +103,8 @@ interface SubSectionProps {
 function SubSection({ icon, title, children, defaultOpen = false }: SubSectionProps) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="mb-6 border border-gray-100 rounded-lg overflow-hidden">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
+    <div className="mb-6 border border-gray-100 rounded-lg">
+      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left rounded-t-lg">
         <div className="flex items-center gap-3">
           {icon}
           <h4 className="text-base font-bold text-gray-800">{title}</h4>
