@@ -166,15 +166,15 @@ export default function LehrerManual() {
             <p className="mb-3">Der bekannteste Zweifachzucker ist die Saccharose, unser ‚Haushaltszucker'. Er ist aus Fructose und Glucose zusammengesetzt.</p>
             <p className="font-semibold mb-1">Mehrfachzucker</p>
             <p className="mb-3">Die Zuckermoleküle können miteinander verbunden werden, dann spricht man von Mehrfachzuckern (Polysaccharide). Tatsächlich liegt in der Natur der meiste Zucker als Mehrfachzucker vor.</p>
-            <DocImage src="/manual-images/image3.png" caption="Zuckerarten schematisch" maxHeight={85} maxWidth="50%" />
+            <DocImage src="/manual-images/image3.png" caption="Zuckerarten schematisch" />
             <p className="mb-3">Pflanzen nutzen diese ketten- oder auch netzartig verbundenen Mehrfachzucker als Baustoffe – zum Beispiel in Form der Zellulose für ihre feste Zellwand. Dabei wird die Glucose sehr fest miteinander verbunden, so dass sie kaum wieder aufzuspalten ist. Deshalb können wir dieses Pflanzenmaterial nicht verdauen.</p>
             <p className="mb-3">Eine weitere Verwendung der Mehrfachzucker ist die Bildung von Speicherstoff, der sog. Stärke. Stärke findet man vor allem in Samen und Knollen. Dort dient sie den keimenden Jungpflanzen als Energiequelle.</p>
             <p className="font-semibold mb-1">Aufbau der Stärke</p>
             <p className="mb-3">Im Gegensatz zu den Einfach- und Zweifachzuckern ist Stärke ein sog. komplexes Kohlenhydrat. In der Stärke sind die Einfachzucker zu linearen oder verzweigten Ketten verbunden.</p>
             <p className="mb-3">Stärke besteht zu etwa 20–30 % aus Amylose (lineare Ketten mit einer schraubenartigen Struktur).</p>
-            <DocImage src="/manual-images/image4.png" caption="Struktur der Amylose" maxHeight={85} maxWidth="50%" />
+            <DocImage src="/manual-images/image4.png" caption="Struktur der Amylose" maxHeight={136} maxWidth="80%" />
             <p className="mb-3">Die weiteren 70–80 % der Stärke bestehen aus Amylopektin (vielfach verzweigte, netzartige Strukturen), das sehr große Moleküle bildet.</p>
-            <DocImage src="/manual-images/image5.png" caption="Ausschnitt aus einem Amylopektin-Molekül" maxHeight={85} maxWidth="50%" />
+            <DocImage src="/manual-images/image5.png" caption="Ausschnitt aus einem Amylopektin-Molekül" maxHeight={136} />
             <p className="mb-1">Die wichtigsten stärkehaltigen Nahrungsquellen:</p>
             <ul className="list-disc pl-5 mb-3 space-y-1">
               <li>Getreide: Weizen, Roggen, Gerste, Dinkel, Mais, Reis, Hafer</li>
@@ -188,7 +188,7 @@ export default function LehrerManual() {
             <p className="font-semibold mb-1">Gewinnung von Energie</p>
             <p className="mb-3">Unsere Zellen nehmen die Zuckermoleküle auf, die über den Blutstrom angeliefert werden. Dies wird durch das Hormon Insulin reguliert. In den Zellen erfolgt der Abbau des Zuckers ebenfalls von zahlreichen Enzymen gesteuert durch den Vorgang der Zellatmung.</p>
             <p className="mb-3">Die gesamte Reaktion besteht aus drei aufeinander folgenden Teilprozessen. Dabei handelt es sich um eine mehrstufige Kaskade von enzymgesteuerten chemischen Reaktionen, bei denen die Glucose zu Kohlendioxid (CO2) und Wasser abgebaut wird. Die Reaktionsschritte nutzt die Zelle dabei zur Bildung von Adenosin-Triphosphat (ATP). Dieses energiereiche Molekül dient als Treibstoff für nahezu alle Prozesse, die in Zellen und Organen ablaufen.</p>
-            <DocImage src="/manual-images/image6.png" caption="ATP (Adenosin-Triphosphat), der universelle Energieträger der Zelle" maxHeight={85} maxWidth="50%" />
+            <DocImage src="/manual-images/image6.png" caption="ATP (Adenosin-Triphosphat), der universelle Energieträger der Zelle" />
             <p className="font-semibold mb-1">Glucose ist der Treibstoff für unser Gehirn</p>
             <p className="mb-3">Unser Gehirn hat nur einen kleinen Anteil am Körpergewicht, dafür aber einen exorbitant hohen Energieverbrauch. Es benötigt rund 20 Prozent der Gesamtenergie, die unser Körper täglich braucht.</p>
             <p className="mb-3">Dies liegt unter anderem daran, dass unser Gehirn rund um die Uhr aktiv ist. Außerdem benötigt die tägliche Arbeit der Nervenzellen besonders viel Energie. Auch der Transport von Molekülen und Botenstoffen ist energetisch sehr aufwändig.</p>
@@ -265,7 +265,7 @@ export default function LehrerManual() {
 
           <SubSection icon={<div className="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center"><Lightbulb className="text-indigo-600" size={14} /></div>} title="Weiterführende Informationen">
             <p className="mb-3">Chemisch sind Fette Verbindungen von Glycerin mit sog. Fettsäuren. Sie werden auch Triglyceride genannt.</p>
-            <DocImage src="/manual-images/image7.png" caption="Glycerinanteil / Fettsäureanteil" maxHeight={85} maxWidth="50%" />
+            <DocImage src="/manual-images/image7.png" caption="Glycerinanteil / Fettsäureanteil" />
             <p className="mb-3">In einem Fettmolekül sind drei Fettsäuren mit dem Glycerin verbunden: → Triglyceride</p>
             <p className="font-semibold mb-1">Bildung von Fetten im Körper</p>
             <p className="mb-3">Die Herstellung von Fetten kann in mehreren Organen stattfinden: Leber, Niere, Fettgewebe, Darmwand oder Muskulatur. In mehreren Reaktionsschritten verbinden Enzyme das Molekül Glycerin mit Fettsäuren. Zu den wichtigsten Produzenten von Triglyceriden in unserem Körper gehören die Zellen des weißen Fettgewebes, die Adipozyten (Fettzellen). An der Regulierung dieser Vorgänge sind Hormone wie etwa Insulin oder Adrenalin beteiligt.</p>
@@ -297,10 +297,10 @@ export default function LehrerManual() {
             <div className="bg-gray-50 border border-gray-200 p-3 mb-2 rounded">
               <p className="mb-1 font-medium">Palmitinsäure</p>
               <p className="font-mono text-sm mb-2">C16H32O2</p>
-              <DocImage src="/manual-images/image8.png" caption="Palmitinsäure" maxHeight={85} maxWidth="50%" />
+              <DocImage src="/manual-images/image8.png" caption="Palmitinsäure" />
               <p className="mb-1 font-medium">Stearinsäure</p>
               <p className="font-mono text-sm mb-2">C18H36O2</p>
-              <DocImage src="/manual-images/image9.png" caption="Stearinsäure" maxHeight={85} maxWidth="50%" />
+              <DocImage src="/manual-images/image9.png" caption="Stearinsäure" />
             </div>
             <p className="mb-3">Gesättigte Fette besitzen nur gesättigte Fettsäuren. Große Mengen an gesättigten Fettsäuren findet man vor allem in Nahrungsmitteln tierischer Herkunft. Nur wenige pflanzliche Nahrungsmittel enthalten größere Anteile an gesättigte Fettsäuren.</p>
             <p className="font-semibold mb-1">Ungesättigte Fettsäuren</p>
@@ -309,10 +309,10 @@ export default function LehrerManual() {
             <div className="bg-gray-50 border border-gray-200 p-3 mb-3 rounded">
               <p className="mb-1 font-medium">Ölsäure (einfach ungesättigt)</p>
               <p className="font-mono text-sm mb-2">C18H34O2</p>
-              <DocImage src="/manual-images/image10.png" caption="Ölsäure (einfach ungesättigt)" maxHeight={85} maxWidth="50%" />
+              <DocImage src="/manual-images/image10.png" caption="Ölsäure (einfach ungesättigt)" />
               <p className="mb-1 font-medium">Linolsäure (zweifach ungesättigt)</p>
               <p className="font-mono text-sm mb-2">C18H32O2</p>
-              <DocImage src="/manual-images/image11.png" caption="Linolsäure (zweifach ungesättigt)" maxHeight={85} maxWidth="50%" />
+              <DocImage src="/manual-images/image11.png" caption="Linolsäure (zweifach ungesättigt)" />
             </div>
             <p className="mb-3">Ungesättigte Fette besitzen einen hohen Anteil an ungesättigten Fettsäuren. Diese sind überwiegend in pflanzlichen Nahrungsmitteln und in fettem Fisch enthalten.</p>
             <p className="font-semibold mb-1">Was versteht man unter „Omega-Fettsäuren"?</p>
@@ -321,14 +321,14 @@ export default function LehrerManual() {
             <div className="bg-gray-50 border border-gray-200 p-3 mb-3 rounded">
               <p className="mb-2">Beispiel:</p>
               <p className="mb-1 font-medium">α-Linolensäure (C18H30O2)</p>
-              <DocImage src="/manual-images/image12.png" caption="α-Linolensäure ↑ Omega-3" maxHeight={85} maxWidth="50%" />
+              <DocImage src="/manual-images/image12.png" caption="α-Linolensäure ↑ Omega-3" />
             </div>
             <p className="font-semibold mb-1">Omega-6-Fettsäuren</p>
             <p className="mb-3">Die Omega-6-Fettsäuren weisen – vom Omega-Ende (ω-Ende) her betrachtet – an der sechsten Position die erste Doppelbindung auf.</p>
             <div className="bg-gray-50 border border-gray-200 p-3 mb-3 rounded">
               <p className="mb-2">Beispiel:</p>
               <p className="mb-1 font-medium">Linolsäure (C18H32O2) ↓ Omega-6</p>
-              <DocImage src="/manual-images/image13.png" caption="Linolsäure ↓ Omega-6" maxHeight={85} maxWidth="50%" />
+              <DocImage src="/manual-images/image13.png" caption="Linolsäure ↓ Omega-6" />
             </div>
             <p className="font-semibold mb-1">Was sind ‚essentielle' Fettsäuren?</p>
             <p className="mb-3">Essentielle Fettsäuren sind Fettsäuren, die vom Körper nicht selbst hergestellt werden können. Sie müssen über die Nahrung zugeführt werden. Für den Menschen essentiell sind die oben dargestellte Omega-3-Fettsäure α-Linolensäure und die Omega-6-Fettsäure Linolsäure.</p>
@@ -440,7 +440,7 @@ export default function LehrerManual() {
             <p className="font-semibold mb-1">Die Rolle der Aminosäuren</p>
             <p className="mb-3">Der Körper benötigt zur Proteinbildung 20 verschiedene Aminosäuren. Die Baupläne für die Proteine sind im Erbgut einer jeden Zelle gespeichert.</p>
             <p className="mb-1">Chemische Grundstruktur einer Aminosäure:</p>
-            <DocImage src="/manual-images/image15.png" caption="Struktur einer Aminosäure" maxHeight={85} maxWidth="50%" />
+            <DocImage src="/manual-images/image15.png" caption="Struktur einer Aminosäure" />
             <p className="mb-1">Jede Aminosäure hat:</p>
             <ul className="list-disc pl-5 mb-3 space-y-1">
               <li>eine Aminogruppe (NH2)</li>
@@ -449,7 +449,7 @@ export default function LehrerManual() {
               <li>ein Wasserstoffatom (H)</li>
             </ul>
             <p className="mb-3">Die Aminosäuren werden bei der Herstellung von Proteinen miteinander zu Ketten verknüpft.</p>
-            <DocImage src="/manual-images/image16.png" caption="Aufbau einer Proteinkette" maxHeight={85} maxWidth="50%" />
+            <DocImage src="/manual-images/image16.png" caption="Aufbau einer Proteinkette" />
             <p className="mb-3">Um ihre spätere Gestalt anzunehmen, durchlaufen Proteine den o.g. Prozess der Proteinfaltung. Dabei entsteht zunächst die Sekundärstruktur. Anschließend nimmt das Molekül seine Tertiärstruktur an, die räumliche Anordnung der gefalteten Kette. Sie bestimmt die vollständige dreidimensionale Gestalt. Viele funktionelle Proteine (z.B. Enzyme) müssen sich noch zu einem großen Komplex aus mehreren Untereinheiten zusammenlagern. Dieser heißt Quartärstruktur.</p>
             <DocImage src="/manual-images/image17.png" caption="Proteine: verschiedene Ebenen der Organisation" />
             <p className="font-semibold mb-1">Proteinbedarf und essentielle (unentbehrliche) Aminosäuren</p>
@@ -551,7 +551,7 @@ export default function LehrerManual() {
             <p className="font-semibold mb-1">Wasserlösliche Vitamine anhand von Beispielen</p>
             <p className="font-semibold mb-1">Makronährstoff-Verwertung und B-Vitamine</p>
             <p className="mb-3">Die B-Vitamine Panthotensäure, Folsäure, Biotin, Niacin und Cobalamin werden vor allem im Stoffwechsel gebraucht. Sie ermöglichen den Abbau von Kohlenhydraten und Fetten zu Energie oder den Aufbau von neuen Eiweißen aus Aminosäuren. Sie sind aber auch für die normale Funktion und Entwicklung jeder Zelle wichtig. Cobalamin ist außerdem ein gutes Beispiel für die Bedeutung von Spuren-Metallen im Stoffwechsel. Es enthält als wichtiges funktionsnotwendiges Zentralatom ein Kobalt-Atom. Kobalt ist in größeren Mengen ein gefährliches Schwermetall, in Form einzelner Atome jedoch ein Spurenelement und lebenswichtig als Bestandteil dieses Vitamins:</p>
-            <DocImage src="/manual-images/image19.jpeg" caption="Cobalamin (Vitamin B12)" maxHeight={85} maxWidth="50%" />
+            <DocImage src="/manual-images/image19.jpeg" caption="Cobalamin (Vitamin B12)" />
             <p className="font-semibold mb-1">Funktionen von B-Vitaminen (Beispiele)</p>
             <p className="mb-3">Vitamin B1 (Thiamin) spielt eine zentrale Rolle im Stoffwechsel der Kohlenhydrate. Bei der Umsetzung dieser Gruppe von Makronährstoffen in Energie wird Vitamin B1 benötigt. Da es sich bei den Reaktionen verbraucht, muss es mit der Nahrung nachgeliefert werden.</p>
             <p className="mb-3">Vitamin B2 (Riboflavin) dient als chemische Vorstufe für die sog. Flavin-Koenzyme (FAD, FMN). Diese besitzen eine zentrale Funktion bei der Energiegewinnung aus allen drei Makronährstoffen: Kohlenhydrate, Fette, Proteine.</p>
