@@ -517,7 +517,7 @@ export default function LehrerManual() {
             <P>Vitamin D (Calciferol) ist unverzichtbar bei Aufbau und Stoffwechsel der Knochen. Einem Mangel an Vitamin D kann man nur zum Teil mit entsprechender Ernährung entgegenwirken (vor allem Seefisch ist reich an Vitamin D), für die Bildung von Vitamin D ist unser Körper vor allem von Sonneneinstrahlung auf unsere Haut angewiesen. Ein dauerhafter Mangel an diesem Vitamin führt zu einem Verlust von Knochenmasse (Osteoporose). Eine kontrollierte Substitution kann auch hier sinnvoll sein.</P>
             <P><B>Mineralstoffe: Allgemeines</B></P>
             <P>Unter Mineralstoffen versteht man mehr als 20 chemische Elemente, die im Organismus viele Aufgaben erfüllen. Sie werden zum Beispiel für den Aufbau von Zähnen und Knochen benötigt oder auch für die Funktion von Enzymen. Zudem spielen sie im Wasserhaushalt eine Rolle und im Hormon- sowie im Immunsystem. Sie werden entsprechend unserem Bedarf in Mengenelemente und Spurenelemente eingeteilt.</P>
-            <DocImage src="/manual-images/image20.jpeg" caption="Mineralstoffe: Ein Überblick" maxHeight="204px" />
+            <DocImage src="/manual-images/image20.jpeg" caption="Mineralstoffe: Ein Überblick" maxHeight="224px" />
             <P><B>Die Funktionen der Mineralstoffe in Kürze:</B></P>
             <Li>Natrium/Kalium: Regulation des Wasserhaushalts; Kalium: Funktion von Membranen</Li>
             <Li>Magnesium: aktiviert Enzyme; unterstützt die Reizübertragung von Muskeln und Nerven</Li>
