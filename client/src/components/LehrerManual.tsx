@@ -62,7 +62,7 @@ function DocImage({ src, caption, maxHeight = "170px", maxWidth }: { src: string
   return (
     <figure className="my-3 flex flex-col items-center">
       <img src={src} alt={caption} className="rounded-md border border-gray-200 bg-white" style={{ maxHeight, maxWidth: maxWidth ?? "100%", objectFit: "contain" }} />
-      <figcaption className="mt-1 text-center text-sm text-gray-500 italic">{caption}</figcaption>
+      {caption && <figcaption className="mt-1 text-center text-sm text-gray-500 italic">{caption}</figcaption>}
     </figure>
   );
 }
@@ -287,7 +287,7 @@ export default function LehrerManual() {
 
           <SubSection icon={<div className="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center"><Lightbulb className="text-indigo-600" size={14} /></div>} title="Weiterführende Informationen">
             <P>Chemisch sind Fette Verbindungen von Glycerin mit sog. Fettsäuren. Sie werden auch Triglyceride genannt.</P>
-            <DocImage src="/manual-images/image7.png" caption="Glycerinanteil / Fettsäureanteil" />
+            <DocImage src="/manual-images/image7b.png" caption="" />
             <P>In einem Fettmolekül sind drei Fettsäuren mit dem Glycerin verbunden: → Triglyceride</P>
             <P><B>Bildung von Fetten im Körper</B></P>
             <P>Die Herstellung von Fetten kann in mehreren Organen stattfinden: Leber, Niere, Fettgewebe, Darmwand oder Muskulatur. In mehreren Reaktionsschritten verbinden Enzyme das Molekül Glycerin mit Fettsäuren. Zu den wichtigsten Produzenten von Triglyceriden in unserem Körper gehören die Zellen des weißen Fettgewebes, die Adipozyten (Fettzellen). An der Regulierung dieser Vorgänge sind Hormone wie etwa Insulin oder Adrenalin beteiligt.</P>
