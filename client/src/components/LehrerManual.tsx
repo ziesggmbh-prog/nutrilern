@@ -8,7 +8,7 @@ function DocImage({ src, caption }: { src: string; caption: string }) {
         src={src}
         alt={caption}
         className="max-w-full rounded-md border border-gray-200 bg-white"
-        style={{ maxHeight: "340px", objectFit: "contain" }}
+        style={{ maxHeight: "170px", objectFit: "contain" }}
       />
       <figcaption className="mt-2 text-center text-sm text-gray-500 italic">{caption}</figcaption>
     </figure>
