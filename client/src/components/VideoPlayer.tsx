@@ -186,7 +186,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef1}
-                  src="https://player.vimeo.com/video/1172528318?badge=0&autopause=0&autoplay=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1172528318?badge=0&autopause=0&autoplay=1&playsinline=1&fs=0"
                   frameBorder="0"
                   allow="autoplay; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -200,7 +200,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef2}
-                  src="https://player.vimeo.com/video/1172528646?badge=0&autopause=0&autoplay=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1172528646?badge=0&autopause=0&autoplay=1&playsinline=1&fs=0"
                   frameBorder="0"
                   allow="autoplay; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -214,7 +214,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef3}
-                  src="https://player.vimeo.com/video/1172530056?badge=0&autopause=0&autoplay=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1172530056?badge=0&autopause=0&autoplay=1&playsinline=1&fs=0"
                   frameBorder="0"
                   allow="autoplay; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
@@ -228,7 +228,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
                 <iframe 
                   ref={vimeoRef4}
-                  src="https://player.vimeo.com/video/1148007412?badge=0&autopause=0&autoplay=1&playsinline=1"
+                  src="https://player.vimeo.com/video/1148007412?badge=0&autopause=0&autoplay=1&playsinline=1&fs=0"
                   frameBorder="0"
                   allow="autoplay; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
