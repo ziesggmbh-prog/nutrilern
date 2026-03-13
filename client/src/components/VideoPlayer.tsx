@@ -293,7 +293,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             {lesson.id === 1 ? "Intro abschließen" : "Film abschließen"}
           </button>
         </div>
-      </div>
+        </div>{/* end scrollable body */}
+      </div>{/* end modal */}
     </div>
   );
 }
