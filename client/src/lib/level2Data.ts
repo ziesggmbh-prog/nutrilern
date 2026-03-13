@@ -1,7 +1,7 @@
 import gruppe1 from "@assets/Gruppe_1_opt.jpg";
-import gruppe2 from "@assets/ziesggmbh_59072_add_realistic_olive_oil_bottle_--ar_9151_--pr__1773414504520.png";
-import gruppe3 from "@assets/ziesggmbh_59072_delete_stuff_on_keyboard_--ar_9151_--profile___1773415060932.png";
-import gruppe4 from "@assets/ziesggmbh_59072_a_looking_glass_on_a_detailed_ancient_map_sli__1773414891116.png";
+import gruppe2 from "@assets/Gruppe_2_opt_new.jpg";
+import gruppe3 from "@assets/Gruppe_3_opt_new.jpg";
+import gruppe4 from "@assets/Gruppe_4_opt_new.jpg";
 import gruppe5 from "@assets/Gruppe_5_opt.jpg";
 import gruppe6 from "@assets/Gruppe_6_opt.jpg";
 
