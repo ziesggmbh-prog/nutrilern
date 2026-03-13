@@ -551,7 +551,7 @@ export default function LehrerManual() {
             <Li>Der Konsum von Süßstoffen führt vermutlich zu einer <B>Herabsetzung der Schwelle</B>, ab der wir <B>Süße wahrnehmen</B>.</Li>
             <Li><B>Die Folge</B>: Bei häufigem Konsum verlangt der Körper nach immer süßeren Lebensmitteln, wir konsumieren letztlich immer mehr Süßes.</Li>
             <P><B>Tipp zum Umgang mit Süßem</B>: Lebensmittel, die von Natur aus süß sind (z.B. <B>Obst</B>) enthalten Zucker in einer Form, die vom Körper gesund verstoffwechselt werden kann. Solche Lebensmittel sind Lebensmitteln mit künstlichen Süßstoffen vorzuziehen.</P>
-            <Num n={2}><B>Transfette</B></Num>
+            <div className="mt-8"><Num n={2}><B>Transfette</B></Num></div>
             <P><B>Was sind Transfettsäuren?</B></P>
             <P>Transfettsäuren sind Fettsäuren, die durch das <B>Härten pflanzlicher Öle</B> entstehen. Transfettsäuren sind für den menschlichen Körper <B>besonders ungesund</B>.</P>
             <P><B>Wie entstehen Transfettsäuren?</B></P>
