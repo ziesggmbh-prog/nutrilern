@@ -136,9 +136,10 @@ export default function Home() {
   
 
 
-  // Load lessons from API
-  const { data: lessons = [], isLoading: lessonsLoading } = useQuery<Lesson[]>({
+  // Load lessons from API – staleTime keeps data cached so no re-fetch on revisit
+  const { data: lessons = [] } = useQuery<Lesson[]>({
     queryKey: ["/api/lessons"],
+    staleTime: Infinity,
   });
   
 
@@ -147,14 +148,6 @@ export default function Home() {
     queryKey: ["/api/progress"],
   });
 
-  // Show loading state while lessons are being fetched
-  if (lessonsLoading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center">
-        <div className="text-lg text-gray-600">Lade Lektionen...</div>
-      </div>
-    );
-  }
 
   const completedLessonIds = progress.filter(p => p.isCompleted).map(p => p.lessonId);
   const nextAvailableLesson = lessons.find(lesson => 
@@ -207,14 +200,6 @@ export default function Home() {
     refetchProgress();
   };
 
-
-  if (lessonsLoading) {
-    return (
-      <div className="min-h-screen bg-navy flex items-center justify-center">
-        <div className="text-white text-xl">Loading...</div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-structured text-white overflow-x-hidden">
