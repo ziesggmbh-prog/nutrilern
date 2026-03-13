@@ -58,10 +58,10 @@ function Num({ n, children }: { n: number; children: ReactNode }) {
   );
 }
 
-function DocImage({ src, caption, maxHeight = "170px" }: { src: string; caption: string; maxHeight?: string }) {
+function DocImage({ src, caption, maxHeight = "170px", maxWidth }: { src: string; caption: string; maxHeight?: string; maxWidth?: string }) {
   return (
     <figure className="my-3 flex flex-col items-center">
-      <img src={src} alt={caption} className="max-w-full rounded-md border border-gray-200 bg-white" style={{ maxHeight, objectFit: "contain" }} />
+      <img src={src} alt={caption} className="rounded-md border border-gray-200 bg-white" style={{ maxHeight, maxWidth: maxWidth ?? "100%", objectFit: "contain" }} />
       <figcaption className="mt-1 text-center text-sm text-gray-500 italic">{caption}</figcaption>
     </figure>
   );
@@ -311,7 +311,7 @@ export default function LehrerManual() {
             <P>Palmitinsäure</P>
             <DocImage src="/manual-images/image8.png" caption="Palmitinsäure (C16H32O2)" maxHeight="50px" />
             <P>Stearinsäure</P>
-            <DocImage src="/manual-images/image9.png" caption="Stearinsäure (C18H36O2)" maxHeight="138px" />
+            <DocImage src="/manual-images/image9.png" caption="Stearinsäure (C18H36O2)" maxWidth="90%" />
             <P>Gesättigte Fette besitzen nur gesättigte Fettsäuren. Große Mengen an gesättigten Fettsäuren findet man vor allem in Nahrungsmitteln tierischer Herkunft. Nur wenige pflanzliche Nahrungsmittel enthalten größere Anteile an gesättigte Fettsäuren.</P>
             <P><B>Ungesättigte Fettsäuren</B></P>
             <P>Hier besitzen nicht alle C-Atome in der Kohlenwasserstoffkette die maximale Anzahl an Wasserstoffatomen. Manche C-Atome sind durch eine Doppelbindung verknüpft. Man unterscheidet zwischen einfach und mehrfach ungesättigte Fettsäuren.</P>
