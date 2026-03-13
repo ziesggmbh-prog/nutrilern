@@ -103,15 +103,15 @@ interface SubSectionProps {
 function SubSection({ icon, title, children, defaultOpen = false }: SubSectionProps) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="mb-6 border border-gray-100 rounded-lg">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left rounded-t-lg">
+    <div className="mb-2 border-b border-gray-200 sm:mb-6 sm:border sm:border-gray-100 sm:rounded-lg">
+      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between py-3 px-0 sm:p-4 sm:bg-gray-50 sm:hover:bg-gray-100 transition-colors text-left sm:rounded-t-lg">
         <div className="flex items-center gap-3">
           {icon}
           <h4 className="text-base font-bold text-gray-800">{title}</h4>
         </div>
         {open ? <ChevronUp size={16} className="text-gray-500" /> : <ChevronDown size={16} className="text-gray-500" />}
       </button>
-      {open && <div className="p-5 bg-white text-gray-800 text-[15px] leading-relaxed">{children}</div>}
+      {open && <div className="pb-4 sm:p-5 sm:bg-white text-gray-800 text-[15px] leading-relaxed">{children}</div>}
     </div>
   );
 }
