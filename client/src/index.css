@@ -210,3 +210,13 @@
     transform: translateY(-10px); 
   }
 }
+
+/* Prevent extra browser-specific whitespace on the teachers page */
+.prose p,
+.prose li,
+.prose span,
+.prose div {
+  white-space: normal;
+  word-spacing: normal;
+  letter-spacing: normal;
+}
