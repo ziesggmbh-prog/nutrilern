@@ -160,16 +160,19 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-      {/* Fixed close button – always reachable on mobile even when iframe captures touch */}
+      {/* Tappable backdrop – closes modal when tapping outside the video box */}
+      <div className="absolute inset-0" onClick={onClose} />
+
+      {/* Fixed close button – always visible on all sizes, above the iframe */}
       <button
         onClick={onClose}
-        className="fixed top-3 right-3 z-[60] bg-gray-800 bg-opacity-90 hover:bg-gray-700 text-white rounded-full w-11 h-11 flex items-center justify-center shadow-lg sm:hidden"
+        className="fixed top-3 right-3 z-[60] bg-gray-800 bg-opacity-90 hover:bg-gray-700 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
         aria-label="Schließen"
       >
-        <X size={20} />
+        <X size={22} />
       </button>
 
-      <div className="bg-navy-light rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] flex flex-col">
+      <div className="bg-navy-light rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] flex flex-col relative z-10">
         {/* Header – outside scroll area, always visible */}
         <div className="flex justify-between items-center px-6 pt-5 pb-4 flex-shrink-0">
           <h2 className="text-xl sm:text-2xl font-bold text-white">{lesson.title}</h2>

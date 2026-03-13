@@ -305,7 +305,8 @@ export default function Home() {
       <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         
         <div className="container mx-auto px-4 py-6 relative z-10">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            {/* Logo + Titel */}
             <div className="flex items-center space-x-3 sm:space-x-6 min-w-0">
               <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
                 <img 
@@ -314,13 +315,14 @@ export default function Home() {
                   className="w-12 h-12 sm:w-20 sm:h-20 object-cover rounded-full"
                 />
               </div>
-              <div className="min-w-0">
-                <h1 className="text-lg sm:text-2xl font-bold truncate">NutriLern</h1>
+              <div>
+                <h1 className="text-lg sm:text-2xl font-bold">NutriLern</h1>
                 <p className="hidden sm:block text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Ernährung</p>
               </div>
             </div>
             
-            <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+            {/* Nav-Buttons – auf Mobile rechts unter dem Titel */}
+            <div className="flex items-center justify-end space-x-2 sm:space-x-4">
               <LevelDropdown />
               <FullscreenToggle />
               <HamburgerMenu />
