@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowLeft, Users, Clock, BookOpen, Target, ListOrdered, FileText, Presentation } from "lucide-react";
+import { ArrowLeft, Users, Clock, ListOrdered, Presentation } from "lucide-react";
 import FullscreenToggle from "@/components/FullscreenToggle";
 import FullscreenRestoreNotification from "@/components/FullscreenRestoreNotification";
 import { useFullscreenSync } from "@/hooks/useFullscreenSync";
-import LehrerManual from "@/components/LehrerManual";
 
 export default function Teachers() {
   useFullscreenSync();
-  const [activeSection, setActiveSection] = useState<"fork" | "ablauf" | "manual">("fork");
+  const [activeSection, setActiveSection] = useState<"fork" | "ablauf">("fork");
   const dailySchedule = [
     {
       day: 1,
@@ -101,7 +100,7 @@ export default function Teachers() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="grid md:grid-cols-2 gap-6"
+            className="flex justify-center"
           >
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -120,23 +119,7 @@ export default function Teachers() {
               </div>
             </motion.div>
 
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => setActiveSection("manual")}
-              className="bg-white rounded-2xl shadow-lg p-8 cursor-pointer hover:shadow-xl transition-shadow border-2 border-transparent hover:border-green-300"
-            >
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-5">
-                  <FileText className="text-green-600" size={32} />
-                </div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">Lehrer:innen-Manual</h2>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Hier erhalten Sie Zusammenfassungen zu den Inhalten der Lehrfilme und vertiefende Informationen.
-                </p>
-              </div>
             </motion.div>
-          </motion.div>
         )}
 
         {/* Back button for sub-sections */}
@@ -199,7 +182,7 @@ export default function Teachers() {
               <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Wichtige Hinweise:</h3>
               <ul className="list-disc pl-6 space-y-3">
                 <li>Es ist unerlässlich, die Schüler:innen den Film wiederholt anschauen zu lassen. Wenn die Schüler:innen nicht mit einem eigenen Endgerät und Kopfhörern ausgestattet sind, kann das zweite Anschauen auch im Klassenverband erfolgen.</li>
-                <li>Das Hintergrundwissen einer Lektion, auch zur Beantwortung der vertiefenden Fragen, wird durch die Informationen im <button onClick={() => { setActiveSection("manual"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="underline text-blue-600 hover:text-blue-800">Lehrer:innenmanual</button> abgedeckt. Dort finden sich Zusammenfassungen der Lehrfilme, die vertiefenden Fragen und weiterführende Informationen.</li>
+                <li>Das Hintergrundwissen einer Lektion, auch zur Beantwortung der vertiefenden Fragen, wird durch die Informationen im Lehrer:innenmanual abgedeckt. Dort finden sich Zusammenfassungen der Lehrfilme, die vertiefenden Fragen und weiterführende Informationen.</li>
                 <li>Bei engem Zeitrahmen können die vertiefenden Fragen übersprungen werden (zur Freischaltung der nächsten Lektion genügt die Beantwortung des Quiz). Die Bearbeitung wird jedoch ausdrücklich empfohlen.</li>
                 <li>Das Quiz kann im Klassenverband absolviert werden, wenn eigene Endgeräte der Schüler:innen fehlen.</li>
               </ul>
@@ -332,24 +315,6 @@ export default function Teachers() {
         </motion.div>
         )}
 
-        {/* Manual Section */}
-        {activeSection === "manual" && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl shadow-lg p-8 mb-8"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                <FileText className="text-green-600" size={20} />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-800">Lehrer:innen-Manual</h2>
-            </div>
-            <p className="text-gray-600 mb-6">Fragen für die Gruppenarbeit + zentrale Hintergründe zur Erklärung</p>
-            <LehrerManual />
-          </motion.div>
-        )}
 
       </div>
     </div>
