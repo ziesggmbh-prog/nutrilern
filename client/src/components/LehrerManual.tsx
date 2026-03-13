@@ -24,7 +24,7 @@ function Li({ children }: { children: ReactNode }) {
 
 function OLi({ children }: { children: ReactNode }) {
   return (
-    <div className="flex gap-2 mb-0 pl-12">
+    <div className="flex gap-2 mb-0 pl-24">
       <span className="flex-shrink-0 select-none">○</span>
       <span>{children}</span>
     </div>
@@ -33,7 +33,7 @@ function OLi({ children }: { children: ReactNode }) {
 
 function SqLi({ children }: { children: ReactNode }) {
   return (
-    <div className="flex gap-2 mb-0 pl-12">
+    <div className="flex gap-2 mb-0 pl-36">
       <span className="flex-shrink-0 select-none">▪</span>
       <span>{children}</span>
     </div>
@@ -42,7 +42,7 @@ function SqLi({ children }: { children: ReactNode }) {
 
 function Arr({ children }: { children: ReactNode }) {
   return (
-    <div className="flex gap-2 mb-0 pl-12">
+    <div className="flex gap-2 mb-0 pl-24">
       <span className="flex-shrink-0 select-none">→</span>
       <span>{children}</span>
     </div>
