@@ -117,7 +117,7 @@ function SubSection({ icon, title, children, defaultOpen = false }: SubSectionPr
 }
 
 export default function LehrerManual() {
-  const [openSections, setOpenSections] = useState<Record<number, boolean>>({ 1: true });
+  const [openSections, setOpenSections] = useState<Record<number, boolean>>({});
   const toggle = (n: number) => setOpenSections(prev => ({ ...prev, [n]: !prev[n] }));
 
   return (
@@ -142,7 +142,7 @@ export default function LehrerManual() {
         {/* ── 1. Kohlenhydrate ─────────────────────────────── */}
         <AccordionSection number={1} title="Kohlenhydrate" color="bg-green-600" bgColor="bg-green-50" textColor="text-green-800" isOpen={!!openSections[1]} onToggle={() => toggle(1)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center"><BookOpen className="text-green-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={true}>
+          <SubSection icon={<div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center"><BookOpen className="text-green-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <P>Über die Nahrung nimmt unser Körper <B>zwei Arten von Nährstoffen</B> auf: <B>Makronährstoffe</B> und <B>Mikronährstoffe</B>.</P>
             <P><B>Makronährstoffe</B> benötigt der Körper zur <B>Energiegewinnung</B>.</P>
             <Li>Sämtliche lebenswichtigen Körperfunktionen verbrauchen Energie.</Li>
@@ -235,7 +235,7 @@ export default function LehrerManual() {
         {/* ── 2. Fette ─────────────────────────────────────── */}
         <AccordionSection number={2} title="Fette" color="bg-orange-600" bgColor="bg-orange-50" textColor="text-orange-800" isOpen={!!openSections[2]} onToggle={() => toggle(2)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center"><BookOpen className="text-orange-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={true}>
+          <SubSection icon={<div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center"><BookOpen className="text-orange-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <P>Fette sind auch ein <B>Energielieferant</B> (Makronährstoff) für unseren Körper.</P>
             <TP>Außerdem erfüllen sie weitere wichtige Funktionen:</TP>
             <Li>Wir benötigen Fette, damit bestimmte <B>Vitamine vom Körper aufgenommen</B> werden.</Li>
@@ -341,7 +341,7 @@ export default function LehrerManual() {
         {/* ── 3. Proteine ──────────────────────────────────── */}
         <AccordionSection number={3} title="Proteine" color="bg-red-600" bgColor="bg-red-50" textColor="text-red-800" isOpen={!!openSections[3]} onToggle={() => toggle(3)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center"><BookOpen className="text-red-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={true}>
+          <SubSection icon={<div className="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center"><BookOpen className="text-red-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <P>Proteine sind auch <B>Energielieferanten</B> (Makronährstoffe) für unseren Körper.</P>
             <TP>Außerdem erfüllen sie weitere wichtige Funktionen:</TP>
             <Li>wichtig beim <B>Aufbau von Muskeln und Gewebe</B></Li>
@@ -450,7 +450,7 @@ export default function LehrerManual() {
         {/* ── 4. Mikronährstoffe ───────────────────────────── */}
         <AccordionSection number={4} title="Mikronährstoffe" color="bg-blue-600" bgColor="bg-blue-50" textColor="text-blue-800" isOpen={!!openSections[4]} onToggle={() => toggle(4)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><BookOpen className="text-blue-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={true}>
+          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><BookOpen className="text-blue-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <P><B>Mikronährstoffe</B> sind, anders als die Makronährstoffe, <B>keine Energielieferanten</B> des Körpers.</P>
             <P>Es gibt <B>zwei Gruppen</B> von Mikronährstoffen: <B>Vitamine</B> und <B>Mineralstoffe</B>.</P>
             <P><B>Vitamine</B>:</P>
@@ -540,7 +540,7 @@ export default function LehrerManual() {
         {/* ── 5. Unterwelt ─────────────────────────────────── */}
         <AccordionSection number={5} title="‚Unterwelt'" color="bg-purple-600" bgColor="bg-purple-50" textColor="text-purple-800" isOpen={!!openSections[5]} onToggle={() => toggle(5)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><BookOpen className="text-purple-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={true}>
+          <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><BookOpen className="text-purple-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <Num n={1}><B>Süßstoffe</B></Num>
             <P><B>Warum Süßstoffe?</B></P>
             <Li><B>Die Idee</B>: Durch den Konsum von Süßstoffen sollen die Gefahren eines zu hohen Zuckerkonsums vermieden werden.</Li>
