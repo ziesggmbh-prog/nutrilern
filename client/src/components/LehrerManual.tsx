@@ -311,7 +311,7 @@ export default function LehrerManual() {
             <P>Palmitinsäure</P>
             <DocImage src="/manual-images/image8.png" caption="Palmitinsäure (C16H32O2)" maxHeight="50px" />
             <P>Stearinsäure</P>
-            <DocImage src="/manual-images/image9.png" caption="Stearinsäure (C18H36O2)" />
+            <DocImage src="/manual-images/image9.png" caption="Stearinsäure (C18H36O2)" maxHeight="153px" />
             <P>Gesättigte Fette besitzen nur gesättigte Fettsäuren. Große Mengen an gesättigten Fettsäuren findet man vor allem in Nahrungsmitteln tierischer Herkunft. Nur wenige pflanzliche Nahrungsmittel enthalten größere Anteile an gesättigte Fettsäuren.</P>
             <P><B>Ungesättigte Fettsäuren</B></P>
             <P>Hier besitzen nicht alle C-Atome in der Kohlenwasserstoffkette die maximale Anzahl an Wasserstoffatomen. Manche C-Atome sind durch eine Doppelbindung verknüpft. Man unterscheidet zwischen einfach und mehrfach ungesättigte Fettsäuren.</P>
