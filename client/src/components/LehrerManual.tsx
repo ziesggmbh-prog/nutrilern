@@ -240,7 +240,7 @@ export default function LehrerManual() {
             <TP>Außerdem erfüllen sie weitere wichtige Funktionen:</TP>
             <Li>Wir benötigen Fette, damit bestimmte <B>Vitamine vom Körper aufgenommen</B> werden.</Li>
             <Li>Fette sind <B>Bestandteil der Zellmembran</B>, d.i. die Hülle, die die Körperzellen umschließt.</Li>
-            <P>Fette sind der Nährstoff mit der mit Abstand <B>höchsten Energiedichte</B>.</P>
+            <P>Fette sind der Nährstoff mit der mit Abstand <B>höchsten Energiedichte</B>:</P>
             <Li>Ein Gramm Fett liefert mehr als doppelt so viel Energie wie ein Gramm Kohlenhydrate oder Proteine.</Li>
             <Arr>Fette sollten bewusst konsumiert werden.</Arr>
             <P>Fette setzen sich aus <B>Fettsäuren</B> zusammen, von diesen Fettsäuren gibt es <B>unterschiedliche Arten</B>. Die unterschiedlichen Arten von Fettsäuren haben <B>unterschiedliche Funktionen und Effekte</B>.</P>
