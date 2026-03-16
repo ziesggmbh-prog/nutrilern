@@ -22,7 +22,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
       },
       {
         gruppe: 3,
-        fragen: "Welche Kohlenhydrate können als \u2018gut\u2019 gelten und warum? In welchen Lebensmitteln befinden sie sich? Welche Kohlenhydrate müssen als \u2018schlecht\u2019 gelten und warum? In welchen Lebensmitteln befinden sie sich?"
+        fragen: "Welche Kohlenhydrate können als \u201Agut\u2018 gelten und warum? In welchen Lebensmitteln befinden sie sich? Welche Kohlenhydrate müssen als \u201Aschlecht\u2018 gelten und warum? In welchen Lebensmitteln befinden sie sich?"
       },
       {
         gruppe: 4,
@@ -44,7 +44,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
       },
       {
         gruppe: 3,
-        fragen: "Was ist der Unterschied zwischen gesättigten Fettsäuren und einfach ungesättigten Fettsäuren (chemisch gesehen)? Warum gelten erstere als \u2018schlecht\u2019 und letztere als relativ \u2018gut\u2019? In welchen Lebensmitteln findet man sie jeweils?"
+        fragen: "Was ist der Unterschied zwischen gesättigten Fettsäuren und einfach ungesättigten Fettsäuren (chemisch gesehen)? Warum gelten erstere als \u201Aschlecht\u2018 und letztere als relativ \u201Agut\u2018? In welchen Lebensmitteln findet man sie jeweils?"
       },
       {
         gruppe: 4,
@@ -114,7 +114,7 @@ export const vertiefendeFragen: VertiefendeFrage[] = [
       },
       {
         gruppe: 4,
-        fragen: "Diskutiert: Ist es möglich, auf die Produkte aus der \u2018Unterwelt\u2019 der Ernährung ganz zu verzichten? Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker reguliert werden?"
+        fragen: "Diskutiert: Ist es möglich, auf die Produkte aus der \u201AUnterwelt\u2018 der Ernährung ganz zu verzichten? Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker reguliert werden?"
       }
     ]
   }
