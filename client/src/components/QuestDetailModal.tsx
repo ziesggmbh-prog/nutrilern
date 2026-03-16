@@ -165,10 +165,9 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           onClick={() => handleDayClick(day)}
         >
           <img 
-            src={quest.thumbnailUrl} 
-            alt={quest.title}
+            src="/praesentation_tag5.png" 
+            alt="Präsentation"
             className="w-full h-40 object-cover"
-            style={quest.id === 12 ? { objectPosition: 'center 37%' } : undefined}
           />
           <div className="p-4 text-center">
             <h3 className="text-lg font-bold text-white mb-1">Tag 5</h3>
