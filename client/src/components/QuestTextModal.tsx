@@ -90,10 +90,9 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
           <>
             <div className="mb-6 rounded-lg overflow-hidden">
               <img 
-                src={lesson.thumbnailUrl} 
-                alt={lesson.title}
+                src="/praesentation_tag5.png" 
+                alt="Präsentation"
                 className="w-full h-64 object-cover"
-                style={lesson.id === 12 ? { objectPosition: 'center 37%' } : undefined}
               />
             </div>
             <div className="text-center mb-6">
@@ -128,10 +127,9 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
               {day5 !== null && (
                 <div className="mt-8 border-t border-gray-600 pt-6">
                   <img 
-                    src={lesson.thumbnailUrl} 
-                    alt={lesson.title}
+                    src="/praesentation_tag5.png" 
+                    alt="Präsentation"
                     className="w-full h-96 object-cover rounded-lg mb-4"
-                    style={lesson.id === 12 ? { objectPosition: 'center 37%' } : undefined}
                   />
                   <h3 className="text-2xl font-bold text-green-custom text-center">
                     Präsentation
