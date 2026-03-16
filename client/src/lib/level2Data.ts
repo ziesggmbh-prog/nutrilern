@@ -2,9 +2,8 @@ import gruppe1 from "@assets/Gruppe_1_opt.jpg";
 import gruppe2 from "@assets/Gruppe_2_opt_new2.jpg";
 import gruppe3 from "@assets/Gruppe_3_opt_new.jpg";
 import gruppe4 from "@assets/Gruppe_4_opt_new2.jpg";
+import gruppe5 from "@assets/Gruppe_5_opt.jpg";
 import gruppe6 from "@assets/Gruppe_6_opt.jpg";
-
-const gruppe5 = "/assets/tag5_praesentation_1773675967818.png";
 
 export const level2Data = [
   {
