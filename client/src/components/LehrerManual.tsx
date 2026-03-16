@@ -331,7 +331,7 @@ export default function LehrerManual() {
             <DocImage src="/manual-images/image11.png" caption="" maxWidth="280px" maxHeight="none" />
             <P>Ungesättigte Fette besitzen einen hohen Anteil an ungesättigten Fettsäuren. Diese sind überwiegend in pflanzlichen Nahrungsmitteln und in fettem Fisch enthalten.</P>
             <P className="mt-8"><B>Was versteht man unter ‚Omega‘-Fettsäuren?</B></P>
-            <TP><B>Omega-3-Fettsäuren</B></TP>
+            <P className="mt-4"><B>Omega-3-Fettsäuren</B></P>
             <P>Die Omega-3-Fettsäuren bilden eine Untergruppe der ungesättigten Fettsäuren. Omega-3 bedeutet: Die letzte Doppelbindung in der ungesättigten Kohlenstoffkette befindet sich bei der vom COOH-Ende aus gesehen drittletzten C-C-Bindung. Omega (ω) ist der letzte Buchstabe des griechischen Alphabets und bezeichnet das von der Carboxylgruppe entfernteste C-Atom in der Kette.</P>
             <P>Beispiel:</P>
             <DocImage src="/manual-images/image12b.png" caption="" maxWidth="480px" />
