@@ -69,7 +69,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
       });
       const percentage = Math.round((score / questions.length) * 100);
       const passed = percentage >= 70;
-      const result = { score, percentage, passed, totalQuestions: questions.length };
+      const result = { score: percentage, correctAnswers: score, passed, totalQuestions: questions.length };
       setQuizResults(result);
       setShowResults(true);
       apiRequest("POST", `/api/lessons/${lesson.id}/quiz/submit`, {
