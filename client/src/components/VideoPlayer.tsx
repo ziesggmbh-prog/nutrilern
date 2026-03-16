@@ -207,7 +207,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             : lesson.id === 4 ? renderVimeoMobile(vimeoRef4, '1148007412', 'Proteine')
             : lesson.id === 5 ? renderVimeoMobile(vimeoRef5, '1174041123', 'Mikronährstoffe')
             : lesson.id === 6 ? renderVimeoMobile(vimeoRef6, '1174040953', 'Unterwelt')
-            : lesson.id === 7 ? renderVimeoMobile(vimeoRef7, '1174041187', 'Outro')
+            : lesson.id === 7 ? renderVimeoMobile(vimeoRef7, '1174139522', 'Outro')
             : (
               <video
                 ref={htmlVideoRef}
@@ -288,7 +288,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             : lesson.id === 4 ? renderVimeoDesktop(vimeoRef4, '1148007412', 'Proteine')
             : lesson.id === 5 ? renderVimeoDesktop(vimeoRef5, '1174041123', 'Mikronährstoffe')
             : lesson.id === 6 ? renderVimeoDesktop(vimeoRef6, '1174040953', 'Unterwelt')
-            : lesson.id === 7 ? renderVimeoDesktop(vimeoRef7, '1174041187', 'Outro')
+            : lesson.id === 7 ? renderVimeoDesktop(vimeoRef7, '1174139522', 'Outro')
             : (
               <video
                 controls
