@@ -182,14 +182,14 @@ export default function LehrerManual() {
             <Li>Vergleich mit Schokolade: Schokolade enthält ausschließlich Einfachzucker, keine Kohlenhydrate und keine Ballaststoffe.</Li>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><span className="text-blue-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center"><span className="text-green-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
             <Num n={1}>Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für unser Gehirn?</Num>
             <Num n={2}>Worin unterscheiden sich komplexe Kohlenhydrate von Einfachzuckern (chemisch gesehen) und welche Folgen hat das für die Verdauung? Wie funktioniert die Verwertung von Kohlenhydraten?</Num>
             <Num n={3}>Welche Kohlenhydrate können als ‚gut' gelten und warum? In welchen Lebensmitteln befinden sie sich? Welche Kohlenhydrate müssen als ‚schlecht' gelten und warum? In welchen Lebensmitteln befinden sie sich?</Num>
             <Num n={4}>Welche Folgen hat der Konsum von Einfachzuckern für unser Körpergefühl und unsere Leistungsfähigkeit, welche der Konsum von komplexen Kohlenhydraten? Warum ist es möglich, durch Essen einer Banane vor Prüfungen die Effekte beider Arten von Kohlenhydraten optimal auszunutzen?</Num>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center"><Lightbulb className="text-indigo-600" size={14} /></div>} title="Weiterführende Informationen">
+          <SubSection icon={<div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center"><Lightbulb className="text-green-600" size={14} /></div>} title="Weiterführende Informationen">
             <P><B>Wie entstehen Kohlenhydrate?</B></P>
             <P>Grundlage für die Bildung von Kohlenhydraten ist die Photosynthese durch grüne Pflanzen.</P>
             <P>Dabei bilden die Pflanzen aus Wasser und Kohlendioxid (CO2) das energiehaltige Molekül Glucose. Als Energiequelle dient dabei das Sonnenlicht.</P>
@@ -278,14 +278,14 @@ export default function LehrerManual() {
             <Num n={3}>Man sollte <B>möglichst viele ungesättigte Fettsäuren</B> zu sich nehmen, <B>vor allem mehrfach ungesättigte Fettsäuren</B>.</Num>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><span className="text-blue-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center"><span className="text-orange-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
             <Num n={1}>Welche Funktionen erfüllen Fette im Körper? Warum ist es bei Fetten besonders wichtig, nicht zu viel zu konsumieren? Was sind die Obergrenzen?</Num>
             <Num n={2}>Wie sind Fette chemisch aufgebaut und welche Rolle spielen die Fettsäuren? Was sind die wichtigsten Unterschiede zwischen den Fettsäuren hinsichtlich ihrer Funktion/Wirkung und Herstellung?</Num>
             <Num n={3}>Was ist der Unterschied zwischen gesättigten Fettsäuren und einfach ungesättigten Fettsäuren (chemisch gesehen)? Warum gelten erstere als ‚schlecht' und letztere als relativ ‚gut'? In welchen Lebensmitteln findet man sie jeweils?</Num>
             <Num n={4}>Was sind mehrfach ungesättigte Fettsäuren (chemisch gesehen) und in welchen Lebensmitteln befinden sie sich? Inwiefern haben sie eine Sonderstellung unter den Fettsäuren und warum sind sie so gesund?</Num>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center"><Lightbulb className="text-indigo-600" size={14} /></div>} title="Weiterführende Informationen">
+          <SubSection icon={<div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center"><Lightbulb className="text-orange-600" size={14} /></div>} title="Weiterführende Informationen">
             <P>Chemisch sind Fette Verbindungen von Glycerin mit sog. Fettsäuren. Sie werden auch Triglyceride genannt.</P>
             <DocImage src="/manual-images/image7b.png" caption="" />
             <P>In einem Fettmolekül sind drei Fettsäuren mit dem Glycerin verbunden: → Triglyceride</P>
@@ -391,14 +391,14 @@ export default function LehrerManual() {
             <Arr>Tierisches Protein wird oft von ungesunden Stoffen begleitet, pflanzliches Protein meist von gesunden Stoffen.</Arr>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><span className="text-blue-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center"><span className="text-red-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
             <Num n={1}>Wie sind Proteine chemisch aufgebaut und was macht sie so kompliziert, aber auch faszinierend? Welche Funktionen erfüllen sie in unserem Körper? Welchen Beitrag leisten sie zum Muskelaufbau?</Num>
             <Num n={2}>Was ist der wesentliche Unterschied zwischen tierischem und pflanzlichem Protein im Hinblick auf den Menschen? Was sind jeweils die Vorteile und Nachteile von pflanzlichem und tierischem Protein?</Num>
             <Num n={3}>Wie lassen sich die Nachteile von pflanzlichem Protein ausgleichen, um seine Vorteile nutzen zu können? Welche Lebensmittel werden dafür benötigt?</Num>
             <Num n={4}>Diskutiert: Inwieweit führen die Ernährungsempfehlungen zum Thema Protein zu einer veganen Lebensweise?</Num>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center"><Lightbulb className="text-indigo-600" size={14} /></div>} title="Weiterführende Informationen">
+          <SubSection icon={<div className="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center"><Lightbulb className="text-red-600" size={14} /></div>} title="Weiterführende Informationen">
             <P>Proteine (abgeleitet vom griechischen Wort prōteios für „grundlegend" und „vorrangig") werden auch als Eiweiße bezeichnet. Die Bezeichnung Eiweiß ist historisch bedingt und geht auf die ursprüngliche Isolierung dieser Stoffe aus dem Hühnereiweiß (Hühnerei) zurück. Heute wird allgemein die Bezeichnung Protein dem älteren Begriff Eiweiß vorgezogen.</P>
             <P>Proteine erfüllen im Organismus zahlreiche lebenswichtige Aufgaben, etwa</P>
             <Li>als Bausteine für Muskeln (z.B. Aktin und Myosin)</Li>
@@ -494,7 +494,7 @@ export default function LehrerManual() {
             <Num n={4}>Was passiert im Körper bei der Aufnahme von Salz und warum kann das gefährlich werden? Wie lässt sich ein hoher Salzkonsum auf 5 Gramm am Tag reduzieren?</Num>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center"><Lightbulb className="text-indigo-600" size={14} /></div>} title="Weiterführende Informationen">
+          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><Lightbulb className="text-blue-600" size={14} /></div>} title="Weiterführende Informationen">
             <P><B>Vitamine: Allgemeines</B></P>
             <P>Zu den Vitaminen zählt man eine Reihe lebenswichtiger Stoffe. Wir müssen sie in kleinen Mengen regelmäßig über die Nahrung aufnehmen. Die meisten Vitamine sind essentiell. Sie sind an lebenswichtigen Reaktionen beteiligt und spielen in vielen Stoffwechselprozessen eine unverzichtbare Rolle.</P>
             <P>Die Vitamine lassen sich in wasserlösliche und fettlösliche einteilen. Zu den wasserlöslichen Vitaminen gehören die Gruppe der B-Vitamine und das Vitamin C. Zu den fettlöslichen Vitaminen zählen wir die Vitamine A, D, E und K.</P>
@@ -580,14 +580,14 @@ export default function LehrerManual() {
             <Li>Auch Sportler:innen benötigen <B>alle Nährstoffe</B> in ausreichender Menge – nicht nur Protein. Dies kann nur über eine ausgewogene Ernährung erreicht werden.</Li>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><span className="text-blue-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><span className="text-purple-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
             <Num n={1}>Was verspricht man sich von zuckerfreien Süßstoffen? Aus welchen Gründen sind sie dennoch problematisch? Auf welche Produkte sollte man lieber ganz verzichten?</Num>
             <Num n={2}>Worum handelt es sich bei Transfetten chemisch gesehen? Wie entstehen sie – in der Natur und in der Lebensmittelindustrie? Worin befinden sich Transfette und wie erkennt man entsprechende Produkte im Supermarkt?</Num>
             <Num n={3}>Warum werden Proteinshakes zum Muskelaufbau nicht wirklich benötigt? Wozu sollte man sportlichen Menschen stattdessen raten?</Num>
             <Num n={4}>Diskutiert: Ist es möglich, auf die Produkte aus der ‚Unterwelt' der Ernährung ganz zu verzichten? Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker eingeschränkt werden?</Num>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-indigo-100 rounded-full flex items-center justify-center"><Lightbulb className="text-indigo-600" size={14} /></div>} title="Weiterführende Informationen">
+          <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><Lightbulb className="text-purple-600" size={14} /></div>} title="Weiterführende Informationen">
             <Num n={1}><B>Süßstoffe</B></Num>
             <P><B>Wie kommt es, dass wir uns an Süßes gewöhnen können?</B></P>
             <P>Zentral ist hier unser körpereigenes Belohnungssystem. Eine Studie des Max-Planck-Instituts für Stoffwechselforschung hat gezeigt, dass unmittelbar nach dem Verzehr von zuckerreichen Lebensmitteln Dopamin (Begriffserklärung s.u.) ausgeschüttet wird, noch bevor die Nahrung den Magen erreicht (vgl. Thanarajah et al.). Je nach individuellem Verlangen wird sogar zu unterschiedlichen Zeitpunkten unterschiedlich viel Dopamin ausgeschüttet. Die Gehirne von Versuchsteilnehmer:innen mit einem starken Verlangen nach zuckerreicher Nahrung schütteten direkt nach dem Verzehr eine große Menge an Dopamin aus.</P>
