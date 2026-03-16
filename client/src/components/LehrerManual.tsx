@@ -355,7 +355,7 @@ export default function LehrerManual() {
             <Li>Aminosäuren werden vom Körper zu Ketten verbunden und bilden räumliche Strukturen aus.</Li>
             <Li>Wenn wir Proteine zu uns nehmen, zerlegt unser Stoffwechsel sie in einzelne Aminosäuren.</Li>
             <Li>Anschließend baut er daraus jene Proteine neu zusammen, die er braucht.</Li>
-            <P>Es gibt <B>essentielle Aminosäuren</B></P>
+            <P>Es gibt <B>essentielle Aminosäuren</B>.</P>
             <Li>Sie können vom Körper nicht selbst hergestellt werden.</Li>
             <Arr>Essentielle Aminosäuren <B>müssen über die Nahrung zugeführt werden</B>.</Arr>
             <P>In unserer Nahrung kommen <B>Proteine aus tierischen</B> und <B>pflanzlichen Quellen</B> vor.</P>
