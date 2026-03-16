@@ -6,7 +6,7 @@ function B({ children }: { children: ReactNode }) {
 }
 
 function P({ children, className }: { children: ReactNode; className?: string }) {
-  return <p className={`mt-6 mb-1 first:mt-0${className ? ' ' + className : ''}`}>{children}</p>;
+  return <p className={`mt-4 mb-0 first:mt-0${className ? ' ' + className : ''}`}>{children}</p>;
 }
 
 function TP({ children, className }: { children: ReactNode; className?: string }) {
@@ -120,7 +120,7 @@ function SubSection({ icon, title, children, defaultOpen = false }: SubSectionPr
         </div>
         {open ? <ChevronUp size={16} className="text-gray-500" /> : <ChevronDown size={16} className="text-gray-500" />}
       </button>
-      {open && <div className="pb-4 sm:p-5 sm:bg-white text-gray-800 text-[15px] leading-relaxed flex flex-col">{children}</div>}
+      {open && <div className="pb-4 sm:p-5 sm:bg-white text-gray-800 text-[15px] leading-relaxed">{children}</div>}
     </div>
   );
 }
