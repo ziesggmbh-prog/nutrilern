@@ -110,7 +110,7 @@ export class MemStorage implements IStorage {
       {
         title: "Unterwelt",
         description: "Welche Stoffe wirklich ungesund sind und wie du ihnen entkommst.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "https://player.vimeo.com/video/1174040953",
         duration: 5,
         thumbnailUrl: "/assets/unterwelt_thumbnail_1773234316303_opt.jpg",
         order: 6,
