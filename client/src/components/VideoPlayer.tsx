@@ -25,6 +25,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const vimeoRef2   = useRef<HTMLIFrameElement>(null);
   const vimeoRef3   = useRef<HTMLIFrameElement>(null);
   const vimeoRef4   = useRef<HTMLIFrameElement>(null);
+  const vimeoRef5   = useRef<HTMLIFrameElement>(null);
   const htmlVideoRef = useRef<HTMLVideoElement>(null);
   const playerRef   = useRef<any>(null);
   const hasEndedRef = useRef(false);
@@ -71,7 +72,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
 
   // ── Vimeo Player API setup ─────────────────────────────────────────────
   useEffect(() => {
-    const refs = [vimeoRef1, vimeoRef2, vimeoRef3, vimeoRef4];
+    const refs = [vimeoRef1, vimeoRef2, vimeoRef3, vimeoRef4, vimeoRef5];
     const iframeRef = refs[lesson.id - 1];
     if (!iframeRef) return;
 
@@ -202,6 +203,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             : lesson.id === 2 ? renderVimeoMobile(vimeoRef2, '1172528646', 'Kohlenhydrate')
             : lesson.id === 3 ? renderVimeoMobile(vimeoRef3, '1172530056', 'Fette')
             : lesson.id === 4 ? renderVimeoMobile(vimeoRef4, '1148007412', 'Proteine')
+            : lesson.id === 5 ? renderVimeoMobile(vimeoRef5, '1174041123', 'Mikronährstoffe')
             : (
               <video
                 ref={htmlVideoRef}
@@ -280,6 +282,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             : lesson.id === 2 ? renderVimeoDesktop(vimeoRef2, '1172528646', 'Kohlenhydrate')
             : lesson.id === 3 ? renderVimeoDesktop(vimeoRef3, '1172530056', 'Fette')
             : lesson.id === 4 ? renderVimeoDesktop(vimeoRef4, '1148007412', 'Proteine')
+            : lesson.id === 5 ? renderVimeoDesktop(vimeoRef5, '1174041123', 'Mikronährstoffe')
             : (
               <video
                 controls

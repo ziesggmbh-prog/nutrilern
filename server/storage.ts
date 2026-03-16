@@ -101,7 +101,7 @@ export class MemStorage implements IStorage {
       {
         title: "Mikronährstoffe",
         description: "Ein Einblick in die faszinierende Welt der Mikronährstoffe und ihre Bedeutung für die Ernährung.",
-        videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        videoUrl: "https://player.vimeo.com/video/1174041123",
         duration: 5,
         thumbnailUrl: "/assets/mikronaehrstoffe_thumbnail_1773234148860_opt.jpg",
         order: 5,
