@@ -95,7 +95,7 @@ function parseQuestDays(fullDescription: string): QuestDay[] {
 const questColors = [
   "bg-coral-red",
   "bg-golden-amber",
-  "bg-forest-green",
+  "bg-warm-burgundy",
   "bg-ocean-blue",
   "bg-dusty-rose",
   "bg-slate-teal",

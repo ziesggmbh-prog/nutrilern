@@ -48,7 +48,7 @@ const questColors = [
 const groupColors = [
   { bg: "bg-coral-red", text: "text-coral-red" },
   { bg: "bg-golden-amber", text: "text-golden-amber" },
-  { bg: "bg-forest-green", text: "text-forest-green" },
+  { bg: "bg-warm-burgundy", text: "text-warm-burgundy" },
   { bg: "bg-ocean-blue", text: "text-ocean-blue" },
   { bg: "bg-dusty-rose", text: "text-dusty-rose" },
   { bg: "bg-slate-teal", text: "text-slate-teal" },
