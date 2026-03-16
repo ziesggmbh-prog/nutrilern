@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, BookOpen, Info, Star } from 'lucide-react';
+import { Menu, X, Home, BookOpen, Info, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'wouter';
+import { useAuth } from '@/hooks/useAuth';
 
 interface HamburgerMenuProps {
   className?: string;
@@ -9,6 +10,7 @@ interface HamburgerMenuProps {
 
 export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { logout } = useAuth();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -68,8 +70,21 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
                     <span className="font-medium">{item.label}</span>
                   </a>
                 </motion.div>
-
               ))}
+              <div className="border-t border-gray-700 my-1" />
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: menuItems.length * 0.05 }}
+              >
+                <button
+                  className="w-full flex items-center px-4 py-3 text-gray-400 hover:bg-red-500 hover:bg-opacity-20 hover:text-red-400 transition-colors group"
+                  onClick={() => { setIsOpen(false); logout(); }}
+                >
+                  <LogOut size={18} className="mr-3 transition-colors" />
+                  <span className="font-medium">Abmelden</span>
+                </button>
+              </motion.div>
             </div>
             
             {/* Decorative Bottom */}
