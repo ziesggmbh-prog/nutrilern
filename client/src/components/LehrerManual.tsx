@@ -380,7 +380,7 @@ export default function LehrerManual() {
             <Li>Unterschiedliche pflanzliche Nahrungsmittel haben unterschiedliche Aminosäuren-Zusammensetzungen.</Li>
             <Li>Wenn man unterschiedliche pflanzliche Nahrungsmittel <B>richtig kombiniert</B>, erhält der Körper alle essentiellen Aminosäuren in ausreichender Menge.</Li>
             <P>Einige wenige pflanzliche Proteinquellen enthalten für sich genommen alle essentiellen Aminosäuren.</P>
-            <Li>Beispiel: Die Sojabohne, aus der Tofu hergestellt wird.</Li>
+            <Li>Beispiel: die Sojabohne, aus der Tofu hergestellt wird.</Li>
             <P><B>Quellen für pflanzliches Protein</B>:</P>
             <Li>Getreide (z.B. Reis, Dinkel, Hafer)</Li>
             <Li>Hülsenfrüchte (z.B. Bohnen, Linsen, Erbsen)</Li>
