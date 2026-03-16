@@ -165,7 +165,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           onClick={() => handleDayClick(day)}
         >
           <img 
-            src="/praesentation_tag5.png" 
+            src="/praesentation_tag5.jpg" 
             alt="Präsentation"
             className="w-full h-40 object-cover"
           />

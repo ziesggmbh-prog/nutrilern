@@ -90,7 +90,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
           <>
             <div className="mb-6 rounded-lg overflow-hidden">
               <img 
-                src="/praesentation_tag5.png" 
+                src="/praesentation_tag5.jpg" 
                 alt="Präsentation"
                 className="w-full h-64 object-cover"
               />
@@ -127,7 +127,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
               {day5 !== null && (
                 <div className="mt-8 border-t border-gray-600 pt-6">
                   <img 
-                    src="/praesentation_tag5.png" 
+                    src="/praesentation_tag5.jpg" 
                     alt="Präsentation"
                     className="w-full h-96 object-cover rounded-lg mb-4"
                   />
