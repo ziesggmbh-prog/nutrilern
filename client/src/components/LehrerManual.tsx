@@ -551,7 +551,7 @@ export default function LehrerManual() {
 
           <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><List className="text-purple-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <Num n={1}><B>Süßstoffe</B></Num>
-            <P className="mt-8"><B>Warum Süßstoffe?</B></P>
+            <P className="mt-4"><B>Warum Süßstoffe?</B></P>
             <Li><B>Die Idee</B>: Durch den Konsum von Süßstoffen sollen die Gefahren eines zu hohen Zuckerkonsums vermieden werden.</Li>
             <Li><B>Das Risiko</B>: Der Konsum von mit Süßstoffen gesüßten Lebensmitteln kann <B>unser Verlangen nach Süßem</B> deutlich <B>steigern</B>.</Li>
             <Arr>Der Konsum von Süßstoffen <B>verändert</B> auf Dauer unser <B>Süße-Empfinden</B>.</Arr>
@@ -561,7 +561,7 @@ export default function LehrerManual() {
             <Li><B>Die Folge</B>: Bei häufigem Konsum verlangt der Körper nach immer süßeren Lebensmitteln, wir konsumieren letztlich immer mehr Süßes.</Li>
             <P><B>Tipp zum Umgang mit Süßem</B>: Lebensmittel, die von Natur aus süß sind (z.B. <B>Obst</B>) enthalten Zucker in einer Form, die vom Körper gesund verstoffwechselt werden kann. Solche Lebensmittel sind Lebensmitteln mit künstlichen Süßstoffen vorzuziehen.</P>
             <div className="mt-8"><Num n={2}><B>Transfette</B></Num></div>
-            <P className="mt-8"><B>Was sind Transfettsäuren?</B></P>
+            <P className="mt-4"><B>Was sind Transfettsäuren?</B></P>
             <TP>Transfettsäuren sind Fettsäuren, die durch das <B>Härten pflanzlicher Öle</B> entstehen. Transfettsäuren sind für den menschlichen Körper <B>besonders ungesund</B>.</TP>
             <P className="mt-8"><B>Wie entstehen Transfettsäuren?</B></P>
             <Li>Transfettsäuren entstehen natürlicherweise z.B. im Magen von Wiederkäuern (z.B. von Kühen) durch bestimmte Mikroorganismen.</Li>
