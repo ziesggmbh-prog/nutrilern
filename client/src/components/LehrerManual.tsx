@@ -171,7 +171,7 @@ export default function LehrerManual() {
             <P>Bei Nahrungsmitteln mit <B>Einfachzuckern</B> gelangt die enthaltene Glucose sehr schnell ins Blut.</P>
             <Li>Die Folge: ein <B>schneller Energieschub</B></Li>
             <Li>Aber: Die Energie ist <B>schnell wieder verbraucht</B>.</Li>
-            <Li>Der <B>Effekt</B> auf unseren Körper: Ist keine Glucose mehr verfügbar, fühlen wir uns schlapp. Wir bekommen schnell wieder Hunger und haben immer wieder ‚Lust auf Süßes'.</Li>
+            <Li>Der <B>Effekt</B> auf unseren Körper: Ist keine Glucose mehr verfügbar, fühlen wir uns schlapp. Wir bekommen schnell wieder Hunger und haben immer wieder ‚Lust auf Süßes‘.</Li>
             <P><B>Komplexe Kohlenhydrate</B> sind für eine gleichmäßige Energieversorgung <B>deutlich vorteilhafter</B> als Einfachzucker.</P>
             <Li>Bei Nahrungsmitteln mit komplexen Kohlenhydraten hält die <B>Energieversorgung</B> durch die Glucose <B>länger an</B>.</Li>
             <Li>Wir fühlen uns länger wach, konzentriert und satt.</Li>
@@ -194,7 +194,7 @@ export default function LehrerManual() {
           <SubSection icon={<div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center"><span className="text-green-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
             <Num n={1}>Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für unser Gehirn?</Num>
             <Num n={2}>Worin unterscheiden sich komplexe Kohlenhydrate von Einfachzuckern (chemisch gesehen) und welche Folgen hat das für die Verdauung? Wie funktioniert die Verwertung von Kohlenhydraten?</Num>
-            <Num n={3}>Welche Kohlenhydrate können als ‚gut' gelten und warum? In welchen Lebensmitteln befinden sie sich? Welche Kohlenhydrate müssen als ‚schlecht' gelten und warum? In welchen Lebensmitteln befinden sie sich?</Num>
+            <Num n={3}>Welche Kohlenhydrate können als ‚gut‘ gelten und warum? In welchen Lebensmitteln befinden sie sich? Welche Kohlenhydrate müssen als ‚schlecht‘ gelten und warum? In welchen Lebensmitteln befinden sie sich?</Num>
             <Num n={4}>Welche Folgen hat der Konsum von Einfachzuckern für unser Körpergefühl und unsere Leistungsfähigkeit, welche der Konsum von komplexen Kohlenhydraten? Warum ist es möglich, durch Essen einer Banane vor Prüfungen die Effekte beider Arten von Kohlenhydraten optimal auszunutzen?</Num>
           </SubSection>
 
@@ -210,7 +210,7 @@ export default function LehrerManual() {
             <P className="mt-8"><B>Einfachzucker</B></P>
             <TP>Die wichtigsten Einfachzucker, die in unserer Ernährung eine Rolle spielen, sind Traubenzucker (Glucose) und Fruchtzucker (Fructose). Glucose ist die Hauptenergiequelle für das Gehirn und die Muskeln.</TP>
             <P className="mt-8"><B>Zweifachzucker</B></P>
-            <TP>Der bekannteste Zweifachzucker ist die Saccharose, unser ‚Haushaltszucker'. Er ist aus Fructose und Glucose zusammengesetzt.</TP>
+            <TP>Der bekannteste Zweifachzucker ist die Saccharose, unser ‚Haushaltszucker‘. Er ist aus Fructose und Glucose zusammengesetzt.</TP>
             <P className="mt-8"><B>Mehrfachzucker</B></P>
             <TP>Die Zuckermoleküle können miteinander verbunden werden, dann spricht man von Mehrfachzuckern (Polysaccharide). Tatsächlich liegt in der Natur der meiste Zucker als Mehrfachzucker vor.</TP>
             <DocImage src="/manual-images/image3.png" caption="Zuckerarten schematisch" />
@@ -281,7 +281,7 @@ export default function LehrerManual() {
             <Li>Mehrfach ungesättigte Fettsäuren heißen darum auch <B>essentielle Fettsäuren</B>.</Li>
             <Li>Wir müssen sie <B>über die Nahrung aufnehmen</B>.</Li>
             <Arr>Man sollte <B>möglichst reichlich</B> mehrfach ungesättigte Fettsäuren zu sich nehmen.</Arr>
-            <P><B>Die ‚Fett-Faustregeln'</B>:</P>
+            <P><B>Die ‚Fett-Faustregeln‘</B>:</P>
             <Num n={1}>Fette sollten bei der Ernährung <B>maximal ein Drittel</B> ausmachen.</Num>
             <Num n={2}><B>Nicht mehr als 10 Prozent</B> sollte aus <B>gesättigten Fettsäuren</B> bestehen.</Num>
             <Num n={3}>Man sollte <B>möglichst viele ungesättigte Fettsäuren</B> zu sich nehmen, <B>vor allem mehrfach ungesättigte Fettsäuren</B>.</Num>
@@ -290,7 +290,7 @@ export default function LehrerManual() {
           <SubSection icon={<div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center"><span className="text-orange-600 font-semibold text-sm leading-none">?</span></div>} title="Vertiefende Fragen">
             <Num n={1}>Welche Funktionen erfüllen Fette im Körper? Warum ist es bei Fetten besonders wichtig, nicht zu viel zu konsumieren? Was sind die Obergrenzen?</Num>
             <Num n={2}>Wie sind Fette chemisch aufgebaut und welche Rolle spielen die Fettsäuren? Was sind die wichtigsten Unterschiede zwischen den Fettsäuren hinsichtlich ihrer Funktion/Wirkung und Herstellung?</Num>
-            <Num n={3}>Was ist der Unterschied zwischen gesättigten Fettsäuren und einfach ungesättigten Fettsäuren (chemisch gesehen)? Warum gelten erstere als ‚schlecht' und letztere als relativ ‚gut'? In welchen Lebensmitteln findet man sie jeweils?</Num>
+            <Num n={3}>Was ist der Unterschied zwischen gesättigten Fettsäuren und einfach ungesättigten Fettsäuren (chemisch gesehen)? Warum gelten erstere als ‚schlecht‘ und letztere als relativ ‚gut‘? In welchen Lebensmitteln findet man sie jeweils?</Num>
             <Num n={4}>Was sind mehrfach ungesättigte Fettsäuren (chemisch gesehen) und in welchen Lebensmitteln befinden sie sich? Inwiefern haben sie eine Sonderstellung unter den Fettsäuren und warum sind sie so gesund?</Num>
           </SubSection>
 
@@ -313,7 +313,7 @@ export default function LehrerManual() {
             <Li>gesättigte Fettsäuren und</Li>
             <Li>ungesättigte Fettsäuren.</Li>
             <P className="mt-8"><B>Was sind Fettsäuren und wie werden sie unterschieden?</B></P>
-            <TP>Fettsäuren sind organische Verbindungen aus den Elementen Kohlenstoff (C), Wasserstoff (H) und Sauerstoff (O), sog. Monocarbonsäuren. Ein Fettsäure-Molekül besteht aus einer langen Kohlenwasserstoffkette, die an einem Ende eine COOH-Gruppe (Carboxylgruppe) trägt und namengebend zur Bezeichnung ‚-säure' beiträgt. Die Zahl der C-Atome ist immer gerade und liegt zwischen 8 und 24. Man unterscheidet gesättigte und ungesättigte Fettsäuren.</TP>
+            <TP>Fettsäuren sind organische Verbindungen aus den Elementen Kohlenstoff (C), Wasserstoff (H) und Sauerstoff (O), sog. Monocarbonsäuren. Ein Fettsäure-Molekül besteht aus einer langen Kohlenwasserstoffkette, die an einem Ende eine COOH-Gruppe (Carboxylgruppe) trägt und namengebend zur Bezeichnung ‚-säure‘ beiträgt. Die Zahl der C-Atome ist immer gerade und liegt zwischen 8 und 24. Man unterscheidet gesättigte und ungesättigte Fettsäuren.</TP>
             <P className="mt-8"><B>Gesättigte Fettsäuren</B></P>
             <TP>Jedes C-Atom in der Kohlenwasserstoffkette ist hier mit der maximal möglichen Anzahl von Wasserstoffatomen verbunden. Alle C-Atome sind durch Einfachbindungen verknüpft. Die Kohlenstoffatome in der Kette besitzen ausschließlich Einfachbindungen.</TP>
             <P>Beispiele für gesättigte Fettsäuren:</P>
@@ -330,7 +330,7 @@ export default function LehrerManual() {
             <P>Linolsäure (zweifach ungesättigt)</P>
             <DocImage src="/manual-images/image11.png" caption="" maxWidth="280px" maxHeight="none" />
             <P>Ungesättigte Fette besitzen einen hohen Anteil an ungesättigten Fettsäuren. Diese sind überwiegend in pflanzlichen Nahrungsmitteln und in fettem Fisch enthalten.</P>
-            <P className="mt-8"><B>Was versteht man unter ‚Omega'-Fettsäuren?</B></P>
+            <P className="mt-8"><B>Was versteht man unter ‚Omega‘-Fettsäuren?</B></P>
             <TP><B>Omega-3-Fettsäuren</B></TP>
             <P>Die Omega-3-Fettsäuren bilden eine Untergruppe der ungesättigten Fettsäuren. Omega-3 bedeutet: Die letzte Doppelbindung in der ungesättigten Kohlenstoffkette befindet sich bei der vom COOH-Ende aus gesehen drittletzten C-C-Bindung. Omega (ω) ist der letzte Buchstabe des griechischen Alphabets und bezeichnet das von der Carboxylgruppe entfernteste C-Atom in der Kette.</P>
             <P>Beispiel:</P>
@@ -339,7 +339,7 @@ export default function LehrerManual() {
             <TP>Die Omega-6-Fettsäuren weisen – vom Omega-Ende (ω-Ende) her betrachtet – an der sechsten Position die erste Doppelbindung auf.</TP>
             <P>Beispiel:</P>
             <DocImage src="/manual-images/image13b.png" caption="" maxWidth="302px" />
-            <P className="mt-8"><B>Was sind ‚essentielle' Fettsäuren?</B></P>
+            <P className="mt-8"><B>Was sind ‚essentielle‘ Fettsäuren?</B></P>
             <TP>Essentielle Fettsäuren sind Fettsäuren, die vom Körper nicht selbst hergestellt werden können. Sie müssen über die Nahrung zugeführt werden. Für den Menschen essentiell sind die oben dargestellte Omega-3-Fettsäure α-Linolensäure und die Omega-6-Fettsäure Linolsäure.</TP>
             <P>Essentielle Fettsäuren erfüllen lebenswichtige Funktionen: Sie sind u.a. Bausteine unserer Zellmembranen. Zudem spielen sie eine Rolle bei der Steuerung von Entzündungsprozessen, sind wichtig für die Regulierung des Blutdrucks und stärken das Immunsystem. Auch unterstützen sie die Regeneration der Muskulatur und wirken bei der Hormon-Produktion mit.</P>
             <P className="mt-8"><B>Fettsäuren und Cholesterin</B></P>
@@ -421,7 +421,7 @@ export default function LehrerManual() {
             <P className="mt-8"><B>Woraus bestehen und wie entstehen Proteine?</B></P>
             <TP>Proteine bildet der Stoffwechsel aus 20 verschiedenen Aminosäuren (AS). Zur Bildung von Proteinen werden die AS zu ursprünglich linear aufgebauten Molekülen verbunden. Besteht eine Kette aus mehr als 100 AS, spricht man von einem Protein. Aufgrund von Wechselwirkungen innerhalb des großen Moleküls bilden sich spezifische, an die jeweiligen Funktionen angepasste räumliche Strukturen aus. Man nennt das Proteinfaltung.</TP>
             <DocImage src="/manual-images/image14.png" caption="Schema der Proteinfaltung" />
-            <P>Falsch geformte Proteine können ihre biologischen Aufgaben nicht mehr erfüllen und klumpen oft zu unlöslichen Aggregaten zusammen, die sich in der Zelle oder ihrer unmittelbaren Umgebung ansammeln. Derartige Abfallprodukte schädigen die Zellen. Nach neuen Erkenntnissen spielt das vermutlich so verursachte Absterben von Nervenzellen eine entscheidende Rolle bei vielen altersbedingten Krankheiten des Nervensystems, etwa bei der Alzheimerdemenz. Falsch geformte Proteine stellen außerdem eine energetisch teure ‚Fehlinvestition' des Stoffwechsels dar.</P>
+            <P>Falsch geformte Proteine können ihre biologischen Aufgaben nicht mehr erfüllen und klumpen oft zu unlöslichen Aggregaten zusammen, die sich in der Zelle oder ihrer unmittelbaren Umgebung ansammeln. Derartige Abfallprodukte schädigen die Zellen. Nach neuen Erkenntnissen spielt das vermutlich so verursachte Absterben von Nervenzellen eine entscheidende Rolle bei vielen altersbedingten Krankheiten des Nervensystems, etwa bei der Alzheimerdemenz. Falsch geformte Proteine stellen außerdem eine energetisch teure ‚Fehlinvestition‘ des Stoffwechsels dar.</P>
             <P className="mt-8"><B>Die Rolle der Aminosäuren</B></P>
             <TP>Der Körper benötigt zur Proteinbildung 20 verschiedene Aminosäuren. Die Baupläne für die Proteine sind im Erbgut einer jeden Zelle gespeichert.</TP>
             <P>Chemische Grundstruktur einer Aminosäure:</P>
@@ -508,7 +508,7 @@ export default function LehrerManual() {
             <TP>Zu den Vitaminen zählt man eine Reihe lebenswichtiger Stoffe. Wir müssen sie in kleinen Mengen regelmäßig über die Nahrung aufnehmen. Die meisten Vitamine sind essentiell. Sie sind an lebenswichtigen Reaktionen beteiligt und spielen in vielen Stoffwechselprozessen eine unverzichtbare Rolle.</TP>
             <P>Die Vitamine lassen sich in wasserlösliche und fettlösliche einteilen. Zu den wasserlöslichen Vitaminen gehören die Gruppe der B-Vitamine und das Vitamin C. Zu den fettlöslichen Vitaminen zählen wir die Vitamine A, D, E und K.</P>
             <DocImage src="/manual-images/image18.jpeg" caption="Vitamine: Ein Überblick" maxHeight="267px" />
-            <P className="mt-8"><B>Warum gibt es mehrere ‚Nummern' vom gleichen Vitamin: Was bedeutet das?</B></P>
+            <P className="mt-8"><B>Warum gibt es mehrere ‚Nummern‘ vom gleichen Vitamin: Was bedeutet das?</B></P>
             <TP>Die Benennung der Vitamine wirkt auf den ersten Blick lückenhaft und unordentlich. Das ist historisch bedingt. Die Lücken in der Namensgebung entstanden unter anderem deshalb, weil viele der ursprünglich als Vitamine entdeckten und listenartig benannten Stoffe sich später als keineswegs einheitliche Substanzen herausstellten. In der Folge wurden einige Bezeichnungen aus der Benennungsliste entfernt, die übrigen aber beibehalten.</TP>
             <P>Die Entdeckung der Vitamine begann Anfang des 20. Jahrhunderts. Damals war deren chemische Struktur noch nicht bekannt, so dass man sie zunächst nicht exakt wissenschaftlich bezeichnen konnte. Daher wurde den Vitaminen je ein großer Buchstabe des Alphabets zugeordnet.</P>
             <P className="mt-8"><B>Die heutige Benennung der Vitamine</B></P>
@@ -535,19 +535,19 @@ export default function LehrerManual() {
             <Li>Zink: unterstützt Zellbildung, Hormonwirkung und Immunsystem; neutralisiert schädliche Moleküle („Radikale")</Li>
             <Li>Selen: fördert antioxidative Prozesse/Entgiftung; unterstützt Funktion der Bauchspeicheldrüse</Li>
             <Li>Jod: Bestandteil der Schilddrüsenhormone</Li>
-            <Li>Fluorid/Fluor: kein ‚echtes' Spurenelement; hilft aber bei der Aushärtung von Knochen, Zahnschmelz und Dentin der Zähne und erhöht die Widerstandsfähigkeit gegen Karies</Li>
-            <P className="mt-8"><B>Warum bringt ein Zuviel an Nährstoffen (etwa durch Einnahme von Nahrungsergänzungsmitteln) nichts? Warum gilt bei Mikronährstoffen nicht: ‚Mehr ist besser'?</B></P>
+            <Li>Fluorid/Fluor: kein ‚echtes‘ Spurenelement; hilft aber bei der Aushärtung von Knochen, Zahnschmelz und Dentin der Zähne und erhöht die Widerstandsfähigkeit gegen Karies</Li>
+            <P className="mt-8"><B>Warum bringt ein Zuviel an Nährstoffen (etwa durch Einnahme von Nahrungsergänzungsmitteln) nichts? Warum gilt bei Mikronährstoffen nicht: ‚Mehr ist besser‘?</B></P>
             <TP>Normalerweise können wir unseren Bedarf an Mikronährstoffen mit ausgewogener Ernährung mühelos decken. Motto: Je bunter es auf dem Teller ist, desto eher sind wir auf der sicheren Seite. Allerdings gibt es Bedingungen, unter denen es für einige Stoffe knapp werden kann. Dazu zählt die Versorgung mit Vitamin D in der dunklen Jahreszeit oder – bei veganer Ernährungsweise – mit Vitaminen der B-Gruppe. Bei Mangelzuständen können sie unter ärztlicher Kontrolle von außen zugefügt (substituiert) werden.</TP>
             <P>Ein Zuviel an einzelnen Nährstoffen kann die Aufnahme anderer Nährstoffe behindern, etwa Zink und Eisen. Fettlösliche Vitamine können sich bei übermäßiger Aufnahme im Körper anreichern, weil wir sie nicht wie die wasserlöslichen über die Niere ausscheiden können. Daher besteht hier eine Gefahr der Überdosierung bzw. Akkumulation, was zu unerwünschten Nebenwirkungen führt.</P>
             <P className="mt-8"><B>Was passiert im Körper genau nach Salzkonsum? Warum kann zu viel Salz auf Dauer bestimmte Erkrankungen auslösen?</B></P>
             <TP>Natrium als Bestandteil von Kochsalz ist das wichtigste Ion im Körper. Ein Ion ist ein elektrisch geladenes Atom. Ionen können sich bilden, wenn Atome miteinander reagieren und beispielsweise zu Salzen werden (z.B. Kochsalz, NaCl: gelöst als Na+ und Cl-). Sind die Salze in Wasser gelöst, liegen die Ionen in der Lösung mit einer wässrigen Hydrathülle vor.</TP>
-            <P>Im Zusammenspiel mit Kalium ist Natrium unverzichtbar für den Wasserhaushalt. Außerdem benötigen wir Natrium für die Knochen und die Funktion von Membranen. Natrium reguliert den osmotischen Druck (Konzentrationsdruck gelöster Teilchen) der Zellen und des Flüssigkeitsraums außerhalb der Zellen. Dadurch beeinflusst es auch maßgeblich die Blutmenge in den Gefäßen und damit den Blutdruck, weil es das Wasser in den Blutgefäßen ‚festhält' und sich der Druck innerhalb dieses begrenzten Raumes daraufhin erhöht.</P>
+            <P>Im Zusammenspiel mit Kalium ist Natrium unverzichtbar für den Wasserhaushalt. Außerdem benötigen wir Natrium für die Knochen und die Funktion von Membranen. Natrium reguliert den osmotischen Druck (Konzentrationsdruck gelöster Teilchen) der Zellen und des Flüssigkeitsraums außerhalb der Zellen. Dadurch beeinflusst es auch maßgeblich die Blutmenge in den Gefäßen und damit den Blutdruck, weil es das Wasser in den Blutgefäßen ‚festhält‘ und sich der Druck innerhalb dieses begrenzten Raumes daraufhin erhöht.</P>
             <P>Wird zu viel Speisesalz verzehrt, hat das eine Erhöhung des Blutdrucks zur Folge. Das Risiko für Bluthochdruck (Hypertonie) steigt. Bluthochdruck wiederum gehört zu den wichtigsten Risikofaktoren für das Auftreten von Herz-Kreislauf-Krankheiten.</P>
           </SubSection>
         </AccordionSection>
 
         {/* ── 5. Unterwelt ─────────────────────────────────── */}
-        <AccordionSection number={5} title="‚Unterwelt'" color="bg-purple-600" bgColor="bg-purple-50" textColor="text-purple-800" isOpen={!!openSections[5]} onToggle={() => toggle(5)}>
+        <AccordionSection number={5} title="‚Unterwelt‘" color="bg-purple-600" bgColor="bg-purple-50" textColor="text-purple-800" isOpen={!!openSections[5]} onToggle={() => toggle(5)}>
 
           <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><List className="text-purple-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <Num n={1}><B>Süßstoffe</B></Num>
@@ -593,7 +593,7 @@ export default function LehrerManual() {
             <Num n={1}>Was verspricht man sich von zuckerfreien Süßstoffen? Aus welchen Gründen sind sie dennoch problematisch? Auf welche Produkte sollte man lieber ganz verzichten?</Num>
             <Num n={2}>Worum handelt es sich bei Transfetten chemisch gesehen? Wie entstehen sie – in der Natur und in der Lebensmittelindustrie? Worin befinden sich Transfette und wie erkennt man entsprechende Produkte im Supermarkt?</Num>
             <Num n={3}>Warum werden Proteinshakes zum Muskelaufbau nicht wirklich benötigt? Wozu sollte man sportlichen Menschen stattdessen raten?</Num>
-            <Num n={4}>Diskutiert: Ist es möglich, auf die Produkte aus der ‚Unterwelt' der Ernährung ganz zu verzichten? Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker eingeschränkt werden?</Num>
+            <Num n={4}>Diskutiert: Ist es möglich, auf die Produkte aus der ‚Unterwelt‘ der Ernährung ganz zu verzichten? Sollte ihre Verwendung in der Lebensmittelindustrie von der Politik stärker eingeschränkt werden?</Num>
           </SubSection>
 
           <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><Lightbulb className="text-purple-600" size={14} /></div>} title="Weiterführende Informationen">
@@ -606,7 +606,7 @@ export default function LehrerManual() {
             <TP>Dopamin ist ein Botenstoff (sog. Neurotransmitter), der hauptsächlich im Gehirn vorkommt. Es wird umgangssprachlich auch als Wohlfühl- oder Glücks-Botenstoff bezeichnet.</TP>
             <P>Neueren Befunden zufolge spielt Dopamin eine wichtige Rolle im Belohnungs- und Motivationssystem des Gehirns (sog. mesolimbisches System). Dopamin vermittelt vor allem die Zuweisung von Begehren (wanting). Interessant: Das wanting, das beim Belohnungslernen eine zentrale Funktion ausübt, wird in der Psychologie als bedeutsam bei der Entstehung von Suchterkrankungen angesehen.</P>
             <P className="mt-8"><B>Die Wirkung von Süßstoffen</B></P>
-            <TP>Zucker-Ersatzstoffe sollen eine Aktivierung des Belohnungssystems ohne die ‚Nebenwirkungen' von Zucker wie Übergewicht, Typ-2-Diabetes etc. ermöglichen. Zu beachten ist aber, dass viele langfristige Effekte von Zucker-Ersatzstoffen auf den Organismus bisher nicht eingeschätzt werden können.</TP>
+            <TP>Zucker-Ersatzstoffe sollen eine Aktivierung des Belohnungssystems ohne die ‚Nebenwirkungen‘ von Zucker wie Übergewicht, Typ-2-Diabetes etc. ermöglichen. Zu beachten ist aber, dass viele langfristige Effekte von Zucker-Ersatzstoffen auf den Organismus bisher nicht eingeschätzt werden können.</TP>
             <P>Was bisher als gesichert gilt: Künstliche Süßstoffe wie Aspartam, Saccharin und Sucralose beeinflussen das Darmmikrobiom (d.h. die im Darm vorkommenden Mikroorganismen) negativ, so zeigt eine Studie (vgl. Suez et al.). Untersuchungen zeigen, dass bereits moderate Mengen der Süßstoffe die Zusammensetzung und Funktion der Darmbakterien verändern können. Dadurch verschlechtert sich die Glukosetoleranz, das Risiko für Erkrankungen wie Typ-2-Diabetes steigt. Außerdem fördern sie das Wachstum unerwünschter Bakterien, können die Darmbarriere schädigen („leaky gut") und Entzündungen begünstigen. Überdies konnte eine weitere Studie zeigen, dass regelmäßiger Konsum künstlicher Süßstoffe wie Aspartam, Sucralose oder Saccharin mit einem beschleunigten kognitiven Abbau und Herz-Kreislauf-Erkrankungen verbunden sein kann (vgl. Gonçalves et al.).</P>
             <P>Weiterhin wird das Verlangen nach Süßem durch den Konsum von Süßstoffen nicht gestillt, sondern – im Gegenteil – verstärkt. Eine aktuelle Studie belegt z.B., dass der Zuckerersatzstoff Sucralose den Hypothalamus aktiviert, eine wichtige Schaltzentrale für Hunger und Sättigung (vgl. Chakravartti et al.). Daraufhin steigert sich das Hungergefühl, und zwar besonders bei Menschen mit Übergewicht (Adipositas). Wenn künstliche Süßstoffe dem Gehirn Zuckersignale senden, aber die vom Körper erwarteten Kalorien ausbleiben, führt genau dies zu einem größeren Hungergefühl.</P>
             <P>Die Weltgesundheitsorganisation (WHO: World Health Organization) gibt in ihren Richtlinien zum Gebrauch von Zucker-Ersatzstoffen einen Rat, den man einfach umsetzen kann: Statt diese Mittel zu konsumieren, sollte man bei Lust auf Süßes lieber Obst essen, denn dieses liefert wertvolle Ballaststoffe, Vitamine, Mineralien und Spurenelemente.</P>
@@ -630,7 +630,7 @@ export default function LehrerManual() {
             <TP>Die benötigte Proteinzufuhr kann für einen Menschen in der Regel über den Verzehr proteinreicher Lebensmittel mühelos sichergestellt werden.</TP>
             <P>Gerade bei jüngeren Menschen, die viel Sport treiben, hat sich die Meinung verbreitet, man müsse den Körper durch eine hohe Proteinaufnahme bei Erhalt und Aufbau der Muskulatur unterstützen. Das ist in einem gewissen Rahmen sinnvoll, kann aber schon durch Anpassungen im persönlichen Speiseplan erreicht werden.</P>
             <P className="mt-8"><B>Kann man zu viel Protein zu sich nehmen?</B></P>
-            <TP>In der Wissenschaft wird überdies diskutiert, ob ein Zuviel an Protein schädlich sein könnte. Die Befunde sind bislang nicht eindeutig, aber es gibt Hinweise darauf, dass ein Übermaß an Protein die Niere belastet. Zudem ist eine mögliche Erhöhung des Risikos für Typ 2-Diabetes durch übermäßig hohen Proteinkonsum in der wissenschaftlichen Diskussion. Teure ‚High Protein'-Produkte oder zusätzliche Eiweißshakes sind für gesunde Menschen nicht notwendig. Der vermutete Nutzen wird in der Regel überschätzt, während potenzielle Risiken nicht ausgeschlossen werden können.</TP>
+            <TP>In der Wissenschaft wird überdies diskutiert, ob ein Zuviel an Protein schädlich sein könnte. Die Befunde sind bislang nicht eindeutig, aber es gibt Hinweise darauf, dass ein Übermaß an Protein die Niere belastet. Zudem ist eine mögliche Erhöhung des Risikos für Typ 2-Diabetes durch übermäßig hohen Proteinkonsum in der wissenschaftlichen Diskussion. Teure ‚High Protein‘-Produkte oder zusätzliche Eiweißshakes sind für gesunde Menschen nicht notwendig. Der vermutete Nutzen wird in der Regel überschätzt, während potenzielle Risiken nicht ausgeschlossen werden können.</TP>
           </SubSection>
         </AccordionSection>
 
