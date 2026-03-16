@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { ChevronDown, ChevronUp, BookOpen, Users, Lightbulb, Download } from "lucide-react";
+import { ChevronDown, ChevronUp, List, HelpCircle, Lightbulb, Download } from "lucide-react";
 
 function B({ children }: { children: ReactNode }) {
   return <strong>{children}</strong>;
@@ -142,7 +142,7 @@ export default function LehrerManual() {
         {/* ── 1. Kohlenhydrate ─────────────────────────────── */}
         <AccordionSection number={1} title="Kohlenhydrate" color="bg-green-600" bgColor="bg-green-50" textColor="text-green-800" isOpen={!!openSections[1]} onToggle={() => toggle(1)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center"><BookOpen className="text-green-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
+          <SubSection icon={<div className="w-7 h-7 bg-green-100 rounded-full flex items-center justify-center"><List className="text-green-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <P>Über die Nahrung nimmt unser Körper <B>zwei Arten von Nährstoffen</B> auf: <B>Makronährstoffe</B> und <B>Mikronährstoffe</B>.</P>
             <P><B>Makronährstoffe</B> benötigt der Körper zur <B>Energiegewinnung</B>.</P>
             <Li>Sämtliche lebenswichtigen Körperfunktionen verbrauchen Energie.</Li>
@@ -182,7 +182,7 @@ export default function LehrerManual() {
             <Li>Vergleich mit Schokolade: Schokolade enthält ausschließlich Einfachzucker, keine Kohlenhydrate und keine Ballaststoffe.</Li>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><Users className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><HelpCircle className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
             <Num n={1}>Wie wird die Energie aus den Makronährstoffen im Körper gespeichert? Warum sind Kohlenhydrate wichtig für unser Gehirn?</Num>
             <Num n={2}>Worin unterscheiden sich komplexe Kohlenhydrate von Einfachzuckern (chemisch gesehen) und welche Folgen hat das für die Verdauung? Wie funktioniert die Verwertung von Kohlenhydraten?</Num>
             <Num n={3}>Welche Kohlenhydrate können als ‚gut' gelten und warum? In welchen Lebensmitteln befinden sie sich? Welche Kohlenhydrate müssen als ‚schlecht' gelten und warum? In welchen Lebensmitteln befinden sie sich?</Num>
@@ -235,7 +235,7 @@ export default function LehrerManual() {
         {/* ── 2. Fette ─────────────────────────────────────── */}
         <AccordionSection number={2} title="Fette" color="bg-orange-600" bgColor="bg-orange-50" textColor="text-orange-800" isOpen={!!openSections[2]} onToggle={() => toggle(2)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center"><BookOpen className="text-orange-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
+          <SubSection icon={<div className="w-7 h-7 bg-orange-100 rounded-full flex items-center justify-center"><List className="text-orange-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <P>Fette sind auch ein <B>Energielieferant</B> (Makronährstoff) für unseren Körper.</P>
             <TP>Außerdem erfüllen sie weitere wichtige Funktionen:</TP>
             <Li>Wir benötigen Fette, damit bestimmte <B>Vitamine vom Körper aufgenommen</B> werden.</Li>
@@ -278,7 +278,7 @@ export default function LehrerManual() {
             <Num n={3}>Man sollte <B>möglichst viele ungesättigte Fettsäuren</B> zu sich nehmen, <B>vor allem mehrfach ungesättigte Fettsäuren</B>.</Num>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><Users className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><HelpCircle className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
             <Num n={1}>Welche Funktionen erfüllen Fette im Körper? Warum ist es bei Fetten besonders wichtig, nicht zu viel zu konsumieren? Was sind die Obergrenzen?</Num>
             <Num n={2}>Wie sind Fette chemisch aufgebaut und welche Rolle spielen die Fettsäuren? Was sind die wichtigsten Unterschiede zwischen den Fettsäuren hinsichtlich ihrer Funktion/Wirkung und Herstellung?</Num>
             <Num n={3}>Was ist der Unterschied zwischen gesättigten Fettsäuren und einfach ungesättigten Fettsäuren (chemisch gesehen)? Warum gelten erstere als ‚schlecht' und letztere als relativ ‚gut'? In welchen Lebensmitteln findet man sie jeweils?</Num>
@@ -341,7 +341,7 @@ export default function LehrerManual() {
         {/* ── 3. Proteine ──────────────────────────────────── */}
         <AccordionSection number={3} title="Proteine" color="bg-red-600" bgColor="bg-red-50" textColor="text-red-800" isOpen={!!openSections[3]} onToggle={() => toggle(3)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center"><BookOpen className="text-red-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
+          <SubSection icon={<div className="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center"><List className="text-red-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <P>Proteine sind auch <B>Energielieferanten</B> (Makronährstoffe) für unseren Körper.</P>
             <TP>Außerdem erfüllen sie weitere wichtige Funktionen:</TP>
             <Li>wichtig beim <B>Aufbau von Muskeln und Gewebe</B></Li>
@@ -391,7 +391,7 @@ export default function LehrerManual() {
             <Arr>Tierisches Protein wird oft von ungesunden Stoffen begleitet, pflanzliches Protein meist von gesunden Stoffen.</Arr>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><Users className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><HelpCircle className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
             <Num n={1}>Wie sind Proteine chemisch aufgebaut und was macht sie so kompliziert, aber auch faszinierend? Welche Funktionen erfüllen sie in unserem Körper? Welchen Beitrag leisten sie zum Muskelaufbau?</Num>
             <Num n={2}>Was ist der wesentliche Unterschied zwischen tierischem und pflanzlichem Protein im Hinblick auf den Menschen? Was sind jeweils die Vorteile und Nachteile von pflanzlichem und tierischem Protein?</Num>
             <Num n={3}>Wie lassen sich die Nachteile von pflanzlichem Protein ausgleichen, um seine Vorteile nutzen zu können? Welche Lebensmittel werden dafür benötigt?</Num>
@@ -450,7 +450,7 @@ export default function LehrerManual() {
         {/* ── 4. Mikronährstoffe ───────────────────────────── */}
         <AccordionSection number={4} title="Mikronährstoffe" color="bg-blue-600" bgColor="bg-blue-50" textColor="text-blue-800" isOpen={!!openSections[4]} onToggle={() => toggle(4)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><BookOpen className="text-blue-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
+          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><List className="text-blue-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <P><B>Mikronährstoffe</B> sind, anders als die Makronährstoffe, <B>keine Energielieferanten</B> des Körpers.</P>
             <P>Es gibt <B>zwei Gruppen</B> von Mikronährstoffen: <B>Vitamine</B> und <B>Mineralstoffe</B>.</P>
             <P><B>Vitamine</B>:</P>
@@ -487,7 +487,7 @@ export default function LehrerManual() {
             <Li>beim Kochen wenig salzen, nicht voreilig nachsalzen</Li>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><Users className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><HelpCircle className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
             <Num n={1}>Was ist der Hauptunterschied zwischen Makro- und Mikronährstoffen? Welche Gruppen von Mikronährstoffen gibt es? Welchen Einfluss haben Mikronährstoffe auf die Verwertung der Makronährstoffe?</Num>
             <Num n={2}>Welche Rolle spielen Vitamine für das Immunsystem, welche Mineralstoffe für das Nervensystem?</Num>
             <Num n={3}>Wie lässt sich der Bedarf an Mikronährstoffen decken und was ist von Nahrungsergänzungsmitteln zu halten?</Num>
@@ -540,7 +540,7 @@ export default function LehrerManual() {
         {/* ── 5. Unterwelt ─────────────────────────────────── */}
         <AccordionSection number={5} title="‚Unterwelt'" color="bg-purple-600" bgColor="bg-purple-50" textColor="text-purple-800" isOpen={!!openSections[5]} onToggle={() => toggle(5)}>
 
-          <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><BookOpen className="text-purple-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
+          <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><List className="text-purple-600" size={14} /></div>} title="Zentrale Inhalte" defaultOpen={false}>
             <Num n={1}><B>Süßstoffe</B></Num>
             <P><B>Warum Süßstoffe?</B></P>
             <Li><B>Die Idee</B>: Durch den Konsum von Süßstoffen sollen die Gefahren eines zu hohen Zuckerkonsums vermieden werden.</Li>
@@ -580,7 +580,7 @@ export default function LehrerManual() {
             <Li>Auch Sportler:innen benötigen <B>alle Nährstoffe</B> in ausreichender Menge – nicht nur Protein. Dies kann nur über eine ausgewogene Ernährung erreicht werden.</Li>
           </SubSection>
 
-          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><Users className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
+          <SubSection icon={<div className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center"><HelpCircle className="text-blue-600" size={14} /></div>} title="Vertiefende Fragen">
             <Num n={1}>Was verspricht man sich von zuckerfreien Süßstoffen? Aus welchen Gründen sind sie dennoch problematisch? Auf welche Produkte sollte man lieber ganz verzichten?</Num>
             <Num n={2}>Worum handelt es sich bei Transfetten chemisch gesehen? Wie entstehen sie – in der Natur und in der Lebensmittelindustrie? Worin befinden sich Transfette und wie erkennt man entsprechende Produkte im Supermarkt?</Num>
             <Num n={3}>Warum werden Proteinshakes zum Muskelaufbau nicht wirklich benötigt? Wozu sollte man sportlichen Menschen stattdessen raten?</Num>
