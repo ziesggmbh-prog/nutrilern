@@ -328,8 +328,8 @@ export default function LehrerManual() {
             <DocImage src="/manual-images/image12b.png" caption="α-Linolensäure (C18H30O2)" maxWidth="432px" />
             <P><B>Omega-6-Fettsäuren</B></P>
             <P>Die Omega-6-Fettsäuren weisen – vom Omega-Ende (ω-Ende) her betrachtet – an der sechsten Position die erste Doppelbindung auf.</P>
-            <P>Beispiel: ↓ Omega-6</P>
-            <DocImage src="/manual-images/image13b.png" caption="Linolsäure (C18H32O2)" maxWidth="480px" />
+            <P>Beispiel:</P>
+            <DocImage src="/manual-images/image13b.png" caption="" maxWidth="480px" />
             <P><B>Was sind ‚essentielle' Fettsäuren?</B></P>
             <P>Essentielle Fettsäuren sind Fettsäuren, die vom Körper nicht selbst hergestellt werden können. Sie müssen über die Nahrung zugeführt werden. Für den Menschen essentiell sind die oben dargestellte Omega-3-Fettsäure α-Linolensäure und die Omega-6-Fettsäure Linolsäure.</P>
             <P>Essentielle Fettsäuren erfüllen lebenswichtige Funktionen: Sie sind u.a. Bausteine unserer Zellmembranen. Zudem spielen sie eine Rolle bei der Steuerung von Entzündungsprozessen, sind wichtig für die Regulierung des Blutdrucks und stärken das Immunsystem. Auch unterstützen sie die Regeneration der Muskulatur und wirken bei der Hormon-Produktion mit.</P>
