@@ -598,7 +598,7 @@ export default function LehrerManual() {
 
           <SubSection icon={<div className="w-7 h-7 bg-purple-100 rounded-full flex items-center justify-center"><Lightbulb className="text-purple-600" size={14} /></div>} title="Weiterführende Informationen">
             <Num n={1}><B>Süßstoffe</B></Num>
-            <P className="mt-8"><B>Wie kommt es, dass wir uns an Süßes gewöhnen können?</B></P>
+            <P className="mt-4"><B>Wie kommt es, dass wir uns an Süßes gewöhnen können?</B></P>
             <TP>Zentral ist hier unser körpereigenes Belohnungssystem. Eine Studie des Max-Planck-Instituts für Stoffwechselforschung hat gezeigt, dass unmittelbar nach dem Verzehr von zuckerreichen Lebensmitteln Dopamin (Begriffserklärung s.u.) ausgeschüttet wird, noch bevor die Nahrung den Magen erreicht (vgl. Thanarajah et al.). Je nach individuellem Verlangen wird sogar zu unterschiedlichen Zeitpunkten unterschiedlich viel Dopamin ausgeschüttet. Die Gehirne von Versuchsteilnehmer:innen mit einem starken Verlangen nach zuckerreicher Nahrung schütteten direkt nach dem Verzehr eine große Menge an Dopamin aus.</TP>
             <P className="mt-8"><B>Zucker (und Fett) programmieren unsere Synapsen um</B></P>
             <TP>Forschende maßen die Aktivität bestimmter Hirnregionen und stellten fest, dass das Dopamin-ausschüttende System besonders stark bei Teilnehmer:innen aktiviert wurde, die ein sehr fett- und zuckerreiches Gericht aßen. Der erhöhte Zuckerkonsum veränderte die neuronalen Schaltkreise so, dass zuckerreiche Nahrung bei den Proband:innen eine stärkere belohnende Wirkung hatte und sie nach dem Experiment zucker- und fettreiche Lebensmittel positiver bewerteten.</TP>
@@ -618,7 +618,7 @@ export default function LehrerManual() {
               <p className="text-xs text-gray-600 mb-3">Thanarajah SE, Backes H, DiFeliceantonio AG, Albus K, Cremer AL, Hanssen R, Lippert RN, Cornely OA, Small DM, Brüning JC, Tittgemeyer M. Food Intake Recruits Orosensory and Post-ingestive Dopaminergic Circuits to Affect Eating Desire in Humans. Cell Metab. 2019 Mar 5;29(3):695-706.e4. doi: 10.1016/j.cmet.2018.12.006. Epub 2018 Dec 27. PMID: 30595479.</p>
             </div>
             <div className="mt-8"><Num n={2}><B>Transfette</B></Num></div>
-            <P className="mt-8"><B>Wie entstehen Transfettsäuren?</B></P>
+            <P className="mt-4"><B>Wie entstehen Transfettsäuren?</B></P>
             <TP>Transfettsäuren entstehen vor allem durch lebensmitteltechnologische Prozesse wie die sog. Fetthärtung. Dies ist ein Verfahren, bei dem fette Öle in feste oder streichfähige Fette umgewandelt werden. Aus ursprünglich gesunden Pflanzenölen werden Produkte gewonnen, die bessere technische Eigenschaften als natürliche (feste) Fette wie Butter oder Schmalz aufweisen und sich gut lagern lassen. Solche industriell gehärteten Fette werden aufgrund ihres z.T. hohen Gehaltes an Transfettsäuren auch als Transfette bezeichnet.</TP>
             <P className="mt-8"><B>Was sind Transfettsäuren?</B></P>
             <TP>Ungesättigte Fettsäuren liegen in der Natur hauptsächlich in sogenannter cis-Konfiguration vor. Durch die Härtung kann es zu einer Veränderung der Konfiguration der Doppelbindungen kommen: Es entstehen Transfettsäuren, in denen sich die Wasserstoffatome an den durch Doppelbindungen verknüpften Kohlenstoffatomen auf entgegengesetzten Seiten befinden.</TP>
@@ -626,7 +626,7 @@ export default function LehrerManual() {
             <P className="mt-8"><B>Die Wirkung von Transfettsäuren</B></P>
             <TP>Transfettsäuren besitzen keine bekannte positive Funktion im Organismus, aber negative Auswirkungen auf den Stoffwechsel sind eindeutig belegt. Eine hohe Zufuhr von Transfettsäuren birgt das Risiko für eine Fettstoffwechselstörung, die zu einer Erhöhung des Triglycerid-Spiegels führt. Auch wird das Verhältnis zwischen LDL-Cholesterol und HDL-Cholesterol im Blut nachteilig verändert. Die Auswirkungen auf die Gesundheit können erheblich sein und sowohl die Entstehung von Arteriosklerose als auch einer koronaren Herzkrankheit begünstigen sowie das Herzinfarktrisiko erhöhen.</TP>
             <div className="mt-8"><Num n={3}><B>Protein-Produkte: Shakes, Riegel etc.</B></Num></div>
-            <P className="mt-8"><B>Braucht unser Körper Protein-Produkte?</B></P>
+            <P className="mt-4"><B>Braucht unser Körper Protein-Produkte?</B></P>
             <TP>Die benötigte Proteinzufuhr kann für einen Menschen in der Regel über den Verzehr proteinreicher Lebensmittel mühelos sichergestellt werden.</TP>
             <P>Gerade bei jüngeren Menschen, die viel Sport treiben, hat sich die Meinung verbreitet, man müsse den Körper durch eine hohe Proteinaufnahme bei Erhalt und Aufbau der Muskulatur unterstützen. Das ist in einem gewissen Rahmen sinnvoll, kann aber schon durch Anpassungen im persönlichen Speiseplan erreicht werden.</P>
             <P className="mt-8"><B>Kann man zu viel Protein zu sich nehmen?</B></P>
