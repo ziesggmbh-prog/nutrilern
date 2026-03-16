@@ -85,13 +85,14 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
         const handleEnd = () => {
           if (hasEndedRef.current) return;
           hasEndedRef.current = true;
-          setVideoEnded(true);
-          if (isMobile) {
-            exitFs();
-          } else {
-            // Desktop: exit Vimeo's own fullscreen if user used it
-            player.exitFullscreen().catch(() => {});
-          }
+          setTimeout(() => {
+            if (isMobile) {
+              exitFs();
+            } else {
+              player.exitFullscreen().catch(() => {});
+            }
+            setVideoEnded(true);
+          }, 1500);
         };
 
         player.on('ended', handleEnd);
@@ -209,7 +210,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 autoPlay
                 className="absolute inset-0 w-full h-full"
                 preload="auto"
-                onEnded={() => { setVideoEnded(true); exitFs(); }}
+                onEnded={() => { setTimeout(() => { exitFs(); setVideoEnded(true); }, 1500); }}
               >
                 <source src={lesson.videoUrl} type="video/mp4" />
               </video>
@@ -287,7 +288,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 playsInline
                 autoPlay
                 ref={htmlVideoRef}
-                onEnded={() => { setVideoEnded(true); }}
+                onEnded={() => { setTimeout(() => setVideoEnded(true), 1500); }}
               >
                 <source src={lesson.videoUrl} type="video/mp4" />
                 Ihr Browser unterstützt das Video-Element nicht.
