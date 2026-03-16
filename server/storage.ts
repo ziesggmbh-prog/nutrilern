@@ -119,7 +119,7 @@ export class MemStorage implements IStorage {
       {
         title: "Outro",
         description: "Die Umsetzung des Ernährungswissens im Alltag.",
-        videoUrl: "",
+        videoUrl: "https://player.vimeo.com/video/1174041187",
         duration: 3,
         thumbnailUrl: "/assets/outro_thumbnail_1773234406911_opt.jpg",
         order: 7,
