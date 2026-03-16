@@ -2,9 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { X, HelpCircle, CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
 import type { Lesson, Quiz, QuizQuestion } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
 
@@ -20,31 +19,9 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
   const [showResults, setShowResults] = useState(false);
   const [quizResults, setQuizResults] = useState<any>(null);
   const [selectedPerQuestion, setSelectedPerQuestion] = useState<(number | null)[]>([]);
-  const { toast } = useToast();
 
   const { data: quiz, isLoading } = useQuery<Quiz>({
     queryKey: [`/api/lessons/${lesson.id}/quiz`],
-  });
-
-  const submitQuizMutation = useMutation({
-    mutationFn: async (answers: number[]) => {
-      const response = await apiRequest("POST", `/api/lessons/${lesson.id}/quiz/submit`, {
-        lessonId: lesson.id,
-        answers,
-      });
-      return response.json();
-    },
-    onSuccess: (data) => {
-      setQuizResults(data);
-      setShowResults(true);
-    },
-    onError: () => {
-      toast({
-        title: "Fehler",
-        description: "Beim Übermitteln des Quiz ist ein Fehler aufgetreten.",
-        variant: "destructive",
-      });
-    },
   });
 
   if (isLoading) {
@@ -84,7 +61,21 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      submitQuizMutation.mutate(answers);
+      let score = 0;
+      answers.forEach((answer, index) => {
+        if (questions[index] && questions[index].correctAnswer === answer) {
+          score++;
+        }
+      });
+      const percentage = Math.round((score / questions.length) * 100);
+      const passed = percentage >= 70;
+      const result = { score, percentage, passed, totalQuestions: questions.length };
+      setQuizResults(result);
+      setShowResults(true);
+      apiRequest("POST", `/api/lessons/${lesson.id}/quiz/submit`, {
+        lessonId: lesson.id,
+        answers,
+      }).catch(() => {});
     }
   };
 
@@ -250,14 +241,10 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
               
               <Button
                 onClick={handleNext}
-                disabled={answers[currentQuestion] === undefined || submitQuizMutation.isPending}
+                disabled={answers[currentQuestion] === undefined}
                 className="bg-purple-custom hover:bg-purple-custom/90 text-white px-6 py-3 font-semibold"
               >
-                {submitQuizMutation.isPending
-                  ? "Wird übermittelt..."
-                  : currentQuestion === questions.length - 1
-                  ? "Quiz abschließen"
-                  : "Nächste Frage"}
+                {currentQuestion === questions.length - 1 ? "Quiz abschließen" : "Nächste Frage"}
               </Button>
             </div>
           </div>
