@@ -151,9 +151,14 @@ export default function Home() {
 
   const completedLessonIds = progress.filter(p => p.isCompleted).map(p => p.lessonId);
   const quizCompletedLessonIds = progress.filter(p => p.quizScore !== null && p.quizScore !== undefined).map(p => p.lessonId);
+  // A lesson "fully unlocks" the next one only when its quiz is done.
+  // Exception: lesson 1 (Intro) has no quiz — video completion is enough.
+  const lessonFullyDoneIds = lessons
+    .filter(l => l.id === 1 ? completedLessonIds.includes(l.id) : quizCompletedLessonIds.includes(l.id))
+    .map(l => l.id);
   const nextAvailableLesson = lessons.find(lesson => 
-    !completedLessonIds.includes(lesson.id) && 
-    (lesson.order === 1 || completedLessonIds.includes(lessons.find(l => l.order === lesson.order - 1)?.id || 0))
+    !lessonFullyDoneIds.includes(lesson.id) && 
+    (lesson.order === 1 || lessonFullyDoneIds.includes(lessons.find(l => l.order === lesson.order - 1)?.id || 0))
   );
 
   const handleLessonClick = (lesson: Lesson) => {
