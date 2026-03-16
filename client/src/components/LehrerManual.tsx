@@ -408,7 +408,7 @@ export default function LehrerManual() {
           </SubSection>
 
           <SubSection icon={<div className="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center"><Lightbulb className="text-red-600" size={14} /></div>} title="Weiterführende Informationen">
-            <P>Proteine (abgeleitet vom griechischen Wort prōteios für „grundlegend" und „vorrangig") werden auch als Eiweiße bezeichnet. Die Bezeichnung Eiweiß ist historisch bedingt und geht auf die ursprüngliche Isolierung dieser Stoffe aus dem Hühnereiweiß (Hühnerei) zurück. Heute wird allgemein die Bezeichnung Protein dem älteren Begriff Eiweiß vorgezogen.</P>
+            <P>Proteine (abgeleitet vom griechischen Wort prōteios für „grundlegend“ und „vorrangig“) werden auch als Eiweiße bezeichnet. Die Bezeichnung Eiweiß ist historisch bedingt und geht auf die ursprüngliche Isolierung dieser Stoffe aus dem Hühnereiweiß (Hühnerei) zurück. Heute wird allgemein die Bezeichnung Protein dem älteren Begriff Eiweiß vorgezogen.</P>
             <P>Proteine erfüllen im Organismus zahlreiche lebenswichtige Aufgaben, etwa</P>
             <Li>als Bausteine für Muskeln (z.B. Aktin und Myosin)</Li>
             <Li>als Gerüste und Stabilisatoren (Kollagen, Keratin)</Li>
@@ -532,7 +532,7 @@ export default function LehrerManual() {
             <Li>Magnesium: aktiviert Enzyme; unterstützt die Reizübertragung von Muskeln und Nerven</Li>
             <Li>Calcium: Baustoff für Knochen und Zähne</Li>
             <Li>Eisen: Blutbildung und Sauerstofftransport (Zentralatom im Hämoglobin)</Li>
-            <Li>Zink: unterstützt Zellbildung, Hormonwirkung und Immunsystem; neutralisiert schädliche Moleküle („Radikale")</Li>
+            <Li>Zink: unterstützt Zellbildung, Hormonwirkung und Immunsystem; neutralisiert schädliche Moleküle („Radikale“)</Li>
             <Li>Selen: fördert antioxidative Prozesse/Entgiftung; unterstützt Funktion der Bauchspeicheldrüse</Li>
             <Li>Jod: Bestandteil der Schilddrüsenhormone</Li>
             <Li>Fluorid/Fluor: kein ‚echtes‘ Spurenelement; hilft aber bei der Aushärtung von Knochen, Zahnschmelz und Dentin der Zähne und erhöht die Widerstandsfähigkeit gegen Karies</Li>
@@ -575,7 +575,7 @@ export default function LehrerManual() {
             <Li>Fertigprodukte (z.B. Fertigpizza, Fertigsuppen)</Li>
             <Li>Fast Food und Frittiertes (z.B. Hamburger, Pommes)</Li>
             <P className="mt-8"><B>Wie erkenne ich Transfettsäuren?</B></P>
-            <Li>Lebensmittel, auf deren Verpackung „<B>teilweise gehärtete Fette</B>" angegeben sind, enthalten Transfettsäuren.</Li>
+            <Li>Lebensmittel, auf deren Verpackung „<B>teilweise gehärtete Fette</B>“ angegeben sind, enthalten Transfettsäuren.</Li>
             <div className="mt-8"><Num n={3}><B>Protein-Produkte: Shakes, Riegel etc.</B></Num></div>
             <P>Müssen wir unserem Körper <B>zusätzliches Protein</B> zuführen?</P>
             <Li>Über eine <B>ausgewogene Ernährung</B> kann der Körper <B>ausreichend mit Protein</B> versorgt werden. Eine <B>Ergänzung</B> durch künstliche Protein-Produkte ist <B>nicht notwendig</B>.</Li>
@@ -607,11 +607,11 @@ export default function LehrerManual() {
             <P>Neueren Befunden zufolge spielt Dopamin eine wichtige Rolle im Belohnungs- und Motivationssystem des Gehirns (sog. mesolimbisches System). Dopamin vermittelt vor allem die Zuweisung von Begehren (wanting). Interessant: Das wanting, das beim Belohnungslernen eine zentrale Funktion ausübt, wird in der Psychologie als bedeutsam bei der Entstehung von Suchterkrankungen angesehen.</P>
             <P className="mt-8"><B>Die Wirkung von Süßstoffen</B></P>
             <TP>Zucker-Ersatzstoffe sollen eine Aktivierung des Belohnungssystems ohne die ‚Nebenwirkungen‘ von Zucker wie Übergewicht, Typ-2-Diabetes etc. ermöglichen. Zu beachten ist aber, dass viele langfristige Effekte von Zucker-Ersatzstoffen auf den Organismus bisher nicht eingeschätzt werden können.</TP>
-            <P>Was bisher als gesichert gilt: Künstliche Süßstoffe wie Aspartam, Saccharin und Sucralose beeinflussen das Darmmikrobiom (d.h. die im Darm vorkommenden Mikroorganismen) negativ, so zeigt eine Studie (vgl. Suez et al.). Untersuchungen zeigen, dass bereits moderate Mengen der Süßstoffe die Zusammensetzung und Funktion der Darmbakterien verändern können. Dadurch verschlechtert sich die Glukosetoleranz, das Risiko für Erkrankungen wie Typ-2-Diabetes steigt. Außerdem fördern sie das Wachstum unerwünschter Bakterien, können die Darmbarriere schädigen („leaky gut") und Entzündungen begünstigen. Überdies konnte eine weitere Studie zeigen, dass regelmäßiger Konsum künstlicher Süßstoffe wie Aspartam, Sucralose oder Saccharin mit einem beschleunigten kognitiven Abbau und Herz-Kreislauf-Erkrankungen verbunden sein kann (vgl. Gonçalves et al.).</P>
+            <P>Was bisher als gesichert gilt: Künstliche Süßstoffe wie Aspartam, Saccharin und Sucralose beeinflussen das Darmmikrobiom (d.h. die im Darm vorkommenden Mikroorganismen) negativ, so zeigt eine Studie (vgl. Suez et al.). Untersuchungen zeigen, dass bereits moderate Mengen der Süßstoffe die Zusammensetzung und Funktion der Darmbakterien verändern können. Dadurch verschlechtert sich die Glukosetoleranz, das Risiko für Erkrankungen wie Typ-2-Diabetes steigt. Außerdem fördern sie das Wachstum unerwünschter Bakterien, können die Darmbarriere schädigen („leaky gut“) und Entzündungen begünstigen. Überdies konnte eine weitere Studie zeigen, dass regelmäßiger Konsum künstlicher Süßstoffe wie Aspartam, Sucralose oder Saccharin mit einem beschleunigten kognitiven Abbau und Herz-Kreislauf-Erkrankungen verbunden sein kann (vgl. Gonçalves et al.).</P>
             <P>Weiterhin wird das Verlangen nach Süßem durch den Konsum von Süßstoffen nicht gestillt, sondern – im Gegenteil – verstärkt. Eine aktuelle Studie belegt z.B., dass der Zuckerersatzstoff Sucralose den Hypothalamus aktiviert, eine wichtige Schaltzentrale für Hunger und Sättigung (vgl. Chakravartti et al.). Daraufhin steigert sich das Hungergefühl, und zwar besonders bei Menschen mit Übergewicht (Adipositas). Wenn künstliche Süßstoffe dem Gehirn Zuckersignale senden, aber die vom Körper erwarteten Kalorien ausbleiben, führt genau dies zu einem größeren Hungergefühl.</P>
             <P>Die Weltgesundheitsorganisation (WHO: World Health Organization) gibt in ihren Richtlinien zum Gebrauch von Zucker-Ersatzstoffen einen Rat, den man einfach umsetzen kann: Statt diese Mittel zu konsumieren, sollte man bei Lust auf Süßes lieber Obst essen, denn dieses liefert wertvolle Ballaststoffe, Vitamine, Mineralien und Spurenelemente.</P>
             <div className="pl-8 mt-4">
-              <p className="text-xs text-gray-600 mb-1"><B>Quellen „Süßstoffe":</B></p>
+              <p className="text-xs text-gray-600 mb-1"><B>Quellen „Süßstoffe“:</B></p>
               <p className="text-xs text-gray-600 mb-3">Chakravartti SP, Jann K, Veit R, Liu H, Yunker AG, Angelo B, Monterosso JR, Xiang AH, Kullmann S, Page KA. Non-caloric sweetener effects on brain appetite regulation in individuals across varying body weights. Nat Metab. 2025 Mar;7(3):574-585. doi: 10.1038/s42255-025-01227-8. Epub 2025 Mar 26. PMID: 40140714.</p>
               <p className="text-xs text-gray-600 mb-3">Gonçalves NG, Martinez-Steele E, Lotufo PA, Bensenor I, Goulart AC, Barreto SM, Giatti L, de Faria CP, Molina MDCB, Caramelli P, Marchioni DM, Suemoto CK. Association Between Consumption of Low- and No-Calorie Artificial Sweeteners and Cognitive Decline: An 8-Year Prospective Study. Neurology. 2025 Oct 7;105(7):e214023. doi: 10.1212/WNL.0000000000214023. Epub 2025 Sep 3. PMID: 40902134.</p>
               <p className="text-xs text-gray-600 mb-3">Suez J, Korem T, Zeevi D, Zilberman-Schapira G, Thaiss CA, Maza O, Israeli D, Zmora N, Gilad S, Weinberger A, Kuperman Y, Harmelin A, Kolodkin-Gal I, Shapiro H, Halpern Z, Segal E, Elinav E. Artificial sweeteners induce glucose intolerance by altering the gut microbiota. Nature. 2014 Oct 9;514(7521):181-6. doi: 10.1038/nature13793. Epub 2014 Sep 17. PMID: 25231862.</p>
