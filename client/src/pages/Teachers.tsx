@@ -31,21 +31,21 @@ export default function Teachers() {
     {
       day: 2,
       title: "Fette",
-      individual: ["Bearbeitung des Films 'Fette' nach dem Schema von Tag 1"],
+      individual: ["Bearbeitung des Films 'Fette‘ nach dem Schema von Tag 1"],
       hours: "3 Schulstunden",
       groupHours: "3 Schulstunden"
     },
     {
       day: 3,
       title: "Proteine",
-      individual: ["Bearbeitung des Films 'Proteine' nach dem Schema von Tag 1"],
+      individual: ["Bearbeitung des Films 'Proteine‘ nach dem Schema von Tag 1"],
       hours: "3 Schulstunden",
       groupHours: "3 Schulstunden"
     },
     {
       day: 4,
       title: "Mikronährstoffe",
-      individual: ["Bearbeitung des Films 'Mikronährstoffe' nach dem Schema von Tag 1"],
+      individual: ["Bearbeitung des Films 'Mikronährstoffe‘ nach dem Schema von Tag 1"],
       hours: "2 Schulstunden",
       groupHours: "4 Schulstunden (1 für Probepräsentation)"
     },
@@ -179,7 +179,7 @@ export default function Teachers() {
                 Sie sehen die Filme an, beantworten Fragen und absolvieren jeweils ein Quiz.
               </p>
               <p className="text-lg mb-6">
-                Die einzelnen ‚Lektionen', bestehend aus Lehrfilm, vertiefenden Fragen und Quiz, bauen aufeinander auf. 
+                Die einzelnen ‚Lektionen‘, bestehend aus Lehrfilm, vertiefenden Fragen und Quiz, bauen aufeinander auf. 
                 Das Absolvieren des Quiz am Ende führt zur Freischaltung der nächsten Lektion.
               </p>
 
@@ -187,11 +187,11 @@ export default function Teachers() {
               <ol className="list-decimal pl-6 space-y-3 mb-6">
                 <li>Die Schüler:innen schauen den jeweiligen Film einmal im Klassenverband auf der digitalen Tafel/dem Smartboard (oder Beamer) und einmal auf ihrem Endgerät mit Kopfhörern an. Beim zweiten Anschauen notieren sie Fragen zu unverstandenen Begriffen und/oder Zusammenhängen.</li>
                 <li>Danach werden in kleinen Lerngruppen vertiefende Fragen zu zentralen Zusammenhängen des Films bearbeitet und die Ergebnisse im Klassenverband vorgestellt. Jede Gruppe bearbeitet einen von vier Fragenkomplexen. Zur Beantwortung darf auf Internetrecherche zurückgegriffen werden.
-                  <p className="mt-1">Die Fragen sind unter dem jeweiligen Film hinterlegt (‚Vertiefende Fragen'). Zu Intro und Outro gibt es <span className="underline">keine</span> vertiefenden Fragen.</p>
+                  <p className="mt-1">Die Fragen sind unter dem jeweiligen Film hinterlegt (‚Vertiefende Fragen‘). Zu Intro und Outro gibt es <span className="underline">keine</span> vertiefenden Fragen.</p>
                 </li>
                 <li>Nun kontrollieren die Schüler:innen, ob von den beim zweiten Anschauen des Films notierten Fragen noch welche offen geblieben sind. Diese werden im Klassenverband geklärt.</li>
                 <li>Abschließend beantworten die Schüler:innen das Quiz auf ihren Geräten. Dabei dürfen sie einander helfen, bis alle das Quiz geschafft haben.
-                  <p className="mt-1">Das ‚Quiz' ist unter dem jeweiligen Film hinterlegt. Zu Intro und Outro gibt es <span className="underline">kein</span> Quiz.</p>
+                  <p className="mt-1">Das ‚Quiz‘ ist unter dem jeweiligen Film hinterlegt. Zu Intro und Outro gibt es <span className="underline">kein</span> Quiz.</p>
                 </li>
                 <li>Die korrekte Beantwortung führt zur Freischaltung der nächsten Lektion.</li>
               </ol>
@@ -217,7 +217,7 @@ export default function Teachers() {
             
             <div className="prose max-w-none text-gray-700 leading-relaxed">
               <p className="text-lg mb-4">
-                Im Gruppenmodus bearbeiten die Schüler:innen eine mehrtägige Aufgabe (‚Quest') nach Art einer Projektarbeit 
+                Im Gruppenmodus bearbeiten die Schüler:innen eine mehrtägige Aufgabe (‚Quest‘) nach Art einer Projektarbeit 
                 in kleinen Projektgruppen. (Diese sind unabhängig von den oben erwähnten Lerngruppen des Lernmodus.) 
                 Hier geht es um die Vertiefung des Erlernten sowie die praktische Umsetzung im Alltag.
               </p>
@@ -226,7 +226,7 @@ export default function Teachers() {
                 <p className="font-semibold text-red-800 mb-2">Wichtig:</p>
                 <p className="text-red-700">
                   Wenn die Schüler:innen zur Gruppenarbeit übergehen, müssen sie oben rechts neben dem 
-                  Hamburger-Menü vom ‚Lernmodus' in den ‚Gruppenmodus' wechseln.
+                  Hamburger-Menü vom ‚Lernmodus‘ in den ‚Gruppenmodus‘ wechseln.
                 </p>
               </div>
 
@@ -236,7 +236,7 @@ export default function Teachers() {
                 <li>Die Gruppengrößen sollten möglichst ausgewogen sein.</li>
                 <li>Für große Klassengrößen (über 25 Personen) gibt es eine Kreativaufgabe, bei der Schüler:innen selbst eine Gruppenaufgabe entwickeln und durchführen.</li>
                 <li>Hinter den Aufgabenfeldern sind für die anvisierten 5 Tage der Gruppenarbeit Anweisungen hinterlegt.</li>
-                <li>Das 'Abschließen' eines Tages schaltet den nächsten frei.</li>
+                <li>Das 'Abschließen‘ eines Tages schaltet den nächsten frei.</li>
               </ul>
 
               <div className="bg-purple-50 border-l-4 border-purple-400 p-4 mt-6">
