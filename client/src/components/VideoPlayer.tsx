@@ -92,7 +92,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
               player.exitFullscreen().catch(() => {});
             }
             setVideoEnded(true);
-          }, 1500);
+          }, 2000);
         };
 
         player.on('ended', handleEnd);
@@ -210,7 +210,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 autoPlay
                 className="absolute inset-0 w-full h-full"
                 preload="auto"
-                onEnded={() => { setTimeout(() => { exitFs(); setVideoEnded(true); }, 1500); }}
+                onEnded={() => { setTimeout(() => { exitFs(); setVideoEnded(true); }, 2000); }}
               >
                 <source src={lesson.videoUrl} type="video/mp4" />
               </video>
@@ -288,7 +288,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
                 playsInline
                 autoPlay
                 ref={htmlVideoRef}
-                onEnded={() => { setTimeout(() => setVideoEnded(true), 1500); }}
+                onEnded={() => { setTimeout(() => setVideoEnded(true), 2000); }}
               >
                 <source src={lesson.videoUrl} type="video/mp4" />
                 Ihr Browser unterstützt das Video-Element nicht.
