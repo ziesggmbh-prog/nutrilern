@@ -52,9 +52,8 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
     }
   };
 
-  // ── Fullscreen change listener (mobile) ────────────────────────────────
+  // ── Fullscreen change listener (mobile + desktop) ─────────────────────
   useEffect(() => {
-    if (!isMobile) return;
     const onChange = () => {
       const inFs = !!(document.fullscreenElement || (document as any).webkitFullscreenElement);
       setIsFullscreen(inFs);
@@ -67,6 +66,14 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
       document.removeEventListener('webkitfullscreenchange', onChange);
       exitFs();
     };
+  }, []);
+
+  // ── Desktop: enter fullscreen automatically on mount ──────────────────
+  useEffect(() => {
+    if (isMobile) return;
+    // Small delay so the DOM element is painted before requesting fullscreen
+    const t = setTimeout(() => enterFs(), 80);
+    return () => clearTimeout(t);
   }, []);
 
   // ── Vimeo Player API setup ─────────────────────────────────────────────
@@ -251,15 +258,15 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   }
 
   // ══════════════════════════════════════════════════════════════════
-  // DESKTOP: Original pre-Friday modal
+  // DESKTOP: Original pre-Friday modal (with auto-fullscreen)
   // ══════════════════════════════════════════════════════════════════
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+    <div ref={outerRef} className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
       <div className="bg-navy-light rounded-xl p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-white">{lesson.title}</h2>
           <button
-            onClick={onClose}
+            onClick={() => { exitFs(); onClose(); }}
             className="text-gray-400 hover:text-white p-2"
           >
             <X size={24} />
