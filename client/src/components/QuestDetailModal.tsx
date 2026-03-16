@@ -91,17 +91,14 @@ function parseQuestDays(fullDescription: string): QuestDay[] {
   return days;
 }
 
-// Quest colors matching the main quest cards
+// Quest colors matching the group mode overview cards
 const questColors = [
-  "bg-deep-purple",
-  "bg-dark-navy", 
-  "bg-royal-purple",
-  "bg-warm-orange",
-  "bg-lavender",
-  "bg-bright-purple",
-  "bg-terracotta",
-  "bg-soft-lavender",
-  "bg-teal-blue"
+  "bg-coral-red",
+  "bg-golden-amber",
+  "bg-forest-green",
+  "bg-ocean-blue",
+  "bg-dusty-rose",
+  "bg-slate-teal",
 ];
 
 export default function QuestDetailModal({ quest, onClose, onQuestComplete }: QuestDetailModalProps) {
