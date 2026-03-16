@@ -68,13 +68,6 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
     };
   }, []);
 
-  // ── Desktop: enter fullscreen automatically on mount ──────────────────
-  useEffect(() => {
-    if (isMobile) return;
-    // Small delay so the DOM element is painted before requesting fullscreen
-    const t = setTimeout(() => enterFs(), 80);
-    return () => clearTimeout(t);
-  }, []);
 
   // ── Vimeo Player API setup ─────────────────────────────────────────────
   useEffect(() => {
@@ -109,6 +102,13 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
             if (dur - cur < 1) handleEnd();
           }
         });
+
+        // Desktop: use Vimeo's own fullscreen once player is ready
+        if (!isMobile) {
+          player.ready().then(() => {
+            player.requestFullscreen().catch(() => {});
+          });
+        }
       } catch (_) {}
     };
     setup();
