@@ -485,7 +485,7 @@ export class MemStorage implements IStorage {
   async updateUserProgress(id: number, updateData: Partial<UserProgress>): Promise<UserProgress> {
     const existing = this.userProgress.get(id);
     if (!existing) {
-      throw new Error(‚Progress not found');
+      throw new Error('Progress not found');
     }
     
     const updated: UserProgress = { 
