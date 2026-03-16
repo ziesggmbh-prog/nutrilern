@@ -59,9 +59,18 @@ function Num({ n, children }: { n: number; children: ReactNode }) {
 }
 
 function DocImage({ src, caption, maxHeight = "170px", maxWidth }: { src: string; caption: string; maxHeight?: string; maxWidth?: string }) {
+  const unconstrained = maxHeight === "none";
   return (
     <figure className="my-3 flex flex-col items-center">
-      <img src={src} alt={caption} className="rounded-md border border-gray-200 bg-white" style={{ maxHeight, maxWidth: maxWidth ?? "100%", objectFit: "contain" }} />
+      <img
+        src={src}
+        alt={caption}
+        className="rounded-md border border-gray-200 bg-white"
+        style={unconstrained
+          ? { maxWidth: maxWidth ?? "100%", display: "block" }
+          : { maxHeight, maxWidth: maxWidth ?? "100%", objectFit: "contain" }
+        }
+      />
       {caption && <figcaption className="mt-1 text-center text-sm text-gray-500 italic">{caption}</figcaption>}
     </figure>
   );
