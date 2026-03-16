@@ -6,7 +6,7 @@ function B({ children }: { children: ReactNode }) {
 }
 
 function P({ children, className }: { children: ReactNode; className?: string }) {
-  return <p className={`mt-4 mb-0 first:mt-0${className ? ' ' + className : ''}`}>{children}</p>;
+  return <p className={`mt-5 mb-1 first:mt-0${className ? ' ' + className : ''}`}>{children}</p>;
 }
 
 function TP({ children, className }: { children: ReactNode; className?: string }) {
