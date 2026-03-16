@@ -65,7 +65,7 @@ function DocImage({ src, caption, maxHeight = "170px", maxWidth }: { src: string
       <img
         src={src}
         alt={caption}
-        className="rounded-md border border-gray-200 bg-white"
+        className="rounded-md bg-white"
         style={unconstrained
           ? { maxWidth: maxWidth ?? "100%", display: "block" }
           : { maxHeight, maxWidth: maxWidth ?? "100%", objectFit: "contain" }
