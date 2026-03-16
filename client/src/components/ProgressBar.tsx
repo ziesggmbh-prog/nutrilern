@@ -9,7 +9,7 @@ interface ProgressBarProps {
 }
 
 export default function ProgressBar({ completedLessons, totalLessons, itemType = "Lektionen", isGroupMode = false }: ProgressBarProps) {
-  const progressPercentage = (completedLessons / totalLessons) * 100;
+  const progressPercentage = totalLessons > 0 ? (completedLessons / totalLessons) * 100 : 0;
   
   return (
     <div className="mb-8">

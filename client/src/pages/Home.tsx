@@ -104,6 +104,18 @@ export default function Home() {
     setupIntroPlayer();
   }, [showIntroOverlay, introPlaying]);
 
+  useEffect(() => {
+    const prefetch = () => {
+      import("@/pages/Level2");
+      import("@/pages/Teachers");
+    };
+    if ('requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(prefetch, { timeout: 3000 });
+    } else {
+      setTimeout(prefetch, 2000);
+    }
+  }, []);
+
   const handleSkipIntro = async () => {
     localStorage.setItem('introSeen', 'true');
     setShowIntroOverlay(false);

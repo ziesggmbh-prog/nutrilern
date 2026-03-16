@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Leaf, Star, Play, Lock, CheckCircle } from "lucide-react";
-import LessonCard from "@/components/LessonCard";
+import { Leaf, Star, CheckCircle } from "lucide-react";
 import QuestCard from "@/components/QuestCard";
-import VideoPlayer from "@/components/VideoPlayer";
 import QuizModal from "@/components/QuizModal";
 import QuestTextModal from "@/components/QuestTextModal";
 import QuestDetailModal from "@/components/QuestDetailModal";
