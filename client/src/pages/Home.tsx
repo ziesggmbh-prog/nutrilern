@@ -150,6 +150,7 @@ export default function Home() {
 
 
   const completedLessonIds = progress.filter(p => p.isCompleted).map(p => p.lessonId);
+  const quizCompletedLessonIds = progress.filter(p => p.quizScore !== null && p.quizScore !== undefined).map(p => p.lessonId);
   const nextAvailableLesson = lessons.find(lesson => 
     !completedLessonIds.includes(lesson.id) && 
     (lesson.order === 1 || completedLessonIds.includes(lessons.find(l => l.order === lesson.order - 1)?.id || 0))
@@ -375,7 +376,7 @@ export default function Home() {
                 {lesson.id !== 1 && lesson.id !== 7 && (
                   <QuestCard
                     lesson={lesson}
-                    isCompleted={isCompleted}
+                    isCompleted={quizCompletedLessonIds.includes(lesson.id)}
                     isAvailable={isAvailable}
                     onQuizClick={() => handleQuizClick(lesson)}
                     showImage={false}
