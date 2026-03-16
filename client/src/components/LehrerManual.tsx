@@ -317,7 +317,7 @@ export default function LehrerManual() {
             <P>Hier besitzen nicht alle C-Atome in der Kohlenwasserstoffkette die maximale Anzahl an Wasserstoffatomen. Manche C-Atome sind durch eine Doppelbindung verknüpft. Man unterscheidet zwischen einfach und mehrfach ungesättigte Fettsäuren.</P>
             <P>Beispiele für ungesättigte Fettsäuren:</P>
             <P>Ölsäure (einfach ungesättigt)</P>
-            <DocImage src="/manual-images/image10.png" caption="" maxWidth="220px" />
+            <DocImage src="/manual-images/image10.png" caption="" maxWidth="220px" maxHeight="none" />
             <P>Linolsäure (zweifach ungesättigt)</P>
             <DocImage src="/manual-images/image11.png" caption="Linolsäure (C18H32O2, zweifach ungesättigt)" maxWidth="243px" />
             <P>Ungesättigte Fette besitzen einen hohen Anteil an ungesättigten Fettsäuren. Diese sind überwiegend in pflanzlichen Nahrungsmitteln und in fettem Fisch enthalten.</P>
