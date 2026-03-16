@@ -351,9 +351,10 @@ export default function Home() {
                         setShowVertiefendeFragen(true);
                       }
                     }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: lesson.order * 0.1 + 0.15 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: lesson.order * 0.08 + 0.15, duration: 0.4 }}
+                    style={{ transform: 'translateZ(0)' }}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
