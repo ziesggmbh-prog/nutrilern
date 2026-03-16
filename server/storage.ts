@@ -82,7 +82,7 @@ export class MemStorage implements IStorage {
       },
       {
         title: "Fette",
-        description: "Wir klären, welche Rolle Fette in deinem Körper spielen und was es mit ‚guten' und ‚schlechten' Fetten auf sich hat.",
+        description: "Wir klären, welche Rolle Fette in deinem Körper spielen und was es mit ‚guten‘ und ‚schlechten‘ Fetten auf sich hat.",
         videoUrl: "https://player.vimeo.com/video/1172530056",
         duration: 5,
         thumbnailUrl: "/assets/fette_thumbnail_1773234114265_opt.jpg",
@@ -163,7 +163,7 @@ export class MemStorage implements IStorage {
           },
           {
             id: "c3",
-            question: "In welchen Lebensmitteln finden sich überwiegend 'gute' Kohlenhydrate?",
+            question: "In welchen Lebensmitteln finden sich überwiegend 'gute‘ Kohlenhydrate?",
             options: [
               "Süßigkeiten, Weißbrot, Limonade",
               "Milch, Joghurt, Käse",
@@ -204,7 +204,7 @@ export class MemStorage implements IStorage {
           },
           {
             id: "f4",
-            question: "Worin kommen vor allem 'schlechte' Fette (gesättigte Fettsäuren) vor?",
+            question: "Worin kommen vor allem 'schlechte‘ Fette (gesättigte Fettsäuren) vor?",
             options: [
               "In pflanzlichen Ölen wie Olivenöl",
               "In Nüssen und Samen",
