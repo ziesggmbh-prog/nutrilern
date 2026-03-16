@@ -93,7 +93,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
                 src={lesson.thumbnailUrl} 
                 alt={lesson.title}
                 className="w-full h-64 object-cover"
-                style={lesson.id === 12 ? { objectPosition: 'center 25%' } : undefined}
+                style={lesson.id === 12 ? { objectPosition: 'center 37%' } : undefined}
               />
             </div>
             <div className="text-center mb-6">
@@ -114,7 +114,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
                   src={lesson.thumbnailUrl} 
                   alt={lesson.title}
                   className="w-full h-48 object-cover rounded-lg"
-                  style={lesson.id === 12 ? { objectPosition: 'center 25%' } : undefined}
+                  style={lesson.id === 12 ? { objectPosition: 'center 37%' } : undefined}
                 />
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
                     src={lesson.thumbnailUrl} 
                     alt={lesson.title}
                     className="w-full h-96 object-cover rounded-lg mb-4"
-                    style={lesson.id === 12 ? { objectPosition: 'center 25%' } : undefined}
+                    style={lesson.id === 12 ? { objectPosition: 'center 37%' } : undefined}
                   />
                   <h3 className="text-2xl font-bold text-green-custom text-center">
                     Präsentation
