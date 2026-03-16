@@ -111,10 +111,10 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
         !isGroupMode && isAvailable ? "hover:shadow-xl" : ""
       } ${isGroupMode ? "h-full flex flex-col" : ""}`}
       onClick={isAvailable ? onQuizClick : undefined}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: lesson.order * 0.08, duration: 0.4 }}
-      style={{ transform: 'translateZ(0)' }}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: lesson.order * 0.1, duration: 0.35 }}
+      style={{ willChange: 'transform, opacity', backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
     >
       <div className="absolute top-0 right-0 w-20 h-20">
         <OrganicShape

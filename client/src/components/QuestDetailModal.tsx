@@ -152,10 +152,9 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
     if (isDay5) {
       return (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: dayIndex * 0.08 }}
-          style={{ transform: 'translateZ(0)' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: dayIndex * 0.1 }}
           className={`relative rounded-xl cursor-pointer transition-all duration-300 border-2 overflow-hidden bg-navy-light ${
             isCompleted 
               ? "border-green-custom shadow-lg" 
@@ -189,10 +188,9 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
 
     return (
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: dayIndex * 0.08 }}
-        style={{ transform: 'translateZ(0)' }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: dayIndex * 0.1 }}
         className={`relative rounded-xl p-8 cursor-pointer transition-all duration-300 border-2 ${
           isCompleted 
             ? "bg-navy-light border-green-custom shadow-lg" 
