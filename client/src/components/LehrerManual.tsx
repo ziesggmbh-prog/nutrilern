@@ -227,8 +227,8 @@ export default function LehrerManual() {
             <Li>Kartoffeln</Li>
             <Li>Hülsenfrüchte: Bohnen, Erbsen, Erdnüsse, Kichererbsen, Linsen, Sojabohnen, Hirse</Li>
             <P className="mt-8"><B>Wie werden Zucker und Stärke im Körper verstoffwechselt, und wie wird daraus Energie gewonnen?</B></P>
-            <TP><B>Abbau von Stärke zu Zweifach- und Einfachzuckern</B></TP>
-            <P>Die Verdauung von Stärke in unserer Nahrung beginnt bereits im Mund. Unser Speichel enthält das stärkespaltende Enzym Alpha-Amylase. Die Amylase spaltet die Stärke zu Dextrinen (Bruchstücke der Stärke). Daher ist es wichtig, dass man lange und gründlich kaut.</P>
+            <P className="mt-8"><B>Abbau von Stärke zu Zweifach- und Einfachzuckern</B></P>
+            <TP>Die Verdauung von Stärke in unserer Nahrung beginnt bereits im Mund. Unser Speichel enthält das stärkespaltende Enzym Alpha-Amylase. Die Amylase spaltet die Stärke zu Dextrinen (Bruchstücke der Stärke). Daher ist es wichtig, dass man lange und gründlich kaut.</P>
             <P>Die Dextrine, welche die Alpha-Amylase gebildet hat, werden im Dünndarm durch die Pankreas-Amylase und Saccharidasen weiter gespalten. Die schließlich entstehenden Einfachzucker (Monosaccharide) werden nun durch die Darmzellen aufgenommen und gelangen ins Blut, von wo sie in alle Organe, Gewebe und Zellen des Körpers transportiert werden.</P>
             <P className="mt-8"><B>Gewinnung von Energie</B></P>
             <TP>Unsere Zellen nehmen die Zuckermoleküle auf, die über den Blutstrom angeliefert werden. Dies wird durch das Hormon Insulin reguliert. In den Zellen erfolgt der Abbau des Zuckers ebenfalls von zahlreichen Enzymen gesteuert durch den Vorgang der Zellatmung.</TP>
