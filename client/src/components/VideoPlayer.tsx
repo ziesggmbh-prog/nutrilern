@@ -12,12 +12,13 @@ interface VideoPlayerProps {
   onComplete: () => void;
 }
 
+const isMobile = typeof window !== 'undefined' && 'ontouchstart' in window;
+
 export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayerProps) {
   const hasQuiz = quizData.some(q => q.lessonId === lesson.id);
   const [videoEnded, setVideoEnded] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  // Show overlay on touch devices so user tap triggers fullscreen
-  const [overlayVisible, setOverlayVisible] = useState(() => 'ontouchstart' in window);
+  const [overlayVisible, setOverlayVisible] = useState(isMobile);
 
   const outerRef    = useRef<HTMLDivElement>(null);
   const vimeoRef1   = useRef<HTMLIFrameElement>(null);
@@ -25,23 +26,20 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   const vimeoRef3   = useRef<HTMLIFrameElement>(null);
   const vimeoRef4   = useRef<HTMLIFrameElement>(null);
   const htmlVideoRef = useRef<HTMLVideoElement>(null);
-  const playerRef   = useRef<any>(null);   // Vimeo Player instance
+  const playerRef   = useRef<any>(null);
   const hasEndedRef = useRef(false);
 
-  // ── Fullscreen helpers ─────────────────────────────────────────────────
+  // ── Fullscreen helpers (mobile only) ───────────────────────────────────
   const enterFs = () => {
     const el = outerRef.current;
     if (!el) return;
     if (el.requestFullscreen) {
       el.requestFullscreen().catch(() => {
-        // Fallback for iOS: use Vimeo Player's own requestFullscreen
-        // (internally calls webkitEnterFullscreen on the <video> element)
         playerRef.current?.requestFullscreen?.().catch(() => {});
       });
     } else if ((el as any).webkitRequestFullscreen) {
       (el as any).webkitRequestFullscreen();
     } else {
-      // iOS Safari fallback via Vimeo Player API
       playerRef.current?.requestFullscreen?.().catch(() => {});
     }
   };
@@ -54,8 +52,9 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
     }
   };
 
-  // ── Track fullscreenchange events ──────────────────────────────────────
+  // ── Fullscreen change listener (mobile) ────────────────────────────────
   useEffect(() => {
+    if (!isMobile) return;
     const onChange = () => {
       const inFs = !!(document.fullscreenElement || (document as any).webkitFullscreenElement);
       setIsFullscreen(inFs);
@@ -66,7 +65,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
     return () => {
       document.removeEventListener('fullscreenchange', onChange);
       document.removeEventListener('webkitfullscreenchange', onChange);
-      exitFs(); // always exit fullscreen when modal unmounts
+      exitFs();
     };
   }, []);
 
@@ -87,8 +86,12 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
           if (hasEndedRef.current) return;
           hasEndedRef.current = true;
           setVideoEnded(true);
-          // Exit native fullscreen → user sees "Film abschließen" button
-          exitFs();
+          if (isMobile) {
+            exitFs();
+          } else {
+            // Desktop: exit Vimeo's own fullscreen if user used it
+            player.exitFullscreen().catch(() => {});
+          }
         };
 
         player.on('ended', handleEnd);
@@ -111,7 +114,10 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
     playerRef.current?.play?.().catch(() => {});
   };
 
-  const handleClose = () => { exitFs(); onClose(); };
+  const handleClose = () => {
+    if (isMobile) exitFs();
+    onClose();
+  };
 
   const handleReplay = async () => {
     setVideoEnded(false);
@@ -125,100 +131,185 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
       htmlVideoRef.current.currentTime = 0;
       htmlVideoRef.current.play();
     }
-    enterFs();
+    if (isMobile) enterFs();
   };
 
-  // ── Vimeo iframe helpers ───────────────────────────────────────────────
-  const vimeoSrc = (id: string) =>
-    `https://player.vimeo.com/video/${id}?badge=0&autopause=0&autoplay=1&playsinline=1`;
+  // ── Vimeo iframe URLs ──────────────────────────────────────────────────
+  // Desktop: no playsinline (matches pre-Friday original)
+  // Mobile: playsinline=1 so video plays inline before fullscreen overlay
+  const vimeoSrc = (id: string) => isMobile
+    ? `https://player.vimeo.com/video/${id}?badge=0&autopause=0&autoplay=1&playsinline=1`
+    : `https://player.vimeo.com/video/${id}?badge=0&autopause=0&autoplay=1`;
+
   const iframeAllow =
     'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
-  const iframeStyle: React.CSSProperties =
-    { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' };
 
-  // ── Render ─────────────────────────────────────────────────────────────
-  return (
-    <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center">
+  // ── Shared video content ───────────────────────────────────────────────
+  const renderVimeoDesktop = (ref: React.RefObject<HTMLIFrameElement>, id: string, title: string) => (
+    <div style={{padding: '56.25% 0 0 0', position: 'relative'}}>
+      <iframe
+        ref={ref}
+        src={vimeoSrc(id)}
+        frameBorder="0"
+        allowFullScreen
+        allow={iframeAllow}
+        style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+        title={title}
+      />
+    </div>
+  );
 
-      {/* X – always on top-right, exits fullscreen + closes modal */}
-      <button
-        onClick={handleClose}
-        className="absolute top-4 right-4 z-30 bg-black bg-opacity-70 border-2 border-white border-opacity-60 text-white rounded-full w-12 h-12 flex items-center justify-center"
-        aria-label="Schließen"
-      >
-        <X size={26} />
-      </button>
+  const renderVimeoMobile = (ref: React.RefObject<HTMLIFrameElement>, id: string, title: string) => (
+    <iframe
+      ref={ref}
+      src={vimeoSrc(id)}
+      title={title}
+      frameBorder="0"
+      allow={iframeAllow}
+      style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
+    />
+  );
 
-      {/* ── Video ── */}
-      <div className="w-full relative">
-        <div className="aspect-video w-full relative bg-black">
+  // ══════════════════════════════════════════════════════════════════
+  // MOBILE: Full-screen takeover (new Friday behavior)
+  // ══════════════════════════════════════════════════════════════════
+  if (isMobile) {
+    return (
+      <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center">
 
-          {/* Vimeo embeds */}
-          {lesson.id === 1 ? (
-            <iframe ref={vimeoRef1} src={vimeoSrc('1172528318')} title="Intro"
-              frameBorder="0" allow={iframeAllow} style={iframeStyle} />
-          ) : lesson.id === 2 ? (
-            <iframe ref={vimeoRef2} src={vimeoSrc('1172528646')} title="Kohlenhydrate"
-              frameBorder="0" allow={iframeAllow} style={iframeStyle} />
-          ) : lesson.id === 3 ? (
-            <iframe ref={vimeoRef3} src={vimeoSrc('1172530056')} title="Fette"
-              frameBorder="0" allow={iframeAllow} style={iframeStyle} />
-          ) : lesson.id === 4 ? (
-            <iframe ref={vimeoRef4} src={vimeoSrc('1148007412')} title="Proteine"
-              frameBorder="0" allow={iframeAllow} style={iframeStyle} />
-          ) : (
-            /* HTML5 fallback */
-            <video
-              ref={htmlVideoRef}
-              controls
-              playsInline
-              autoPlay
-              className="absolute inset-0 w-full h-full"
-              preload="auto"
-              onEnded={() => { setVideoEnded(true); exitFs(); }}
-            >
-              <source src={lesson.videoUrl} type="video/mp4" />
-            </video>
-          )}
+        {/* X button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 z-30 bg-black bg-opacity-70 border-2 border-white border-opacity-60 text-white rounded-full w-12 h-12 flex items-center justify-center"
+          aria-label="Schließen"
+        >
+          <X size={26} />
+        </button>
 
-          {/* ── Mobile overlay: "Tippen zum Starten" ─────────────────
-               Shown on touch devices. Direct tap = user gesture = fullscreen works. */}
-          {overlayVisible && (
-            <div
-              className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black bg-opacity-40 cursor-pointer"
-              onClick={handleOverlayTap}
-            >
-              <div className="w-24 h-24 rounded-full bg-white bg-opacity-15 border-2 border-white border-opacity-70 flex items-center justify-center mb-4">
-                <Play size={44} className="text-white ml-2" fill="white" />
-              </div>
-              <span className="text-white text-base font-semibold drop-shadow">Vollbild starten</span>
-            </div>
-          )}
+        {/* Video */}
+        <div className="w-full relative">
+          <div className="aspect-video w-full relative bg-black">
 
-          {/* ── Replay overlay ── */}
-          {videoEnded && !overlayVisible && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
-              <button
-                onClick={handleReplay}
-                className="bg-white bg-opacity-20 border border-white border-opacity-40 text-white rounded-lg px-6 py-3 flex items-center gap-2"
+            {lesson.id === 1 ? renderVimeoMobile(vimeoRef1, '1172528318', 'Intro')
+            : lesson.id === 2 ? renderVimeoMobile(vimeoRef2, '1172528646', 'Kohlenhydrate')
+            : lesson.id === 3 ? renderVimeoMobile(vimeoRef3, '1172530056', 'Fette')
+            : lesson.id === 4 ? renderVimeoMobile(vimeoRef4, '1148007412', 'Proteine')
+            : (
+              <video
+                ref={htmlVideoRef}
+                controls
+                playsInline
+                autoPlay
+                className="absolute inset-0 w-full h-full"
+                preload="auto"
+                onEnded={() => { setVideoEnded(true); exitFs(); }}
               >
-                <RotateCcw size={20} />
-                <span>Video wiederholen</span>
-              </button>
-            </div>
-          )}
+                <source src={lesson.videoUrl} type="video/mp4" />
+              </video>
+            )}
+
+            {/* Vollbild-Overlay */}
+            {overlayVisible && (
+              <div
+                className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black bg-opacity-40 cursor-pointer"
+                onClick={handleOverlayTap}
+              >
+                <div className="w-24 h-24 rounded-full bg-white bg-opacity-15 border-2 border-white border-opacity-70 flex items-center justify-center mb-4">
+                  <Play size={44} className="text-white ml-2" fill="white" />
+                </div>
+                <span className="text-white text-base font-semibold drop-shadow">Vollbild starten</span>
+              </div>
+            )}
+
+            {/* Replay overlay */}
+            {videoEnded && !overlayVisible && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
+                <button
+                  onClick={handleReplay}
+                  className="bg-white bg-opacity-20 border border-white border-opacity-40 text-white rounded-lg px-6 py-3 flex items-center gap-2"
+                >
+                  <RotateCcw size={20} />
+                  <span>Video wiederholen</span>
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Film abschließen */}
+        <div className="mt-6 px-4">
+          <button
+            onClick={onComplete}
+            className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg flex items-center gap-2"
+          >
+            <CheckCircle size={24} />
+            {lesson.id === 1 ? 'Intro abschließen' : 'Film abschließen'}
+          </button>
         </div>
       </div>
+    );
+  }
 
-      {/* ── Film abschließen ── */}
-      <div className="mt-6 px-4">
-        <button
-          onClick={onComplete}
-          className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg flex items-center gap-2"
-        >
-          <CheckCircle size={24} />
-          {lesson.id === 1 ? 'Intro abschließen' : 'Film abschließen'}
-        </button>
+  // ══════════════════════════════════════════════════════════════════
+  // DESKTOP: Original pre-Friday modal
+  // ══════════════════════════════════════════════════════════════════
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+      <div className="bg-navy-light rounded-xl p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold text-white">{lesson.title}</h2>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-white p-2"
+          >
+            <X size={24} />
+          </button>
+        </div>
+
+        <div className="relative rounded-xl overflow-hidden mb-6">
+          <div className="bg-gray-800 aspect-video relative">
+            {lesson.id === 1 ? renderVimeoDesktop(vimeoRef1, '1172528318', 'Intro')
+            : lesson.id === 2 ? renderVimeoDesktop(vimeoRef2, '1172528646', 'Kohlenhydrate')
+            : lesson.id === 3 ? renderVimeoDesktop(vimeoRef3, '1172530056', 'Fette')
+            : lesson.id === 4 ? renderVimeoDesktop(vimeoRef4, '1148007412', 'Proteine')
+            : (
+              <video
+                controls
+                className="w-full h-full object-cover"
+                preload="auto"
+                playsInline
+                autoPlay
+                ref={htmlVideoRef}
+                onEnded={() => { setVideoEnded(true); }}
+              >
+                <source src={lesson.videoUrl} type="video/mp4" />
+                Ihr Browser unterstützt das Video-Element nicht.
+              </video>
+            )}
+
+            {/* Replay overlay */}
+            {videoEnded && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                <button
+                  onClick={handleReplay}
+                  className="bg-gray-800 hover:bg-gray-700 text-white rounded-lg px-6 py-3 transition-colors shadow-lg"
+                >
+                  <span className="font-medium">Video wiederholen</span>
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={onComplete}
+            className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2 mx-auto"
+          >
+            <CheckCircle size={24} />
+            {lesson.id === 1 ? 'Intro abschließen' : 'Film abschließen'}
+          </button>
+        </div>
       </div>
     </div>
   );
