@@ -514,7 +514,7 @@ export default function LehrerManual() {
             <P className="mt-8"><B>Die heutige Benennung der Vitamine</B></P>
             <TP>Heute richtet sich der chemische Name eines Vitamins nach seiner chemischen Struktur. Bei den Trivialnamen werden immer noch die altbekannten Buchstaben verwendet, teilweise mit einer Nummer ergänzt. Teilweise gab es mehrere Trivialnamen, in der Regel hat sich aber jeweils nur ein Trivialname durchgesetzt.</TP>
             <P className="mt-8"><B>Wasserlösliche Vitamine anhand von Beispielen</B></P>
-            <TP><B>Makronährstoff-Verwertung und B-Vitamine</B></TP>
+            <P className="mt-4"><B>Makronährstoff-Verwertung und B-Vitamine</B></P>
             <P>Die B-Vitamine Panthotensäure, Folsäure, Biotin, Niacin und Cobalamin werden vor allem im Stoffwechsel gebraucht. Sie ermöglichen den Abbau von Kohlenhydraten und Fetten zu Energie oder den Aufbau von neuen Eiweißen aus Aminosäuren. Sie sind aber auch für die normale Funktion und Entwicklung jeder Zelle wichtig. Cobalamin ist außerdem ein gutes Beispiel für die Bedeutung von Spuren-Metallen im Stoffwechsel. Es enthält als wichtiges funktionsnotwendiges Zentralatom ein Kobalt-Atom. Kobalt ist in größeren Mengen ein gefährliches Schwermetall, in Form einzelner Atome jedoch ein Spurenelement und lebenswichtig als Bestandteil dieses Vitamins:</P>
             <DocImage src="/manual-images/image19.png" caption="" maxWidth="280px" maxHeight="none" />
             <P className="mt-8"><B>Funktionen von B-Vitaminen (Beispiele)</B></P>
