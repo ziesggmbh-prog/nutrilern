@@ -31,21 +31,21 @@ export default function Teachers() {
     {
       day: 2,
       title: "Fette",
-      individual: ["Bearbeitung des Films 'Fette‘ nach dem Schema von Tag 1"],
+      individual: ["Bearbeitung des Films ‚Fette‘ nach dem Schema von Tag 1"],
       hours: "3 Schulstunden",
       groupHours: "3 Schulstunden"
     },
     {
       day: 3,
       title: "Proteine",
-      individual: ["Bearbeitung des Films 'Proteine‘ nach dem Schema von Tag 1"],
+      individual: ["Bearbeitung des Films ‚Proteine‘ nach dem Schema von Tag 1"],
       hours: "3 Schulstunden",
       groupHours: "3 Schulstunden"
     },
     {
       day: 4,
       title: "Mikronährstoffe",
-      individual: ["Bearbeitung des Films 'Mikronährstoffe‘ nach dem Schema von Tag 1"],
+      individual: ["Bearbeitung des Films ‚Mikronährstoffe‘ nach dem Schema von Tag 1"],
       hours: "2 Schulstunden",
       groupHours: "4 Schulstunden (1 für Probepräsentation)"
     },
@@ -236,7 +236,7 @@ export default function Teachers() {
                 <li>Die Gruppengrößen sollten möglichst ausgewogen sein.</li>
                 <li>Für große Klassengrößen (über 25 Personen) gibt es eine Kreativaufgabe, bei der Schüler:innen selbst eine Gruppenaufgabe entwickeln und durchführen.</li>
                 <li>Hinter den Aufgabenfeldern sind für die anvisierten 5 Tage der Gruppenarbeit Anweisungen hinterlegt.</li>
-                <li>Das 'Abschließen‘ eines Tages schaltet den nächsten frei.</li>
+                <li>Das ‚Abschließen‘ eines Tages schaltet den nächsten frei.</li>
               </ul>
 
               <div className="bg-purple-50 border-l-4 border-purple-400 p-4 mt-6">

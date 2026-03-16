@@ -163,7 +163,7 @@ export class MemStorage implements IStorage {
           },
           {
             id: "c3",
-            question: "In welchen Lebensmitteln finden sich überwiegend 'gute‘ Kohlenhydrate?",
+            question: "In welchen Lebensmitteln finden sich überwiegend ‚gute‘ Kohlenhydrate?",
             options: [
               "Süßigkeiten, Weißbrot, Limonade",
               "Milch, Joghurt, Käse",
@@ -204,7 +204,7 @@ export class MemStorage implements IStorage {
           },
           {
             id: "f4",
-            question: "Worin kommen vor allem 'schlechte‘ Fette (gesättigte Fettsäuren) vor?",
+            question: "Worin kommen vor allem ‚schlechte‘ Fette (gesättigte Fettsäuren) vor?",
             options: [
               "In pflanzlichen Ölen wie Olivenöl",
               "In Nüssen und Samen",
@@ -485,7 +485,7 @@ export class MemStorage implements IStorage {
   async updateUserProgress(id: number, updateData: Partial<UserProgress>): Promise<UserProgress> {
     const existing = this.userProgress.get(id);
     if (!existing) {
-      throw new Error('Progress not found');
+      throw new Error(‚Progress not found');
     }
     
     const updated: UserProgress = { 
