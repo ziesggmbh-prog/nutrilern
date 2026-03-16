@@ -216,7 +216,7 @@ export default function LehrerManual() {
             <P><B>Die wichtigsten stärkehaltigen Nahrungsquellen:</B></P>
             <Li>Getreide: Weizen, Roggen, Gerste, Dinkel, Mais, Reis, Hafer</Li>
             <Li>Kartoffeln</Li>
-            <Li>Hülsenfrüchte: Bohnen, Erbsen, Erdnüssen, Kichererbsen, Linsen, Sojabohnen, Hirse</Li>
+            <Li>Hülsenfrüchte: Bohnen, Erbsen, Erdnüsse, Kichererbsen, Linsen, Sojabohnen, Hirse</Li>
             <P><B>Wie werden Zucker und Stärke im Körper verstoffwechselt, und wie wird daraus Energie gewonnen?</B></P>
             <P><B>Abbau von Stärke zu Zweifach- und Einfachzuckern</B></P>
             <P>Die Verdauung von Stärke in unserer Nahrung beginnt bereits im Mund. Unser Speichel enthält das stärkespaltende Enzym Alpha-Amylase. Die Amylase spaltet die Stärke zu Dextrinen (Bruchstücke der Stärke). Daher ist es wichtig, dass man lange und gründlich kaut.</P>
