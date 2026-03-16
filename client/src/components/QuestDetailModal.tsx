@@ -168,6 +168,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             src={quest.thumbnailUrl} 
             alt={quest.title}
             className="w-full h-40 object-cover"
+            style={quest.id === 12 ? { objectPosition: 'center 25%' } : undefined}
           />
           <div className="p-4 text-center">
             <h3 className="text-lg font-bold text-white mb-1">Tag 5</h3>
