@@ -420,7 +420,7 @@ export default function Home() {
               <img 
                 src={bkkFirmusLogo} 
                 alt="BKK firmus Logo" 
-                className="h-16 lg:h-24 w-auto object-contain" 
+                className="h-10 lg:h-24 w-auto object-contain" 
                 style={{ maxWidth: '180px' }}
               />
             </div>
@@ -437,7 +437,7 @@ export default function Home() {
               <img 
                 src={ziesLogo} 
                 alt="ZIES gGmbH Logo" 
-                className="h-16 lg:h-24 w-auto object-contain" 
+                className="h-10 lg:h-24 w-auto object-contain" 
                 style={{ maxWidth: '180px' }}
               />
             </div>
