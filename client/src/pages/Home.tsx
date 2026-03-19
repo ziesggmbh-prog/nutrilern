@@ -311,11 +311,10 @@ export default function Home() {
           {/* Mobile: Hamburger links, Modus-Switch rechts, Logo absolut zentriert */}
           <div className="sm:hidden relative flex items-center justify-between">
             <HamburgerMenu />
-            <div className="absolute left-1/2 -translate-x-1/2 flex items-center space-x-2 pointer-events-none">
-              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+            <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none">
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
                 <img src={logoImage} alt="" className="w-10 h-10 object-cover rounded-full" />
               </div>
-              <h1 className="text-lg font-bold whitespace-nowrap">NutriLern</h1>
             </div>
             <LevelDropdown />
           </div>
