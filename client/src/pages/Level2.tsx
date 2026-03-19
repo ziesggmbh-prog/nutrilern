@@ -118,13 +118,14 @@ export default function Level2() {
       {/* Header */}
       <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         <div className="container mx-auto px-4 py-6 relative z-10">
-          {/* Mobile: Hamburger links, Modus-Switch rechts, Logo absolut zentriert */}
-          <div className="sm:hidden relative flex items-center justify-between">
-            <HamburgerMenu />
-            <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none">
-              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+          {/* Mobile: Hamburger + Logo + NutriLern links, Modus-Switch rechts */}
+          <div className="sm:hidden flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <HamburgerMenu />
+              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
                 <img src={logoImage} alt="" className="w-10 h-10 object-cover rounded-full" />
               </div>
+              <h1 className="text-lg font-bold">NutriLern</h1>
             </div>
             <LevelDropdown />
           </div>
