@@ -118,30 +118,37 @@ export default function Level2() {
       {/* Header */}
       <header className="relative overflow-visible bg-black bg-opacity-30 z-10">
         <div className="container mx-auto px-4 py-6 relative z-10">
-          {/* Zeile 1: Logo + Fullscreen + Hamburger */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3 sm:space-x-6">
-              <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
-                <img 
-                  src={logoImage} 
-                  alt=""
-                  className="w-12 h-12 sm:w-20 sm:h-20 object-cover rounded-full"
-                />
+          {/* Mobile: dreispaltig – Hamburger | Logo zentriert | Modus-Switch */}
+          <div className="flex sm:hidden items-center">
+            <div className="flex-1 flex items-center">
+              <HamburgerMenu />
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                <img src={logoImage} alt="" className="w-10 h-10 object-cover rounded-full" />
+              </div>
+              <h1 className="text-lg font-bold">NutriLern</h1>
+            </div>
+            <div className="flex-1 flex items-center justify-end">
+              <LevelDropdown />
+            </div>
+          </div>
+          {/* Desktop: unverändert */}
+          <div className="hidden sm:flex items-center justify-between">
+            <div className="flex items-center space-x-6">
+              <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 flex items-center justify-center">
+                <img src={logoImage} alt="" className="w-20 h-20 object-cover rounded-full" />
               </div>
               <div>
-                <h1 className="text-lg sm:text-2xl font-bold">NutriLern</h1>
-                <p className="hidden sm:block text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Ernährung</p>
+                <h1 className="text-2xl font-bold">NutriLern</h1>
+                <p className="text-gray-300 text-sm">Interaktive Lerneinheit zum Thema Ernährung</p>
               </div>
             </div>
-            <div className="flex items-center space-x-2 sm:space-x-4">
-              <div className="hidden sm:block"><LevelDropdown /></div>
+            <div className="flex items-center space-x-4">
+              <LevelDropdown />
               <FullscreenToggle />
               <HamburgerMenu />
             </div>
-          </div>
-          {/* Zeile 2 (nur Mobile): Level-Switch darunter, rechtsbündig */}
-          <div className="flex sm:hidden justify-end mt-2">
-            <LevelDropdown />
           </div>
         </div>
 
