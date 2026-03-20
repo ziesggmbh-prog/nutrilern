@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, BookOpen, Info, Star } from 'lucide-react';
+import { Menu, X, BookOpen, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'wouter';
 
@@ -13,7 +13,6 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
-    { icon: Home, label: 'Start', href: '/' },
     { icon: BookOpen, label: 'Für Lehrer:innen', href: '/teachers' },
     { icon: Info, label: 'Über das Programm', href: '/about' }
   ];
@@ -46,7 +45,7 @@ export default function HamburgerMenu({ className = "" }: HamburgerMenuProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 top-12 w-56 bg-black bg-opacity-30 backdrop-blur-sm rounded-xl shadow-xl border border-gray-700 overflow-hidden z-[100]"
+            className="absolute left-0 sm:left-auto sm:right-0 top-12 w-56 bg-black bg-opacity-30 backdrop-blur-sm rounded-xl shadow-xl border border-gray-700 overflow-hidden z-[100]"
           >
             <div className="py-2">
               {menuItems.map((item, index) => (
