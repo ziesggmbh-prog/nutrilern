@@ -220,7 +220,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
             
           </div>
           
-          <div className="flex justify-between">
+          <div className="flex flex-wrap gap-2 justify-between">
             <Button
               onClick={onClose}
               className="bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 px-4 py-2"
@@ -229,11 +229,11 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
               Abbrechen
             </Button>
             
-            <div className="flex space-x-3">
+            <div className="flex flex-wrap gap-2">
               {currentQuestion > 0 && (
                 <Button
                   onClick={handlePrevious}
-                  className="bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 px-6 py-3"
+                  className="bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 px-4 py-2"
                 >
                   Zurück
                 </Button>
@@ -242,7 +242,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
               <Button
                 onClick={handleNext}
                 disabled={answers[currentQuestion] === undefined}
-                className="bg-purple-custom hover:bg-purple-custom/90 text-white px-6 py-3 font-semibold"
+                className="bg-purple-custom hover:bg-purple-custom/90 text-white px-4 py-2 font-semibold"
               >
                 {currentQuestion === questions.length - 1 ? "Quiz abschließen" : "Nächste Frage"}
               </Button>
