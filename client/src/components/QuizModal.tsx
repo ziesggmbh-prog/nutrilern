@@ -164,6 +164,13 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
       >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white transition-colors"
+          aria-label="Schließen"
+        >
+          <X size={16} />
+        </button>
         <div className="relative z-10">
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-purple-custom rounded-full flex items-center justify-center mx-auto mb-4">
@@ -221,33 +228,22 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
             
           </div>
           
-          <div className="flex flex-wrap gap-2 justify-between">
-            <Button
-              onClick={onClose}
-              className="bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 px-4 py-2"
-            >
-              <X className="mr-2" size={16} />
-              Abbrechen
-            </Button>
-            
-            <div className="flex flex-wrap gap-2">
-              {currentQuestion > 0 && (
-                <Button
-                  onClick={handlePrevious}
-                  className="bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 px-4 py-2"
-                >
-                  Zurück
-                </Button>
-              )}
-              
+          <div className="flex flex-wrap gap-2 justify-end">
+            {currentQuestion > 0 && (
               <Button
-                onClick={handleNext}
-                disabled={answers[currentQuestion] === undefined}
-                className="bg-purple-custom hover:bg-purple-custom/90 text-white px-4 py-2 font-semibold"
+                onClick={handlePrevious}
+                className="bg-gray-700 text-white border border-gray-600 hover:bg-gray-600 px-4 py-2"
               >
-                {currentQuestion === questions.length - 1 ? "Quiz abschließen" : "Nächste Frage"}
+                Zurück
               </Button>
-            </div>
+            )}
+            <Button
+              onClick={handleNext}
+              disabled={answers[currentQuestion] === undefined}
+              className="bg-purple-custom hover:bg-purple-custom/90 text-white px-4 py-2 font-semibold"
+            >
+              {currentQuestion === questions.length - 1 ? "Quiz abschließen" : "Nächste Frage"}
+            </Button>
           </div>
         </div>
       </motion.div>
