@@ -140,17 +140,17 @@ export default function QuestTextModal({ lesson, onClose, onComplete, isPresenta
           </>
         )}
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-wrap gap-2 justify-between items-center">
           <button
             onClick={onClose}
-            className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+            className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
           >
             Schließen
           </button>
           
           <button
             onClick={handleComplete}
-            className="px-6 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
+            className="px-4 py-2 bg-green-custom text-white rounded-lg hover:bg-green-700 transition-colors flex items-center gap-2"
           >
             <CheckCircle size={20} />
             Tag abschließen
