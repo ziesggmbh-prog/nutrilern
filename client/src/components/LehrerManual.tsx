@@ -67,8 +67,8 @@ function DocImage({ src, caption, maxHeight = "170px", maxWidth }: { src: string
         alt={caption}
         className="rounded-md bg-white"
         style={unconstrained
-          ? { maxWidth: maxWidth ?? "100%", display: "block" }
-          : { maxHeight, maxWidth: maxWidth ?? "100%", objectFit: "contain" }
+          ? { width: "100%", maxWidth: maxWidth ?? "100%", display: "block" }
+          : { maxHeight, width: "100%", maxWidth: maxWidth ?? "100%", objectFit: "contain" }
         }
       />
       {caption && <figcaption className="mt-1 text-center text-sm text-gray-500 italic">{caption}</figcaption>}
