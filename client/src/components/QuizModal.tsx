@@ -152,13 +152,14 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
 
   return (
     <motion.div
-      className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black bg-opacity-90 z-50 overflow-y-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
+      <div className="flex min-h-full items-start sm:items-center justify-center p-4 pb-10">
       <motion.div
-        className="bg-navy-light rounded-2xl p-8 max-w-2xl w-full relative overflow-hidden"
+        className="bg-navy-light rounded-2xl p-6 sm:p-8 max-w-2xl w-full relative"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
@@ -250,6 +251,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
           </div>
         </div>
       </motion.div>
+      </div>
     </motion.div>
   );
 }
