@@ -89,7 +89,7 @@ interface AccordionSectionProps {
 
 function AccordionSection({ number, title, color, bgColor, textColor, isOpen, onToggle, children }: AccordionSectionProps) {
   return (
-    <div className="mb-4 border border-gray-200 rounded-xl shadow-sm">
+    <div className="mb-4 border border-gray-200 rounded-xl shadow-sm overflow-hidden">
       <button onClick={onToggle} className={`w-full flex items-center justify-between p-5 ${bgColor} hover:opacity-90 transition-opacity text-left rounded-t-xl`}>
         <div className="flex items-center gap-3">
           <span className={`w-8 h-8 rounded-full ${color} text-white flex items-center justify-center font-bold text-sm flex-shrink-0`}>{number}</span>
