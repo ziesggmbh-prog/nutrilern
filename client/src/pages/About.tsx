@@ -80,7 +80,7 @@ export default function About() {
                 href="https://www.zies-frankfurt.de"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-purple-600 hover:text-purple-800 font-medium transition-colors"
+                className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium transition-colors"
               >
                 www.zies-frankfurt.de
                 <ExternalLink size={14} />
