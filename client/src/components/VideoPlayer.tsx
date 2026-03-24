@@ -72,6 +72,22 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   }, []);
 
 
+  // ── Scroll lock + orientation fix (mobile only) ───────────────────────
+  useEffect(() => {
+    if (!isMobile) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+    const onOrientationChange = () => { window.scrollTo(0, 0); };
+    window.addEventListener('orientationchange', onOrientationChange);
+    window.addEventListener('resize', onOrientationChange);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener('orientationchange', onOrientationChange);
+      window.removeEventListener('resize', onOrientationChange);
+    };
+  }, []);
+
   // ── Vimeo Player API setup ─────────────────────────────────────────────
   useEffect(() => {
     const refs = [vimeoRef1, vimeoRef2, vimeoRef3, vimeoRef4, vimeoRef5, vimeoRef6, vimeoRef7];
@@ -186,7 +202,7 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // ══════════════════════════════════════════════════════════════════
   if (isMobile) {
     return (
-      <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center">
+      <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center" style={{height: '100dvh'}}>
 
         {/* X button */}
         <button
