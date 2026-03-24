@@ -208,7 +208,57 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // ══════════════════════════════════════════════════════════════════
   if (isMobile) {
     return (
-      <div ref={outerRef} className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center" style={{height: '100dvh'}}>
+      <div ref={outerRef} className="fixed inset-0 bg-black z-50" style={{height: '100dvh'}}>
+
+        {/* Video fills entire screen */}
+        <div className="absolute inset-0">
+          {lesson.id === 1 ? renderVimeoMobile(vimeoRef1, '1172528318', 'Intro')
+          : lesson.id === 2 ? renderVimeoMobile(vimeoRef2, '1172528646', 'Kohlenhydrate')
+          : lesson.id === 3 ? renderVimeoMobile(vimeoRef3, '1172530056', 'Fette')
+          : lesson.id === 4 ? renderVimeoMobile(vimeoRef4, '1148007412', 'Proteine')
+          : lesson.id === 5 ? renderVimeoMobile(vimeoRef5, '1174041123', 'Mikronährstoffe')
+          : lesson.id === 6 ? renderVimeoMobile(vimeoRef6, '1174040953', 'Unterwelt')
+          : lesson.id === 7 ? renderVimeoMobile(vimeoRef7, '1174139522', 'Outro')
+          : (
+            <video
+              ref={htmlVideoRef}
+              controls
+              playsInline
+              autoPlay
+              className="absolute inset-0 w-full h-full"
+              preload="auto"
+              onEnded={() => { setTimeout(() => { exitFs(); setVideoEnded(true); }, 2000); }}
+            >
+              <source src={lesson.videoUrl} type="video/mp4" />
+            </video>
+          )}
+
+          {/* Vollbild-Overlay */}
+          {overlayVisible && (
+            <div
+              className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black bg-opacity-40 cursor-pointer"
+              onClick={handleOverlayTap}
+            >
+              <div className="w-24 h-24 rounded-full bg-white bg-opacity-15 border-2 border-white border-opacity-70 flex items-center justify-center mb-4">
+                <Play size={44} className="text-white ml-2" fill="white" />
+              </div>
+              <span className="text-white text-base font-semibold drop-shadow">Vollbild starten</span>
+            </div>
+          )}
+
+          {/* Replay overlay */}
+          {videoEnded && !overlayVisible && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
+              <button
+                onClick={handleReplay}
+                className="bg-white bg-opacity-20 border border-white border-opacity-40 text-white rounded-lg px-6 py-3 flex items-center gap-2"
+              >
+                <RotateCcw size={20} />
+                <span>Video wiederholen</span>
+              </button>
+            </div>
+          )}
+        </div>
 
         {/* X button */}
         <button
@@ -219,64 +269,11 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
           <X size={26} />
         </button>
 
-        {/* Video */}
-        <div className="w-full relative">
-          <div className="aspect-video w-full relative bg-black">
-
-            {lesson.id === 1 ? renderVimeoMobile(vimeoRef1, '1172528318', 'Intro')
-            : lesson.id === 2 ? renderVimeoMobile(vimeoRef2, '1172528646', 'Kohlenhydrate')
-            : lesson.id === 3 ? renderVimeoMobile(vimeoRef3, '1172530056', 'Fette')
-            : lesson.id === 4 ? renderVimeoMobile(vimeoRef4, '1148007412', 'Proteine')
-            : lesson.id === 5 ? renderVimeoMobile(vimeoRef5, '1174041123', 'Mikronährstoffe')
-            : lesson.id === 6 ? renderVimeoMobile(vimeoRef6, '1174040953', 'Unterwelt')
-            : lesson.id === 7 ? renderVimeoMobile(vimeoRef7, '1174139522', 'Outro')
-            : (
-              <video
-                ref={htmlVideoRef}
-                controls
-                playsInline
-                autoPlay
-                className="absolute inset-0 w-full h-full"
-                preload="auto"
-                onEnded={() => { setTimeout(() => { exitFs(); setVideoEnded(true); }, 2000); }}
-              >
-                <source src={lesson.videoUrl} type="video/mp4" />
-              </video>
-            )}
-
-            {/* Vollbild-Overlay */}
-            {overlayVisible && (
-              <div
-                className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black bg-opacity-40 cursor-pointer"
-                onClick={handleOverlayTap}
-              >
-                <div className="w-24 h-24 rounded-full bg-white bg-opacity-15 border-2 border-white border-opacity-70 flex items-center justify-center mb-4">
-                  <Play size={44} className="text-white ml-2" fill="white" />
-                </div>
-                <span className="text-white text-base font-semibold drop-shadow">Vollbild starten</span>
-              </div>
-            )}
-
-            {/* Replay overlay */}
-            {videoEnded && !overlayVisible && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 z-10">
-                <button
-                  onClick={handleReplay}
-                  className="bg-white bg-opacity-20 border border-white border-opacity-40 text-white rounded-lg px-6 py-3 flex items-center gap-2"
-                >
-                  <RotateCcw size={20} />
-                  <span>Video wiederholen</span>
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-
         {/* Film abschließen */}
-        <div className="mt-6 px-4">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30">
           <button
             onClick={onComplete}
-            className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg flex items-center gap-2"
+            className="px-8 py-3 text-lg bg-green-custom text-white rounded-lg flex items-center gap-2 shadow-lg"
           >
             <CheckCircle size={24} />
             {lesson.id === 1 ? 'Intro abschließen' : 'Film abschließen'}
