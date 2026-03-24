@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  background-color: hsl(220, 33%, 13%);
+  background-color: hsl(220, 33%, 9%);
 }
 
 :root {
