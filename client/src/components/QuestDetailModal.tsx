@@ -260,10 +260,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           }
         }}
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
+        <div
           className="bg-structured rounded-2xl w-full max-w-6xl max-h-[95dvh] overflow-hidden relative flex flex-col"
           onClick={(e) => e.stopPropagation()}
         >
@@ -318,7 +315,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Day Detail Modal */}
