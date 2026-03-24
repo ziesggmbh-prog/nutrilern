@@ -149,6 +149,7 @@ Changelog:
 - September 14, 2025. Successfully restored login authentication with correct hash verification for "xnutrix" password
 - September 14, 2025. Removed PHD-Lernspiel from app after stakeholder feedback - complete removal from navigation and routes
 - September 14, 2025. Renamed "Einzelspielermodus" to "Lernmodus" throughout app interface and teacher documentation
+- March 24, 2026. PWA implemented: manifest.webmanifest, service worker (sw.js), app icons (192px, 512px, 180px apple-touch), all PWA meta tags in index.html
 ```
 
 ## User Preferences
