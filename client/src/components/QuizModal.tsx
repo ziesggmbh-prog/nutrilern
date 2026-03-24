@@ -210,7 +210,7 @@ export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProp
                       ? index === questions[currentQuestion].correctAnswer
                         ? "bg-green-custom text-white"
                         : "bg-red-500 text-white"
-                      : "bg-gray-800 hover:bg-gray-700"
+                      : "bg-gray-800 [@media(hover:hover)]:hover:bg-gray-700"
                   }`}
                 >
                   <input
