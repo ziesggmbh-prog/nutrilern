@@ -253,18 +253,19 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
     <>
       {/* Main Quest Detail Modal */}
       <div 
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+        className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto"
         onClick={(e) => {
           if (e.target === e.currentTarget) {
             onClose();
           }
         }}
       >
+        <div className="flex min-h-full items-start sm:items-center justify-center p-4 pb-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3 }}
-          className="bg-structured rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden relative"
+          className="bg-structured rounded-2xl w-full max-w-6xl relative"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
@@ -302,7 +303,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           </div>
 
           {/* Content */}
-          <div className="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
+          <div className="p-6">
             {/* Progress Bar */}
             <ProgressBar 
               completedLessons={completedDays.length}
@@ -319,6 +320,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
             </div>
           </div>
         </motion.div>
+        </div>
       </div>
 
       {/* Day Detail Modal */}
