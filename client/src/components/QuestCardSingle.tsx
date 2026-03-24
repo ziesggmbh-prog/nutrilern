@@ -33,9 +33,10 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
         isAvailable ? "hover:shadow-xl" : ""
       }`}
       onClick={isAvailable ? onQuizClick : undefined}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: lesson.order * 0.1 }}
+      transition={{ delay: lesson.order * 0.1, duration: 0.35 }}
+      style={{ willChange: 'transform, opacity', backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
     >
       <OrganicShape
         className={`absolute top-0 right-0 w-20 h-20 ${colorClass} opacity-20`}

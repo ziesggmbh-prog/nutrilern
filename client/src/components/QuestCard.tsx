@@ -70,9 +70,10 @@ export default function QuestCard({ lesson, isCompleted, isAvailable, onQuizClic
           isAvailable ? "hover:shadow-xl" : "opacity-60"
         }`}
         onClick={isAvailable ? onQuizClick : undefined}
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: lesson.order * 0.1 + 0.2 }}
+        transition={{ delay: lesson.order * 0.1 + 0.2, duration: 0.35 }}
+        style={{ willChange: 'transform, opacity', backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
