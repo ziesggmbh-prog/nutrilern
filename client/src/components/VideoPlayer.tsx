@@ -75,14 +75,20 @@ export default function VideoPlayer({ lesson, onClose, onComplete }: VideoPlayer
   // ── Scroll lock + orientation fix (mobile only) ───────────────────────
   useEffect(() => {
     if (!isMobile) return;
-    const prev = document.body.style.overflow;
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
-    window.scrollTo(0, 0);
     const onOrientationChange = () => { window.scrollTo(0, 0); };
     window.addEventListener('orientationchange', onOrientationChange);
     window.addEventListener('resize', onOrientationChange);
     return () => {
-      document.body.style.overflow = prev;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
       window.removeEventListener('orientationchange', onOrientationChange);
       window.removeEventListener('resize', onOrientationChange);
     };
