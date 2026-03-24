@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { Lesson, Quiz, QuizQuestion } from "@shared/schema";
 import OrganicShape from "./OrganicShape";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 interface QuizModalProps {
   lesson: Lesson;
@@ -14,6 +15,7 @@ interface QuizModalProps {
 }
 
 export default function QuizModal({ lesson, onClose, onComplete }: QuizModalProps) {
+  useScrollLock();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const [showResults, setShowResults] = useState(false);

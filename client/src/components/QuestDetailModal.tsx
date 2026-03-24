@@ -6,6 +6,7 @@ import OrganicShape from "./OrganicShape";
 import QuestTextModal from "./QuestTextModal";
 import { getCompletedDays, saveCompletedDays } from "@/lib/progressStorage";
 import type { Lesson } from "@shared/schema";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 interface QuestDay {
   id: string;
@@ -102,6 +103,7 @@ const questColors = [
 ];
 
 export default function QuestDetailModal({ quest, onClose, onQuestComplete }: QuestDetailModalProps) {
+  useScrollLock();
   const [selectedDay, setSelectedDay] = useState<QuestDay | null>(null);
   const [showDayDetail, setShowDayDetail] = useState(false);
   const [completedDays, setCompletedDays] = useState<string[]>(() => getCompletedDays(quest.id));

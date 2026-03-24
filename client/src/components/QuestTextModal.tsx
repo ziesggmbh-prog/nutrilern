@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { X, CheckCircle, Target } from "lucide-react";
 import type { Lesson } from "@shared/schema";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 interface QuestTextModalProps {
   lesson: Lesson;
@@ -10,6 +11,7 @@ interface QuestTextModalProps {
 }
 
 export default function QuestTextModal({ lesson, onClose, onComplete, isPresentationDay }: QuestTextModalProps) {
+  useScrollLock();
   const handleComplete = () => {
     onComplete();
     onClose();
