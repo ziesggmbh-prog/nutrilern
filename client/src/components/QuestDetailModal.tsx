@@ -261,11 +261,11 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
         }}
       >
         <div
-          className="bg-structured rounded-2xl w-full max-w-6xl max-h-[95dvh] overflow-hidden relative flex flex-col"
+          className="bg-structured rounded-2xl w-full max-w-6xl max-h-[95dvh] overflow-y-auto relative"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className={`${colorClass} p-6 relative overflow-hidden flex-shrink-0`}>
+          <div className={`${colorClass} p-6 relative overflow-hidden`}>
             <button
               onClick={(e) => {
                 e.preventDefault();
@@ -299,7 +299,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           </div>
 
           {/* Content */}
-          <div className="p-6 overflow-y-auto flex-1">
+          <div className="p-6">
             {/* Progress Bar */}
             <ProgressBar 
               completedLessons={completedDays.length}
