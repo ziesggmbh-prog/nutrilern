@@ -265,7 +265,7 @@ export default function QuestDetailModal({ quest, onClose, onQuestComplete }: Qu
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className={`${colorClass} p-6 relative overflow-hidden`}>
+          <div className={`${colorClass} p-6 relative overflow-hidden flex-shrink-0`}>
             <button
               onClick={(e) => {
                 e.preventDefault();
